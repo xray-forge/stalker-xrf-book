@@ -2,15 +2,18 @@
 
 Documentation for x-ray forge script engine template and tools.
 
-TODO book link. <br/>
-TODO tsdoc link. <br/>
 
 ## 📦 Links
+- [Xray forge documentation book](https://xray-forge.github.io/stalker-xrf-book).
+- [Xray16 type definitions](https://xray-forge.github.io/xray-16-types/modules.html).
 
-- Type definitions: [https://github.com/xray-forge/xray-16-types](https://github.com/xray-forge/xray-16-types)
-- Template: [https://github.com/xray-forge/stalker-xrf-template](https://github.com/xray-forge/stalker-xrf-template)
-- Binaries: [https://github.com/xray-forge/stalker-xrf-bin](https://github.com/xray-forge/stalker-xrf-bin)
+---
 
+- Types repository: [https://github.com/xray-forge/xray-16-types](https://github.com/xray-forge/xray-16-types)
+- Template repository: [https://github.com/xray-forge/stalker-xrf-template](https://github.com/xray-forge/stalker-xrf-template)
+- Binaries repository: [https://github.com/xray-forge/stalker-xrf-bin](https://github.com/xray-forge/stalker-xrf-bin)
+
+---
 
 - Base assets: [https://gitlab.com/xray-forge/stalker-xrf-resources-base](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
 - Extended assets: [https://gitlab.com/xray-forge/stalker-xrf-resources-extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
