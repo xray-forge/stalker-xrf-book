@@ -29,17 +29,23 @@
     - [Commands](xrf/cli/commands.md)
   - [Building](xrf/building/building.md)
     - [Building scripts](xrf/building/building_scripts.md)
+    - [Building configs](xrf/building/building_configs.md)
     - [Building translations](xrf/building/building_translations.md)
     - [Building UI forms](xrf/building/building_forms.md)
     - [Building resources](xrf/building/building_resources.md)
-  - [Testing](xrf/testing.md)
-  - [Formatting and linting](xrf/formatting_and_linting.md)
+ 
   - [Packaging](xrf/packaging.md)
-  - [Logs](xrf/logs.md)
-  - [Debugging](xrf/debugging.md)
   - [Developing](xrf/developing/developing.md)
     - [Types definitions](xrf/developing/typedefs.md)
+  - [Logs](xrf/logs.md)
+  - [Debugging](xrf/debugging.md)
+  - [Testing](xrf/testing.md)
+  - [Formatting and linting](xrf/formatting_and_linting.md)
   - [Additional resources](xrf/additional_resources.md)
+
+---
+
+- [Extensions](extensions/extensions.md)
 
 ---
 
