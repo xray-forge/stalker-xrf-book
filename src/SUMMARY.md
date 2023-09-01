@@ -1,6 +1,43 @@
 # Summary
 
 - [General](general/general.md)
+- [Installation](xrf/installation.md)
+
+---
+
+- [XRF](xrf/xrf.md)
+  - [Additional resources](xrf/additional_resources.md)
+  - [Building](xrf/building/building.md)
+    - [Building UI forms](xrf/building/building_forms.md)
+    - [Building configs](xrf/building/building_configs.md)
+    - [Building resources](xrf/building/building_resources.md)
+    - [Building scripts](xrf/building/building_scripts.md)
+    - [Building translations](xrf/building/building_translations.md)
+  - [CLI](xrf/cli/cli.md)
+    - [Commands](xrf/cli/commands.md)
+    - [Configuration](xrf/cli/configuration.md)
+    - [Pre-built engines and tools](xrf/cli/bin.md)
+  - [Compressing](xrf/compressing.md)
+  - [Debugging](xrf/debugging.md)
+  - [Developing](xrf/developing/developing.md)
+    - [Types definitions](xrf/developing/typedefs.md)
+  - [Formatting and linting](xrf/formatting_and_linting.md)
+  - [Linking](xrf/linking.md)
+  - [Logs](xrf/logs.md)
+  - [Packaging](xrf/packaging.md)
+  - [Switching engines](xrf/switching_engines.md)
+  - [Testing](xrf/testing.md)
+
+---
+
+- [Extensions](extensions/extensions.md)
+
+---
+
+- [Utils](utils/utils.md)
+  - [Useful links](utils/useful_links.md)
+  - [Game SDK](utils/game_sdk.md)
+  - [Lua debugger](utils/lua_debugger.md)
 
 ---
 
@@ -96,40 +133,3 @@
     - [Utils](script_engine/scripts_utils.md)
   - [Shaders](script_engine/shaders.md)
   - [Translations](script_engine/translations.md)
-
----
-
-- [XRF](xrf/xrf.md)
-  - [Additional resources](xrf/additional_resources.md)
-  - [Building](xrf/building/building.md)
-    - [Building UI forms](xrf/building/building_forms.md)
-    - [Building configs](xrf/building/building_configs.md)
-    - [Building resources](xrf/building/building_resources.md)
-    - [Building scripts](xrf/building/building_scripts.md)
-    - [Building translations](xrf/building/building_translations.md)
-  - [CLI](xrf/cli/cli.md)
-    - [Commands](xrf/cli/commands.md)
-    - [Configuration](xrf/cli/configuration.md)
-    - [Pre-built engines and tools](xrf/cli/bin.md)
-  - [Compressing](xrf/compressing.md)
-  - [Debugging](xrf/debugging.md)
-  - [Developing](xrf/developing/developing.md)
-    - [Types definitions](xrf/developing/typedefs.md)
-  - [Formatting and linting](xrf/formatting_and_linting.md)
-  - [Installation](xrf/installation.md)
-  - [Linking](xrf/linking.md)
-  - [Logs](xrf/logs.md)
-  - [Packaging](xrf/packaging.md)
-  - [Switching engines](xrf/switching_engines.md)
-  - [Testing](xrf/testing.md)
-
----
-
-- [Extensions](extensions/extensions.md)
-
----
-
-- [Utils](utils/utils.md)
-  - [Useful links](utils/useful_links.md)
-  - [Game SDK](utils/game_sdk.md)
-  - [Lua debugger](utils/lua_debugger.md)
