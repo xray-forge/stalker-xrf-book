@@ -1,8 +1,10 @@
-# todo;
+# 🏗️ Debugging
 
-todo;
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
-## ️️🏗️ Debugging game
+## ️️🏗️ Using LUA/C++ debugger
 
 To attach a debugger to Lua/C++ code, follow these steps:
 
@@ -15,3 +17,24 @@ To attach a debugger to Lua/C++ code, follow these steps:
 Note that it is not possible to debug TypeScript directly. <br/>
 Instead, attach a breakpoint and observe the transpiled Lua code. <br/>
 Additionally, it is not possible to debug luabind declared classes and userdata.
+
+## ️️🏗️ Running custom script
+
+todo;
+
+## ️️🏗️ Debugging circular reference
+
+todo;
+
+## ️️🏗️ Debugging GOAP and logics
+
+todo;
+
+## ️️🏗️ Debugging weather
+
+todo;
+
+
+## ️️🏗️ Debugging UI forms
+
+todo;
