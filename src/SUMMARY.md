@@ -5,7 +5,7 @@
 
 ---
 
-- [XRF](xrf/xrf.md)
+- [XRF]()
   - [Additional resources](xrf/additional_resources.md)
   - [Building](xrf/building/building.md)
     - [Building UI forms](xrf/building/building_forms.md)
@@ -34,7 +34,7 @@
 
 ---
 
-- [Utils](utils/utils.md)
+- [Utils]()
   - [Useful links](utils/useful_links.md)
   - [Game SDK](utils/game_sdk.md)
   - [Lua debugger](utils/lua_debugger.md)
