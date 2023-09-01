@@ -1,4 +1,4 @@
-# 🎮 [Stalker XRF book](README.md)
+# 🎮 [Stalker XRF book](https://xray-forge.github.io/stalker-xrf-book)
 
 Documentation for x-ray forge script engine template and tools.
 
