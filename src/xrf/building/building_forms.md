@@ -1,4 +1,4 @@
-# 🥑 todo;
+# 🥑 Building forms
 
 todo; <br/>
 todo; <br/>
@@ -14,3 +14,15 @@ Notes:
 - Use `preview` command to preview forms and develop faster, example: `npm run preview menu`
 
 For examples check: `src/engine/forms`.
+
+## 🥑 Filtering form assets
+
+todo; <br/>
+todo; <br/>
+todo; <br/>
+
+## 🥑 16x9 vs 4x3
+
+todo; <br/>
+todo; <br/>
+todo; <br/>

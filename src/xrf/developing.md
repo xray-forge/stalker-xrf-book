@@ -35,4 +35,3 @@ Also there is no need to restart the game .exe, just 'new game' option in menu w
 ## 🏗️ Filtering assets
 
 todo; <br/>
-

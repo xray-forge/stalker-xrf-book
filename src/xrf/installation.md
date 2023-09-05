@@ -5,7 +5,7 @@
 - [NodeJS](https://nodejs.org/en/) 14 or later
 - [Stalker-COP](https://store.steampowered.com/app/41700/STALKER_Call_of_Pripyat/) game
 
-## 💿 Start development
+## 💿 Starting development
 
 - DOWNLOAD [the game](https://store.steampowered.com/app/41700/STALKER_Call_of_Pripyat/)
 - RUN `git clone https://github.com/xray-forge/stalker-xrf-template.git` - clone repository
@@ -17,7 +17,7 @@
 - RUN `npm run cli build` - build gamedata to the destination
 - RUN `npm run cli start_game` - start game and test changes
 
-## 🧰 Check issues
+## 🧰 Checking issues
 
 `$ npm run cli verify` - will check whether project is set up and ready to start developing
 

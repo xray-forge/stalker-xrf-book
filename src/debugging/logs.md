@@ -16,7 +16,7 @@ Depending on how you run the game, you can use the following approaches to check
 - Make sure you are using the custom engine. If not, switch to the mixed/release variant: `npm run engine use release`
 - Link the application logs folder with the target directory: `npm run link` (if it is not linked already)
 - Start the game (`npm run start_game`)
-- Check files in `target/logs_link` directory -> `opexray_%username%.log` is default openxray log file 
+- Check files in `target/logs_link` directory -> `opexray_%username%.log` is default openxray log file
 
 ### With visual studio
 
@@ -42,6 +42,12 @@ todo; <br/>
 todo; <br/>
 
 ## 🧰 Flushing logs
+
+todo; <br/>
+todo; <br/>
+todo; <br/>
+
+## 🧰 Printing logs with CLI
 
 todo; <br/>
 todo; <br/>

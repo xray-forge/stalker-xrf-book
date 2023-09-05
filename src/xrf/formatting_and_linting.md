@@ -1,16 +1,28 @@
-# todo;
+# ☔️ Formatting
 
-todo;
+todo; <br/>
 
-## Typescript linting
+## ☂️ Typescript linting
 
-todo;
+[Eslint](https://eslint.org/) is used as main linting tool for XRF typescript codebase.
 
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
-## Typescript formatting
+## ☂️ Typescript formatting
 
-todo;
+[Prettier](https://prettier.io/) is used as main formatting tool for XRF codebase.
 
-## LTX formatting
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
-todo;
+## ☂️ LTX formatting
+
+[Custom script](https://github.com/xray-forge/stalker-xrf-template/tree/main/cli/format/README.md) is used as main formatting tool
+for LTX configs codebase.
+
+todo; <br/>
+todo; <br/>
+todo; <br/>

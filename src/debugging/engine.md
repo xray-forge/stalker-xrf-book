@@ -21,3 +21,15 @@ To attach a debugger to Lua/C++ code, follow these steps:
 
 - It is not possible to debug TypeScript directly. Instead, attach a breakpoint and observe the transpiled Lua code. <br/>
 - It is not possible to attach to luabind declared classes and userdata (unfortunately, lua debug tools were not maintained in OXR for 10+ years)
+
+## ️🏗️ todo
+
+todo; <br/>
+todo; <br/>
+todo; <br/>
+
+## ️🏗️ todo
+
+todo; <br/>
+todo; <br/>
+todo; <br/>

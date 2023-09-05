@@ -2,8 +2,8 @@
 
 Documentation for x-ray forge script engine template and tools.
 
-
 ## 📦 Links
+
 - [Xray forge documentation book](https://xray-forge.github.io/stalker-xrf-book).
 - [Xray16 type definitions](https://xray-forge.github.io/xray-16-types/modules.html).
 

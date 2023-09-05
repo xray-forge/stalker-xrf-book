@@ -1,16 +1,23 @@
-# todo;
+# 🎡 CLI configuration
 
-todo;
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
-## Config json scheme
+## 🎡 Config json scheme
 
-todo;
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
-## Different locale
+## 🎡 Different locale
 
-todo;
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
-## Custom game path (non steam version of game)
+## 🎡 Custom game path (non-steam version of game)
 
-todo;
-
+todo; <br/>
+todo; <br/>
+todo; <br/>

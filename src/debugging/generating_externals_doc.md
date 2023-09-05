@@ -1,22 +1,16 @@
-# 🌋 Assets
+# 🚜 Generating externals doc
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌋 todo
+## 🚜 Running command to generate externals
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌋 todo
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
-
-## 🌋 todo
+## 🚜 Updating jsdoc
 
 todo; <br/>
 todo; <br/>

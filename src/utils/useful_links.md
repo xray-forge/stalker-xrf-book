@@ -1,6 +1,6 @@
-# Useful utils and resources
+# 🍌 Useful utils and resources
 
-## Development utils
+## 🍌 Development utils
 
 - https://github.com/revolucas/AXRToolset - set of utilities for mod development (unpack gamedata)
 - https://github.com/OpenXRay/xray-16 - open x-ray project

@@ -1,6 +1,8 @@
-# todo;
+# 🏗️ Type definitions
 
-todo;
+todo; <br/>
+todo; <br/>
+todo; <br/>
 
 ## 🏗️ Typedefs
 
@@ -13,3 +15,15 @@ After transpiling process import statements will be stripped and transformed to 
 
 For types correction and validation: [Open X-Ray source code](https://github.com/OpenXRay/xray-16) <br/>
 Bindings documentation: [xray-16-types](https://xray-forge.github.io/xray-16-types/modules.html)
+
+## 🏗️ Updating type definitions
+
+todo; <br/>
+todo; <br/>
+todo; <br/>
+
+## 🏗️ Matching open xray
+
+todo; <br/>
+todo; <br/>
+todo; <br/>
