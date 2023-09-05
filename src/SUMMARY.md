@@ -3,8 +3,6 @@
 - [General](general/general.md)
 - [Installation](xrf/installation.md)
 
----
-
 - [XRF]()
   - [Additional resources](xrf/additional_resources.md)
   - [Building](xrf/building/building.md)
@@ -18,28 +16,28 @@
     - [Configuration](xrf/cli/configuration.md)
     - [Pre-built engines and tools](xrf/cli/bin.md)
   - [Compressing](xrf/compressing.md)
-  - [Debugging](xrf/debugging.md)
   - [Developing](xrf/developing/developing.md)
     - [Types definitions](xrf/developing/typedefs.md)
   - [Formatting and linting](xrf/formatting_and_linting.md)
   - [Linking](xrf/linking.md)
-  - [Logs](xrf/logs.md)
   - [Packaging](xrf/packaging.md)
   - [Switching engines](xrf/switching_engines.md)
   - [Testing](xrf/testing.md)
 
----
+- [Debugging]()
+  - [Engine (C++)](debugging/engine.md)
+  - [Logs](debugging/logs.md)
+  - [AI and logics](debugging/ai_and_logics.md)
+  - [Weather](debugging/weather.md)
+  - [UI forms](debugging/ui_forms.md)
+  - [Stats](debugging/stats.md)
 
 - [Extensions](extensions/extensions.md)
-
----
 
 - [Utils]()
   - [Useful links](utils/useful_links.md)
   - [Game SDK](utils/game_sdk.md)
   - [Lua debugger](utils/lua_debugger.md)
-
----
 
 - [Game engine](game_engine/game_engine.md)
   - [Command line arguments](game_engine/command_line_arguments.md)
@@ -50,8 +48,6 @@
   - [Luabind](game_engine/luabind.md)
   - [Online and offline](game_engine/online_and_offline.md)
   - [Updates and scheduling](game_engine/updates_and_scheduling.md)
-
----
 
 - [Script engine](script_engine/script_engine.md)
   - [Assets](script_engine/assets.md)
