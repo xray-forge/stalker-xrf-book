@@ -1,3 +1,5 @@
+<img src="images/scenery.jpg" alt="Ai debug preview" />
+
 # 🎮 [Stalker XRF book](/)
 
 Documentation for x-ray forge script engine and tools.
@@ -11,4 +13,5 @@ Documentation for x-ray forge script engine and tools.
 
 ## 📦 References
 
-Using [rust md-book](https://github.com/rust-lang/mdBook) for documentation generation.
+- Using [rust md-book](https://github.com/rust-lang/mdBook) for documentation generation
+- Using [openxray](https://github.com/OpenXRay/xray-16) as main engine
