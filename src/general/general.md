@@ -1,5 +1,3 @@
-![Body frame](images/scenery.jpg)
-
 # 🎮 [Stalker XRF book](/)
 
 Documentation for x-ray forge script engine and tools.
