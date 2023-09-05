@@ -18,6 +18,7 @@
   - [Compression](xrf/compression.md)
   - [Developing](xrf/developing/developing.md)
     - [Types definitions](xrf/developing/typedefs.md)
+    - [Running in watch mode](xrf/developing/running_in_watchmode.md)
     - [Starting game](xrf/developing/starting_game.md)
   - [Formatting and linting](xrf/formatting_and_linting.md)
   - [Linking](xrf/linking.md)
