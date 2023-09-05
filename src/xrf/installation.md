@@ -20,3 +20,9 @@
 ## 🧰 Check issues
 
 `$ npm run cli verify` - will check whether project is set up and ready to start developing
+
+## 💿 Updating submodules
+
+From time to time update of submodules is needed to load latest assets:
+
+`git submodule update --recursive`

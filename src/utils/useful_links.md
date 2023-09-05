@@ -7,6 +7,5 @@
 - https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701 - windows terminal
 - https://developer.nvidia.com/nvidia-texture-tools-exporter- nvidia texture tools exported, useful for work with textures
 - https://igigog.github.io/anomaly-modding-book/ - anomaly based modding docs
-- https://github.com/exdingbat/xrCompress-helper - docs about xrCompress
 - https://github.com/themrdemonized/STALKER-Anomaly-modded-exes - dltx as source of ideas / openxray updates
 - https://github.com/vika-sonne/xray-skls-file-browser - animations converter

@@ -1,4 +1,4 @@
-<img src="images/scenery.jpg" alt="Ai debug preview" />
+![Body frame](images/scenery.jpg)
 
 # 🎮 [Stalker XRF book](/)
 
