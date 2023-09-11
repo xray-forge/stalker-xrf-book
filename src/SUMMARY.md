@@ -60,6 +60,7 @@
     - [Dialogs](script_engine/configs_dialogs.md)
     - [Scripts](script_engine/configs_scripts.md)
     - [Smart terrains and jobs](script_engine/configs_smart_terrains_and_jobs.md)
+    - [Treasures](script_engine/configs_treasures.md)
     - [Weapons](script_engine/configs_weapons.md)
     - [Weather](script_engine/configs_weather.md)
   - [Effects and conditions](script_engine/effects_and_conditions.md)
