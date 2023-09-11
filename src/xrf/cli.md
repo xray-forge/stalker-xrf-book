@@ -1,6 +1,6 @@
 # 🔗 CLI
 
-[Readme link](https://github.com/xray-forge/stalker-xrf-template/blob/main/cli/README.md).
+[Readme link](https://github.com/xray-forge/stalker-xrf-engine/blob/main/cli/README.md).
 
 todo; <br/>
 todo; <br/>

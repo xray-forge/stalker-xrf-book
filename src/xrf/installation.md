@@ -8,8 +8,8 @@
 ## 💿 Starting development
 
 - DOWNLOAD [the game](https://store.steampowered.com/app/41700/STALKER_Call_of_Pripyat/)
-- RUN `git clone https://github.com/xray-forge/stalker-xrf-template.git` - clone repository
-- RUN `cd stalker-xrf-template` - cd to project folder
+- RUN `git clone https://github.com/xray-forge/stalker-xrf-engine.git` - clone repository
+- RUN `cd stalker-xrf-engine` - cd to project folder
 - RUN `npm install` - install all the dependencies
 - RUN `npm run setup` - set up the project, install submodules
 - RUN `npm run cli link` - link gamedata to the game folder

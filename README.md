@@ -10,7 +10,7 @@ Documentation for x-ray forge script engine template and tools.
 ---
 
 - Types repository: [https://github.com/xray-forge/xray-16-types](https://github.com/xray-forge/xray-16-types)
-- Template repository: [https://github.com/xray-forge/stalker-xrf-template](https://github.com/xray-forge/stalker-xrf-template)
+- Engine repository: [https://github.com/xray-forge/stalker-xrf-engine](https://github.com/xray-forge/stalker-xrf-engine)
 - Binaries repository: [https://github.com/xray-forge/stalker-xrf-bin](https://github.com/xray-forge/stalker-xrf-bin)
 
 ---

@@ -20,7 +20,7 @@ todo; <br/>
 
 ## ☂️ LTX formatting
 
-[Custom script](https://github.com/xray-forge/stalker-xrf-template/tree/main/cli/format/README.md) is used as main formatting tool
+[Custom script](https://github.com/xray-forge/stalker-xrf-engine/tree/main/cli/format/README.md) is used as main formatting tool
 for LTX configs codebase.
 
 todo; <br/>
