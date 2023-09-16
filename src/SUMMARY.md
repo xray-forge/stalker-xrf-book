@@ -65,6 +65,7 @@
     - [Weather](script_engine/configs_weather.md)
   - [Effects and conditions](script_engine/effects_and_conditions.md)
   - [Forms](script_engine/forms.md)
+  - [Patrols](script_engine/patrols.md)
   - [UI elements](script_engine/ui/ui_elements.md)
   - [Schemes](script_engine/schemes/schemes.md)
     - [abuse](script_engine/schemes/abuse.md)
