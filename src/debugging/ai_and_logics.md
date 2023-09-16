@@ -33,6 +33,23 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
+## 🌑 Profiling performance:
+
+To profile performance of scripts / c++ scheduler of AI etc following steps are required:
+
+- Enable rendering of stats: `rs_stats on`
+- Enable rendering of ai profiling: `ai_stats on`
+
+After execution following information will be visible:
+
+<img src="images/ai_performance_profile.jpg" alt="Ai profile preview" />
+
+### Meaning
+
+Stats have 7 columns displayed in such format:
+
+[name][min_time][avg_time][max_time][call_rate][call_count][total_time]
+
 ## 🌑 AI debug console commands:
 
 [List of commands](../game_engine/console_commands.md#-ai-debug-console-commands).
