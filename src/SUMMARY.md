@@ -50,6 +50,10 @@
   - [Known forks](game_engine/known_forks.md)
   - [Lifecycle](game_engine/game_engine_lifecycle.md)
   - [Luabind](game_engine/luabind.md)
+  - [Lua extensions](game_engine/lua_extensions/lua_extensions.md)
+    - [Custom luajit](game_engine/lua_extensions/custom.md)
+    - [Marshal](game_engine/lua_extensions/marshal.md)
+    - [LFS](game_engine/lua_extensions/lfs.md)
   - [Online and offline](game_engine/online_and_offline.md)
   - [Updates and scheduling](game_engine/updates_and_scheduling.md)
 
