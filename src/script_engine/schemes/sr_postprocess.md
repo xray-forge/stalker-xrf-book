@@ -1,8 +1,16 @@
-# scheme_name
+# sr_postprocess
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
+
+## ini parameters
+
+```
+intensity - ?
+intensity_speed - ?
+hit_intensity - ?
+```
 
 ## Configuration
 

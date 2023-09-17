@@ -1,8 +1,8 @@
 # scheme_name
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+Scheme describing monsters waiting for actor in some specific place. <br/>
+When actor is in zone, play few warning sounds and then force monster to attack. <br/>
+Used for boards in clear sky swamps.
 
 ## Configuration
 
