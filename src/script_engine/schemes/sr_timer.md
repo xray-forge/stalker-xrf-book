@@ -19,7 +19,7 @@ Increment will count from 0 to value, decrement is backwards timer.
 Start value of timer to count from. <br/>
 Required for decrement timers.
 
-- Type: `number`
+- Type: `number`, `milliseconds`
 - Default: `0` for `increment`, required for `decrement`
 - Example: `0`, `1000`, `60000`
 

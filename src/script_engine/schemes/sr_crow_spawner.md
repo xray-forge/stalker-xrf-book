@@ -24,9 +24,9 @@ Maximal count of crows spawned on level at once
 
 Stringified list of patrols (paths) to spawn crows at.
 
-- Type: `string list`
+- Type: `string`, `list`
 - Default: `""`
-- Example: `"pri_crow_spawn_1, pri_crow_spawn_2, pri_crow_spawn_3, pri_crow_spawn_4, pri_crow_spawn_5"`
+- Example: `pri_crow_spawn_1, pri_crow_spawn_2, pri_crow_spawn_3, pri_crow_spawn_4, pri_crow_spawn_5`
 
 ## Usage
 
