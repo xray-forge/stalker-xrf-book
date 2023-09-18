@@ -4,6 +4,10 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
+## Type
+
+Restrictor scheme.
+
 ## Configuration
 
 todo; <br/>

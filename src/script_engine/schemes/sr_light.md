@@ -2,6 +2,10 @@
 
 Scheme to control stalkers torches light mode.
 
+## Type
+
+Restrictor scheme.
+
 ## ini parameters
 
 ```

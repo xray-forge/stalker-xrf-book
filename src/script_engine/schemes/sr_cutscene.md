@@ -3,6 +3,10 @@
 Scheme is implementing cutscenes and scenarios. <br/>
 Helps to disable actor input and control camera for some time periods.
 
+## Type
+
+Restrictor scheme.
+
 ## ini parameters
 
 ```

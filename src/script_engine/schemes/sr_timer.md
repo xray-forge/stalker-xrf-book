@@ -3,6 +3,10 @@
 Scheme is implementing timers on screen and allows using timed logic. <br/>
 Example: in ShoC everything related to time near psy-labs, bloodsuckers lair, helicopters evacuation limits etc.
 
+## Type
+
+Restrictor scheme.
+
 ## ini parameters
 
 ### ❄️ type

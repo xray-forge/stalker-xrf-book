@@ -5,6 +5,10 @@ Example: teleports in stalker ShoC last zone, teleports at Zaton burning village
 
 Supports up to 10 different teleport locations (`i = 0...10`).
 
+## Type
+
+Restrictor scheme.
+
 ## ini parameters
 
 ### ❄️ timeout
