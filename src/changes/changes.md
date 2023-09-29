@@ -9,6 +9,7 @@
   - More efficient smart terrain jobs creation/checks
   - More game conditions checks where possible
   - Memoize client objects / simulator and other refs
+- Removing dead code / assets
 
 ## 🧪 Gameplay
 
@@ -19,7 +20,7 @@
 
 ## 🧪 Graphics
 
-- Added different variants of fullscreen mode
+- Added different variants of fullscreen mode rendering
 - Added grass height configuration
 - Added grass radius configuration
 - Added rendering fps limit configuration
@@ -28,11 +29,19 @@
 
 ## 🧪 Build pipeline
 
-- Added tools for simplified game localization
-- Added tools for simplified game packages creation (build custom game with one command)
-- Added tools for simplified asset management (different locales etc.)
+- All the modules are separated and sorted with folders
+- Added NodeJS based CLI
+- Added workflows to run tests/checks/build on repository commits
+- Added tools for codebase linting/formatting (ltx/js/ts)
+- Added tools for game assets compression
+- Added tools for game translation
+- Added tools for simplified engines management / testing with different variants of game engines
+- Added tools for forms generation based on JSX
+  - Adding type definitions and sharable basic components for custom UI rendering
+- Added tools for game packages creation (build custom game with one command)
+- Added tools for asset management (different locales etc.)
 - Added tools for game profiling/debugging/development
-  - Advanced logging
+  - Advanced logging (game, cli)
   - Alife debugging
   - Console commands shortcut switcher
   - Game registry debugging
@@ -44,17 +53,28 @@
   - Teleportation
   - Treasures debugging
   - Weather debugging tools
+  - Game UI debugging tools
 - Added unit testing with coverage checker
+  - Added `fengari` lua VM for direct lua functionality checks
 
 ## 🧪 Modding
 
 - Added game engine documentation
 - Added game engine typing and according checks
+- Added tools for generation of `html` file with game conditions/effects documentation based on JSDoc
 - Fully rewritten game script engine with typescript
 - Adding extensions support [WIP]
   - UI to reorder / enable / disable extensions
   - API to work with community extensions
 - Added events management system with numerous game callbacks
+- Added lua `marshal` lib and typing for it
+- Added lua `lfs` lib and typing for it
+- Added custom lua extensions lib and typing for it (based on CoC)
+- Added fixtures for game API testing
+- Added support for `ts` based `ltx` configs building (allows build-time logics and generation)
+- Added shared utils lib to reduce code duplication and simplify frequently used logics
+- Added managers abstraction for game logics control
+- Updated schemes abstraction for easier testing/extending/sharing/updating of game logics schemes
 
 ## 🧪 TODO
 
