@@ -1,6 +1,7 @@
 # Summary
 
 - [General](general/general.md)
+- [Changes](changes/changes.md)
 - [Installation](xrf/installation.md)
 
 - [XRF](xrf/xrf.md)
