@@ -9,12 +9,16 @@
   - More efficient smart terrain jobs creation/checks
   - More game conditions checks where possible
   - Memoize client objects / simulator and other refs
+  - Optimizing game quest state checks (one of most frequent game engine calls)
 - Removing dead code / assets
 
 ## 🧪 Gameplay
 
 - Adding gameplay options for OXR (interface rendering, loot simplification etc.)
-- Treasures will have different color based on loot price (green, blue, purple, orange)
+- [optional] Treasures will have different color based on loot price (green, blue, purple, orange)
+- [optional] Alternative start location
+- [optional] Display map marks only after visiting
+- [optional] Allow traveling only to known places
 - Improving and optimizing game AI/logics
   - Improving game schemes (wounded, loot collection, combat danger checks etc.)
 
@@ -31,6 +35,7 @@
 
 - All the modules are separated and sorted with folders
 - Added NodeJS based CLI
+  - Added shared commands for intellij based IDEs 
 - Added workflows to run tests/checks/build on repository commits
 - Added tools for codebase linting/formatting (ltx/js/ts)
 - Added tools for game assets compression
