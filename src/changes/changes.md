@@ -19,6 +19,7 @@
 - [optional] Alternative start location
 - [optional] Display map marks only after visiting
 - [optional] Allow traveling only to known places
+- [optional] Weapons/armor/helmets with random upgrades
 - Improving and optimizing game AI/logics
   - Improving game schemes (wounded, loot collection, combat danger checks etc.)
 
@@ -80,6 +81,7 @@
 - Added shared utils lib to reduce code duplication and simplify frequently used logics
 - Added managers abstraction for game logics control
 - Updated schemes abstraction for easier testing/extending/sharing/updating of game logics schemes
+- Add support for dynamic files with `marshal` lib, ability to save dynamic custom data without 16K limit
 
 ## 🧪 TODO
 
