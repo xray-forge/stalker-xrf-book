@@ -22,6 +22,7 @@
 - [optional] Weapons/armor/helmets with random upgrades
 - Improving and optimizing game AI/logics
   - Improving game schemes (wounded, loot collection, combat danger checks etc.)
+- Physical boxes (wooden, iron) can drop loot with some chance based on difficulty/level similar to SHoC/CS
 
 ## 🧪 Graphics
 
