@@ -32,6 +32,7 @@
 - Added rendering fps limit configuration
 - Updated weather system
 - Removed controls related to game patch download
+- Enabled OXR screenspace/grading shaders
 
 ## 🧪 Build pipeline
 
@@ -63,6 +64,7 @@
   - Game UI debugging tools
 - Added unit testing with coverage checker
   - Added `fengari` lua VM for direct lua functionality checks
+- Added loadouts presets for generating character profiles / loot
 
 ## 🧪 Modding
 
