@@ -4,7 +4,7 @@
 - [Changes](changes/changes.md)
 - [Installation](xrf/installation.md)
 
-- [XRF](xrf/xrf.md)
+- [XRF engine](xrf/xrf.md)
   - [Building](xrf/building/building.md)
     - [Building UI forms](xrf/building/building_forms.md)
     - [Building configs](xrf/building/building_configs.md)
@@ -26,6 +26,19 @@
   - [Packaging](xrf/packaging.md)
   - [Switching engines](xrf/switching_engines.md)
   - [Testing](xrf/testing.md)
+
+- [XRF tools](tools/tools.md)
+  - [Application](tools/app/tools_app.md)
+    - [Archive editor](tools/app/archive_editor.md)
+    - [Dialog editor](tools/app/dialog_editor.md)
+    - [Config editor](tools/app/config_editor.md)
+    - [Exports viewer](tools/app/exports_viewer.md)
+    - [Icon editor](tools/app/icon_editor.md)
+    - [Spawn editor](tools/app/spawn_editor.md)
+  - [CLI](tools/cli/tools_cli.md)
+    - [Archive](tools/cli/archive.md)
+    - [LTX](tools/cli/ltx.md)
+    - [Spawn](tools/cli/spawn.md)
 
 - [Debugging]()
   - [AI and logics](debugging/ai_and_logics.md)

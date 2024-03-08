@@ -86,6 +86,13 @@
 - Updated schemes abstraction for easier testing/extending/sharing/updating of game logics schemes
 - Add support for dynamic files with `marshal` lib, ability to save dynamic custom data without 16K limit
 
+## 🧪 Tools
+
+- Added spawn pack/unpack/verify in CLI
+- Added LTX files formatting and verification in CLI
+- Added spawn file inspector in tools application
+- Added spawn file utilities in tools application
+
 ## 🧪 TODO
 
 For todos check following git projects:
