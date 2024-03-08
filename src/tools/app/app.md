@@ -1,6 +1,6 @@
 # 🔨 Tools application
 
-<img src="images/stalker_debug.jpg" alt="Ai debug preview" />
+<img src="images/main_window.png" alt="main window" />
 
 todo; <br/>
 todo; <br/>
