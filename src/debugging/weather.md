@@ -4,13 +4,13 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌧 Changing with console command
+## Changing with console command
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌧 Activating IMGui debug tools
+## Activating IMGui debug tools
 
 todo; <br/>
 todo; <br/>

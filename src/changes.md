@@ -1,6 +1,6 @@
-# 🌡 Changes
+# 🧪 Changes
 
-## 🧪 General
+## General
 
 - ~~Added new bugs~~
 - Optimized performance of scripts
@@ -12,7 +12,7 @@
   - Optimizing game quest state checks (one of most frequent game engine calls)
 - Removing dead code / assets
 
-## 🧪 Gameplay
+## Gameplay
 
 - Adding gameplay options for OXR (interface rendering, loot simplification etc.)
 - [optional] Treasures will have different color based on loot price (green, blue, purple, orange)
@@ -24,7 +24,7 @@
   - Improving game schemes (wounded, loot collection, combat danger checks etc.)
 - Physical boxes (wooden, iron) can drop loot with some chance based on difficulty/level similar to SHoC/CS
 
-## 🧪 Graphics
+## Graphics
 
 - Added different variants of fullscreen mode rendering
 - Added grass height configuration
@@ -34,11 +34,11 @@
 - Removed controls related to game patch download
 - Enabled OXR screenspace/grading shaders
 
-## 🧪 Build pipeline
+## Build pipeline
 
 - All the modules are separated and sorted with folders
 - Added NodeJS based CLI
-  - Added shared commands for intellij based IDEs 
+  - Added shared commands for intellij based IDEs
 - Added workflows to run tests/checks/build on repository commits
 - Added tools for codebase linting/formatting (ltx/js/ts)
 - Added tools for game assets compression
@@ -66,7 +66,7 @@
   - Added `fengari` lua VM for direct lua functionality checks
 - Added loadouts presets for generating character profiles / loot
 
-## 🧪 Modding
+## Modding
 
 - Added game engine documentation
 - Added game engine typing and according checks
@@ -86,14 +86,14 @@
 - Updated schemes abstraction for easier testing/extending/sharing/updating of game logics schemes
 - Add support for dynamic files with `marshal` lib, ability to save dynamic custom data without 16K limit
 
-## 🧪 Tools
+## Tools
 
 - Added spawn pack/unpack/verify in CLI
 - Added LTX files formatting and verification in CLI
 - Added spawn file inspector in tools application
 - Added spawn file utilities in tools application
 
-## 🧪 TODO
+## TODO
 
 For todos check following git projects:
 

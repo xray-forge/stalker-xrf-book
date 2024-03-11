@@ -49,7 +49,7 @@ Following parameters can be used to affect patrolling logics.
 - time to stay idle when on point and look
 - `*` means unlimited time
 - valid values are in the range [1000, 30000], 5000 by default
-- for terminal waypoints of path_walk that have no more than one corresponding path_look, the value of `t` is always 
+- for terminal waypoints of path_walk that have no more than one corresponding path_look, the value of `t` is always
   considered infinite and does not have to be set
 
 #### sig=name
@@ -79,7 +79,6 @@ Play press animation and emit scheme signal:
 ### todo:
 
 - Check docs from links and integrate more
-
 
 ## ⛽️ References
 

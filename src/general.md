@@ -2,7 +2,14 @@
 
 Documentation for x-ray forge script engine and tools.
 
-## 📦 Links
+The book describes:
+
+- set of tools and technologies used for development in XRF project
+- script engine architecture and building blocks
+- debugging and testing of xray engine
+- API and built-in tools of xray engine
+
+## Links
 
 - [Xray16 type definitions](https://xray-forge.github.io/xray-16-types/modules.html).
 
@@ -22,7 +29,7 @@ Documentation for x-ray forge script engine and tools.
 - UA locale assets: [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
 - RU locale assets: [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus)
 
-## 📦 References
+## References
 
 - Using [rust md-book](https://github.com/rust-lang/mdBook) for documentation generation
 - Using [openxray](https://github.com/OpenXRay/xray-16) as main engine

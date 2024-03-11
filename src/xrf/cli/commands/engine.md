@@ -1,60 +1,60 @@
-# 💽 Switching game engines
+# 💽 Engine
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 📀 Linking
+## Linking
 
 For linking details and instructions check [reference](./linking.md).
 
-## 💾 Engine info
+## Engine info
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 📀 Engine use
+## Engine use
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 💾 Engine rollback
+## Engine rollback
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 📀 Engines list
+## Engines list
 
 todo; <br/>
 
-### 💿 Gold
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
-
-### 💿 Release
+### Gold
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-### 💿 Mixed
+### Release
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-### 💿 Debug
+### Mixed
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 💾 Engine for packaging
+### Debug
+
+todo; <br/>
+todo; <br/>
+todo; <br/>
+
+## Engine for packaging
 
 todo; About configured engine used for custom game packages <br/>
 todo; <br/>

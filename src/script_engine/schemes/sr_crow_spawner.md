@@ -30,8 +30,8 @@ Stringified list of patrols (paths) to spawn crows at.
 
 ## Usage
 
-1) Create restrictor object in level editor
-2) Assign sr_crow_spawner section as active logic in `ltx` file
+1. Create restrictor object in level editor
+2. Assign sr_crow_spawner section as active logic in `ltx` file
 
 ## Examples
 
@@ -47,6 +47,7 @@ spawn_path = zat_crow_spawn_1, zat_crow_spawn_2, zat_crow_spawn_3, zat_crow_spaw
 ```
 
 ### jup_crow_spawner.ltx
+
 ```ini
 [logic]
 active = sr_crow_spawner

@@ -4,19 +4,19 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🥑 Filtering config assets
+## Filtering config assets
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🥑 Dynamic (typescript) configs
+## Dynamic (typescript) configs
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🥑 Diff checking
+## Diff checking
 
 todo; <br/>
 todo; <br/>

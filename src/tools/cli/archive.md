@@ -4,7 +4,7 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🔨 Commands
+## Commands
 
 todo; <br/>
 todo; <br/>

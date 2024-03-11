@@ -4,7 +4,7 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌑 AI debug console commands
+## AI debug console commands
 
 ### ai_debug [on/off]
 

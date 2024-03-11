@@ -4,13 +4,13 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🚜 Running command to generate externals
+## Running command to generate externals
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🚜 Updating jsdoc
+## Updating jsdoc
 
 todo; <br/>
 todo; <br/>

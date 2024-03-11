@@ -1,24 +1,24 @@
 # 🧺 Luabind
 
-## 🧺 todo;
+## todo;
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🧺 todo;
+## todo;
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🧺 todo;
+## todo;
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🧺 What is 'class' and 'super' in luabind
+## What is 'class' and 'super' in luabind
 
 - [Luabind declaration of globals](https://github.com/OpenXRay/luabind-deboostified/blob/xray/src/open.cpp#L138)
 

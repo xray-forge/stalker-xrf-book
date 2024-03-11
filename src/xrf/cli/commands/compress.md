@@ -1,21 +1,21 @@
-# 🔨 XrCompress
+# 🔨 Compress
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🔨 Why
+## Why
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🔨 Arguments
+## Arguments
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🔨 References
+## References
 
 - https://github.com/exdingbat/xrCompress-helper - xrCompress usage / docs

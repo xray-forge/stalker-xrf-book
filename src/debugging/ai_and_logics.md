@@ -1,10 +1,10 @@
-# 🌑 AI and logics
+# AI and logics
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌓 Capturing NPC in game
+## Capturing NPC in game
 
 To capture NPC following steps should be applied:
 
@@ -21,19 +21,19 @@ As result, you will see game world from perspective of captured NPC. <br/>
 
 <img src="images/monster_debug.jpg" alt="Ai debug preview" />
 
-## 🌑 GOAP displaying in logs
+## GOAP displaying in logs
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌓 Getting action planners states
+## Getting action planners states
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🌑 Profiling performance:
+## Profiling performance:
 
 To profile performance of scripts / c++ scheduler of AI etc following steps are required:
 
@@ -50,7 +50,7 @@ Stats have 7 columns displayed in such format:
 
 [name][min_time][avg_time][max_time][call_rate][call_count][total_time]
 
-## 🌑 AI debug console commands:
+## AI debug console commands:
 
 [List of commands](../game_engine/console_commands.md#-ai-debug-console-commands).
 

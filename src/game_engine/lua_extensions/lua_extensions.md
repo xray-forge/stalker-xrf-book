@@ -1,3 +1,3 @@
-# 🧺 Luabind
+# 🧺 Lua extensions
 
 Brief description.

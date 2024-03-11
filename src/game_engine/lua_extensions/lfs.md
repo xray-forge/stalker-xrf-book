@@ -2,19 +2,19 @@
 
 Lfs lib brief description and links.
 
-## 🧺 todo;
+## todo;
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🧺 todo;
+## todo;
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🧺 todo;
+## todo;
 
 todo; <br/>
 todo; <br/>

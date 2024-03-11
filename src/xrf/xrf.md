@@ -1,17 +1,6 @@
-# 🌍 XRF
+# 🌍 XRF Engine
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+## What is
 
-## 🌍 What is
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
-
-## 🌍 Why
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
+The xray forge engine is custom script engine rewritten using TypeScript. <br/>
+The project utilises variety of tools to simplify process of development and automate some steps.

@@ -1,10 +1,8 @@
 # 🥑 Building forms
 
 todo; <br/>
-todo; <br/>
-todo; <br/>
 
-## 🥑 Custom forms and UI
+## Custom forms and UI
 
 Notes:
 
@@ -15,13 +13,13 @@ Notes:
 
 For examples check: `src/engine/forms`.
 
-## 🥑 Filtering form assets
+## Filtering form assets
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🥑 16x9 vs 4x3
+## 16x9 vs 4x3
 
 todo; <br/>
 todo; <br/>

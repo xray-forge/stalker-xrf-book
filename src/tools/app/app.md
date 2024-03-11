@@ -6,7 +6,7 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🔨 Available tools
+## Available tools
 
 - [Archive editor](archive_editor.md)
 - [Dialog editor](dialog_editor.md)

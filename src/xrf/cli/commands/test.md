@@ -1,4 +1,4 @@
-# 🚦 Testing
+# 🚦 Test
 
 [Jest package](https://jestjs.io/) is used for typescript testing and verification.
 
@@ -6,25 +6,25 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🚦 Jest
+## Jest
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🚦 Fixtures
+## Fixtures
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🚦 Lua VM for testing
+## Lua VM for testing
 
 todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🚦 Checking coverage
+## Checking coverage
 
 todo; <br/>
 todo; <br/>

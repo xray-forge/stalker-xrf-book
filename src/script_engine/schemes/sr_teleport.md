@@ -69,7 +69,6 @@ point1 = zat_b20_quest_teleport_walk
 look1 = zat_b20_quest_teleport_look
 ```
 
-
 ### example.ltx
 
 ```ini

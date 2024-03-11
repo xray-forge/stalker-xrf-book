@@ -4,7 +4,7 @@ todo; include links and brief description <br/>
 todo; include links and brief description <br/>
 todo; include links and brief description <br/>
 
-## ✉️ List
+## List
 
 - Monilith (anomaly)
 - OpenXray

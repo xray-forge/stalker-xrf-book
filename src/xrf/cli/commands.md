@@ -16,7 +16,7 @@
 `$ npm run cli COMMAND_NAME`
 
 - [verify](https://github.com/xray-forge/stalker-xrf-engine/blob/main/cli/verify/README.md)
-  - `project` - verify project setup and links 
+  - `project` - verify project setup and links
   - `ltx` - verify ltx configuration files
 - [format](https://github.com/xray-forge/stalker-xrf-engine/blob/main/cli/format/README.md)
   - `ltx` - format ltx configuration files

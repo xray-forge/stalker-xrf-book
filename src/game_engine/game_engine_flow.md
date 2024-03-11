@@ -4,7 +4,7 @@ todo; <br/>
 todo; <br/>
 todo; <br/>
 
-## 🧰 Scripts execution flow
+## Scripts execution flow
 
 ### -> Game .exe start
 
