@@ -1,8 +1,8 @@
 # Summary
 
-- [General](general.md)
-- [Changes](changes.md)
-- [Installation](installation.md)
+- [General](GENERAL.md)
+- [Changes](CHANGES.md)
+- [Installation](INSTALLATION.md)
 
 - [Forged engine](xrf/xrf.md)
 
