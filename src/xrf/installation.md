@@ -19,7 +19,7 @@
 
 ## 🧰 Checking issues
 
-`$ npm run cli verify` - will check whether project is set up and ready to start developing
+`$ npm run cli verify project` - will check whether project is set up and ready to start developing
 
 ## 💿 Updating submodules
 

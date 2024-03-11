@@ -2,7 +2,7 @@
 
 ## 🧪 General
 
-- ~~Added new game bugs~~
+- ~~Added new bugs~~
 - Optimized performance of scripts
   - Force instant initialization of all objects on game load/start to reduce lag duration
   - Memoize condlists

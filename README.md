@@ -1,6 +1,6 @@
 # 🎮 [Stalker XRF book](https://xray-forge.github.io/stalker-xrf-book)
 
-Documentation for x-ray forge script engine template and tools.
+Documentation for x-ray forge engine template and tools.
 
 ## 📦 Links
 
@@ -22,7 +22,7 @@ Documentation for x-ray forge script engine template and tools.
 - UA locale assets: [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
 - RU locale assets: [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus)
 
-### Working with the book locally
+## Working with the book locally
 
 - Make sure [rust](https://www.rust-lang.org/) is installed
 - [Install cargo mdbook](https://rust-lang.github.io/mdBook/guide/installation.html)
