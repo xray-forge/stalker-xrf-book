@@ -34,7 +34,7 @@
       - [Verify](xrf/cli/commands/verify.md)
   - [Extensions](xrf/extensions.md)
 
-- [Tools]()
+- [Tools](tools/tools.md)
 
   - [Tools application](tools/app/app.md)
     - [Archive editor](tools/app/archive_editor.md)
