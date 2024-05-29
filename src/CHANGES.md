@@ -30,7 +30,8 @@
 - Added grass height configuration
 - Added grass radius configuration
 - Added rendering fps limit configuration
-- Updated weather system
+- Updated weather system (atmosfear3 + tweaks)
+- Updated game levels (absolute nature + tweaks)
 - Removed controls related to game patch download
 - Enabled OXR screenspace/grading shaders
 
