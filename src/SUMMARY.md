@@ -2,6 +2,7 @@
 
 - [General](GENERAL.md)
 - [Changes](CHANGES.md)
+- [Credits](CREDITS.md)
 - [Installation](INSTALLATION.md)
 
 - [Forged engine](xrf/xrf.md)
