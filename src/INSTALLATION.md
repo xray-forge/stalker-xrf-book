@@ -26,3 +26,9 @@
 From time to time update of submodules is needed to load latest assets:
 
 `git submodule update --recursive`
+
+## Using local game engine ([OpenXray](https://github.com/OpenXRay/xray-16))
+
+- [SETUP OpenXray locally with Visual studio](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-How-to-build-and-setup-on-Windows) 
+- LINK game folder resources with visual studio project
+- todo;
