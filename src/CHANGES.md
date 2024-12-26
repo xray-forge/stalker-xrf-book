@@ -63,6 +63,7 @@
   - Treasures debugging
   - Weather debugging tools
   - Game UI debugging tools
+  - Dumping of system.ini and Lua states
 - Added unit testing with coverage checker
   - Added `fengari` lua VM for direct lua functionality checks
 - Added loadouts presets for generating character profiles / loot
@@ -86,6 +87,7 @@
 - Added managers abstraction for game logics control
 - Updated schemes abstraction for easier testing/extending/sharing/updating of game logics schemes
 - Add support for dynamic files with `marshal` lib, ability to save dynamic custom data without 16K limit
+- Integrated events / callbacks / methods from Call Of Chornobyl
 
 ## Tools
 
