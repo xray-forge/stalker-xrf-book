@@ -8,16 +8,53 @@ combat, anomaly handling, wounded handling, corpse search, item gathering, or ab
 
 ## Parameters
 
-| Field                | Type    | Required | Default             | Description                                                                                                          |
-| -------------------- | ------- | -------- | ------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `path_walk`          | string  | yes      | -                   | Patrol path used for movement. Relative names are resolved against the active smart terrain.                         |
-| `path_look`          | string  | no       | `null`              | Patrol path used for look points. It must not equal `path_walk`.                                                     |
-| `team`               | string  | no       | `null`              | Patrol team name passed to the stalker patrol manager. Relative names are resolved against the active smart terrain. |
-| `sound_idle`         | string  | no       | `null`              | Sound played by the sound manager while the NPC is not in a camp zone.                                               |
-| `use_camp`           | boolean | no       | `false`             | Allows the NPC to register in a camp story manager when standing inside a camp zone.                                 |
-| `def_state_standing` | string  | no       | `null`              | Suggested standing animation state.                                                                                  |
-| `def_state_moving`   | string  | no       | `def_state_moving1` | Suggested moving animation state.                                                                                    |
-| `def_state_moving1`  | string  | no       | `null`              | Compatibility fallback for `def_state_moving`.                                                                       |
+### `path_walk`
+
+Type: string. Required. Default: none.
+
+Patrol path used for movement. Relative names are resolved against the active smart terrain.
+
+### `path_look`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path used for look points. It must not equal `path_walk`.
+
+### `team`
+
+Type: string. Optional. Default: `null`.
+
+Patrol team name passed to the stalker patrol manager. Relative names are resolved against the active smart terrain.
+
+### `sound_idle`
+
+Type: string. Optional. Default: `null`.
+
+Sound played by the sound manager while the NPC is not in a camp zone.
+
+### `use_camp`
+
+Type: boolean. Optional. Default: `false`.
+
+Allows the NPC to register in a camp story manager when standing inside a camp zone.
+
+### `def_state_standing`
+
+Type: string. Optional. Default: `null`.
+
+Suggested standing animation state.
+
+### `def_state_moving`
+
+Type: string. Optional. Default: `def_state_moving1`.
+
+Suggested moving animation state.
+
+### `def_state_moving1`
+
+Type: string. Optional. Default: `null`.
+
+Compatibility fallback for `def_state_moving`.
 
 The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-distance checks.
 

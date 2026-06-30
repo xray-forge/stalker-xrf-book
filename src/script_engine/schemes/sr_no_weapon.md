@@ -9,12 +9,29 @@ Use it for safe areas, story spaces, and bases where the actor should not be abl
 
 `sr_no_weapon` has no scheme-specific fields. It reads common switch fields from the section.
 
-| Field                        | Type                       | Description                                                |
-| ---------------------------- | -------------------------- | ---------------------------------------------------------- |
-| `on_info`, `on_info1`, ...   | condlist                   | Switch when the condlist selects another section.          |
-| `on_timer`, `on_timer1`, ... | `milliseconds \| condlist` | Switch after the section has been active for the duration. |
-| `on_actor_inside`            | condlist                   | Switch while the actor is inside the current restrictor.   |
-| `on_actor_outside`           | condlist                   | Switch while the actor is outside the current restrictor.  |
+### `on_info`, `on_info1`, ...
+
+Type: condlist.
+
+Switch when the condlist selects another section.
+
+### `on_timer`, `on_timer1`, ...
+
+Type: `milliseconds | condlist`.
+
+Switch after the section has been active for the duration.
+
+### `on_actor_inside`
+
+Type: condlist.
+
+Switch while the actor is inside the current restrictor.
+
+### `on_actor_outside`
+
+Type: condlist.
+
+Switch while the actor is outside the current restrictor.
 
 ## Runtime behavior
 

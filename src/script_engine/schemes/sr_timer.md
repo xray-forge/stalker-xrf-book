@@ -9,13 +9,36 @@ timer static and optional label static.
 
 ## Parameters
 
-| Field         | Type                 | Required           | Default       | Description                                                                                                                                |
-| ------------- | -------------------- | ------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `type`        | `inc` or `dec`       | no                 | `inc`         | Timer mode. `inc` counts up from `start_value`; `dec` counts down from `start_value`.                                                      |
-| `start_value` | number               | required for `dec` | `0` for `inc` | Starting time in milliseconds.                                                                                                             |
-| `on_value`    | `number \| condlist` | no                 | `null`        | Switch when the timer reaches the value. For `dec`, the switch happens at or below the value. For `inc`, it happens at or above the value. |
-| `timer_id`    | string               | no                 | `hud_timer`   | HUD custom static id used for the timer text.                                                                                              |
-| `string`      | string id            | no                 | `null`        | Optional text string shown in `hud_timer_text`.                                                                                            |
+### `type`
+
+Type: `inc` or `dec`. Optional. Default: `inc`.
+
+Timer mode. `inc` counts up from `start_value`; `dec` counts down from `start_value`.
+
+### `start_value`
+
+Type: number. Required: required for `dec`. Default: `0` for `inc`.
+
+Starting time in milliseconds.
+
+### `on_value`
+
+Type: `number | condlist`. Optional. Default: `null`.
+
+Switch when the timer reaches the value. For `dec`, the switch happens at or below the value. For `inc`, it happens at
+or above the value.
+
+### `timer_id`
+
+Type: string. Optional. Default: `hud_timer`.
+
+HUD custom static id used for the timer text.
+
+### `string`
+
+Type: string id. Optional. Default: `null`.
+
+Optional text string shown in `hud_timer_text`.
 
 The section also checks common switch fields before updating the timer. If a common switch succeeds, the timer update
 for that tick is skipped.

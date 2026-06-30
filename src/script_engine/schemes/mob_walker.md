@@ -7,12 +7,29 @@ Use it for non-combat monster patrols, scripted monster movement, lair idles, an
 
 ## Parameters
 
-| Field       | Type          | Required | Default | Description                                                                                          |
-| ----------- | ------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------- |
-| `path_walk` | string        | yes      | -       | Patrol path used for monster movement. Relative names are resolved against the active smart terrain. |
-| `path_look` | string        | no       | `null`  | Patrol path used for look or idle points. It must not equal `path_walk`.                             |
-| `state`     | monster state | no       | `null`  | Base monster state read by the shared monster-state parser.                                          |
-| `no_reset`  | boolean       | no       | `false` | Stored in scheme state for compatibility with monster logic.                                         |
+### `path_walk`
+
+Type: string. Required. Default: none.
+
+Patrol path used for monster movement. Relative names are resolved against the active smart terrain.
+
+### `path_look`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path used for look or idle points. It must not equal `path_walk`.
+
+### `state`
+
+Type: monster state. Optional. Default: `null`.
+
+Base monster state read by the shared monster-state parser.
+
+### `no_reset`
+
+Type: boolean. Optional. Default: `false`.
+
+Stored in scheme state for compatibility with monster logic.
 
 The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-zone checks.
 
@@ -22,21 +39,39 @@ When activated, the manager captures the monster for scripted commands and sends
 
 Movement waypoints can provide extra data parsed from patrol point flags:
 
-| Waypoint key | Effect                                                                |
-| ------------ | --------------------------------------------------------------------- |
-| `sig`        | Sets a signal on the active scheme state. Use it with `on_signal`.    |
-| `s`          | Schedules a sound to play with the next movement or standing command. |
-| `c`          | Uses crouch or steal movement when set to `true`.                     |
-| `r`          | Uses run movement when set to `true`.                                 |
-| `b`          | Overrides the monster state at that waypoint.                         |
-| `flags`      | Selects a matching `path_look` point.                                 |
+### `sig`
+
+Sets a signal on the active scheme state. Use it with `on_signal`.
+
+### `s`
+
+Schedules a sound to play with the next movement or standing command.
+
+### `c`
+
+Uses crouch or steal movement when set to `true`.
+
+### `r`
+
+Uses run movement when set to `true`.
+
+### `b`
+
+Overrides the monster state at that waypoint.
+
+### `flags`
+
+Selects a matching `path_look` point.
 
 Look waypoints can provide:
 
-| Waypoint key | Effect                                                                              |
-| ------------ | ----------------------------------------------------------------------------------- |
-| `t`          | Standing time in milliseconds.                                                      |
-| `a`          | Animation condlist. The selected value is resolved through the engine `anim` table. |
+#### `t`
+
+Standing time in milliseconds.
+
+#### `a`
+
+Animation condlist. The selected value is resolved through the engine `anim` table.
 
 If a movement waypoint has look flags, the manager chooses a matching point from `path_look`, turns the monster toward
 it, plays the selected animation, waits, and then resumes movement.

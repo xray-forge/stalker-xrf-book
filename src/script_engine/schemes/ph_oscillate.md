@@ -5,12 +5,29 @@ rock around a physics bone.
 
 ## Parameters
 
-| Field           | Type   | Required | Default | Description                                                                          |
-| --------------- | ------ | -------- | ------- | ------------------------------------------------------------------------------------ |
-| `joint`         | string | yes      | -       | Physics joint bone name. Smart terrain prefixing is applied by the parser.           |
-| `period`        | number | yes      | -       | Time interval used by the oscillation manager.                                       |
-| `force`         | number | yes      | -       | Force magnitude used to calculate force growth during the active part of the period. |
-| `correct_angle` | number | no       | `0`     | Rotation angle applied to the next force direction when the oscillation flips.       |
+### `joint`
+
+Type: string. Required. Default: none.
+
+Physics joint bone name. Smart terrain prefixing is applied by the parser.
+
+### `period`
+
+Type: number. Required. Default: none.
+
+Time interval used by the oscillation manager.
+
+### `force`
+
+Type: number. Required. Default: none.
+
+Force magnitude used to calculate force growth during the active part of the period.
+
+### `correct_angle`
+
+Type: number. Optional. Default: `0`.
+
+Rotation angle applied to the next force direction when the oscillation flips.
 
 The section also supports common switch fields, parsed into state with the rest of the section.
 

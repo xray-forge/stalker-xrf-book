@@ -5,16 +5,25 @@ wounded target and plays the medkit-help animation.
 
 ## Parameters
 
-| Field                  | Type    | Required | Default | Description                                                                |
-| ---------------------- | ------- | -------- | ------- | -------------------------------------------------------------------------- |
-| `help_wounded_enabled` | boolean | no       | `true`  | Enables or disables wounded-helper behavior for the current reset section. |
+### `help_wounded_enabled`
+
+Type: boolean. Optional. Default: `true`.
+
+Enables or disables wounded-helper behavior for the current reset section.
 
 Runtime constants:
 
-| Constant                     | Value                    | Description                                                         |
-| ---------------------------- | ------------------------ | ------------------------------------------------------------------- |
-| `DISTANCE_TO_HELP`           | `30`                     | Maximum search distance for wounded targets.                        |
-| `HELPING_WOUNDED_OBJECT_KEY` | `helping_wounded_object` | Portable-store key used to reserve a wounded target for one helper. |
+### `DISTANCE_TO_HELP`
+
+Value: `30`.
+
+Maximum search distance for wounded targets.
+
+### `HELPING_WOUNDED_OBJECT_KEY`
+
+Value: `helping_wounded_object`.
+
+Portable-store key used to reserve a wounded target for one helper.
 
 ## Runtime behavior
 

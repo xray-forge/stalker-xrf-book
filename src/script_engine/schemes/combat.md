@@ -5,9 +5,12 @@ planner hooks used by camper and zombied combat helpers.
 
 ## Parameters
 
-| Field         | Type     | Required | Default | Description                                                                                                                 |
-| ------------- | -------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `combat_type` | condlist | no       | `null`  | Resolves to a scripted combat type. Supported enum values in the TypeScript source are `camper`, `zombied`, and `monolith`. |
+### `combat_type`
+
+Type: condlist. Optional. Default: `null`.
+
+Resolves to a scripted combat type. Supported enum values in the TypeScript source are `camper`, `zombied`, and
+`monolith`.
 
 The section also supports common switch fields. They are parsed into `state.logic`, although the main combat behavior is
 driven through planner evaluators and actions.

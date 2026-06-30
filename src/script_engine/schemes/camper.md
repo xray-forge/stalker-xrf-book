@@ -8,33 +8,111 @@ helping until close-combat camping is finished.
 
 ## Parameters
 
-| Field                      | Type                            | Required | Default               | Description                                                                                                      |
-| -------------------------- | ------------------------------- | -------- | --------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `path_walk`                | string                          | yes      | -                     | Patrol path used for movement between camp points. Relative names are resolved against the active smart terrain. |
-| `path_look`                | string                          | yes      | -                     | Patrol path used for look and scan points. It must not equal `path_walk`.                                        |
-| `sniper`                   | boolean                         | no       | `false`               | Enables sniper scan behavior and sniper update rate.                                                             |
-| `no_retreat`               | boolean                         | no       | `false`               | Stored in scheme state. Invalid together with `sniper = true`.                                                   |
-| `shoot`                    | `always`, `none`, or `terminal` | no       | `always`              | Controls when the NPC may fire at the visible enemy.                                                             |
-| `sniper_anim`              | stalker state                   | no       | `hide_na`             | Sniper animation state stored by the scheme.                                                                     |
-| `radius`                   | number                          | no       | `20`                  | Close-combat radius used by the close-combat evaluator.                                                          |
-| `def_state_moving`         | stalker state                   | no       | `null`                | Suggested movement state.                                                                                        |
-| `def_state_moving_fire`    | stalker state                   | no       | `null`                | Suggested movement-with-fire state.                                                                              |
-| `def_state_campering`      | stalker state                   | no       | `null`                | Suggested cover/scanning state.                                                                                  |
-| `def_state_standing`       | stalker state                   | no       | `def_state_campering` | Suggested standing state.                                                                                        |
-| `def_state_campering_fire` | stalker state                   | no       | `null`                | Suggested cover firing state.                                                                                    |
-| `scantime_free`            | number                          | no       | `60000`               | Time to keep scanning without enemy contact before resuming patrol movement.                                     |
-| `attack_sound`             | string or `false`               | no       | `fight_attack`        | Sound played when firing. `false` disables it.                                                                   |
-| `enemy_idle`               | number                          | no       | `60000`               | Enemy memory timeout before the action stops treating the remembered enemy as active.                            |
+### `path_walk`
+
+Type: string. Required. Default: none.
+
+Patrol path used for movement between camp points. Relative names are resolved against the active smart terrain.
+
+### `path_look`
+
+Type: string. Required. Default: none.
+
+Patrol path used for look and scan points. It must not equal `path_walk`.
+
+### `sniper`
+
+Type: boolean. Optional. Default: `false`.
+
+Enables sniper scan behavior and sniper update rate.
+
+### `no_retreat`
+
+Type: boolean. Optional. Default: `false`.
+
+Stored in scheme state. Invalid together with `sniper = true`.
+
+### `shoot`
+
+Type: `always`, `none`, or `terminal`. Optional. Default: `always`.
+
+Controls when the NPC may fire at the visible enemy.
+
+### `sniper_anim`
+
+Type: stalker state. Optional. Default: `hide_na`.
+
+Sniper animation state stored by the scheme.
+
+### `radius`
+
+Type: number. Optional. Default: `20`.
+
+Close-combat radius used by the close-combat evaluator.
+
+### `def_state_moving`
+
+Type: stalker state. Optional. Default: `null`.
+
+Suggested movement state.
+
+### `def_state_moving_fire`
+
+Type: stalker state. Optional. Default: `null`.
+
+Suggested movement-with-fire state.
+
+### `def_state_campering`
+
+Type: stalker state. Optional. Default: `null`.
+
+Suggested cover/scanning state.
+
+### `def_state_standing`
+
+Type: stalker state. Optional. Default: `def_state_campering`.
+
+Suggested standing state.
+
+### `def_state_campering_fire`
+
+Type: stalker state. Optional. Default: `null`.
+
+Suggested cover firing state.
+
+### `scantime_free`
+
+Type: number. Optional. Default: `60000`.
+
+Time to keep scanning without enemy contact before resuming patrol movement.
+
+### `attack_sound`
+
+Type: string or `false`. Optional. Default: `fight_attack`.
+
+Sound played when firing. `false` disables it.
+
+### `enemy_idle`
+
+Type: number. Optional. Default: `60000`.
+
+Enemy memory timeout before the action stops treating the remembered enemy as active.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
 ## Shooting modes
 
-| `shoot` value | Behavior                                                     |
-| ------------- | ------------------------------------------------------------ |
-| `always`      | Fire whenever the enemy is visible and the action can shoot. |
-| `none`        | Never fire from this camper action.                          |
-| `terminal`    | Fire only from the terminal waypoint of `path_walk`.         |
+### `always`
+
+Fire whenever the enemy is visible and the action can shoot.
+
+### `none`
+
+Never fire from this camper action.
+
+### `terminal`
+
+Fire only from the terminal waypoint of `path_walk`.
 
 Any other value aborts with a config error.
 

@@ -7,11 +7,23 @@ Use it for hazardous visual zones where the actor should see an effect and take 
 
 ## Parameters
 
-| Field             | Type   | Required | Default | Description                                                                      |
-| ----------------- | ------ | -------- | ------- | -------------------------------------------------------------------------------- |
-| `intensity`       | number | yes      | -       | Target postprocess intensity. The value is multiplied by `0.01`.                 |
-| `intensity_speed` | number | yes      | -       | Ramp speed for entering and leaving the zone. The value is multiplied by `0.01`. |
-| `hit_intensity`   | number | yes      | -       | Damage accumulation rate while the actor is inside.                              |
+### `intensity`
+
+Type: number. Required. Default: none.
+
+Target postprocess intensity. The value is multiplied by `0.01`.
+
+### `intensity_speed`
+
+Type: number. Required. Default: none.
+
+Ramp speed for entering and leaving the zone. The value is multiplied by `0.01`.
+
+### `hit_intensity`
+
+Type: number. Required. Default: none.
+
+Damage accumulation rate while the actor is inside.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and actor-zone checks.
 

@@ -7,12 +7,29 @@ Use it for switches, props, doors, breakable objects, and scene objects that sho
 
 ## Parameters
 
-| Field              | Type                 | Required | Default      | Description                                            |
-| ------------------ | -------------------- | -------- | ------------ | ------------------------------------------------------ |
-| `hit_on_bone`      | bone descriptor list | no       | empty        | Maps hit bone indexes to condlists.                    |
-| `nonscript_usable` | boolean              | no       | `false`      | Passed to `object.set_nonscript_usable` on activation. |
-| `on_use`           | condlist             | no       | `null`       | Switch condlist evaluated when the object is used.     |
-| `tips`             | string               | no       | empty string | Tip text assigned to the object.                       |
+### `hit_on_bone`
+
+Type: bone descriptor list. Optional. Default: empty.
+
+Maps hit bone indexes to condlists.
+
+### `nonscript_usable`
+
+Type: boolean. Optional. Default: `false`.
+
+Passed to `object.set_nonscript_usable` on activation.
+
+### `on_use`
+
+Type: condlist. Optional. Default: `null`.
+
+Switch condlist evaluated when the object is used.
+
+### `tips`
+
+Type: string. Optional. Default: empty string.
+
+Tip text assigned to the object.
 
 The section also supports common switch fields such as `on_info` and `on_timer`.
 

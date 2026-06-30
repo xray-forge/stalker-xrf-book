@@ -6,11 +6,23 @@
 
 `death` reads its configuration indirectly:
 
-| Field      | Location                    | Type         | Required | Description                            |
-| ---------- | --------------------------- | ------------ | -------- | -------------------------------------- |
-| `on_death` | active logic section        | section name | no       | Names the death configuration section. |
-| `on_info`  | death configuration section | condlist     | no       | First condlist executed on death.      |
-| `on_info2` | death configuration section | condlist     | no       | Second condlist executed on death.     |
+### `on_death`
+
+Location: active logic section. Type: section name. Optional.
+
+Names the death configuration section.
+
+### `on_info`
+
+Location: death configuration section. Type: condlist. Optional.
+
+First condlist executed on death.
+
+### `on_info2`
+
+Location: death configuration section. Type: condlist. Optional.
+
+Second condlist executed on death.
 
 ## Runtime behavior
 

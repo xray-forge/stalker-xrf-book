@@ -6,17 +6,59 @@ values when the actor leaves.
 
 ## Parameters
 
-| Field                  | Type    | Required | Default       | Description                                                           |
-| ---------------------- | ------- | -------- | ------------- | --------------------------------------------------------------------- |
-| `eff_intensity`        | number  | yes      | -             | Sound/postprocess intensity. Multiplied by `0.01`.                    |
-| `postprocess`          | string  | no       | `psy_antenna` | Postprocess effector name. Use `nil` to skip adding an effector.      |
-| `hit_intensity`        | number  | yes      | -             | Hit intensity added to the psy antenna manager. Multiplied by `0.01`. |
-| `phantom_prob`         | number  | no       | `0`           | Phantom spawn probability. Multiplied by `0.01`.                      |
-| `mute_sound_threshold` | number  | no       | `0`           | Added to the manager mute threshold while inside.                     |
-| `no_static`            | boolean | no       | `false`       | Sets the manager `noStatic` flag.                                     |
-| `no_mumble`            | boolean | no       | `false`       | Sets the manager `noMumble` flag.                                     |
-| `hit_type`             | string  | no       | `wound`       | Hit type used by the manager.                                         |
-| `hit_freq`             | number  | no       | `5000`        | Hit frequency used by the manager.                                    |
+### `eff_intensity`
+
+Type: number. Required. Default: none.
+
+Sound/postprocess intensity. Multiplied by `0.01`.
+
+### `postprocess`
+
+Type: string. Optional. Default: `psy_antenna`.
+
+Postprocess effector name. Use `nil` to skip adding an effector.
+
+### `hit_intensity`
+
+Type: number. Required. Default: none.
+
+Hit intensity added to the psy antenna manager. Multiplied by `0.01`.
+
+### `phantom_prob`
+
+Type: number. Optional. Default: `0`.
+
+Phantom spawn probability. Multiplied by `0.01`.
+
+### `mute_sound_threshold`
+
+Type: number. Optional. Default: `0`.
+
+Added to the manager mute threshold while inside.
+
+### `no_static`
+
+Type: boolean. Optional. Default: `false`.
+
+Sets the manager `noStatic` flag.
+
+### `no_mumble`
+
+Type: boolean. Optional. Default: `false`.
+
+Sets the manager `noMumble` flag.
+
+### `hit_type`
+
+Type: string. Optional. Default: `wound`.
+
+Hit type used by the manager.
+
+### `hit_freq`
+
+Type: number. Optional. Default: `5000`.
+
+Hit frequency used by the manager.
 
 The section also supports common switch fields.
 

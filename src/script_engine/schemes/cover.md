@@ -5,14 +5,41 @@ generated enemy-facing position.
 
 ## Parameters
 
-| Field                  | Type     | Required | Default | Description                                                                        |
-| ---------------------- | -------- | -------- | ------- | ---------------------------------------------------------------------------------- |
-| `smart`                | string   | yes      | -       | Smart terrain name used as the center for cover selection.                         |
-| `anim`                 | condlist | no       | `hide`  | Stalker state condlist used after the NPC reaches cover.                           |
-| `sound_idle`           | string   | no       | `null`  | Sound alias played while the NPC is in cover.                                      |
-| `use_attack_direction` | boolean  | no       | `true`  | Parsed into state. The inspected action does not currently read it.                |
-| `radius_min`           | number   | no       | `3`     | Minimum random distance from the smart terrain for selecting a cover search point. |
-| `radius_max`           | number   | no       | `5`     | Maximum random distance from the smart terrain for selecting a cover search point. |
+### `smart`
+
+Type: string. Required. Default: none.
+
+Smart terrain name used as the center for cover selection.
+
+### `anim`
+
+Type: condlist. Optional. Default: `hide`.
+
+Stalker state condlist used after the NPC reaches cover.
+
+### `sound_idle`
+
+Type: string. Optional. Default: `null`.
+
+Sound alias played while the NPC is in cover.
+
+### `use_attack_direction`
+
+Type: boolean. Optional. Default: `true`.
+
+Parsed into state. The inspected action does not currently read it.
+
+### `radius_min`
+
+Type: number. Optional. Default: `3`.
+
+Minimum random distance from the smart terrain for selecting a cover search point.
+
+### `radius_max`
+
+Type: number. Optional. Default: `5`.
+
+Maximum random distance from the smart terrain for selecting a cover search point.
 
 The section also supports common switch fields.
 

@@ -5,9 +5,11 @@ active movement section.
 
 ## Parameters
 
-| Field                  | Type    | Required | Default | Description                                           |
-| ---------------------- | ------- | -------- | ------- | ----------------------------------------------------- |
-| `gather_items_enabled` | boolean | no       | `true`  | Enables item gathering for the current reset section. |
+### `gather_items_enabled`
+
+Type: boolean. Optional. Default: `true`.
+
+Enables item gathering for the current reset section.
 
 ## Runtime behavior
 

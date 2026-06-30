@@ -5,15 +5,47 @@ terrain point, or scripted territory.
 
 ## Parameters
 
-| Field             | Type          | Required | Default        | Description                                                                                       |
-| ----------------- | ------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------- |
-| `state`           | monster state | no       | `null`         | Base monster state applied on activation.                                                         |
-| `path_home`       | string        | no       | `null`         | Patrol path used as home reference. Relative names are resolved against the active smart terrain. |
-| `gulag_point`     | boolean       | no       | `false`        | Uses the monster's smart terrain level vertex as the home point.                                  |
-| `aggressive`      | boolean       | no       | `false`        | Passed to `object.set_home`.                                                                      |
-| `home_min_radius` | number        | no       | default config | Minimum home radius.                                                                              |
-| `home_mid_radius` | number        | no       | midpoint       | Middle home radius. Clamped to the range between min and max.                                     |
-| `home_max_radius` | number        | no       | default config | Maximum home radius.                                                                              |
+### `state`
+
+Type: monster state. Optional. Default: `null`.
+
+Base monster state applied on activation.
+
+### `path_home`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path used as home reference. Relative names are resolved against the active smart terrain.
+
+### `gulag_point`
+
+Type: boolean. Optional. Default: `false`.
+
+Uses the monster's smart terrain level vertex as the home point.
+
+### `aggressive`
+
+Type: boolean. Optional. Default: `false`.
+
+Passed to `object.set_home`.
+
+### `home_min_radius`
+
+Type: number. Optional. Default: default config.
+
+Minimum home radius.
+
+### `home_mid_radius`
+
+Type: number. Optional. Default: midpoint.
+
+Middle home radius. Clamped to the range between min and max.
+
+### `home_max_radius`
+
+Type: number. Optional. Default: default config.
+
+Maximum home radius.
 
 The section also supports common switch fields.
 

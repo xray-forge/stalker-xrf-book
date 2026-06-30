@@ -5,16 +5,53 @@ for scripted first-person scenes and controlled transitions where player input s
 
 ## Parameters
 
-| Field              | Type                    | Required | Default | Description                                                          |
-| ------------------ | ----------------------- | -------- | ------- | -------------------------------------------------------------------- |
-| `point`            | string                  | yes      | `none`  | Patrol path used by the teleport effect as actor position.           |
-| `look`             | string                  | yes      | `none`  | Patrol path used by the teleport effect as actor look target.        |
-| `global_cameffect` | boolean                 | no       | `false` | Marks generated camera effects as global.                            |
-| `pp_effector`      | string                  | no       | `nil`   | Postprocess effector name without `.ppe`. The parser appends `.ppe`. |
-| `cam_effector`     | comma-separated strings | yes      | -       | Camera effectors or named effector sets played in order.             |
-| `fov`              | number                  | no       | `null`  | Field of view stored in the scheme state.                            |
-| `enable_ui_on_end` | boolean                 | no       | `true`  | Re-enables game UI/input at the end when possible.                   |
-| `outdoor`          | boolean                 | no       | `false` | Adds a brighten complex effector for outdoor night cutscenes.        |
+### `point`
+
+Type: string. Required. Default: `none`.
+
+Patrol path used by the teleport effect as actor position.
+
+### `look`
+
+Type: string. Required. Default: `none`.
+
+Patrol path used by the teleport effect as actor look target.
+
+### `global_cameffect`
+
+Type: boolean. Optional. Default: `false`.
+
+Marks generated camera effects as global.
+
+### `pp_effector`
+
+Type: string. Optional. Default: `nil`.
+
+Postprocess effector name without `.ppe`. The parser appends `.ppe`.
+
+### `cam_effector`
+
+Type: comma-separated strings. Required. Default: none.
+
+Camera effectors or named effector sets played in order.
+
+### `fov`
+
+Type: number. Optional. Default: `null`.
+
+Field of view stored in the scheme state.
+
+### `enable_ui_on_end`
+
+Type: boolean. Optional. Default: `true`.
+
+Re-enables game UI/input at the end when possible.
+
+### `outdoor`
+
+Type: boolean. Optional. Default: `false`.
+
+Adds a brighten complex effector for outdoor night cutscenes.
 
 The section also supports common switch fields.
 

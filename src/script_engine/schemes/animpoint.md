@@ -9,13 +9,36 @@ gives the look direction.
 
 ## Parameters
 
-| Field              | Type                    | Required | Default             | Description                                                                                                                     |
-| ------------------ | ----------------------- | -------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `cover_name`       | string                  | no       | `$script_id$_cover` | Registered smart cover name used as the animation anchor.                                                                       |
-| `use_camp`         | boolean                 | no       | `true`              | Allows camp manager integration when the animpoint position is inside a camp zone.                                              |
-| `reach_movement`   | stalker state           | no       | `walk`              | Movement state used while walking to the animpoint.                                                                             |
-| `reach_distance`   | number                  | no       | `0.75`              | Distance threshold for reaching the animpoint. The engine stores it as squared distance.                                        |
-| `avail_animations` | comma-separated strings | no       | `null`              | Explicit animation states to choose from. When absent, animations are selected from predicates for the smart cover description. |
+### `cover_name`
+
+Type: string. Optional. Default: `$script_id$_cover`.
+
+Registered smart cover name used as the animation anchor.
+
+### `use_camp`
+
+Type: boolean. Optional. Default: `true`.
+
+Allows camp manager integration when the animpoint position is inside a camp zone.
+
+### `reach_movement`
+
+Type: stalker state. Optional. Default: `walk`.
+
+Movement state used while walking to the animpoint.
+
+### `reach_distance`
+
+Type: number. Optional. Default: `0.75`.
+
+Distance threshold for reaching the animpoint. The engine stores it as squared distance.
+
+### `avail_animations`
+
+Type: comma-separated strings. Optional. Default: `null`.
+
+Explicit animation states to choose from. When absent, animations are selected from predicates for the smart cover
+description.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 

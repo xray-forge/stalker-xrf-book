@@ -5,12 +5,29 @@ ten weighted destination/look pairs.
 
 ## Parameters
 
-| Field                  | Type   | Required          | Default | Description                                                          |
-| ---------------------- | ------ | ----------------- | ------- | -------------------------------------------------------------------- |
-| `timeout`              | number | no                | `900`   | Delay in milliseconds between actor entry and teleport.              |
-| `point1` ... `point10` | string | at least one pair | `none`  | Patrol path whose first point is the teleport position.              |
-| `look1` ... `look10`   | string | at least one pair | `none`  | Patrol path whose first point defines look direction after teleport. |
-| `prob1` ... `prob10`   | number | no                | `100`   | Weight for the matching point/look pair.                             |
+### `timeout`
+
+Type: number. Optional. Default: `900`.
+
+Delay in milliseconds between actor entry and teleport.
+
+### `point1` ... `point10`
+
+Type: string. Required: at least one pair. Default: `none`.
+
+Patrol path whose first point is the teleport position.
+
+### `look1` ... `look10`
+
+Type: string. Required: at least one pair. Default: `none`.
+
+Patrol path whose first point defines look direction after teleport.
+
+### `prob1` ... `prob10`
+
+Type: number. Optional. Default: `100`.
+
+Weight for the matching point/look pair.
 
 The section also supports common switch fields. They are checked after teleport processing when the manager is idle.
 

@@ -7,11 +7,23 @@ conditions to move the object to another section.
 
 `mob_combat` has no scheme-specific config fields. It reads common switch fields from the section.
 
-| Field                          | Type                       | Description                                                |
-| ------------------------------ | -------------------------- | ---------------------------------------------------------- |
-| `on_info`, `on_info1`, ...     | condlist                   | Switch when the condlist selects another section.          |
-| `on_timer`, `on_timer1`, ...   | `milliseconds \| condlist` | Switch after the section has been active for the duration. |
-| `on_signal`, `on_signal1`, ... | `signal \| condlist`       | Switch when a signal is set.                               |
+### `on_info`, `on_info1`, ...
+
+Type: condlist.
+
+Switch when the condlist selects another section.
+
+### `on_timer`, `on_timer1`, ...
+
+Type: `milliseconds | condlist`.
+
+Switch after the section has been active for the duration.
+
+### `on_signal`, `on_signal1`, ...
+
+Type: `signal | condlist`.
+
+Switch when a signal is set.
 
 ## Runtime behavior
 

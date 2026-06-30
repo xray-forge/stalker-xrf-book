@@ -7,19 +7,43 @@ is shared by stalker and monster binders.
 
 Add one or more `on_sound` lines to the active section:
 
-| Field                        | Type                          | Required | Description |
-| ---------------------------- | ----------------------------- | -------- | ----------- |
-| `on_sound`, `on_sound1`, ... | pipe-separated parameter list | no       | `story_id   | sound_type | distance | power | condlist` |
+### `on_sound`, `on_sound1`, ...
+
+Type: pipe-separated parameter list. Optional.
+
+`story_id | sound_type | distance | power | condlist`
 
 Parameter meanings:
 
-| Position | Name         | Description                                                                                  |
-| -------- | ------------ | -------------------------------------------------------------------------------------------- |
-| 1        | `story_id`   | Story id of the sound source. The runtime uses `any` when the source object has no story id. |
-| 2        | `sound_type` | Mapped sound type, such as `WPN_shoot`, `WPN_hit`, `ITM_drop`, or `MST_attack`.              |
-| 3        | `distance`   | Maximum distance from the heard sound position to the listening object.                      |
-| 4        | `power`      | Minimum heard sound power.                                                                   |
-| 5        | `condlist`   | Section condlist evaluated when the sound matches.                                           |
+### `story_id`
+
+Position: 1.
+
+Story id of the sound source. The runtime uses `any` when the source object has no story id.
+
+### `sound_type`
+
+Position: 2.
+
+Mapped sound type, such as `WPN_shoot`, `WPN_hit`, `ITM_drop`, or `MST_attack`.
+
+### `distance`
+
+Position: 3.
+
+Maximum distance from the heard sound position to the listening object.
+
+### `power`
+
+Position: 4.
+
+Minimum heard sound power.
+
+### `condlist`
+
+Position: 5.
+
+Section condlist evaluated when the sound matches.
 
 ## Runtime behavior
 

@@ -7,26 +7,85 @@ state, calls for help, can be helped by another stalker, and can auto-heal after
 
 The active logic section can point to a wounded configuration section:
 
-| Field     | Location                             | Type         | Required | Description                                                                |
-| --------- | ------------------------------------ | ------------ | -------- | -------------------------------------------------------------------------- |
-| `wounded` | active section or `[logic]` fallback | section name | no       | Section used to configure wounded behavior. `nil` uses community defaults. |
+### `wounded`
+
+Location: active section or `[logic]` fallback. Type: section name. Optional.
+
+Section used to configure wounded behavior. `nil` uses community defaults.
 
 The wounded configuration section supports:
 
-| Field               | Type         | Required | Default           | Description                                                                             |
-| ------------------- | ------------ | -------- | ----------------- | --------------------------------------------------------------------------------------- |
-| `hp_state`          | wounded data | no       | community default | State/sound descriptor for HP wounds when the actor is not seen.                        |
-| `hp_state_see`      | wounded data | no       | community default | State/sound descriptor for HP wounds when the actor is seen.                            |
-| `psy_state`         | wounded data | no       | community default | State/sound descriptor for psy-health wounds.                                           |
-| `hp_victim`         | wounded data | no       | community default | Victim descriptor stored in portable state.                                             |
-| `hp_cover`          | wounded data | no       | community default | Parsed into state. The inspected manager does not currently store its processed result. |
-| `hp_fight`          | wounded data | no       | community default | Controls whether the NPC can keep fighting while wounded.                               |
-| `help_dialog`       | string       | no       | community default | Dialog used for wounded help interaction.                                               |
-| `help_start_dialog` | string       | no       | `null`            | Start dialog set when the NPC becomes wounded.                                          |
-| `use_medkit`        | boolean      | no       | community default | Allows medkit use after help or auto-heal unlocks it.                                   |
-| `autoheal`          | boolean      | no       | `true`            | Allows automatic medkit unlock after wounded timeout.                                   |
-| `enable_talk`       | boolean      | no       | `true`            | Stores whether talking is enabled while wounded.                                        |
-| `not_for_help`      | boolean      | no       | community default | Marks the wounded object as not suitable for helper NPCs.                               |
+### `hp_state`
+
+Type: wounded data. Optional. Default: community default.
+
+State/sound descriptor for HP wounds when the actor is not seen.
+
+### `hp_state_see`
+
+Type: wounded data. Optional. Default: community default.
+
+State/sound descriptor for HP wounds when the actor is seen.
+
+### `psy_state`
+
+Type: wounded data. Optional. Default: community default.
+
+State/sound descriptor for psy-health wounds.
+
+### `hp_victim`
+
+Type: wounded data. Optional. Default: community default.
+
+Victim descriptor stored in portable state.
+
+### `hp_cover`
+
+Type: wounded data. Optional. Default: community default.
+
+Parsed into state. The inspected manager does not currently store its processed result.
+
+### `hp_fight`
+
+Type: wounded data. Optional. Default: community default.
+
+Controls whether the NPC can keep fighting while wounded.
+
+### `help_dialog`
+
+Type: string. Optional. Default: community default.
+
+Dialog used for wounded help interaction.
+
+### `help_start_dialog`
+
+Type: string. Optional. Default: `null`.
+
+Start dialog set when the NPC becomes wounded.
+
+### `use_medkit`
+
+Type: boolean. Optional. Default: community default.
+
+Allows medkit use after help or auto-heal unlocks it.
+
+### `autoheal`
+
+Type: boolean. Optional. Default: `true`.
+
+Allows automatic medkit unlock after wounded timeout.
+
+### `enable_talk`
+
+Type: boolean. Optional. Default: `true`.
+
+Stores whether talking is enabled while wounded.
+
+### `not_for_help`
+
+Type: boolean. Optional. Default: community default.
+
+Marks the wounded object as not suitable for helper NPCs.
 
 ## Wounded Data Syntax
 
@@ -46,11 +105,17 @@ psy_state = 20|{=best_pistol}psy_armed,psy_pain@wounded_psy
 
 Each descriptor has:
 
-| Part             | Description                                                              |
-| ---------------- | ------------------------------------------------------------------------ |
-| `hp`             | Breakpoint compared with current HP or psy-health in the `0..100` range. |
-| `state_condlist` | Condlist resolved to the stalker state or special value.                 |
-| `sound_condlist` | Optional condlist after `@`, resolved to the sound name.                 |
+### `hp`
+
+Breakpoint compared with current HP or psy-health in the `0..100` range.
+
+### `state_condlist`
+
+Condlist resolved to the stalker state or special value.
+
+### `sound_condlist`
+
+Optional condlist after `@`, resolved to the sound name.
 
 The parser selects the last descriptor whose breakpoint is greater than or equal to the current value before a higher
 unmatched breakpoint stops the scan.

@@ -5,10 +5,17 @@ for beds, camp sleep spots, and scripted rest positions.
 
 ## Parameters
 
-| Field       | Type    | Required | Default | Description                                                                                                          |
-| ----------- | ------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| `path_main` | string  | yes      | -       | Patrol path used to derive both walking and look data. Relative names are resolved against the active smart terrain. |
-| `wakeable`  | boolean | no       | `false` | Uses the sitting state instead of the sleeping state when the NPC reaches the final point.                           |
+### `path_main`
+
+Type: string. Required. Default: none.
+
+Patrol path used to derive both walking and look data. Relative names are resolved against the active smart terrain.
+
+### `wakeable`
+
+Type: boolean. Optional. Default: `false`.
+
+Uses the sitting state instead of the sleeping state when the NPC reaches the final point.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
@@ -16,10 +23,13 @@ The section also supports common switch fields such as `on_info`, `on_timer`, an
 
 `path_main` must contain either one or two waypoints.
 
-| Waypoint count | Behavior                                                                                           |
-| -------------- | -------------------------------------------------------------------------------------------------- |
-| `1`            | The NPC walks to the single point and then sleeps there.                                           |
-| `2`            | The NPC walks using the main path and looks toward the second point when entering the final state. |
+### `1`
+
+The NPC walks to the single point and then sleeps there.
+
+### `2`
+
+The NPC walks using the main path and looks toward the second point when entering the final state.
 
 Any other waypoint count aborts with a config error.
 

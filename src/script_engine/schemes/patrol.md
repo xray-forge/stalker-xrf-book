@@ -8,17 +8,59 @@ object becomes commander unless a section has `commander = true`.
 
 ## Parameters
 
-| Field                | Type    | Required | Default             | Description                                                                               |
-| -------------------- | ------- | -------- | ------------------- | ----------------------------------------------------------------------------------------- |
-| `path_walk`          | string  | yes      | -                   | Commander movement path. Relative names are resolved against the active smart terrain.    |
-| `path_look`          | string  | no       | `null`              | Optional look path for the commander. It must not equal `path_walk`.                      |
-| `formation`          | string  | no       | `back`              | Formation used by followers. Supported values are defined by the patrol formation config. |
-| `silent`             | boolean | no       | `false`             | Disables automatic patrol movement sounds.                                                |
-| `move_type`          | string  | no       | `patrol`            | Stored movement type for patrol logic compatibility.                                      |
-| `commander`          | boolean | no       | `false`             | Marks this NPC as the patrol commander when registering in the patrol manager.            |
-| `def_state_standing` | string  | no       | `null`              | Suggested standing animation state.                                                       |
-| `def_state_moving`   | string  | no       | `def_state_moving1` | Suggested commander moving animation state.                                               |
-| `def_state_moving1`  | string  | no       | `null`              | Compatibility fallback for `def_state_moving`.                                            |
+### `path_walk`
+
+Type: string. Required. Default: none.
+
+Commander movement path. Relative names are resolved against the active smart terrain.
+
+### `path_look`
+
+Type: string. Optional. Default: `null`.
+
+Optional look path for the commander. It must not equal `path_walk`.
+
+### `formation`
+
+Type: string. Optional. Default: `back`.
+
+Formation used by followers. Supported values are defined by the patrol formation config.
+
+### `silent`
+
+Type: boolean. Optional. Default: `false`.
+
+Disables automatic patrol movement sounds.
+
+### `move_type`
+
+Type: string. Optional. Default: `patrol`.
+
+Stored movement type for patrol logic compatibility.
+
+### `commander`
+
+Type: boolean. Optional. Default: `false`.
+
+Marks this NPC as the patrol commander when registering in the patrol manager.
+
+### `def_state_standing`
+
+Type: string. Optional. Default: `null`.
+
+Suggested standing animation state.
+
+### `def_state_moving`
+
+Type: string. Optional. Default: `def_state_moving1`.
+
+Suggested commander moving animation state.
+
+### `def_state_moving1`
+
+Type: string. Optional. Default: `null`.
+
+Compatibility fallback for `def_state_moving`.
 
 The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-distance checks.
 
@@ -34,11 +76,17 @@ state based on the commander's current state.
 
 The commander can change formation from waypoint callback return values:
 
-| Return value | Formation |
-| ------------ | --------- |
-| `0`          | `line`    |
-| `1`          | `around`  |
-| `2`          | `back`    |
+### `0`
+
+`line`
+
+### `1`
+
+`around`
+
+### `2`
+
+`back`
 
 ## Example
 

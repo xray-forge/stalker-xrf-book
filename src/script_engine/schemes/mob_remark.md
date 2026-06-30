@@ -5,16 +5,53 @@ displays, scene beats, and temporary talk/tip control.
 
 ## Parameters
 
-| Field           | Type                    | Required | Default | Description                                                             |
-| --------------- | ----------------------- | -------- | ------- | ----------------------------------------------------------------------- |
-| `state`         | monster state           | no       | `null`  | Monster state applied on activation.                                    |
-| `dialog_cond`   | condlist                | no       | `null`  | Enables or disables talking based on condlist result.                   |
-| `anim`          | comma-separated strings | no       | `null`  | Animation sequence to command.                                          |
-| `anim_movement` | boolean                 | no       | `false` | Uses movement animation command form when true.                         |
-| `anim_head`     | string                  | no       | `null`  | Parsed and stored; current manager does not use it directly.            |
-| `tip`           | string                  | no       | `null`  | Tip notification sent once after activation.                            |
-| `snd`           | string                  | no       | `null`  | Parsed and stored; current manager does not play it directly.           |
-| `time`          | comma-separated numbers | no       | `null`  | Per-animation timeout list. Missing values use animation-end condition. |
+### `state`
+
+Type: monster state. Optional. Default: `null`.
+
+Monster state applied on activation.
+
+### `dialog_cond`
+
+Type: condlist. Optional. Default: `null`.
+
+Enables or disables talking based on condlist result.
+
+### `anim`
+
+Type: comma-separated strings. Optional. Default: `null`.
+
+Animation sequence to command.
+
+### `anim_movement`
+
+Type: boolean. Optional. Default: `false`.
+
+Uses movement animation command form when true.
+
+### `anim_head`
+
+Type: string. Optional. Default: `null`.
+
+Parsed and stored; current manager does not use it directly.
+
+### `tip`
+
+Type: string. Optional. Default: `null`.
+
+Tip notification sent once after activation.
+
+### `snd`
+
+Type: string. Optional. Default: `null`.
+
+Parsed and stored; current manager does not play it directly.
+
+### `time`
+
+Type: comma-separated numbers. Optional. Default: `null`.
+
+Per-animation timeout list. Missing values use animation-end condition.
 
 The section also supports common switch fields.
 

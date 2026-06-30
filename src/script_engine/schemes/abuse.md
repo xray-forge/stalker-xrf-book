@@ -9,12 +9,29 @@ reaction is a punch animation aimed at the actor.
 
 Runtime values are stored in `AbuseManager`:
 
-| Runtime value    | Default | Description                                           |
-| ---------------- | ------- | ----------------------------------------------------- |
-| `isEnabled`      | `true`  | Enables or disables abuse accumulation.               |
-| `abuseRate`      | `2`     | Multiplier used when abuse is added.                  |
-| `abuseThreshold` | `5`     | Threshold at which the evaluator reports abuse.       |
-| `abuseValue`     | `0`     | Current accumulated abuse value. It decays over time. |
+### `isEnabled`
+
+Default: `true`.
+
+Enables or disables abuse accumulation.
+
+### `abuseRate`
+
+Default: `2`.
+
+Multiplier used when abuse is added.
+
+### `abuseThreshold`
+
+Default: `5`.
+
+Threshold at which the evaluator reports abuse.
+
+### `abuseValue`
+
+Default: `0`.
+
+Current accumulated abuse value. It decays over time.
 
 ## Runtime behavior
 

@@ -5,9 +5,11 @@ decide whether a stalker's torch should be on or off while the stalker is inside
 
 ## Parameters
 
-| Field      | Type    | Required | Default | Description                                                   |
-| ---------- | ------- | -------- | ------- | ------------------------------------------------------------- |
-| `light_on` | boolean | no       | `false` | Light flag returned when a stalker is inside the active zone. |
+### `light_on`
+
+Type: boolean. Optional. Default: `false`.
+
+Light flag returned when a stalker is inside the active zone.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and actor-zone checks.
 

@@ -5,23 +5,95 @@ Use it for scripted cover positions, lookout points, and controlled firing from 
 
 ## Parameters
 
-| Field               | Type            | Required | Default             | Description                                                                 |
-| ------------------- | --------------- | -------- | ------------------- | --------------------------------------------------------------------------- |
-| `cover_name`        | string          | no       | `$script_id$_cover` | Registered smart cover name.                                                |
-| `loophole_name`     | string          | no       | `null`              | Loophole name stored by the scheme.                                         |
-| `cover_state`       | condlist string | no       | `default_behaviour` | Smart cover state selected each update.                                     |
-| `target_enemy`      | story id        | no       | `null`              | Story id of the enemy object to target.                                     |
-| `target_path`       | condlist string | no       | `nil`               | Condlist selecting a patrol path whose first point becomes the fire target. |
-| `idle_min_time`     | number          | no       | `6`                 | Minimum idle time passed to the game object.                                |
-| `idle_max_time`     | number          | no       | `10`                | Maximum idle time passed to the game object.                                |
-| `lookout_min_time`  | number          | no       | `6`                 | Minimum lookout time passed to the game object.                             |
-| `lookout_max_time`  | number          | no       | `10`                | Maximum lookout time passed to the game object.                             |
-| `exit_body_state`   | string          | no       | `stand`             | Exit body state stored by the scheme.                                       |
-| `use_precalc_cover` | boolean         | no       | `false`             | Stored by the scheme for cover selection compatibility.                     |
-| `use_in_combat`     | boolean         | no       | `false`             | Allows the combat evaluator to permit smart cover use in combat.            |
-| `weapon_type`       | string          | no       | `null`              | Weapon type stored by the scheme.                                           |
-| `def_state_moving`  | stalker state   | no       | `sneak`             | Movement state stored by the scheme.                                        |
-| `sound_idle`        | string          | no       | `null`              | Sound played while the smart cover action executes.                         |
+### `cover_name`
+
+Type: string. Optional. Default: `$script_id$_cover`.
+
+Registered smart cover name.
+
+### `loophole_name`
+
+Type: string. Optional. Default: `null`.
+
+Loophole name stored by the scheme.
+
+### `cover_state`
+
+Type: condlist string. Optional. Default: `default_behaviour`.
+
+Smart cover state selected each update.
+
+### `target_enemy`
+
+Type: story id. Optional. Default: `null`.
+
+Story id of the enemy object to target.
+
+### `target_path`
+
+Type: condlist string. Optional. Default: `nil`.
+
+Condlist selecting a patrol path whose first point becomes the fire target.
+
+### `idle_min_time`
+
+Type: number. Optional. Default: `6`.
+
+Minimum idle time passed to the game object.
+
+### `idle_max_time`
+
+Type: number. Optional. Default: `10`.
+
+Maximum idle time passed to the game object.
+
+### `lookout_min_time`
+
+Type: number. Optional. Default: `6`.
+
+Minimum lookout time passed to the game object.
+
+### `lookout_max_time`
+
+Type: number. Optional. Default: `10`.
+
+Maximum lookout time passed to the game object.
+
+### `exit_body_state`
+
+Type: string. Optional. Default: `stand`.
+
+Exit body state stored by the scheme.
+
+### `use_precalc_cover`
+
+Type: boolean. Optional. Default: `false`.
+
+Stored by the scheme for cover selection compatibility.
+
+### `use_in_combat`
+
+Type: boolean. Optional. Default: `false`.
+
+Allows the combat evaluator to permit smart cover use in combat.
+
+### `weapon_type`
+
+Type: string. Optional. Default: `null`.
+
+Weapon type stored by the scheme.
+
+### `def_state_moving`
+
+Type: stalker state. Optional. Default: `sneak`.
+
+Movement state stored by the scheme.
+
+### `sound_idle`
+
+Type: string. Optional. Default: `null`.
+
+Sound played while the smart cover action executes.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
@@ -29,14 +101,29 @@ The section also supports common switch fields such as `on_info`, `on_timer`, an
 
 `cover_state` is parsed as a condlist. The selected value is used to choose smart cover target behavior.
 
-| Value                               | Target behavior                                     |
-| ----------------------------------- | --------------------------------------------------- |
-| `idle_target`                       | Calls idle target mode.                             |
-| `lookout_target`                    | Updates target and calls lookout target mode.       |
-| `fire_target`                       | Calls fire target mode.                             |
-| `fire_no_lookout_target`            | Updates target and calls fire-without-lookout mode. |
-| `default_behaviour` or other values | Updates target and uses default target mode.        |
-| `nil`                               | Clears the target selector.                         |
+### `idle_target`
+
+Calls idle target mode.
+
+### `lookout_target`
+
+Updates target and calls lookout target mode.
+
+### `fire_target`
+
+Calls fire target mode.
+
+### `fire_no_lookout_target`
+
+Updates target and calls fire-without-lookout mode.
+
+### `default_behaviour` or other values
+
+Updates target and uses default target mode.
+
+### `nil`
+
+Clears the target selector.
 
 When `target_path` selects a patrol path, the first point of that path becomes the smart cover target. If no path is
 selected, the action can target `target_enemy` by story id. A stored target position is also supported by the action,
@@ -46,10 +133,13 @@ but the current scheme parser does not read a config field for it.
 
 When `target_enemy` is set and the stalker is in smart cover, the action updates:
 
-| Signal             | Meaning                                                    |
-| ------------------ | ---------------------------------------------------------- |
-| `enemy_in_fov`     | Target enemy is in the current loophole field of view.     |
-| `enemy_not_in_fov` | Target enemy is not in the current loophole field of view. |
+### `enemy_in_fov`
+
+Target enemy is in the current loophole field of view.
+
+### `enemy_not_in_fov`
+
+Target enemy is not in the current loophole field of view.
 
 ## Example
 

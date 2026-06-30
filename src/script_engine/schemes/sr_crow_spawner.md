@@ -7,10 +7,17 @@ Use one active crow spawner per level unless the level intentionally needs multi
 
 ## Parameters
 
-| Field                | Type                    | Required | Default      | Description                                                          |
-| -------------------- | ----------------------- | -------- | ------------ | -------------------------------------------------------------------- |
-| `max_crows_on_level` | number                  | no       | `16`         | Maximum allowed `registry.crows.count` before spawning is throttled. |
-| `spawn_path`         | comma-separated strings | no       | empty string | Patrol paths considered as crow spawn points.                        |
+### `max_crows_on_level`
+
+Type: number. Optional. Default: `16`.
+
+Maximum allowed `registry.crows.count` before spawning is throttled.
+
+### `spawn_path`
+
+Type: comma-separated strings. Optional. Default: empty string.
+
+Patrol paths considered as crow spawn points.
 
 The section also supports common switch fields.
 

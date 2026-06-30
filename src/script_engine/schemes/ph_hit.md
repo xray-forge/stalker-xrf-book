@@ -5,12 +5,29 @@ props, kicking an object, or driving door and physics reactions through the norm
 
 ## Parameters
 
-| Field      | Type   | Required | Default | Description                                              |
-| ---------- | ------ | -------- | ------- | -------------------------------------------------------- |
-| `power`    | number | no       | `0`     | Hit power.                                               |
-| `impulse`  | number | no       | `1000`  | Hit impulse.                                             |
-| `bone`     | string | yes      | -       | Bone name passed to the hit object.                      |
-| `dir_path` | string | yes      | -       | Patrol path whose first point defines the hit direction. |
+### `power`
+
+Type: number. Optional. Default: `0`.
+
+Hit power.
+
+### `impulse`
+
+Type: number. Optional. Default: `1000`.
+
+Hit impulse.
+
+### `bone`
+
+Type: string. Required. Default: none.
+
+Bone name passed to the hit object.
+
+### `dir_path`
+
+Type: string. Required. Default: none.
+
+Patrol path whose first point defines the hit direction.
 
 The section also supports common switch fields such as `on_info` and `on_timer`.
 

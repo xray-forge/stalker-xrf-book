@@ -10,17 +10,59 @@ exit, or other common switch conditions.
 
 `sr_idle` has no scheme-specific parameters. It reads only common switch fields from the section.
 
-| Field                                  | Type                           | Description                                                          |
-| -------------------------------------- | ------------------------------ | -------------------------------------------------------------------- |
-| `on_info`, `on_info1`, ...             | condlist                       | Switch when the condlist selects another section.                    |
-| `on_timer`, `on_timer1`, ...           | `milliseconds \| condlist`     | Switch after the section has been active for the duration.           |
-| `on_game_timer`, `on_game_timer1`, ... | `seconds \| condlist`          | Switch after the section has been active for the game-time duration. |
-| `on_actor_inside`                      | condlist                       | Switch while the actor is inside the current restrictor.             |
-| `on_actor_outside`                     | condlist                       | Switch while the actor is outside the current restrictor.            |
-| `on_actor_in_zone`                     | `zone \| condlist`             | Switch while the actor is inside another named zone.                 |
-| `on_actor_not_in_zone`                 | `zone \| condlist`             | Switch while the actor is outside another named zone.                |
-| `on_npc_in_zone`                       | `story_id \| zone \| condlist` | Switch while the named NPC is inside the named zone.                 |
-| `on_npc_not_in_zone`                   | `story_id \| zone \| condlist` | Switch while the named NPC is outside the named zone.                |
+### `on_info`, `on_info1`, ...
+
+Type: condlist.
+
+Switch when the condlist selects another section.
+
+### `on_timer`, `on_timer1`, ...
+
+Type: `milliseconds | condlist`.
+
+Switch after the section has been active for the duration.
+
+### `on_game_timer`, `on_game_timer1`, ...
+
+Type: `seconds | condlist`.
+
+Switch after the section has been active for the game-time duration.
+
+### `on_actor_inside`
+
+Type: condlist.
+
+Switch while the actor is inside the current restrictor.
+
+### `on_actor_outside`
+
+Type: condlist.
+
+Switch while the actor is outside the current restrictor.
+
+### `on_actor_in_zone`
+
+Type: `zone | condlist`.
+
+Switch while the actor is inside another named zone.
+
+### `on_actor_not_in_zone`
+
+Type: `zone | condlist`.
+
+Switch while the actor is outside another named zone.
+
+### `on_npc_in_zone`
+
+Type: `story_id | zone | condlist`.
+
+Switch while the named NPC is inside the named zone.
+
+### `on_npc_not_in_zone`
+
+Type: `story_id | zone | condlist`.
+
+Switch while the named NPC is outside the named zone.
 
 ## Usage
 

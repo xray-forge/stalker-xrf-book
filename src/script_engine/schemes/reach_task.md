@@ -9,10 +9,17 @@ not a hand-authored active section with LTX parameters.
 
 Runtime constants:
 
-| Constant               | Value                   | Description                                          |
-| ---------------------- | ----------------------- | ---------------------------------------------------- |
-| `PATROL_UPDATE_PERIOD` | `1000`                  | Milliseconds between movement-order updates.         |
-| `FORMATIONS.back`      | built-in formation list | Default follower offsets behind the squad commander. |
+### `PATROL_UPDATE_PERIOD`
+
+Value: `1000`.
+
+Milliseconds between movement-order updates.
+
+### `FORMATIONS.back`
+
+Value: built-in formation list.
+
+Default follower offsets behind the squad commander.
 
 ## Runtime behavior
 

@@ -20,17 +20,23 @@ combat_type = camper
 
 The helper adds two evaluators:
 
-| Evaluator                   | Purpose                                                                      |
-| --------------------------- | ---------------------------------------------------------------------------- |
-| `IS_COMBAT_CAMPING_ENABLED` | Returns true when the object registry `scriptCombatType` is `camper`.        |
-| `SEE_BEST_ENEMY`            | Returns true when the NPC sees its best enemy and stores the enemy position. |
+### `IS_COMBAT_CAMPING_ENABLED`
+
+Returns true when the object registry `scriptCombatType` is `camper`.
+
+### `SEE_BEST_ENEMY`
+
+Returns true when the NPC sees its best enemy and stores the enemy position.
 
 It also adds two actions:
 
-| Action        | Behavior                                                                                                          |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `SHOOT`       | Sets stalker state to `hide_fire` and looks at the best enemy.                                                    |
-| `LOOK_AROUND` | Sets stalker state to `hide`, looks near the last seen enemy position, and periodically changes search direction. |
+#### `SHOOT`
+
+Sets stalker state to `hide_fire` and looks at the best enemy.
+
+#### `LOOK_AROUND`
+
+Sets stalker state to `hide`, looks near the last seen enemy position, and periodically changes search direction.
 
 ## Notes
 

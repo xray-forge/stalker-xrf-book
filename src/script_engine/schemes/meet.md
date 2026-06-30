@@ -11,27 +11,119 @@ with a `meet = ...` field, and the meet scheme is reset whenever the active logi
 Most fields are condlists. They can return values such as distances, animation states, sound ids, dialog ids, `true`,
 `false`, or `nil`.
 
-| Field                | Type               | Default source    | Description                                                                   |
-| -------------------- | ------------------ | ----------------- | ----------------------------------------------------------------------------- |
-| `close_distance`     | condlist number    | relation defaults | Distance for close meet state.                                                |
-| `close_anim`         | condlist state     | relation defaults | Animation state used during close contact.                                    |
-| `close_snd_distance` | condlist number    | relation defaults | Distance for hello and bye sound checks.                                      |
-| `close_snd_hello`    | condlist sound     | relation defaults | Sound played when the actor first enters close sound distance.                |
-| `close_snd_bye`      | condlist sound     | relation defaults | Sound played after hello when the actor is still inside far sound distance.   |
-| `close_victim`       | condlist story id  | relation defaults | Object story id used as look victim for close animation.                      |
-| `far_distance`       | condlist number    | relation defaults | Distance for far meet state.                                                  |
-| `far_anim`           | condlist state     | relation defaults | Animation state used during far contact.                                      |
-| `far_snd_distance`   | condlist number    | relation defaults | Distance for far sound checks.                                                |
-| `far_snd`            | condlist sound     | relation defaults | Sound played while executing far meet state.                                  |
-| `far_victim`         | condlist story id  | relation defaults | Object story id used as look victim for far animation.                        |
-| `snd_on_use`         | condlist sound     | relation defaults | Use sound condlist stored by the scheme.                                      |
-| `use`                | condlist value     | relation defaults | Controls actor use behavior. `self` starts talk directly.                     |
-| `meet_dialog`        | condlist dialog id | relation defaults | Overrides the object's start dialog. `nil` restores the default start dialog. |
-| `abuse`              | condlist boolean   | relation defaults | Enables or disables abuse state on the object.                                |
-| `trade_enable`       | condlist boolean   | relation defaults | Enables or disables trading, unless the NPC is wounded.                       |
-| `allow_break`        | condlist boolean   | relation defaults | Allows or blocks breaking the talk dialog.                                    |
-| `meet_on_talking`    | boolean string     | relation defaults | Treats current talking as close meet contact when enabled.                    |
-| `use_text`           | condlist string    | relation defaults | Overrides the interaction tip text. `nil` restores default use text behavior. |
+### `close_distance`
+
+Type: condlist number. Default source: relation defaults.
+
+Distance for close meet state.
+
+### `close_anim`
+
+Type: condlist state. Default source: relation defaults.
+
+Animation state used during close contact.
+
+### `close_snd_distance`
+
+Type: condlist number. Default source: relation defaults.
+
+Distance for hello and bye sound checks.
+
+### `close_snd_hello`
+
+Type: condlist sound. Default source: relation defaults.
+
+Sound played when the actor first enters close sound distance.
+
+### `close_snd_bye`
+
+Type: condlist sound. Default source: relation defaults.
+
+Sound played after hello when the actor is still inside far sound distance.
+
+### `close_victim`
+
+Type: condlist story id. Default source: relation defaults.
+
+Object story id used as look victim for close animation.
+
+### `far_distance`
+
+Type: condlist number. Default source: relation defaults.
+
+Distance for far meet state.
+
+### `far_anim`
+
+Type: condlist state. Default source: relation defaults.
+
+Animation state used during far contact.
+
+### `far_snd_distance`
+
+Type: condlist number. Default source: relation defaults.
+
+Distance for far sound checks.
+
+### `far_snd`
+
+Type: condlist sound. Default source: relation defaults.
+
+Sound played while executing far meet state.
+
+### `far_victim`
+
+Type: condlist story id. Default source: relation defaults.
+
+Object story id used as look victim for far animation.
+
+### `snd_on_use`
+
+Type: condlist sound. Default source: relation defaults.
+
+Use sound condlist stored by the scheme.
+
+### `use`
+
+Type: condlist value. Default source: relation defaults.
+
+Controls actor use behavior. `self` starts talk directly.
+
+### `meet_dialog`
+
+Type: condlist dialog id. Default source: relation defaults.
+
+Overrides the object's start dialog. `nil` restores the default start dialog.
+
+### `abuse`
+
+Type: condlist boolean. Default source: relation defaults.
+
+Enables or disables abuse state on the object.
+
+### `trade_enable`
+
+Type: condlist boolean. Default source: relation defaults.
+
+Enables or disables trading, unless the NPC is wounded.
+
+### `allow_break`
+
+Type: condlist boolean. Default source: relation defaults.
+
+Allows or blocks breaking the talk dialog.
+
+### `meet_on_talking`
+
+Type: boolean string. Default source: relation defaults.
+
+Treats current talking as close meet contact when enabled.
+
+### `use_text`
+
+Type: condlist string. Default source: relation defaults.
+
+Overrides the interaction tip text. `nil` restores default use text behavior.
 
 The engine uses enemy defaults for hostile NPCs and neutral defaults for other relations. If the section is `no_meet`,
 interaction is disabled by setting distances to `0`, animations and sounds to `nil`, and `use` to `false`.

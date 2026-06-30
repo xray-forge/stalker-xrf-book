@@ -7,12 +7,29 @@ Use it for scripted scare jumps and ambush starts.
 
 ## Parameters
 
-| Field            | Type           | Required | Default | Description                                                                                                          |
-| ---------------- | -------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| `path_jump`      | string         | no       | `null`  | Patrol path whose first point is the jump target base. Relative names are resolved against the active smart terrain. |
-| `offset`         | `x,y,z` string | yes      | -       | Offset added to `path_jump` point `0` to form the final jump target.                                                 |
-| `ph_jump_factor` | number         | no       | `1.8`   | Jump factor passed to `object.jump`.                                                                                 |
-| `on_signal`      | switch field   | yes      | -       | Required by the scheme parser. Usually listens for `jumped`.                                                         |
+### `path_jump`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path whose first point is the jump target base. Relative names are resolved against the active smart terrain.
+
+### `offset`
+
+Type: `x,y,z` string. Required. Default: none.
+
+Offset added to `path_jump` point `0` to form the final jump target.
+
+### `ph_jump_factor`
+
+Type: number. Optional. Default: `1.8`.
+
+Jump factor passed to `object.jump`.
+
+### `on_signal`
+
+Type: switch field. Required. Default: none.
+
+Required by the scheme parser. Usually listens for `jumped`.
 
 The section also supports other common switch fields.
 

@@ -5,14 +5,41 @@ signals. Use it for scenario beats, one-off gestures, directed looks, and transi
 
 ## Parameters
 
-| Field           | Type     | Required | Default | Description                                                                    |
-| --------------- | -------- | -------- | ------- | ------------------------------------------------------------------------------ |
-| `anim`          | condlist | no       | `wait`  | Animation state selected by condlist when the remark starts.                   |
-| `snd`           | string   | no       | `null`  | Sound played by the sound manager after the animation when sound is scheduled. |
-| `snd_anim_sync` | boolean  | no       | `false` | Controls whether sound is scheduled independently from the animation.          |
-| `target`        | string   | no       | `nil`   | Optional look target descriptor.                                               |
-| `tips`          | string   | no       | `null`  | Tip id stored by the scheme.                                                   |
-| `tips_sender`   | string   | no       | `null`  | Sender id read only when `tips` is set.                                        |
+### `anim`
+
+Type: condlist. Optional. Default: `wait`.
+
+Animation state selected by condlist when the remark starts.
+
+### `snd`
+
+Type: string. Optional. Default: `null`.
+
+Sound played by the sound manager after the animation when sound is scheduled.
+
+### `snd_anim_sync`
+
+Type: boolean. Optional. Default: `false`.
+
+Controls whether sound is scheduled independently from the animation.
+
+### `target`
+
+Type: string. Optional. Default: `nil`.
+
+Optional look target descriptor.
+
+### `tips`
+
+Type: string. Optional. Default: `null`.
+
+Tip id stored by the scheme.
+
+### `tips_sender`
+
+Type: string. Optional. Default: `null`.
+
+Sender id read only when `tips` is set.
 
 The section also supports common switch fields. `remark` is commonly paired with `on_signal = action_end | ...` or
 `on_signal = anim_end | ...`.
@@ -21,11 +48,17 @@ The section also supports common switch fields. `remark` is commonly paired with
 
 `target` supports three descriptor forms:
 
-| Form   | Meaning                 |
-| ------ | ----------------------- |
-| `story | actor`or`story          | story_id`                                            | Looks at the object resolved by story id. |
-| `path  | patrol_path,point_id`   | Looks at the selected patrol point.                  |
-| `job   | job_section,smart_name` | Looks at the object assigned to a smart terrain job. |
+### `story | actor` or `story | story_id`
+
+Looks at the object resolved by story id.
+
+### `path | patrol_path,point_id`
+
+Looks at the selected patrol point.
+
+### `job | job_section,smart_name`
+
+Looks at the object assigned to a smart terrain job.
 
 When `target = nil`, the animation runs without a target descriptor.
 
@@ -33,10 +66,13 @@ When `target = nil`, the animation runs without a target descriptor.
 
 The remark action sets signals on the active scheme state:
 
-| Signal       | When it is set                                  |
-| ------------ | ----------------------------------------------- |
-| `anim_end`   | The animation callback reaches the sound stage. |
-| `action_end` | Both animation end and sound end were observed. |
+### `anim_end`
+
+The animation callback reaches the sound stage.
+
+### `action_end`
+
+Both animation end and sound end were observed.
 
 The action also observes `sound_end` and `theme_end` signals. Those can be set by sound handling code to allow
 `action_end`.

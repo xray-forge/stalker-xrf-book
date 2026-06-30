@@ -5,9 +5,11 @@ NPC to a corpse and plays the corpse-search state.
 
 ## Parameters
 
-| Field                      | Type    | Required | Default | Description                                                         |
-| -------------------------- | ------- | -------- | ------- | ------------------------------------------------------------------- |
-| `corpse_detection_enabled` | boolean | no       | `true`  | Enables or disables corpse detection for the current reset section. |
+### `corpse_detection_enabled`
+
+Type: boolean. Optional. Default: `true`.
+
+Enables or disables corpse detection for the current reset section.
 
 ## Runtime behavior
 

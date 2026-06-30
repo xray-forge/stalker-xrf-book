@@ -5,27 +5,119 @@ trail, and optional combat health UI.
 
 ## Parameters
 
-| Field                    | Type    | Required | Default | Description                                                                                        |
-| ------------------------ | ------- | -------- | ------- | -------------------------------------------------------------------------------------------------- |
-| `path_move`              | string  | yes      | -       | Patrol path used for helicopter movement. Must exist.                                              |
-| `path_look`              | string  | no       | `null`  | Patrol path used as a look point, or `actor` to keep looking at the actor.                         |
-| `enemy`                  | string  | no       | `null`  | Enemy preference passed to the fire manager. Runtime handles `actor`, `all`, `nil`, or a story id. |
-| `fire_point`             | string  | no       | `null`  | Patrol path whose first point is used as a fallback fire point.                                    |
-| `max_velocity`           | number  | yes      | -       | Maximum helicopter movement velocity.                                                              |
-| `max_mgun_attack_dist`   | number  | no       | `null`  | Overrides helicopter max minigun attack distance.                                                  |
-| `min_mgun_attack_dist`   | number  | no       | `null`  | Overrides helicopter min minigun attack distance.                                                  |
-| `max_rocket_attack_dist` | number  | no       | `null`  | Overrides helicopter max rocket attack distance.                                                   |
-| `min_rocket_attack_dist` | number  | no       | `null`  | Overrides helicopter min rocket attack distance.                                                   |
-| `upd_vis`                | number  | no       | `10`    | Visibility refresh interval passed to the fire manager, in seconds.                                |
-| `use_rocket`             | boolean | no       | `true`  | Enables rocket use during attack.                                                                  |
-| `use_mgun`               | boolean | no       | `true`  | Enables minigun use during attack.                                                                 |
-| `engine_sound`           | boolean | no       | `true`  | Enables helicopter engine sound.                                                                   |
-| `stop_fire`              | boolean | no       | `false` | With `path_look = actor`, holds the helicopter position while the actor is visible.                |
-| `show_health`            | boolean | no       | `false` | Shows the helicopter combat health UI while active.                                                |
-| `fire_trail`             | boolean | no       | `false` | Enables the helicopter fire trail effect.                                                          |
-| `invulnerable`           | boolean | no       | `false` | Sets object registry invulnerable state.                                                           |
-| `immortal`               | boolean | no       | `false` | Sets object registry immortal state.                                                               |
-| `mute`                   | boolean | no       | `false` | Sets object registry mute state.                                                                   |
+### `path_move`
+
+Type: string. Required. Default: none.
+
+Patrol path used for helicopter movement. Must exist.
+
+### `path_look`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path used as a look point, or `actor` to keep looking at the actor.
+
+### `enemy`
+
+Type: string. Optional. Default: `null`.
+
+Enemy preference passed to the fire manager. Runtime handles `actor`, `all`, `nil`, or a story id.
+
+### `fire_point`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path whose first point is used as a fallback fire point.
+
+### `max_velocity`
+
+Type: number. Required. Default: none.
+
+Maximum helicopter movement velocity.
+
+### `max_mgun_attack_dist`
+
+Type: number. Optional. Default: `null`.
+
+Overrides helicopter max minigun attack distance.
+
+### `min_mgun_attack_dist`
+
+Type: number. Optional. Default: `null`.
+
+Overrides helicopter min minigun attack distance.
+
+### `max_rocket_attack_dist`
+
+Type: number. Optional. Default: `null`.
+
+Overrides helicopter max rocket attack distance.
+
+### `min_rocket_attack_dist`
+
+Type: number. Optional. Default: `null`.
+
+Overrides helicopter min rocket attack distance.
+
+### `upd_vis`
+
+Type: number. Optional. Default: `10`.
+
+Visibility refresh interval passed to the fire manager, in seconds.
+
+### `use_rocket`
+
+Type: boolean. Optional. Default: `true`.
+
+Enables rocket use during attack.
+
+### `use_mgun`
+
+Type: boolean. Optional. Default: `true`.
+
+Enables minigun use during attack.
+
+### `engine_sound`
+
+Type: boolean. Optional. Default: `true`.
+
+Enables helicopter engine sound.
+
+### `stop_fire`
+
+Type: boolean. Optional. Default: `false`.
+
+With `path_look = actor`, holds the helicopter position while the actor is visible.
+
+### `show_health`
+
+Type: boolean. Optional. Default: `false`.
+
+Shows the helicopter combat health UI while active.
+
+### `fire_trail`
+
+Type: boolean. Optional. Default: `false`.
+
+Enables the helicopter fire trail effect.
+
+### `invulnerable`
+
+Type: boolean. Optional. Default: `false`.
+
+Sets object registry invulnerable state.
+
+### `immortal`
+
+Type: boolean. Optional. Default: `false`.
+
+Sets object registry immortal state.
+
+### `mute`
+
+Type: boolean. Optional. Default: `false`.
+
+Sets object registry mute state.
 
 The section also supports common switch fields. They are checked before movement updates.
 

@@ -5,13 +5,35 @@ props, and one-shot physical impulses that should last for a configured duration
 
 ## Parameters
 
-| Field         | Type   | Required | Default | Description                                                            |
-| ------------- | ------ | -------- | ------- | ---------------------------------------------------------------------- |
-| `force`       | number | yes      | -       | Force magnitude. Must be greater than `0`.                             |
-| `time`        | number | yes      | -       | Duration passed to `object.set_const_force`. Must be greater than `0`. |
-| `delay`       | number | no       | `0`     | Delay in milliseconds before applying the force.                       |
-| `point`       | string | yes      | -       | Patrol path used to choose the target point.                           |
-| `point_index` | number | no       | `0`     | Patrol point index used as the force target.                           |
+### `force`
+
+Type: number. Required. Default: none.
+
+Force magnitude. Must be greater than `0`.
+
+### `time`
+
+Type: number. Required. Default: none.
+
+Duration passed to `object.set_const_force`. Must be greater than `0`.
+
+### `delay`
+
+Type: number. Optional. Default: `0`.
+
+Delay in milliseconds before applying the force.
+
+### `point`
+
+Type: string. Required. Default: none.
+
+Patrol path used to choose the target point.
+
+### `point_index`
+
+Type: number. Optional. Default: `0`.
+
+Patrol point index used as the force target.
 
 The section also supports common switch fields. They are checked before force application.
 

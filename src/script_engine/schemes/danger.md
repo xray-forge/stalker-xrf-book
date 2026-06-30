@@ -9,11 +9,23 @@ generic planner scheme rather than a normal active movement section.
 
 Runtime constants:
 
-| Constant                              | Value     | Description                                                                              |
-| ------------------------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| `INERTIA_TIME`                        | `15000`   | Time in milliseconds to keep danger true after the object stops facing a current danger. |
-| `BULLET_REACT_DISTANCE_SQR`           | `2 * 2`   | Distance check for nearby bullet-hit sounds.                                             |
-| `ALLIES_SHOOTING_ASSIST_DISTANCE_SQR` | `40 * 40` | Distance check for helping allies or reacting to enemy weapon sounds.                    |
+### `INERTIA_TIME`
+
+Value: `15000`.
+
+Time in milliseconds to keep danger true after the object stops facing a current danger.
+
+### `BULLET_REACT_DISTANCE_SQR`
+
+Value: `2 * 2`.
+
+Distance check for nearby bullet-hit sounds.
+
+### `ALLIES_SHOOTING_ASSIST_DISTANCE_SQR`
+
+Value: `40 * 40`.
+
+Distance check for helping allies or reacting to enemy weapon sounds.
 
 ## Runtime behavior
 

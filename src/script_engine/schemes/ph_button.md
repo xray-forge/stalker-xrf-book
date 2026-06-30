@@ -5,12 +5,29 @@ and scripted controls.
 
 ## Parameters
 
-| Field        | Type     | Required | Default | Description                                                   |
-| ------------ | -------- | -------- | ------- | ------------------------------------------------------------- |
-| `anim`       | string   | yes      | -       | Animation cycle played on activation.                         |
-| `anim_blend` | boolean  | no       | `true`  | Passed as the blending flag to `object.play_cycle`.           |
-| `on_press`   | condlist | no       | `null`  | Switch condlist evaluated when the active button is used.     |
-| `tooltip`    | string   | no       | `null`  | Tip text shown on the object. Empty text is used when absent. |
+### `anim`
+
+Type: string. Required. Default: none.
+
+Animation cycle played on activation.
+
+### `anim_blend`
+
+Type: boolean. Optional. Default: `true`.
+
+Passed as the blending flag to `object.play_cycle`.
+
+### `on_press`
+
+Type: condlist. Optional. Default: `null`.
+
+Switch condlist evaluated when the active button is used.
+
+### `tooltip`
+
+Type: string. Optional. Default: `null`.
+
+Tip text shown on the object. Empty text is used when absent.
 
 The section also supports common switch fields such as `on_info` and `on_timer`.
 

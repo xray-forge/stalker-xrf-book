@@ -17,10 +17,14 @@ The helper adds `IS_COMBAT_ZOMBIED_ENABLED`. The current evaluator returns true 
 
 It also adds two actions:
 
-| Action                 | Behavior                                                                                                                   |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `ZOMBIED_SHOOT`        | Moves toward the current enemy's last seen position and uses raid/threat fire states depending on distance and visibility. |
-| `ZOMBIED_GO_TO_DANGER` | Moves toward the best danger source, ignoring grenade movement targets and reacting to hits.                               |
+### `ZOMBIED_SHOOT`
+
+Moves toward the current enemy's last seen position and uses raid/threat fire states depending on distance and
+visibility.
+
+### `ZOMBIED_GO_TO_DANGER`
+
+Moves toward the best danger source, ignoring grenade movement targets and reacting to hits.
 
 ## Example
 

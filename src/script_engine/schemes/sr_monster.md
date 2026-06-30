@@ -5,14 +5,41 @@ source along a patrol path. When the path wraps, it spawns a monster and command
 
 ## Parameters
 
-| Field             | Type        | Required | Default | Description                                                                    |
-| ----------------- | ----------- | -------- | ------- | ------------------------------------------------------------------------------ |
-| `snd`             | string      | no       | `null`  | Sound id played as the moving warning sound source.                            |
-| `delay`           | number      | no       | `0`     | Parsed and stored; current manager does not use it directly.                   |
-| `idle`            | number      | no       | `30`    | Idle duration after the ambush finishes. Multiplied by `10000`.                |
-| `sound_path`      | string list | no       | `null`  | Patrol paths used by the moving warning sound. One path is selected at a time. |
-| `monster_section` | string      | no       | `null`  | Server object section spawned when the path wraps.                             |
-| `slide_velocity`  | number      | no       | `7`     | Speed for sliding the warning sound position along the path.                   |
+### `snd`
+
+Type: string. Optional. Default: `null`.
+
+Sound id played as the moving warning sound source.
+
+### `delay`
+
+Type: number. Optional. Default: `0`.
+
+Parsed and stored; current manager does not use it directly.
+
+### `idle`
+
+Type: number. Optional. Default: `30`.
+
+Idle duration after the ambush finishes. Multiplied by `10000`.
+
+### `sound_path`
+
+Type: string list. Optional. Default: `null`.
+
+Patrol paths used by the moving warning sound. One path is selected at a time.
+
+### `monster_section`
+
+Type: string. Optional. Default: `null`.
+
+Server object section spawned when the path wraps.
+
+### `slide_velocity`
+
+Type: number. Optional. Default: `7`.
+
+Speed for sliding the warning sound position along the path.
 
 The section also supports common switch fields.
 

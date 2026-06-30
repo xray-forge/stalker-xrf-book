@@ -9,10 +9,17 @@ behavior. It is installed by setup code and does not have a hand-authored active
 
 The wait duration can be affected by resolved logic overrides stored on the object registry:
 
-| Override            | Default | Description                                                                 |
-| ------------------- | ------- | --------------------------------------------------------------------------- |
-| `minPostCombatTime` | `5`     | Minimum randomized wait time in seconds after a non-actor enemy disappears. |
-| `maxPostCombatTime` | `10`    | Maximum randomized wait time in seconds after a non-actor enemy disappears. |
+### `minPostCombatTime`
+
+Default: `5`.
+
+Minimum randomized wait time in seconds after a non-actor enemy disappears.
+
+### `maxPostCombatTime`
+
+Default: `10`.
+
+Maximum randomized wait time in seconds after a non-actor enemy disappears.
 
 These overrides are consumed by the evaluator. Their parsing is handled outside `SchemePostCombatIdle`.
 

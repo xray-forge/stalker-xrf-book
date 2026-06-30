@@ -5,19 +5,71 @@ switch sections when a watched target becomes visible or hidden.
 
 ## Parameters
 
-| Field                   | Type     | Required | Default  | Description                                                                                                            |
-| ----------------------- | -------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `path_fire`             | string   | no       | `null`   | Patrol path used as the fire point when `target = points`. Smart terrain prefixing is applied.                         |
-| `auto_fire`             | boolean  | no       | `false`  | Enables automatic fire when the current target can be hit.                                                             |
-| `fire_time`             | number   | no       | `1.0`    | Fire phase duration in seconds.                                                                                        |
-| `fire_repeat`           | number   | no       | `0.5`    | Pause duration in seconds between fire phases. `-1` disables the fire/pause timer update.                              |
-| `fire_range`            | number   | no       | `50`     | Maximum distance to an enemy target.                                                                                   |
-| `target`                | string   | no       | `points` | Fire target. Supported runtime values are `points`, `actor`, or a story object id. Smart terrain prefixing is applied. |
-| `track_target`          | boolean  | no       | `false`  | Keeps aiming at the enemy target even when the minigun cannot fire at it.                                              |
-| `fire_angle`            | number   | no       | `120`    | Horizontal firing arc used by the manager when checking whether the target can be aimed at.                            |
-| `shoot_only_on_visible` | boolean  | no       | `true`   | Requires engine visibility before firing at an enemy target.                                                           |
-| `on_target_vis`         | condlist | no       | `null`   | `story_id                                                                                                              | condlist` pair. Switches section when that story object is alive and visible to the minigun.     |
-| `on_target_nvis`        | condlist | no       | `null`   | `story_id                                                                                                              | condlist` pair. Switches section when that story object is alive and not visible to the minigun. |
+### `path_fire`
+
+Type: string. Optional. Default: `null`.
+
+Patrol path used as the fire point when `target = points`. Smart terrain prefixing is applied.
+
+### `auto_fire`
+
+Type: boolean. Optional. Default: `false`.
+
+Enables automatic fire when the current target can be hit.
+
+### `fire_time`
+
+Type: number. Optional. Default: `1.0`.
+
+Fire phase duration in seconds.
+
+### `fire_repeat`
+
+Type: number. Optional. Default: `0.5`.
+
+Pause duration in seconds between fire phases. `-1` disables the fire/pause timer update.
+
+### `fire_range`
+
+Type: number. Optional. Default: `50`.
+
+Maximum distance to an enemy target.
+
+### `target`
+
+Type: string. Optional. Default: `points`.
+
+Fire target. Supported runtime values are `points`, `actor`, or a story object id. Smart terrain prefixing is applied.
+
+### `track_target`
+
+Type: boolean. Optional. Default: `false`.
+
+Keeps aiming at the enemy target even when the minigun cannot fire at it.
+
+### `fire_angle`
+
+Type: number. Optional. Default: `120`.
+
+Horizontal firing arc used by the manager when checking whether the target can be aimed at.
+
+### `shoot_only_on_visible`
+
+Type: boolean. Optional. Default: `true`.
+
+Requires engine visibility before firing at an enemy target.
+
+### `on_target_vis`
+
+Type: condlist. Optional. Default: `null`.
+
+`story_id | condlist` pair. Switches section when that story object is alive and visible to the minigun.
+
+### `on_target_nvis`
+
+Type: condlist. Optional. Default: `null`.
+
+`story_id | condlist` pair. Switches section when that story object is alive and not visible to the minigun.
 
 The section also supports common switch fields. They are checked on manager update before minigun-specific processing.
 

@@ -7,10 +7,17 @@ systems to suppress dynamic music, usually in safe places.
 
 `sr_silence` has no scheme-specific fields. It reads common switch fields from the section.
 
-| Field                        | Type                       | Description                                                |
-| ---------------------------- | -------------------------- | ---------------------------------------------------------- |
-| `on_info`, `on_info1`, ...   | condlist                   | Switch when the condlist selects another section.          |
-| `on_timer`, `on_timer1`, ... | `milliseconds \| condlist` | Switch after the section has been active for the duration. |
+### `on_info`, `on_info1`, ...
+
+Type: condlist.
+
+Switch when the condlist selects another section.
+
+### `on_timer`, `on_timer1`, ...
+
+Type: `milliseconds | condlist`.
+
+Switch after the section has been active for the duration.
 
 ## Runtime behavior
 
