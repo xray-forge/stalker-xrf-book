@@ -160,7 +160,7 @@
     - [Sounds](script_engine/scripts_sounds.md)
     - [Simulation](script_engine/scripts_simulation.md)
     - [Time](script_engine/scripts_time.md)
-    - [UI](script_engine/scripts_managers.md)
+    - [UI](script_engine/scripts_ui.md)
     - [Utils](script_engine/scripts_utils.md)
   - [Shaders](script_engine/shaders.md)
   - [Translations](script_engine/translations.md)
