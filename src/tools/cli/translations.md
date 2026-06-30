@@ -1,8 +1,6 @@
 # 🔨 Translations
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Commands
 

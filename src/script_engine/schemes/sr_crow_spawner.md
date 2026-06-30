@@ -1,41 +1,32 @@
 # sr_crow_spawner
 
-Scheme to describe logics of crows spawner. <br/>
-From time to time spawns crows for declared paths based on maximal possible crows count.
+`sr_crow_spawner` periodically spawns crow server objects at configured patrol paths while the total crow count on the
+level is below a limit.
 
-Listens for game update event and synchronizes count of spawned crows with count of maximal crows. <br/>
-Expects to have only one crow spawner restrictor per level.
+Use one active crow spawner per level unless the level intentionally needs multiple independent spawn sets.
 
-## Type
+## Parameters
 
-Restrictor scheme.
+| Field                | Type                    | Required | Default      | Description                                                          |
+| -------------------- | ----------------------- | -------- | ------------ | -------------------------------------------------------------------- |
+| `max_crows_on_level` | number                  | no       | `16`         | Maximum allowed `registry.crows.count` before spawning is throttled. |
+| `spawn_path`         | comma-separated strings | no       | empty string | Patrol paths considered as crow spawn points.                        |
 
-## ini parameters
+The section also supports common switch fields.
 
-### ❄️ max_crows_on_level
+## Runtime behavior
 
-Maximal count of crows spawned on level at once
+On activation, the manager initializes a cooldown entry for each spawn path. On update, if enough time has passed and
+the current crow count is below the configured maximum, it tries the paths in random order.
 
-- Type: `number`
-- Default: `16`
-- Example: `10`
+A path can spawn a crow when:
 
-### ❄️ spawn_path
+- its cooldown has elapsed;
+- its first patrol point is farther than 100 units from the actor.
 
-Stringified list of patrols (paths) to spawn crows at.
+The spawned server object section is `m_crow`. After a spawn, the selected path is put on a 10-second cooldown.
 
-- Type: `string`, `list`
-- Default: `""`
-- Example: `pri_crow_spawn_1, pri_crow_spawn_2, pri_crow_spawn_3, pri_crow_spawn_4, pri_crow_spawn_5`
-
-## Usage
-
-1. Create restrictor object in level editor
-2. Assign sr_crow_spawner section as active logic in `ltx` file
-
-## Examples
-
-### zat_crow_spawner.ltx
+## Example
 
 ```ini
 [logic]
@@ -43,16 +34,11 @@ active = sr_crow_spawner
 
 [sr_crow_spawner]
 max_crows_on_level = 7
-spawn_path = zat_crow_spawn_1, zat_crow_spawn_2, zat_crow_spawn_3, zat_crow_spawn_4, zat_crow_spawn_5
+spawn_path = zat_crow_spawn_1, zat_crow_spawn_2, zat_crow_spawn_3
 ```
 
-### jup_crow_spawner.ltx
+## Notes
 
-```ini
-[logic]
-active = sr_crow_spawner
-
-[sr_crow_spawner]
-max_crows_on_level = 7
-spawn_path = jup_crow_spawn_1, jup_crow_spawn_2, jup_crow_spawn_3, jup_crow_spawn_4, jup_crow_spawn_5
-```
+- `spawn_path` is parsed as a comma-separated list.
+- If the crow count is already at the limit, the manager waits for the crow update throttle.
+- Each path uses point `0` as the spawn position.

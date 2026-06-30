@@ -20,8 +20,8 @@
 
 ## ☎️ Patrol flags system
 
-To control patrol movement / staying on some point flags system is implemented. <br/>
-Following parameters can be used to affect patrolling logics.
+To control patrol movement / staying on some point flags system is implemented. <br/> Following parameters can be used
+to affect patrolling logics.
 
 ### 🔨 path_walk
 
@@ -35,7 +35,8 @@ Following parameters can be used to affect patrolling logics.
 
 #### sig=name
 
-- set signal on waypoint arrival (without look check and correct), for the following check with the logic system field on_signal
+- set signal on waypoint arrival (without look check and correct), for the following check with the logic system field
+  on_signal
 - -to set a signal after turning, use the corresponding flag for a path_look waypoint
 
 ### 🔨 path_look
@@ -60,7 +61,8 @@ Following parameters can be used to affect patrolling logics.
 
 - flag to wait whole team before setting signal as complete, used to wait others and stay idle before gathering
 - this flag will halt setting the signal until all characters with the given team arrive
-- the team is set as a text string in customdata, the given character will be play its idle animation until the others arrive
+- the team is set as a text string in customdata, the given character will be play its idle animation until the others
+  arrive
 
 #### sigtm=signal
 

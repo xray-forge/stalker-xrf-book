@@ -4,8 +4,8 @@ XRF engine allows adding custom modular extension to the game that can be toggle
 
 ## LTX configurations
 
-Variant of modular game extensions with strictly defined interface and optional loading. <br/>
-Extensions can load with root register method, use shared game utils and services.
+Variant of modular game extensions with strictly defined interface and optional loading. <br/> Extensions can load with
+root register method, use shared game utils and services.
 
 ## What can be done
 

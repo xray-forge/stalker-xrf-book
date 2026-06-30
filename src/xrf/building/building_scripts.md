@@ -7,8 +7,8 @@ Building scripts step is serving two purposes:
 
 ## Watch mode
 
-Allows TSTL compiler to watch over your project's source for changes, and rebuild typescript when they occur.
-As result, there is no need in running `build` command every time scripts change.
+Allows TSTL compiler to watch over your project's source for changes, and rebuild typescript when they occur. As result,
+there is no need in running `build` command every time scripts change.
 
 To run scripts build in watch mode, following command can be used:
 
@@ -16,8 +16,8 @@ To run scripts build in watch mode, following command can be used:
 
 ## Typescript-to-lua
 
-A generic TypeScript to Lua transpiler is used to power XRF project.
-It allows writing typescript and transpiling it into lua.
+A generic TypeScript to Lua transpiler is used to power XRF project. It allows writing typescript and transpiling it
+into lua.
 
 - [docs](https://typescripttolua.github.io/)
 - [git](https://github.com/TypeScriptToLua/TypeScriptToLua/)
@@ -26,8 +26,8 @@ For most questions up-to-date TSTL documentation should be used.
 
 ## Type definitions
 
-Xray engine has set of API methods declared as global classes, enums and methods.
-To access them from typescript codebase, type definitions are needed.
+Xray engine has set of API methods declared as global classes, enums and methods. To access them from typescript
+codebase, type definitions are needed.
 
 - [definitions package](https://github.com/xray-forge/xray-16-types)
 - [definitions documentation](https://xray-forge.github.io/xray-16-types/index.html)
@@ -35,12 +35,12 @@ To access them from typescript codebase, type definitions are needed.
 
 ## Custom transformers
 
-Since luabind offers very specific OOP functionality, which includes vtables and layer of pointer transformation
-when exchanging data between lua and c++, built-in TSTL metatable based classes cannot be used.
-To solve this problem, custom luabind class transformers are implemented.
+Since luabind offers very specific OOP functionality, which includes vtables and layer of pointer transformation when
+exchanging data between lua and c++, built-in TSTL metatable based classes cannot be used. To solve this problem, custom
+luabind class transformers are implemented.
 
-Marking class with `@LuabindClass()` decorator tells transpiler to use luabind class system. <br/>
-Instead of default metatables based classes code close to following is generated:
+Marking class with `@LuabindClass()` decorator tells transpiler to use luabind class system. <br/> Instead of default
+metatables based classes code close to following is generated:
 
 ```lua
 local Example = class("Example")(Base)

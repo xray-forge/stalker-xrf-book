@@ -1,91 +1,59 @@
 # sr_timer
 
-Scheme is implementing timers on screen and allows using timed logic. <br/>
-Example: in ShoC everything related to time near psy-labs, bloodsuckers lair, helicopters evacuation limits etc.
+`sr_timer` shows a HUD timer and switches sections when the timer reaches a configured value. Use it for visible
+countdowns, elapsed-time displays, evacuation limits, laboratory timers, or mission windows where the player should see
+time passing.
 
-## Type
+The scheme is a restrictor scheme. When activated, it adds the configured HUD static. When deactivated, it removes the
+timer static and optional label static.
 
-Restrictor scheme.
+## Parameters
 
-## ini parameters
+| Field         | Type                 | Required           | Default       | Description                                                                                                                                |
+| ------------- | -------------------- | ------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `type`        | `inc` or `dec`       | no                 | `inc`         | Timer mode. `inc` counts up from `start_value`; `dec` counts down from `start_value`.                                                      |
+| `start_value` | number               | required for `dec` | `0` for `inc` | Starting time in milliseconds.                                                                                                             |
+| `on_value`    | `number \| condlist` | no                 | `null`        | Switch when the timer reaches the value. For `dec`, the switch happens at or below the value. For `inc`, it happens at or above the value. |
+| `timer_id`    | string               | no                 | `hud_timer`   | HUD custom static id used for the timer text.                                                                                              |
+| `string`      | string id            | no                 | `null`        | Optional text string shown in `hud_timer_text`.                                                                                            |
 
-### ❄️ type
-
-Type of timer to activate. <br/>
-Increment will count from 0 to value, decrement is backwards timer.
-
-- Type: `enum [inc, dec]`
-- Default: `inc`
-- Example: `dec`
-
-### ❄️ start_value
-
-Start value of timer to count from. <br/>
-Required for decrement timers.
-
-- Type: `number`, `milliseconds`
-- Default: `0` for `increment`, required for `decrement`
-- Example: `0`, `1000`, `60000`
-
-### ❄️ on_value
-
-Logics descriptor of how to handle different values of timer.
-
-- Type: `number | condlist`
-- Default: `null`
-- Example: `0 | {+some_info_portion} section@first, section@second`
-
-### ❄️ timer_id
-
-Identifier of used timer form element. <br/>
-Provides XML selector for rendering in UI hud.
-
-- Type: `string`
-- Default: `hud_timer`
-- Example: `hud_timer`
-
-### ❄️ timer_id
-
-Identifier of used timer form element. <br/>
-Provides XML selector for rendering in UI hud.
-
-- Type: `string`
-- Default: `hud_timer`
-- Example: `hud_timer`
-
-### ❄️ string
-
-Optional text value to display with timer. <br/>
-Displayed in `hud_timer_text` XML form element
-
-- Type: `string`
-- Default: `null`
-- Example: `st_custom_timer_label`, `not translated text`
+The section also checks common switch fields before updating the timer. If a common switch succeeds, the timer update
+for that tick is skipped.
 
 ## Usage
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+Use `type = dec` for deadlines and visible countdowns. It requires `start_value`.
 
-## Examples
+Use `type = inc` for elapsed-time displays. `start_value` is optional and defaults to `0`.
 
-### pri_a28_sr_evac.ltx
+`on_value` is separate from `on_timer`. `on_timer` switches after section activation time; `on_value` switches when the
+displayed timer value crosses the configured threshold.
+
+## Example
 
 ```ini
-[sr_timer@got_one_minute]
+[logic]
+active = sr_timer@countdown
+
+[sr_timer@countdown]
 type = dec
 start_value = 60000
-on_value = 0 | {+pri_a28_evacuation_end =actor_in_zone(pri_a28_scene_end_zone)} sr_idle@cut_1_save, %+pri_a28_helis_leave%
-on_info = {-pri_a28_evacuation_end =actor_in_zone(pri_a28_scene_end_zone)} %+pri_a28_evacuation_end =scenario_autosave(st_save_pri_a28_evacuation_end)%
-on_info2 = {+pri_a28_helis_leave !actor_in_zone(pri_a28_scene_end_zone)} sr_idle@cut_2_save
+timer_id = hud_timer
+string = st_lab_countdown
+on_value = 0 | sr_idle@failed %+lab_timer_failed%
+on_info = {+lab_shutdown_complete} sr_idle@done
+
+[sr_idle@done]
+
+[sr_idle@failed]
 ```
 
-### zat_b57_gas_timer.ltx
+This section starts a 60-second countdown. It switches to `sr_idle@failed` when the displayed value reaches zero, unless
+`lab_shutdown_complete` switches it to `sr_idle@done` first.
 
-```ini
-[sr_timer@gas]
-type = dec
-start_value = 45000
-on_value = 0 | sr_idle@end {!squad_exist(zat_b38_bloodsuckers_sleepers)} %+zat_b57_gas_running_stop +zat_b57_den_of_the_bloodsucker_tell_stalkers_about_destroy_lair_give%
-```
+## Notes
+
+- Timer values are milliseconds.
+- The displayed value is clamped at zero.
+- `type` accepts only `inc` and `dec`.
+- Decrement timers without `start_value` are invalid.

@@ -4,9 +4,7 @@ todo; <br/>
 
 ## Defining schema
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Available types
 
@@ -29,30 +27,20 @@ todo; <br/>
 
 ## Arrays
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Enums
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Tuples
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Strict
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Examples
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>

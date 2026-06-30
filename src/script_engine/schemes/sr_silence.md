@@ -1,24 +1,35 @@
 # sr_silence
 
-Scheme to define some smart zones and silence places. <br/>
-Dynamic combat music cannot be played in such places, usually safe areas.
+`sr_silence` marks a restrictor as a silence zone by registering it in `registry.silenceZones`. It is used by other
+systems to suppress dynamic music, usually in safe places.
 
-## Type
+## Parameters
 
-Restrictor scheme.
+`sr_silence` has no scheme-specific fields. It reads common switch fields from the section.
 
-## ini parameters
+| Field                        | Type                       | Description                                                |
+| ---------------------------- | -------------------------- | ---------------------------------------------------------- |
+| `on_info`, `on_info1`, ...   | condlist                   | Switch when the condlist selects another section.          |
+| `on_timer`, `on_timer1`, ... | `milliseconds \| condlist` | Switch after the section has been active for the duration. |
 
-Only logic field is applied to try to switch current section.
+## Runtime behavior
 
-## Configuration
+On activation, the scheme stores the restrictor id and name in `registry.silenceZones`.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+The manager itself is empty in the current implementation. The source notes that deactivation behavior may be missing.
+Use another section to control logic flow, but do not rely on this manager to unregister itself.
 
-## Usage
+## Example
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+```ini
+[logic]
+active = sr_silence@base
+
+[sr_silence@base]
+on_info = {+base_alarm} sr_idle@disabled
+```
+
+## Notes
+
+- This scheme does not currently implement update or deactivation behavior.
+- Music suppression is handled by systems that read `registry.silenceZones`.

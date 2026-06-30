@@ -1,29 +1,34 @@
-# ph_hit
+# ph_on_hit
 
-Scheme to handle hits for physical objects.
+`ph_on_hit` switches a physical object when it receives a hit callback. Use it for breakable or reactive props where the
+next section should be chosen only after damage is applied.
 
-## ini parameters
+## Parameters
 
-No parameters except logics are handled for the scheme.
+`ph_on_hit` has no scheme-specific fields.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+The section supports common switch fields such as `on_info`, `on_timer`, and zone or distance checks. They are evaluated
+from the hit callback, not from a normal per-frame update.
 
-## Configuration
+## Runtime behavior
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+The manager subscribes to physical object hit events. When the object is hit and the object still has an active scheme,
+it calls the common section-switching logic for the current `ph_on_hit` state.
 
-## Usage
+Hit amount, direction, attacker, and bone index are received by the callback, but the current implementation only logs
+the object name, bone index, and hit amount. The switch conditions decide what happens next.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+## Example
 
-## Examples
+```ini
+[logic]
+active = ph_on_hit@crate
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+[ph_on_hit@crate]
+on_info = ph_idle@damaged %=give_info(crate_was_hit)%
+```
+
+## Notes
+
+- The scheme is event-driven. Without a hit callback, its switch fields are not checked by this manager.
+- `disable` unsubscribes the stored manager action when the scheme state exists.

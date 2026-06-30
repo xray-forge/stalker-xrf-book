@@ -1,17 +1,34 @@
-# scheme_name
+# hit
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+`hit` switches a stalker section when the NPC receives a hit callback. It also records hit metadata that conditions can
+use indirectly through the scheme state.
 
-## Configuration
+## Parameters
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+`hit` has no scheme-specific fields.
 
-## Usage
+The section supports common switch fields. They are evaluated from the hit callback.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+## Runtime behavior
+
+On activation, `hit` verifies that the configured section exists and parses common switch conditions.
+
+When the NPC is hit, the manager stores the hit bone index and attacker id. Missing attackers are stored as `-1`. A
+zero-damage hit is ignored when the object is not invulnerable. If the object has an active scheme, the manager marks
+`isDeadlyHit` when the hit amount is greater than or equal to current health times `100`, tries to switch section, then
+clears the flag.
+
+## Example
+
+```ini
+[logic]
+active = hit@guard
+
+[hit@guard]
+on_info = walker@angry %=give_info(guard_was_hit)%
+```
+
+## Notes
+
+- This scheme is event-driven. Its switch fields are checked when the object is hit.
+- Disabling the scheme unsubscribes the stored hit manager.

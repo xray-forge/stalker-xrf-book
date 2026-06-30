@@ -15,12 +15,8 @@ For examples check: `src/engine/forms`.
 
 ## Filtering form assets
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## 16x9 vs 4x3
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>

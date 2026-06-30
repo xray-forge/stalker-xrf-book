@@ -1,8 +1,6 @@
 # AI and logics
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Capturing NPC in game
 
@@ -23,15 +21,11 @@ As result, you will see game world from perspective of captured NPC. <br/>
 
 ## GOAP displaying in logs
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Getting action planners states
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Profiling performance:
 
@@ -54,6 +48,4 @@ Stats have 7 columns displayed in such format:
 
 [List of commands](../game_engine/console_commands.md#-ai-debug-console-commands).
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>

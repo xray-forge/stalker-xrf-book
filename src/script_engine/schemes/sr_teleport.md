@@ -1,88 +1,50 @@
 # sr_teleport
 
-Scheme is implementing teleportation when reaching specific restrictor. <br/>
-Example: teleports in stalker ShoC last zone, teleports at Zaton burning village, escape bridge teleport is CS.
+`sr_teleport` teleports the actor after the actor enters a restrictor and a timeout elapses. It can choose from up to
+ten weighted destination/look pairs.
 
-Supports up to 10 different teleport locations (`i = 0...10`).
+## Parameters
 
-## Type
+| Field                  | Type   | Required          | Default | Description                                                          |
+| ---------------------- | ------ | ----------------- | ------- | -------------------------------------------------------------------- |
+| `timeout`              | number | no                | `900`   | Delay in milliseconds between actor entry and teleport.              |
+| `point1` ... `point10` | string | at least one pair | `none`  | Patrol path whose first point is the teleport position.              |
+| `look1` ... `look10`   | string | at least one pair | `none`  | Patrol path whose first point defines look direction after teleport. |
+| `prob1` ... `prob10`   | number | no                | `100`   | Weight for the matching point/look pair.                             |
 
-Restrictor scheme.
+The section also supports common switch fields. They are checked after teleport processing when the manager is idle.
 
-## ini parameters
+## Runtime behavior
 
-### ❄️ timeout
+When the actor enters the restrictor, the manager:
 
-Timeout before teleporting.
+1. switches from idle to activated state;
+2. starts the teleport postprocess effector;
+3. waits `timeout` milliseconds;
+4. chooses a destination by subtracting weights from a random value in the total probability range;
+5. teleports the actor to `pointN[0]` and looks toward `lookN[0] - pointN[0]`;
+6. returns to idle state.
 
-- Type: `number`, `milliseconds`
-- Default: `900`
-- Example: `0`, `1000`, `3000`
+The parser stops reading destination pairs when it finds `pointN = none` or `lookN = none`.
 
-### ❄️ point[i], look[i], prob[i]
-
-List of possible teleportation destinations. <br/>
-Just fields with `i` prefix, where `i` is number from 1 to 10.
-
-#### point
-
-Name of teleport patrol to teleport actor on timeout. <br/>
-Requires patrol with at least one point.
-
-- Type: `string`
-- Default: `none`
-- Example: `zat_b20_quest_teleport_walk`
-
-#### look
-
-Name of teleport patrol to set actor look after teleporting. <br/>
-Requires patrol with at least one point.
-
-- Type: `string`
-- Default: `none`
-- Example: `zat_b20_quest_teleport_look`
-
-#### prob
-
-Probability of point `i` usage when teleport timeout activates.
-
-- Type: `number`
-- Default: `100`
-- Example: `25`, `50`, `100`
-
-## Usage
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
-
-## Examples
-
-### zat_b20_teleport_logic.ltx
+## Example
 
 ```ini
 [logic]
-active = sr_teleport
+active = sr_teleport@burnt_farm
 
-[sr_teleport]
-point1 = zat_b20_quest_teleport_walk
-look1 = zat_b20_quest_teleport_look
-```
-
-### example.ltx
-
-```ini
-[logic]
-active = sr_teleport
-
-[sr_teleport]
-point1 = example_teleport1_walk
-look1 = example_teleport1_look
+[sr_teleport@burnt_farm]
+timeout = 1000
+point1 = teleport_walk_a
+look1 = teleport_look_a
 prob1 = 25
-point2 = example_teleport2_walk
-look2 = example_teleport2_look
-prob2 = 25
-point3 = example_teleport3_walk
-look3 = example_teleport3_look
-prob3 = 50
+point2 = teleport_walk_b
+look2 = teleport_look_b
+prob2 = 75
 ```
+
+## Notes
+
+- At least one complete `pointN` and `lookN` pair is required.
+- `probN` is a weight, not a normalized percentage.
+- The teleport triggers again if the actor remains or re-enters after the manager returns to idle.

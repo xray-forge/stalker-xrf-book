@@ -1,35 +1,62 @@
 # walker
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+`walker` makes a stalker follow a patrol path while no higher-priority planner state is active. Use it for guards,
+ambient movement, scripted walks, and simple station-keeping behavior.
 
-## ini parameters
+The scheme is a stalker scheme. It adds a walker planner action that runs only while the NPC is alive and not in danger,
+combat, anomaly handling, wounded handling, corpse search, item gathering, or abuse reactions.
 
-```
-path_walk - string [required]
-path_look - string
-team - string
-team - sound_idle
-team - boolean
-def_state_standing - string
-def_state_moving - string
-```
+## Parameters
 
-## Configuration
+| Field                | Type    | Required | Default             | Description                                                                                                          |
+| -------------------- | ------- | -------- | ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `path_walk`          | string  | yes      | -                   | Patrol path used for movement. Relative names are resolved against the active smart terrain.                         |
+| `path_look`          | string  | no       | `null`              | Patrol path used for look points. It must not equal `path_walk`.                                                     |
+| `team`               | string  | no       | `null`              | Patrol team name passed to the stalker patrol manager. Relative names are resolved against the active smart terrain. |
+| `sound_idle`         | string  | no       | `null`              | Sound played by the sound manager while the NPC is not in a camp zone.                                               |
+| `use_camp`           | boolean | no       | `false`             | Allows the NPC to register in a camp story manager when standing inside a camp zone.                                 |
+| `def_state_standing` | string  | no       | `null`              | Suggested standing animation state.                                                                                  |
+| `def_state_moving`   | string  | no       | `def_state_moving1` | Suggested moving animation state.                                                                                    |
+| `def_state_moving1`  | string  | no       | `null`              | Compatibility fallback for `def_state_moving`.                                                                       |
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-distance checks.
 
 ## Usage
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+Use `walker` when one NPC owns its own patrol. Use `patrol` instead when several squad members should share a commander
+and follow a formation.
 
-## Examples
+The movement path is parsed the first time the action runs. If `path_look` is present, look waypoints are parsed too.
+Waypoint flags and signals are handled by the shared stalker patrol manager.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+If `use_camp = true`, the walker action checks whether the NPC is inside a camp zone each update. Inside a camp, the NPC
+registers with the camp manager; outside a camp, `sound_idle` can play.
+
+## Example
+
+```ini
+[logic]
+active = walker@guard
+
+[walker@guard]
+path_walk = guard_walk
+path_look = guard_look
+sound_idle = state
+def_state_standing = guard
+def_state_moving = walk
+on_info = {+zat_b40_alarm} walker@alarm
+
+[walker@alarm]
+path_walk = alarm_walk
+def_state_moving = run
+on_timer = 15000 | walker@guard
+```
+
+In a smart terrain named `zat_b40_smart_terrain`, the first section resolves `guard_walk` to
+`zat_b40_smart_terrain_guard_walk`.
+
+## Notes
+
+- `path_walk` must exist as a level patrol path.
+- `path_look` cannot be the same as `path_walk`.
+- The scheme does not force combat behavior. Combat, danger, wounded, and other generic schemes can interrupt it.

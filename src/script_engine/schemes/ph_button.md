@@ -1,17 +1,37 @@
-# scheme_name
+# ph_button
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+`ph_button` plays a button animation and switches sections when the object is used. Use it for physical buttons, levers,
+and scripted controls.
 
-## Configuration
+## Parameters
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+| Field        | Type     | Required | Default | Description                                                   |
+| ------------ | -------- | -------- | ------- | ------------------------------------------------------------- |
+| `anim`       | string   | yes      | -       | Animation cycle played on activation.                         |
+| `anim_blend` | boolean  | no       | `true`  | Passed as the blending flag to `object.play_cycle`.           |
+| `on_press`   | condlist | no       | `null`  | Switch condlist evaluated when the active button is used.     |
+| `tooltip`    | string   | no       | `null`  | Tip text shown on the object. Empty text is used when absent. |
 
-## Usage
+The section also supports common switch fields such as `on_info` and `on_timer`.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+## Example
+
+```ini
+[logic]
+active = ph_button@off
+
+[ph_button@off]
+anim = idle_off
+tooltip = st_press_button
+on_press = ph_button@on %+button_pressed%
+
+[ph_button@on]
+anim = idle_on
+anim_blend = false
+```
+
+## Notes
+
+- `anim` is required.
+- `on_press` only runs when the object is still in the active button section.
+- Common switch conditions are checked during update.

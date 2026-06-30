@@ -1,21 +1,49 @@
-# scheme_name
+# sr_monster
 
-Scheme describing monsters waiting for actor in some specific place. <br/>
-When actor is in zone, play few warning sounds and then force monster to attack. <br/>
-Used for boards in clear sky swamps.
+`sr_monster` stages a monster ambush from a restrictor. While the actor is inside the zone, it moves a warning sound
+source along a patrol path. When the path wraps, it spawns a monster and commands it to run to the path endpoint.
 
-## Type
+## Parameters
 
-Restrictor scheme.
+| Field             | Type        | Required | Default | Description                                                                    |
+| ----------------- | ----------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `snd`             | string      | no       | `null`  | Sound id played as the moving warning sound source.                            |
+| `delay`           | number      | no       | `0`     | Parsed and stored; current manager does not use it directly.                   |
+| `idle`            | number      | no       | `30`    | Idle duration after the ambush finishes. Multiplied by `10000`.                |
+| `sound_path`      | string list | no       | `null`  | Patrol paths used by the moving warning sound. One path is selected at a time. |
+| `monster_section` | string      | no       | `null`  | Server object section spawned when the path wraps.                             |
+| `slide_velocity`  | number      | no       | `7`     | Speed for sliding the warning sound position along the path.                   |
 
-## Configuration
+The section also supports common switch fields.
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+## Runtime behavior
 
-## Usage
+When the actor enters the restrictor, the manager selects a path from `sound_path` and starts sliding a sound position
+from point to point. When the selected path wraps back to its start:
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+1. it spawns `monster_section` at the current sound position;
+2. it plays the hard-coded appear sound `monsters_boar_boar_swamp_appear_1`;
+3. it captures the spawned monster when it comes online;
+4. it commands the monster to run to the final point of the current path;
+5. after the monster reaches the final point, it releases and removes the server object;
+6. it enters idle state until `idleEnd`.
+
+## Example
+
+```ini
+[logic]
+active = sr_monster@ambush
+
+[sr_monster@ambush]
+snd = monsters_boar_boar_swamp_appear_1
+sound_path = ambush_sound_path_1, ambush_sound_path_2
+monster_section = boar_normal
+slide_velocity = 7
+idle = 30
+```
+
+## Notes
+
+- `sound_path` should contain patrol paths with enough points for the sound slide and final run target.
+- With multiple paths, the manager avoids immediately selecting the same path again.
+- The implementation currently stores `delay` but does not apply it in `MonsterManager`.

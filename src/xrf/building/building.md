@@ -1,7 +1,7 @@
 # 🥑 Building
 
-Building is process of compiling all the XRF project code and assets into x-ray engine format. <br/>
-It uses set of ordered sets to transform different parts of engine in a right way.
+Building is process of compiling all the XRF project code and assets into x-ray engine format. <br/> It uses set of
+ordered sets to transform different parts of engine in a right way.
 
 ## Command
 
@@ -35,9 +35,8 @@ It uses set of ordered sets to transform different parts of engine in a right wa
 
 ## Separate modules
 
-To make development smoother and faster, it is recommended to rebuild only needed assets.
-Example: changing ui forms, no need to rebuild configs, translations and other parts.
-In this case building `-i ui` is better variant.
+To make development smoother and faster, it is recommended to rebuild only needed assets. Example: changing ui forms, no
+need to rebuild configs, translations and other parts. In this case building `-i ui` is better variant.
 
 `npm run cli build -- -i ui`
 

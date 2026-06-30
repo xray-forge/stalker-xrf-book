@@ -1,33 +1,45 @@
 # sleeper
 
-Scheme to handle sleep patrols. <br/>
-Objects captured by this scheme will walk to sleeping place and start sleeping.
+`sleeper` moves a stalker to a sleeping patrol point and then puts the stalker into a sleeping or sitting state. Use it
+for beds, camp sleep spots, and scripted rest positions.
 
-## ini parameters
+## Parameters
 
+| Field       | Type    | Required | Default | Description                                                                                                          |
+| ----------- | ------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| `path_main` | string  | yes      | -       | Patrol path used to derive both walking and look data. Relative names are resolved against the active smart terrain. |
+| `wakeable`  | boolean | no       | `false` | Uses the sitting state instead of the sleeping state when the NPC reaches the final point.                           |
+
+The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
+
+## Patrol shape
+
+`path_main` must contain either one or two waypoints.
+
+| Waypoint count | Behavior                                                                                           |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| `1`            | The NPC walks to the single point and then sleeps there.                                           |
+| `2`            | The NPC walks using the main path and looks toward the second point when entering the final state. |
+
+Any other waypoint count aborts with a config error.
+
+## Example
+
+```ini
+[logic]
+active = sleeper@bed
+
+[sleeper@bed]
+path_main = sleep_place
+wakeable = false
+on_info = {+alarm_started} walker@wake_up
+
+[walker@wake_up]
+path_walk = wake_up_walk
 ```
-path_main - ?
-wakeable - ?
-path_walk - ?
-path_walk_info - ?
-path_look - ?
-path_look_info - ?
-```
 
-## Configuration
+## Notes
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
-
-## Usage
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
-
-## Examples
-
-todo; <br/>
-todo; <br/>
-todo; <br/>
+- `path_main` is required and must exist as a patrol path.
+- `wakeable = true` currently maps to `sit`; `wakeable = false` maps to `sleep`.
+- The action builds internal `path_walk` and `path_look` data from `path_main`; those are not user-facing fields.

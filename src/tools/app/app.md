@@ -2,9 +2,7 @@
 
 <img src="images/main_window.png" alt="main window" />
 
-todo; <br/>
-todo; <br/>
-todo; <br/>
+todo; <br/> todo; <br/> todo; <br/>
 
 ## Available tools
 
