@@ -1,29 +1,37 @@
-# 🔨 LTX
+# LTX CLI
 
-todo; <br/>
+LTX commands format and verify `.ltx` and `.ini` config files.
 
-## Commands
+## `format-ltx`
 
-- `verify-ltx` - todo
-- `format-ltx` - todo
+Formats a file or all LTX files under a folder.
 
-### Format
+```powershell
+xrf-tool format-ltx --path ./gamedata/configs
+xrf-tool format-ltx --path ./gamedata/configs --check
+```
 
-todo;
+Options:
 
-- `path` - todo
-- `check` - todo
-- `silent` - todo
+- `-p, --path <path>`: file or folder to format. Required.
+- `-c, --check`: check formatting without rewriting project files.
+- `-s, --silent`: disable logging.
+- `-v, --verbose`: enable verbose logging.
 
-### Verify
+## `verify-ltx`
 
-todo;
+Verifies an LTX project folder.
 
-- `path` - todo
-- `verbose` - todo
-- `silent` - todo
-- `strict` - todo
+```powershell
+xrf-tool verify-ltx --path ./gamedata/configs
+xrf-tool verify-ltx --path ./gamedata/configs --strict
+```
 
-## Scheme
+Options:
 
-Scheme definition and how to describe schema documented [here](../../script_engine/configs_scheme.md).
+- `-p, --path <path>`: configs root folder. Required.
+- `--silent`: disable logging.
+- `-v, --verbose`: enable verbose logging.
+- `-s, --strict`: enable strict checking.
+
+Scheme definitions are documented in [Script config schemes](../../script_engine/configs_scheme.md).

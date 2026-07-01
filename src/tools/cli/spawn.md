@@ -1,46 +1,51 @@
-# 🔨 Spawn
+# Spawn CLI
 
-todo; <br/> todo; <br/> todo; <br/>
+Spawn commands work with ALife `.spawn` files.
 
 ## Commands
 
-- `pack-spawn` - todo
-- `repack-spawn` - todo
-- `unpack-spawn` - todo
-- `verify-spawn` - todo
-- `info-spawn` - todo
+- `pack-spawn`: pack an unpacked spawn folder into a single `.spawn` file.
+- `repack-spawn`: read a `.spawn` file and write it to another file.
+- `unpack-spawn`: unpack a `.spawn` file into separate files.
+- `verify-spawn`: verify that a spawn file can be read.
+- `info-spawn`: print header, object, artefact spawn, patrol, and graph counts.
 
-### Pack
+## `pack-spawn`
 
-todo;
+```powershell
+xrf-tool pack-spawn --path ./unpacked --dest ./all.spawn --force
+```
 
-- `path` - todo
-- `dest` - todo
-- `force` - todo
+Options:
 
-### Repack
+- `-p, --path <path>`: unpacked spawn folder. Required.
+- `-d, --dest <dest>`: output `.spawn` file. Defaults to `unpacked`.
+- `-f, --force`: remove an existing output file first.
 
-todo;
+## `repack-spawn`
 
-- `path` - todo
-- `dest` - todo
+```powershell
+xrf-tool repack-spawn --path ./all.spawn --dest ./all.repacked.spawn
+```
 
-### Unpack
+Options:
 
-todo;
+- `-p, --path <path>`: source `.spawn` file. Required.
+- `-d, --dest <dest>`: output `.spawn` file. Required.
 
-- `path` - todo
-- `dest` - todo
-- `force` - todo
+## `unpack-spawn`
 
-### Verify
+```powershell
+xrf-tool unpack-spawn --path ./all.spawn --dest ./unpacked --force
+```
 
-todo;
+Options:
 
-- `path` - todo
+- `-p, --path <path>`: source `.spawn` file. Required.
+- `-d, --dest <dest>`: output folder. Defaults to `unpacked`.
+- `-f, --force`: remove an existing output folder first.
+- `-s, --silent`: disable logging.
 
-### Info
+## `verify-spawn` and `info-spawn`
 
-todo;
-
-- `path` - todo
+Both commands require `-p, --path <path>`.
