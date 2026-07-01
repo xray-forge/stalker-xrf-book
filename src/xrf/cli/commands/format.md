@@ -1,16 +1,18 @@
-# ☔️ Formatting
+# Format
 
-todo; <br/>
+Runs custom formatting commands.
 
-## Typescript formatting
+## LTX
 
-[Prettier](https://prettier.io/) is used as main formatting tool for XRF codebase.
+Formats LTX files:
 
-todo; <br/> todo; <br/> todo; <br/>
+```powershell
+npm run cli -- format ltx
+```
 
-## LTX formatting
+Options:
 
-[Custom script](https://github.com/xray-forge/stalker-xrf-engine/tree/main/cli/format/README.md) is used as main
-formatting tool for LTX configs codebase.
+- `-c, --check`: check formatting without rewriting files.
+- `-v, --verbose`: print verbose logs.
 
-todo; <br/> todo; <br/> todo; <br/>
+The package script `npm run format` is broader: it runs Prettier, ESLint fix, and LTX formatting.

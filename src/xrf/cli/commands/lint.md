@@ -1,9 +1,11 @@
-# ☔️ Linting
+# Lint
 
-todo; <br/>
+Linting is exposed as package scripts rather than a Commander command.
 
-## Typescript linting
+```powershell
+npm run lint
+npm run lint:strict
+```
 
-[Eslint](https://eslint.org/) is used as main linting tool for XRF typescript codebase.
-
-todo; <br/> todo; <br/> todo; <br/>
+`lint` uses the standard ESLint config with cache under `target/eslint/cache.json`. `lint:strict` uses the stricter
+repository config.

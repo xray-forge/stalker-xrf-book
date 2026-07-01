@@ -1,61 +1,31 @@
-# 🏗️ Pack
+# Pack
 
-todo; <br/> todo; <br/> todo; <br/>
+Creates mod or game packages from the XRF project.
 
-## Packaged vs unpacked build
-
-todo; link to additional assets <br/> todo; link to additional assets <br/> todo; link to additional assets <br/>
-
-## Mod vs game pack
-
-todo; link to additional assets <br/> todo; link to additional assets <br/> todo; link to additional assets <br/>
-
-## ️️ Building custom game package
-
-XRF template provides CLI and utils for creation of custom game repacks. <br/> Instead of building `gamedata` folder and
-distributing it as a separate `zip`, mods can be packed in `.db` archives and bundled together with custom engine.
-
-### Pre-requirements
-
-Comparing to normal gamedata builds the only needed thing is full assets list. <br/> To build package you will need
-[extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended) assets and one of locales packs, for example
-[eng](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng). <br/>
-
-After cloning suggested repositories or providing custom assets, you should list them in 'config.json' if paths are
-different from already suggested.
-
-### Running build
-
-If assets are downloaded and configured correctly, the only needed thing is one of following:
-
+```powershell
+npm run cli -- pack <type>
 ```
-npm run cli pack game -- --clean --optimize
 
-# or
-npm run cli pack game -- -c -o
+`<type>` is the package type handled by the pack command, commonly `mod` or `game`.
 
-# or
+## Options
+
+- `--nb, --no-build`: do not run the build step before packing.
+- `--nc, --no-compress`: do not run compression.
+- `--na, --no-asset-overrides`: skip configured override and locale asset roots.
+- `-e, --engine <type>`: use a specific bundled engine.
+- `--se, --skip-engine`: do not include an engine in the package.
+- `-o, --optimize`: use build optimizations.
+- `-v, --verbose`: print verbose logs.
+- `-c, --clean`: clean the destination before packing.
+
+## Examples
+
+```powershell
+npm run cli -- pack game --clean --optimize
+npm run cli -- pack game -c -o
 npm run pack:game
+npm run pack:mod
 ```
 
-As result, new package will be created in `target` folder.
-
-If you want to 'just build' package for testing from existing assets without full build/compress cycle, you can use
-alternative:
-
-```
-npm run cli pack game -- --engine release --no-build
-```
-
-## ️️ Building custom mod package
-
-todo; link to additional assets <br/> todo; link to additional assets <br/> todo; link to additional assets <br/>
-
-### todo;
-
-todo; link to additional assets <br/> todo; link to additional assets <br/> todo; link to additional assets <br/>
-
-## Additional assets links
-
-[Link](./building/building_assets.md). <br/> todo; link to additional assets <br/> todo; link to additional assets <br/>
-todo; link to additional assets <br/>
+Game packages need full configured resources, including extended assets and the selected locale resource pack.

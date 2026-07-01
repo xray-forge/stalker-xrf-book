@@ -1,22 +1,25 @@
-# ⚙️ Link
+# Link
 
-todo; <br/> todo; <br/> todo; <br/>
+Links project output and logs to the configured game installation.
 
-[Custom script](https://github.com/xray-forge/stalker-xrf-engine/blob/main/cli/link/README.md) is used to link game,
-assets, engines and logs in one working system.
+```powershell
+npm run cli -- link
+```
 
-## Linking engine
+## Commands
 
-todo; <br/> todo; <br/> todo; <br/>
+- `link`: create project links.
+- `unlink`: remove project links.
+- `relink`: remove and recreate project links.
 
-## Linking game assets
+`link` and `relink` support `-f, --force` to override existing links.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Examples
 
-## Linking logs
+```powershell
+npm run cli -- link
+npm run cli -- relink --force
+npm run cli -- unlink
+```
 
-todo; <br/> todo; <br/> todo; <br/>
-
-## Linking non-steam game
-
-todo; <br/> todo; <br/> todo; <br/>
+Use `cli/config.json` to configure fallback game paths for non-Steam installations.

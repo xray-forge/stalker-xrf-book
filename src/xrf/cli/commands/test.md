@@ -1,21 +1,28 @@
-# 🚦 Test
+# Test
 
-[Jest package](https://jestjs.io/) is used for typescript testing and verification.
+Tests are run with Jest.
 
-todo; <br/> todo; <br/> todo; <br/>
+```powershell
+npm test
+npm test -- src/engine/scripts/register.test.ts
+```
 
-## Jest
+## Coverage
 
-todo; <br/> todo; <br/> todo; <br/>
+```powershell
+npm run test:coverage
+```
 
-## Fixtures
+Coverage output is written under `target/coverage_report`.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Type Checks
 
-## Lua VM for testing
+Use TypeScript checks separately from Jest:
 
-todo; <br/> todo; <br/> todo; <br/>
+```powershell
+npm run typecheck
+npm run typecheck:tests
+```
 
-## Checking coverage
-
-todo; <br/> todo; <br/> todo; <br/>
+The repository includes fixtures for mocked X-Ray APIs, Lua behavior, engine helpers, and CLI utilities under
+`src/fixtures`.

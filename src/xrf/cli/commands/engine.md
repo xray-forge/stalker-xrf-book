@@ -1,43 +1,25 @@
-# 💽 Engine
+# Engine
 
-todo; <br/> todo; <br/> todo; <br/>
+Manages bundled game engine executables.
 
-## Linking
+```powershell
+npm run cli -- engine <command>
+```
 
-For linking details and instructions check [reference](./linking.md).
+## Commands
 
-## Engine info
+- `engine info`: print the active engine state.
+- `engine list`: print available bundled engines.
+- `engine use <engine>`: switch to a bundled engine.
+- `engine rollback`: restore the default engine backup.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Examples
 
-## Engine use
+```powershell
+npm run cli -- engine list
+npm run cli -- engine use release
+npm run cli -- engine info
+npm run cli -- engine rollback
+```
 
-todo; <br/> todo; <br/> todo; <br/>
-
-## Engine rollback
-
-todo; <br/> todo; <br/> todo; <br/>
-
-## Engines list
-
-todo; <br/>
-
-### Gold
-
-todo; <br/> todo; <br/> todo; <br/>
-
-### Release
-
-todo; <br/> todo; <br/> todo; <br/>
-
-### Mixed
-
-todo; <br/> todo; <br/> todo; <br/>
-
-### Debug
-
-todo; <br/> todo; <br/> todo; <br/>
-
-## Engine for packaging
-
-todo; About configured engine used for custom game packages <br/> todo; <br/> todo; <br/>
+Package creation can also select an engine with `pack --engine <type>`.

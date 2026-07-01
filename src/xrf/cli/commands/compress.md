@@ -1,15 +1,15 @@
-# 🔨 Compress
+# Compress
 
-todo; <br/> todo; <br/> todo; <br/>
+Compresses built gamedata into database archives.
 
-## Why
+```powershell
+npm run cli -- compress
+```
 
-todo; <br/> todo; <br/> todo; <br/>
+## Options
 
-## Arguments
+- `-i, --include <targets...>`: include selected compression targets. Defaults to `all`.
+- `-c, --clean`: clean the destination directory.
+- `-v, --verbose`: print verbose logs.
 
-todo; <br/> todo; <br/> todo; <br/>
-
-## References
-
-- https://github.com/exdingbat/xrCompress-helper - xrCompress usage / docs
+Compression uses the paths configured in `cli/config.json` under `compression`.
