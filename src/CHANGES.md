@@ -1,105 +1,44 @@
-# 🧪 Changes
+# Changes
 
-## General
+This page summarizes the main differences XRF introduces compared with a vanilla Call of Pripyat script and data setup.
 
-- ~~Added new bugs~~
-- Optimized performance of scripts
-  - Force instant initialization of all objects on game load/start to reduce lag duration
-  - Memoize condlists
-  - More efficient smart terrain jobs creation/checks
-  - More game conditions checks where possible
-  - Memoize client objects / simulator and other refs
-  - Optimizing game quest state checks (one of most frequent game engine calls)
-- Removing dead code / assets
+## Development Workflow
 
-## Gameplay
+- TypeScript source is compiled to Lua scripts with TypeScriptToLua.
+- The repository includes a local CLI for building, linking, verification, packaging, engine switching, and asset tools.
+- UI XML can be generated from JSX sources.
+- LTX/XML configs can be generated from TypeScript sources.
+- Translations can be generated from JSON sources and checked with CLI utilities.
+- Jest tests and X-Ray/Lua fixtures cover runtime logic without launching the game.
 
-- Adding gameplay options for OXR (interface rendering, loot simplification etc.)
-- [optional] Treasures will have different color based on loot price (green, blue, purple, orange)
-- [optional] Alternative start location
-- [optional] Display map marks only after visiting
-- [optional] Allow traveling only to known places
-- [optional] Weapons/armor/helmets with random upgrades
-- Improving and optimizing game AI/logics
-  - Improving game schemes (wounded, loot collection, combat danger checks etc.)
-- Physical boxes (wooden, iron) can drop loot with some chance based on difficulty/level similar to SHoC/CS
+## Build Pipeline
 
-## Graphics
+- Build targets are split into scripts, UI, configs, translations, and resources.
+- Generated output is written to `target/gamedata`.
+- Static resources can be copied from base, override, and locale-specific roots.
+- Package commands can create mod or game output under `target`.
+- Verification commands check project setup, gamedata, LTX, and particles data.
 
-- Added different variants of fullscreen mode rendering
-- Added grass height configuration
-- Added grass radius configuration
-- Added rendering fps limit configuration
-- Updated weather system (atmosfear3 + tweaks)
-- Updated game levels (absolute nature + tweaks)
-- Removed controls related to game patch download
-- Enabled OXR screenspace/grading shaders
+## Script Engine
 
-## Build pipeline
+- The original Lua script engine is rewritten in TypeScript.
+- Runtime logic is organized into managers, schemes, binders, registries, utilities, and typed domain constants.
+- The project uses typed declarations for X-Ray engine APIs through `xray16` and local typedefs.
+- Events and callbacks are centralized so game systems can be tested and extended more predictably.
 
-- All the modules are separated and sorted with folders
-- Added NodeJS based CLI
-  - Added shared commands for intellij based IDEs
-- Added workflows to run tests/checks/build on repository commits
-- Added tools for codebase linting/formatting (ltx/js/ts)
-- Added tools for game assets compression
-- Added tools for game translation
-- Added tools for simplified engines management / testing with different variants of game engines
-- Added tools for forms generation based on JSX
-  - Adding type definitions and sharable basic components for custom UI rendering
-- Added tools for game packages creation (build custom game with one command)
-- Added tools for asset management (different locales etc.)
-- Added tools for game profiling/debugging/development
-  - Advanced logging (game, cli)
-  - Alife debugging
-  - Console commands shortcut switcher
-  - Game registry debugging
-  - Items debugging
-  - Lua profiling tools
-  - Objects state/logics debug
-  - Spawner
-  - Task debugging
-  - Teleportation
-  - Treasures debugging
-  - Weather debugging tools
-  - Game UI debugging tools
-  - Dumping of system.ini and Lua states
-- Added unit testing with coverage checker
-  - Added `fengari` lua VM for direct lua functionality checks
-- Added loadouts presets for generating character profiles / loot
+## Gameplay and Extensions
 
-## Modding
+XRF aims to preserve the original plot and baseline behavior while making systems easier to test, optimize, and extend.
+Larger gameplay changes should be isolated as extensions where possible.
 
-- Added game engine documentation
-- Added game engine typing and according checks
-- Added tools for generation of `html` file with game conditions/effects documentation based on JSDoc
-- Fully rewritten game script engine with typescript
-- Adding extensions support [WIP]
-  - UI to reorder / enable / disable extensions
-  - API to work with community extensions
-- Added events management system with numerous game callbacks
-- Added lua `marshal` lib and typing for it
-- Added lua `lfs` lib and typing for it
-- Added custom lua extensions lib and typing for it (based on CoC)
-- Added fixtures for game API testing
-- Added support for `ts` based `ltx` configs building (allows build-time logics and generation)
-- Added shared utils lib to reduce code duplication and simplify frequently used logics
-- Added managers abstraction for game logics control
-- Updated schemes abstraction for easier testing/extending/sharing/updating of game logics schemes
-- Add support for dynamic files with `marshal` lib, ability to save dynamic custom data without 16K limit
-- Integrated events / callbacks / methods from Call Of Chornobyl
+Current extension-oriented work includes optional start-position behavior and other modular gameplay changes under
+`src/engine/extensions`.
 
-## Tools
+## Documentation and Tasks
 
-- Added spawn pack/unpack/verify in CLI
-- Added LTX files formatting and verification in CLI
-- Added spawn file inspector in tools application
-- Added spawn file utilities in tools application
-
-## TODO
-
-For todos check following git projects:
+Project task boards track ongoing work:
 
 - [Script engine](https://github.com/orgs/xray-forge/projects/4)
 - [Game engine](https://github.com/orgs/xray-forge/projects/6)
 - [CLI and tools](https://github.com/orgs/xray-forge/projects/3)
+- [Documentation](https://github.com/orgs/xray-forge/projects/5)

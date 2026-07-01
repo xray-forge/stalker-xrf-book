@@ -1,34 +1,80 @@
-# 🌓 Installation
+# Installation
 
-## Pre-requirements
+This page describes a local development setup for `stalker-xrf-engine`.
 
-- [Node.js](https://nodejs.org/en/) 14 or later
-- [Stalker-COP](https://store.steampowered.com/app/41700/STALKER_Call_of_Pripyat/) game
+## Requirements
 
-## Setting up development environment
+- Windows development environment.
+- [Node.js](https://nodejs.org/) with `npm`.
+- Git with submodule support.
+- Installed S.T.A.L.K.E.R.: Call of Pripyat.
 
-- DOWNLOAD [the game](https://store.steampowered.com/app/41700/STALKER_Call_of_Pripyat/)
-- RUN `git clone https://github.com/xray-forge/stalker-xrf-engine.git` - clone repository
-- RUN `cd stalker-xrf-engine` - cd to project folder
-- RUN `npm install` - install all the dependencies
-- RUN `npm run setup` - set up the project, install submodules
-- RUN `npm run cli link` - link gamedata to the game folder
-- RUN `npm run cli engine use release` - link open xray with game
-- RUN `npm run cli build` - build gamedata to the destination
-- RUN `npm run cli start_game` - start game and test changes
+The project can locate the Steam installation for app id `41700`. For a non-Steam copy, configure the fallback game path
+in `cli/config.json`.
 
-## Checking issues
+## Set Up the Project
 
-`$ npm run cli verify project` - will check whether project is set up and ready to start developing
+Clone the engine repository and install dependencies:
 
-## Updating submodules
+```powershell
+git clone https://github.com/xray-forge/stalker-xrf-engine.git
+cd stalker-xrf-engine
+npm install
+npm run setup
+```
 
-From time to time update of submodules is needed to load latest assets:
+`npm run setup` initializes and updates the repository submodules. The important submodules are `src/resources` for base
+game resources and `cli/bin` for bundled binaries and tooling.
 
-`git submodule update --recursive`
+## Link the Game
 
-## Using local game engine ([OpenXray](https://github.com/OpenXRay/xray-16))
+Run the project verification before linking:
 
-- [SETUP OpenXray locally with Visual studio](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-How-to-build-and-setup-on-Windows)
-- LINK game folder resources with visual studio project
-- todo;
+```powershell
+npm run verify
+```
+
+Link the built `target/gamedata` folder, logs, and game folder paths:
+
+```powershell
+npm run cli -- link
+```
+
+Switch to one of the bundled engine variants:
+
+```powershell
+npm run cli -- engine list
+npm run cli -- engine use release
+```
+
+Use `engine rollback` if you need to restore the default game executable.
+
+## Build and Start
+
+Build the gamedata output:
+
+```powershell
+npm run build
+```
+
+Start the configured game executable:
+
+```powershell
+npm run cli -- start_game
+```
+
+The build output is written to `target/gamedata`. Do not edit files there by hand; edit sources under `src/engine` and
+rebuild.
+
+## Updating Submodules
+
+Update submodules when resource or binary repositories change:
+
+```powershell
+git submodule update --init --recursive
+```
+
+## Local OpenXRay Builds
+
+For a locally built OpenXRay executable, follow the OpenXRay Windows build guide, then configure or copy the executable
+into the engine location used by the CLI. Use `npm run cli -- engine info` to inspect the currently selected engine.
