@@ -1,24 +1,51 @@
-# 🍇 Extensions (WIP)
+# Extensions
 
-XRF engine allows adding custom modular extension to the game that can be toggled on/off from game menu any time.
+Extensions are optional script modules loaded from `gamedata/extensions`. They let XRF keep larger gameplay changes
+separate from the core script engine.
 
-## LTX configurations
+The engine scans extension folders, loads each `main.script`, synchronizes the list with saved user preferences, and
+registers enabled extensions during game start.
 
-Variant of modular game extensions with strictly defined interface and optional loading. <br/> Extensions can load with
-root register method, use shared game utils and services.
+## Extension Entry Point
 
-## What can be done
+Each extension has its own folder under `extensions` and an entry file named `main.script` after build output.
 
-- Optional loading for extensions
-- Ordering and in-game configuration of extensions list
-- Usage of shared utils, configs, managers and schemes
-- Adding custom logics and configuration
-- Overriding system ini sections/fields
+The module can export:
 
-## Todo / research
+- `register(isNewGame, extension)`: called when the extension is enabled.
+- `unregister(isNewGame, extension)`: optional cleanup hook called when the extension is disabled.
+- `save(data)`: optional hook for extension dynamic data.
+- `load(data)`: optional hook for restoring extension dynamic data.
 
-- Custom translations sources / build steps to prepare translations from extensions
-- Custom configs / build steps to transpile extension configs
-- Automated way to load system ini overrides and apply to existing system ini file
-- Save data about active extensions and warn when loading game with invalid extensions list
-- Add `requires` fields when extensions depend on each other
+The TypeScript sources for built-in extensions live under `src/engine/extensions`.
+
+## Runtime State
+
+Loaded extensions are stored in the runtime registry by name. The load order and enabled state are saved to
+`extensions_order.scopo` in the game saves folder.
+
+The main menu includes an extensions dialog. It lets the user reorder extensions and toggle extensions that declare they
+can be toggled.
+
+## Built-In Extensions
+
+The current engine source includes these extension folders:
+
+- `achievements_rewards`
+- `enhanced_items_drop`
+- `enhanced_location_progression`
+- `enhanced_treasures`
+- `original_start_position`
+
+Use these as implementation references when adding a new extension.
+
+## Config Files
+
+Extensions can open extension-local LTX files through the extension utilities. `main.ltx` is the default relative file
+name when no file name is provided.
+
+## Limitations
+
+The current implementation covers discovery, ordering, enabling/disabling, registry registration, and save/load hooks.
+More advanced extension packaging, dependency declarations, and extension-specific build steps should be treated as
+future work unless the source adds them.
