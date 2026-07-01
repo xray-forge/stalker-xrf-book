@@ -1,39 +1,57 @@
-# 🥑 Building resources
+# Building Resources
 
-todo; <br/> todo; <br/> todo; <br/>
+The resources build target copies static game assets into `target/gamedata`.
 
-## Filtering build resources
+The base resource root is configured in `cli/config.json` as `resources.mod_assets_base_folder` and points to
+`src/resources`. Additional override and locale roots can be configured in the same file.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Build Only Resources
 
-## Diff checker
+```powershell
+npm run cli -- build --include resources
+npm run cli -- build -i resources
+```
 
-To optimize build times, diff checker is used for static assets. When rebuilding the project not in `clean` mode, cli
-checks diff between source and resulting files and decides whether new copy with replacement is needed. As result,
-building static assets may take few seconds instead of few minutes.
+Use filters for focused resource copies:
 
-## Additional assets
+```powershell
+npm run cli -- build -i resources --filter textures
+```
 
-Additional assets repository can be cloned manually or with shortcut command: <br/> `npm run cli clone *name*`
-(`extended`, `locale-eng`, `locale-ukr`, `locale-rus`)
+Filters are regular-expression strings matched against source file paths.
 
-# Cloning additional resources
+## Diff Checking
 
-todo; <br/> todo; <br/> todo; <br/>
+Directory resources use a diff check before copy. On non-clean builds, unchanged files are skipped, which keeps static
+asset rebuilds faster.
 
-# Configuring additional assets usage
+Use `--clean` when you need to force a fresh `target/gamedata` tree.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Additional Assets
 
-## Resources links
+Clone configured resource repositories with:
 
-- Base assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-base](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
-- Extended assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
-- EN locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng)
-- UA locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
-- RU locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus)
+```powershell
+npm run cli -- clone --list
+npm run cli -- clone extended
+npm run cli -- clone locale-ukr
+```
+
+The configured roots are:
+
+- `resources.mod_assets_override_folders` for general overrides;
+- `resources.mod_assets_locales` for locale-specific assets.
+
+Disable override roots for a build with `--no-asset-overrides`:
+
+```powershell
+npm run cli -- build --no-asset-overrides
+```
+
+## Resource Links
+
+- [Base assets](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
+- [Extended assets](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
+- [English locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng)
+- [Ukrainian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
+- [Russian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus)

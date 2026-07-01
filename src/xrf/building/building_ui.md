@@ -1,22 +1,37 @@
-# 🥑 Building forms
+# Building UI
 
-todo; <br/>
+The UI build target writes game UI XML files to `target/gamedata/configs/ui`.
 
-## Custom forms and UI
+It processes sources from `src/engine/forms`:
 
-Notes:
+- `.ts` and `.tsx` files that export `create()` are rendered to `.xml` with `renderJsxToXmlText`;
+- static `.xml` files are copied as-is;
+- `*.test.*` files are ignored by the replication helper.
 
-- When creating forms, use [JSX](https://www.typescriptlang.org/docs/handbook/jsx.html)
-- When the engine mod compilation happens, JSX is transformed to valid XML
-- All coordinates with (x, y) are based on 'attach' parent (not XML child, rather script register parent) and related
-- Use `preview` command to preview forms and develop faster, example: `npm run preview menu`
+## Build Only UI
 
-For examples check: `src/engine/forms`.
+```powershell
+npm run cli -- build --include ui
+npm run cli -- build -i ui
+```
 
-## Filtering form assets
+Use a filter when you only need a subset of files:
 
-todo; <br/> todo; <br/> todo; <br/>
+```powershell
+npm run cli -- build -i ui --filter main_menu
+```
 
-## 16x9 vs 4x3
+Filters are regular-expression strings matched against source file paths.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Authoring Forms
+
+Dynamic forms use JSX-compatible TypeScript. The generated output is XML for the game engine, so form layout still has
+to respect X-Ray UI constraints such as absolute coordinates and parent-relative positioning.
+
+Look at existing files in `src/engine/forms` before adding new forms. Reuse shared helpers and components where they
+already exist.
+
+## Aspect Ratios
+
+X-Ray UI XML often has separate layout expectations for 16:9 and 4:3 modes. Keep generated forms compatible with the
+target screen mode and verify in game when changing layout-sensitive XML.
