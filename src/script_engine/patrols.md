@@ -1,8 +1,11 @@
 # Patrols
 
-- todo <br/>
-- todo <br/>
-- todo <br/>
+Patrol paths are level-authored waypoint paths used by stalker schemes, monster movement, smart cover targets, travel,
+spawn helpers, and simulation utilities.
+
+For stalker logic, XRF routes most waypoint behavior through `StalkerPatrolManager`. Schemes such as `walker`,
+`sleeper`, `patrol`, and `reach_task` configure the manager with `path_walk`, optional `path_look`, team
+synchronization, suggested states, and waypoint callbacks.
 
 ## Related schemes
 
@@ -10,79 +13,62 @@
 - [remark](./schemes/remark.md)
 - [sleeper](./schemes/sleeper.md)
 - [camper](./schemes/camper.md)
-- [sniper](./schemes/sniper.md)
-- [follower](./schemes/follower.md)
-- [kamp](./schemes/kamp.md)
-- [zoneguard](./schemes/zoneguard.md)
-- [wounded](./schemes/wounded.md)
-- [heli_hunter](./schemes/heli_hunter.md)
 - [patrol](./schemes/patrol.md)
+- [reach_task](./schemes/reach_task.md)
+- [smartcover](./schemes/smartcover.md)
 
-## ☎️ Patrol flags system
+## `path_walk`
 
-To control patrol movement / staying on some point flags system is implemented. <br/> Following parameters can be used
-to affect patrolling logics.
+`path_walk` is the movement path. The scheme reads it from config, verifies the patrol path exists, parses waypoint
+metadata, and sends the object along the path.
 
-### 🔨 path_walk
+Supported waypoint flags include:
 
-#### a=state
+| Flag        | Meaning                                                                                       |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| `a=state`   | Use a state condlist or state value while moving to or through the waypoint.                  |
+| `p=percent` | Stop probability at the waypoint. If omitted, the manager uses the normal look-path behavior. |
+| `sig=name`  | Set an active scheme signal when the walk waypoint is reached.                                |
+| `ret=value` | Pass a numeric return value to a registered patrol callback before animation turn handling.   |
 
-- body state when moving on a patrol
+If no `sig` is provided on the last walk waypoint, the manager emits `path_end`.
 
-#### p=percent
+## `path_look`
 
-- percent probability to stop on a patrol point (0-100), it is 100 by default
+`path_look` is an optional look/idle path paired with `path_walk`. The engine uses waypoint flags to choose a matching
+look point for a reached walk point.
 
-#### sig=name
+Supported look flags include:
 
-- set signal on waypoint arrival (without look check and correct), for the following check with the logic system field
-  on_signal
-- -to set a signal after turning, use the corresponding flag for a path_look waypoint
+| Flag         | Meaning                                                                                           |
+| ------------ | ------------------------------------------------------------------------------------------------- |
+| `a=state`    | Use a state condlist or state value while standing and looking.                                   |
+| `t=msec`     | Wait time. `*` means no timeout. Numeric values must be `0` or in the accepted millisecond range. |
+| `sig=name`   | Set a signal after turning to the look point. Defaults to `turn_end` when no signal is provided.  |
+| `syn`        | Wait for the patrol team before emitting the signal. Requires `sig`.                              |
+| `sigtm=name` | Set a signal when the animation-time callback fires.                                              |
+| `ret=value`  | Pass a numeric return value to a registered patrol callback after turning.                        |
 
-### 🔨 path_look
+`syn` is intended for terminal coordination. XRF asserts when it is used on a non-terminal waypoint.
 
-#### a=state
+## Example
 
-- body state when stand/sit at place
+Button-style interaction that plays a press state, then switches when the timed animation signal is emitted:
 
-#### t=msec
+```text
+path_look waypoint flags: a=press|t=0|sigtm=pressed
+logic field: on_signal = pressed | next_scheme@section
+```
 
-- time to stay idle when on point and look
-- `*` means unlimited time
-- valid values are in the range [1000, 30000], 5000 by default
-- for terminal waypoints of path_walk that have no more than one corresponding path_look, the value of `t` is always
-  considered infinite and does not have to be set
+The exact waypoint flag syntax is stored in level patrol data, not in the LTX file. LTX sections reference the patrol
+path names through fields such as `path_walk` and `path_look`.
 
-#### sig=name
+## Debugging
 
-- set signal on path_look waypoint with the given name after turning towards the point
+If a patrol does not work:
 
-#### syn
-
-- flag to wait whole team before setting signal as complete, used to wait others and stay idle before gathering
-- this flag will halt setting the signal until all characters with the given team arrive
-- the team is set as a text string in customdata, the given character will be play its idle animation until the others
-  arrive
-
-#### sigtm=signal
-
-- set signal on time callback from state manager
-- if t=0, signal is set right after playing `init` animation
-
-## 💊 Examples
-
-### Button press
-
-Play press animation and emit scheme signal:
-
-- wp00 | a=press | t=0 | sigtm=pressed
-- on_signal = pressed | another_scheme@section
-
-### todo:
-
-- Check docs from links and integrate more
-
-## ⛽️ References
-
-- http://sdk.stalker-game.com/en/index.php?title=Logic
-- http://sdk.stalker-game.com/ru/index.php?title=%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BB%D0%BE%D0%B3%D0%B8%D0%BA%D0%B8_%28%D1%87%D0%B0%D1%81%D1%82%D1%8C_1%29
+- verify `level.patrol_path_exists(path_name)` would pass for `path_walk` and `path_look`;
+- check that `path_look` is not the same path as `path_walk`;
+- check waypoint flags when look points are not selected;
+- check `on_signal` when the movement reaches a point but the scheme does not switch;
+- use AI debug overlays and object dumps from the debug panel when the active state is unclear.

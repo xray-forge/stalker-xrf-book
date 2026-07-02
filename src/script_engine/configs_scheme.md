@@ -1,12 +1,42 @@
-# 🔨 LTX scheme
+# LTX scheme
 
-todo; <br/>
+`src/engine/configs/$scheme` contains validation schemas for LTX configs. The `verify-ltx` tool uses these files to
+check includes, inheritance, field names, and field types.
 
-## Defining schema
+The root file is `scheme.ltx`. It includes category schemas such as `base.scheme.ltx`, `script.scheme.ltx`,
+`environment.scheme.ltx`, `items.scheme.ltx`, `weapons.scheme.ltx`, and `zone.scheme.ltx`.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Defining a schema section
+
+A schema section starts with a section name. Use inheritance when several config sections share fields:
+
+```ltx
+[$item_weapon]:$item,$item_weapon_sounds,$item_weapon_params
+strict = true
+ammo_class = ?string[]
+ammo_mag_size = ?u32
+weapon_class = ?enum:assault_rifle,shotgun,sniper_rifle,heavy_weapon,pistol,grenade,misc
+```
+
+Schema section names commonly start with `$` to separate schemas from game config sections.
+
+## Field syntax
+
+| Syntax                      | Meaning                                      |
+| --------------------------- | -------------------------------------------- |
+| `name = string`             | Required string field.                       |
+| `name = ?string`            | Optional string field.                       |
+| `name = string[]`           | Array of strings.                            |
+| `name = tuple:f32,f32,f32`  | Tuple with fixed element types.              |
+| `name = enum:on,off`        | Value must be one of the listed enum values. |
+| `name = section`            | Value should reference a section.            |
+| `* = tuple:f32,f32,f32,f32` | Wildcard rule for arbitrary field names.     |
+
+Optional marker `?` can be combined with arrays, enums, tuples, and section references.
 
 ## Available types
+
+Common schema types:
 
 - `string`
 - `section`
@@ -25,22 +55,46 @@ todo; <br/> todo; <br/> todo; <br/>
 - `unknown`
 - `any`
 
-## Arrays
+Prefer the narrowest type that matches the engine behavior. Use `unknown` or `any` only when the field is intentionally
+untyped or still being investigated.
 
-todo; <br/> todo; <br/> todo; <br/>
+## Arrays, enums, and tuples
 
-## Enums
+Arrays use `[]`:
 
-todo; <br/> todo; <br/> todo; <br/>
+```ltx
+levels = ?string[]
+installed_upgrades = ?section[]
+```
 
-## Tuples
+Enums list allowed values:
 
-todo; <br/> todo; <br/> todo; <br/>
+```ltx
+scope_status = ?enum:0,1,2
+flares = enum:on,off
+```
 
-## Strict
+Tuples define ordered values:
 
-todo; <br/> todo; <br/> todo; <br/>
+```ltx
+fire_point = ?tuple:f32,f32,f32
+hit_power = ?tuple:f32,f32,f32,f32
+```
 
-## Examples
+## Strict sections
 
-todo; <br/> todo; <br/> todo; <br/>
+`strict = true` means fields not described by the schema are validation errors unless a wildcard rule covers them. Use
+strict schemas for stable config formats such as weapons, weather, and script definitions.
+
+Leave strict mode off only when the config format is intentionally open-ended or not fully modeled yet.
+
+## Verification
+
+Run:
+
+```powershell
+npm run cli verify ltx
+```
+
+When a valid config fails validation, update the matching schema section instead of weakening unrelated schemas. When a
+schema accepts invalid data, add a narrower field type or enable strict mode for that schema if the format is stable.
