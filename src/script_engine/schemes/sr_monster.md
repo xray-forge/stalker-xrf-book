@@ -21,7 +21,8 @@ Parsed and stored; current manager does not use it directly.
 
 Type: number. Optional. Default: `30`.
 
-Idle duration after the ambush finishes. Multiplied by `10000`.
+Idle duration after the ambush finishes. The parser multiplies this value by `10000`, so one configured unit becomes ten
+seconds of game-time delay.
 
 ### `sound_path`
 
@@ -49,7 +50,7 @@ When the actor enters the restrictor, the manager selects a path from `sound_pat
 from point to point. When the selected path wraps back to its start:
 
 1. it spawns `monster_section` at the current sound position;
-2. it plays the hard-coded appear sound `monsters_boar_boar_swamp_appear_1`;
+2. it plays the hard-coded appear sound `monsters\boar\boar_swamp_appear_1`;
 3. it captures the spawned monster when it comes online;
 4. it commands the monster to run to the final point of the current path;
 5. after the monster reaches the final point, it releases and removes the server object;

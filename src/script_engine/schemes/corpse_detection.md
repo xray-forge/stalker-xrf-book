@@ -1,7 +1,7 @@
 # corpse_detection
 
 `corpse_detection` is a generic stalker scheme for finding nearby lootable corpses. It adds planner logic that sends an
-NPC to a corpse and plays the corpse-search state.
+NPC to a corpse within the configured search radius and plays the corpse-search state.
 
 ## Parameters
 
@@ -15,11 +15,14 @@ Enables or disables corpse detection for the current reset section.
 
 The scheme adds `IS_CORPSE_EXISTING` and a `SEARCH_CORPSE` action. The evaluator returns true only when the NPC is
 alive, has no enemy, is not in danger, is not zombied, is not wounded, is not the cinematic actor visual, and a nearby
-lootable corpse exists.
+lootable corpse exists within `20` meters.
 
 When a corpse is selected, the evaluator stores the selected corpse id, vertex id, and position in scheme state and
 marks the corpse in portable storage so another NPC does not select the same corpse. The action sends the NPC to the
 corpse, switches to `search_corpse` near the target, and plays `corpse_loot_begin` once.
+
+The `finishCorpseLooting` helper transfers items from the selected corpse to the looting NPC when the corpse object is
+online. It then plays either `corpse_loot_good` or `corpse_loot_bad`; empty transfers use the bad-loot sound.
 
 ## Example
 

@@ -15,7 +15,8 @@ Patrol path used as the fire point when `target = points`. Smart terrain prefixi
 
 Type: boolean. Optional. Default: `false`.
 
-Enables automatic fire when the current target can be hit.
+Enables automatic fire for enemy targets when the current target can be hit. Point-target firing uses its own firing
+path in the manager and is not gated the same way.
 
 ### `fire_time`
 
@@ -79,7 +80,8 @@ On activation, the manager gets the object's car interface, disables normal scri
 activates the mounted weapon if the car has one.
 
 When `target = points`, `path_fire` must point to an existing patrol path. The minigun aims at the first point of that
-path. When `target = actor`, the actor is used if alive. Any other non-null value is resolved as a story object id.
+path and toggles fire according to the firing timer. When `target = actor`, the actor is used if alive. Any other
+non-null value is resolved as a story object id.
 
 Firing only starts when the target is inside `fire_range`, inside the configured firing arc, and visible unless
 `shoot_only_on_visible = false`. Enemy target aim height is adjusted for actor, crouching NPCs, wounded NPCs, and normal

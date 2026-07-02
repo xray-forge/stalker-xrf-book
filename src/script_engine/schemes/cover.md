@@ -1,7 +1,7 @@
 # cover
 
 `cover` sends a stalker to a nearby cover point around a smart terrain and plays an animation while looking toward a
-generated enemy-facing position.
+generated reference position.
 
 ## Parameters
 
@@ -46,8 +46,9 @@ The section also supports common switch fields.
 ## Runtime behavior
 
 On activation, the cover action picks a random direction from the smart terrain level vertex and chooses a point between
-`radius_min` and `radius_max`. It asks the engine for the best cover near that point. If no cover is found, it uses the
-random point itself. If the chosen point is not accessible, it asks the object for the nearest accessible point.
+`radius_min` and `radius_max`. That point is also stored as the look reference. The action asks the engine for the best
+cover near it. If no cover is found, it uses the random point itself. If the chosen point is not accessible, it asks the
+object for the nearest accessible point.
 
 While moving to cover, the NPC uses the `assault` state. After reaching the cover position, the action resolves `anim`
 and sets that stalker state, looking toward the generated enemy-facing position. If `sound_idle` is set, it plays that
@@ -70,6 +71,5 @@ on_info = {+leave_cover} walker@guard
 
 ## Notes
 
-- `smart` is required. Activation aborts if neither `path_walk` nor `smart` is available; the current parser provides
-  only `smart` for this scheme.
+- `smart` is required. Activation aborts when it is missing.
 - The action blocks normal alife while cover activity is needed.

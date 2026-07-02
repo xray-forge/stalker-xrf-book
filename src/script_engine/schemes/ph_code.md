@@ -19,7 +19,7 @@ Single accepted numeric code.
 
 ### `on_code`
 
-Type: condlist. Required: required when `code` is set. Default: `null`.
+Type: condlist. Optional. Default: `null`.
 
 Condlist evaluated when entered text equals `code`.
 
@@ -37,7 +37,8 @@ There are two modes:
 
 Config: `code` plus `on_code`.
 
-Entering the matching number evaluates `on_code`.
+Entering the matching number evaluates `on_code` when it is configured. If `code` is set and `on_code` is absent, the
+matching input is accepted by the check but has no documented side effect.
 
 ### Multiple codes
 
