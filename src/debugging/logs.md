@@ -1,44 +1,94 @@
-# 🧰 Logs
+# Logs
 
-Logging is the simplest and most accessible debug feature in xray engine. <br/> By default, logs are enabled for all
-engine variants expect `gold` and display in (1) `game console`, (2) `dedicated log file`, (3) `visual studio console`.
+Logs are the quickest way to inspect XRF runtime behavior. By default, `forge.ltx` enables debug mode, regular Lua
+logging, and the separate Lua log file.
 
-## Checking XRF logs
+## Where Logs Go
 
-To enable XRF logging make sure the `GameConfig` logging flag is set to true. <br/> It is enabled by default.
+The engine writes the main log into the game logs folder. XRF tooling can link that folder into the project as
+`target/logs_link`.
 
-Depending on how you run the game, you can use the following approaches to check the log:
+Common files are:
 
-### With pre-built engine
+- `openxray_<username>.log` when a custom OpenXRay binary descriptor is present;
+- `xray_<username>.log` for the base engine name;
+- `xrf_lua.log` when separate Lua logging is enabled;
+- module-specific files such as `xrf_profiling.log` when a logger is configured with a file target.
 
-- Make sure you are using the custom engine. If not, switch to the mixed/release variant: `npm run engine use release`
-- Link the application logs folder with the target directory: `npm run link` (if it is not linked already)
-- Start the game (`npm run start_game`)
-- Check files in `target/logs_link` directory -> `opexray_%username%.log` is default openxray log file
+The exact prefix depends on the logger configuration and the engine variant.
 
-### With visual studio
+## Checking Logs
 
-- Just run the project and check `Output` window of application
+With a prebuilt engine:
 
-### Checking custom log files
+1. Select the engine build you want to run.
+2. Link the game folders with the XRF link command.
+3. Start the game.
+4. Inspect `target/logs_link`.
 
-If lua loggers are explicitly declaring output as file, not game log, then you should check `target/logs_link` for other
-log files. Usually names look like `xrf_%module%.log`.
+With Visual Studio:
 
-## Writing logs
+1. Start the engine project from Visual Studio.
+2. Check the Visual Studio Output window.
+3. Check the same game log files if the message was written through the engine logger.
 
-### In game console / log
+## Printing Logs with the CLI
 
-todo; <br/> todo; <br/> todo; <br/>
+The XRF CLI can print the end of the active engine log:
 
-### In custom .log file
+```powershell
+npm run cli -- logs
+npm run cli -- logs 100
+```
 
-todo; <br/> todo; <br/> todo; <br/>
+The default count is `15` lines. Values are capped at `200` lines. The CLI looks for the linked logs folder and then
+chooses `openxray_<username>.log` or `xray_<username>.log` depending on the detected engine.
 
-## Flushing logs
+## Writing Lua Logs
 
-todo; <br/> todo; <br/> todo; <br/>
+Use `LuaLogger` from runtime code:
 
-## Printing logs with CLI
+```ts
+const logger: LuaLogger = new LuaLogger($filename);
 
-todo; <br/> todo; <br/> todo; <br/>
+logger.info("Spawned object: %s", object.name());
+logger.table(state);
+logger.pushSeparator();
+logger.printStack();
+```
+
+`LuaLogger` formats messages with the current engine time, file prefix, level, and formatted text. It writes to the
+engine log unless a file-only logger is configured. When `separate_lua_log_enabled` is true, it also writes to the
+shared Lua log file.
+
+Use a file logger when the stream is noisy or belongs to a specific subsystem:
+
+```ts
+const logger: LuaLogger = new LuaLogger($filename, {
+  mode: ELuaLoggerMode.DUAL,
+  file: "profiling",
+});
+```
+
+`DUAL` writes both to the named file and to the normal engine log.
+
+## Flushing
+
+Use the engine `flush` console command after generating important logs:
+
+```text
+flush
+```
+
+The profiling manager calls `flush` after printing profiling reports so the latest stats are persisted before you leave
+the session.
+
+## Build-Time Logging Flag
+
+For performance or release-like builds, script compilation can strip Lua logger calls:
+
+```powershell
+npm run cli -- build -i scripts --no-lua-logs
+```
+
+Do not use that flag when you are investigating runtime behavior.

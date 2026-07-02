@@ -1,35 +1,53 @@
-# 🏗️ Engine debug (C++)
+# Engine Debug (C++)
 
-## Setup C++ engine project
+Use engine debugging when the problem crosses from TypeScript/Lua into xray runtime behavior: scheduler timing,
+rendering, physics, UI initialization, luabind bindings, or console command implementation.
 
-Follow one of links to run custom game engine locally in debug mode:
+For script-only behavior, start with logs and the XRF debug panel first. They are faster and do not require rebuilding
+the engine.
 
-- [open xray windows](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-How-to-build-and-setup-on-Windows)
-- [open xray linux](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-How-to-build-and-setup-on-Linux)
+## Set Up the Engine Project
 
-## Using Lua/C++ debugger
+OpenXRay has build guides for both supported development paths:
 
-To attach a debugger to Lua/C++ code, follow these steps:
+- [OpenXRay Windows build guide](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-How-to-build-and-setup-on-Windows)
+- [OpenXRay Linux build guide](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-How-to-build-and-setup-on-Linux)
 
-- Use Visual Studio
-- Install the [LUA debug](https://github.com/WheretIB/LuaDkmDebugger) extension for Visual Studio. (fixes
-  [A](https://github.com/WheretIB/LuaDkmDebugger/pull/25) + [B](https://github.com/WheretIB/LuaDkmDebugger/pull/26)
-  required)
-- Set up the engine project
-- Link the game by running npm run link and targeting the folder of xrf
-- Run the game in mixed/release mode directly from Visual Studio
+For local XRF development on Windows, the usual flow is:
+
+1. Build or select a mixed/debug-capable engine.
+2. Link XRF output and logs to the game folder with the XRF CLI link command.
+3. Start the engine from Visual Studio when you need C++ breakpoints.
+4. Start from the XRF CLI when you only need game logs and Lua output.
+
+## Debugging Lua from Visual Studio
+
+Lua debugging is possible through the Visual Studio Lua debugger extension, but it is limited by the engine and by the
+compiled Lua output.
+
+1. Install the [LuaDkmDebugger](https://github.com/WheretIB/LuaDkmDebugger) Visual Studio extension.
+2. Use an engine configuration that loads Lua debug symbols.
+3. Run the game from Visual Studio.
+4. Set breakpoints in the generated Lua files, not in TypeScript source.
+
+XRF TypeScript is compiled to Lua by TypeScriptToLua. Visual Studio will see the generated Lua code that the engine
+executes.
+
+## What to Debug in C++
+
+Use the engine source when you need to verify:
+
+- console command behavior such as `rs_stats`, `rs_fps`, `ai_stats`, `set_weather`, or `run_string`;
+- luabind signatures exposed through `level`, `game`, `game_object`, UI classes, planners, and packets;
+- UI XML initialization behavior in `CScriptXmlInit` and CUI controls;
+- engine-only debug overlays, stats, scheduler, physics, and renderer behavior.
+
+Use `C:\Projects\stalker\xray-16-types` first for the TypeScript-visible API shape, then confirm ambiguous runtime
+semantics in `C:\Projects\stalker\xray-16`.
 
 ## Limitations
 
-- It is not possible to debug TypeScript directly. Instead, attach a breakpoint and observe the transpiled Lua code.
-  <br/>
-- It is not possible to attach to luabind declared classes and userdata (unfortunately, lua debug tools were not
-  maintained in OXR for 10+ years)
-
-## todo
-
-todo; <br/> todo; <br/> todo; <br/>
-
-## todo
-
-todo; <br/> todo; <br/> todo; <br/>
+- TypeScript breakpoints are not available in the engine. Debug generated Lua or C++ instead.
+- LuaDkmDebugger support is old and does not reliably inspect every luabind class or userdata value.
+- Some debug console commands are compiled only into mixed/debug engine builds.
+- Optimized script builds can strip Lua logger calls when built with `--no-lua-logs`.
