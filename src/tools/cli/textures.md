@@ -4,11 +4,41 @@ Texture commands inspect DDS files and pack or unpack icon-related assets.
 
 ## Commands
 
-- `info-dds`: print DDS size, metadata, mipmap, format, and compression information.
-- `pack-equipment-icons`: pack separate equipment icons into a sprite.
-- `unpack-equipment-icons`: unpack an equipment sprite into separate icons.
-- `pack-texture-description`: pack icons based on an XML texture description.
-- `unpack-texture-description`: unpack icons based on an XML texture description.
+| Command                      | Purpose                                                                    |
+| ---------------------------- | -------------------------------------------------------------------------- |
+| `info-dds`                   | Print DDS size, metadata, mipmap, format, and compression details.         |
+| `unpack-equipment-icons`     | Slice an equipment icon sprite into section icon files using `system.ltx`. |
+| `pack-equipment-icons`       | Pack section icon files into an equipment DDS sprite using `system.ltx`.   |
+| `unpack-texture-description` | Slice textures based on XML texture descriptions.                          |
+| `pack-texture-description`   | Pack textures based on XML texture descriptions.                           |
 
-Use `xrf-tool <command> --help` for command-specific options. The engine repository wraps some of these operations
-through its `icons` CLI command.
+## DDS inspection
+
+```powershell
+xrf-tool info-dds --path ./textures/ui/ui_icon_equipment.dds
+```
+
+The command prints file size, metadata size, pixel data size, dimensions, mipmap information, pitch or linear size when
+present, block size, bits per pixel, FourCC, and D3D/DXGI format when known.
+
+## Equipment icons
+
+```powershell
+xrf-tool unpack-equipment-icons --system-ltx ./configs/system.ltx --source ./textures/ui/ui_icon_equipment.dds --output ./textures_unpacked/ui/ui_icon_equipment
+xrf-tool pack-equipment-icons --system-ltx ./configs/system.ltx --source ./textures_unpacked/ui/ui_icon_equipment --output ./textures/ui/ui_icon_equipment.dds --strict
+```
+
+`pack-equipment-icons` also accepts `--gamedata <path>` for resource lookup, plus `-v, --verbose` and `-s, --strict`.
+`unpack-equipment-icons` supports `-v, --verbose`.
+
+## Texture descriptions
+
+```powershell
+xrf-tool unpack-texture-description --description ./configs/ui/textures_descr/ui_actor.xml --base ./textures --output ./textures_unpacked --parallel
+xrf-tool pack-texture-description --description ./configs/ui/textures_descr/ui_actor.xml --base ./textures_unpacked --output ./textures --strict
+```
+
+Description commands require `--description` and `--base`. If `--output` is omitted, output defaults to the base path.
+Both support `-v, --verbose`, `-s, --strict`, and `--parallel`.
+
+The engine repository wraps the common equipment and description workflows through `npm run cli -- icons ...`.

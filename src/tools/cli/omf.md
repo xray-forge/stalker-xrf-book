@@ -12,4 +12,17 @@ Options:
 
 - `-p, --path <path>`: path to an `.omf` file. Required.
 
-The command prints version, motions, bone count, animation parts, and bones assigned to each part.
+## Output
+
+The command reads the motion file and prints:
+
+- OMF version;
+- motion count and motion names;
+- total bone count;
+- animation part names;
+- bones assigned to each animation part.
+
+## When to use it
+
+Use `info-omf` when checking whether a motion file is readable, whether expected motions are present, or how motion
+parts map to skeleton bones.

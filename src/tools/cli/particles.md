@@ -1,14 +1,36 @@
 # Particles CLI
 
-Particles commands inspect, verify, pack, and unpack `particles.xr` data.
+Particle commands inspect, verify, pack, unpack, and round-trip `particles.xr` data.
 
 ## Commands
 
-- `info-particles`: print information about a particles file.
-- `pack-particles`: pack unpacked particle configs into a particles file.
-- `repack-particles`: read and write a particles file again.
-- `reunpack-particles`: unpack an existing particles file into another folder.
-- `unpack-particles`: unpack a particles file.
-- `verify-particles`: verify a particles file.
+| Command               | Purpose                                                           | Writes files |
+| --------------------- | ----------------------------------------------------------------- | ------------ |
+| `info-particles`      | Print version, effect count, and group count.                     | No           |
+| `unpack-particles`    | Export a packed `particles.xr` into a folder.                     | Yes          |
+| `pack-particles`      | Build a packed `particles.xr` from an unpacked folder.            | Yes          |
+| `repack-particles`    | Read a packed file and write it to another packed file.           | Yes          |
+| `re-unpack-particles` | Read an unpacked folder and export it to another unpacked folder. | Yes          |
+| `verify-particles`    | Check whether packed or unpacked particle data can be parsed.     | No           |
 
-Use `xrf-tool <command> --help` for the exact options supported by the installed binary.
+## Examples
+
+```powershell
+xrf-tool info-particles --path ./particles.xr
+xrf-tool unpack-particles --path ./particles.xr --dest ./particles_unpacked --force
+xrf-tool pack-particles --path ./particles_unpacked --dest ./particles.xr --force
+xrf-tool repack-particles --path ./particles.xr --dest ./particles.repacked.xr
+xrf-tool re-unpack-particles --path ./particles_unpacked --dest ./particles_unpacked_roundtrip
+xrf-tool verify-particles --path ./particles.xr
+xrf-tool verify-particles --path ./particles_unpacked --unpacked
+```
+
+## Shared options
+
+Read commands require `-p, --path <path>`. Write commands that create output also use `-d, --dest <dest>`.
+`unpack-particles` and `pack-particles` support `-f, --force` to remove an existing destination before writing.
+
+## Failure notes
+
+Packing fails if the output file already exists and `--force` is not supplied. Unpacking fails if the destination folder
+already exists and `--force` is not supplied.

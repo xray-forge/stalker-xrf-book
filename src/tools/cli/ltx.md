@@ -1,10 +1,11 @@
 # LTX CLI
 
-LTX commands format and verify `.ltx` and `.ini` config files.
+LTX commands format and verify `.ltx` and `.ini` config files. Use them for standalone config projects or when you need
+the lower-level tool behind the engine repository's `format ltx` and `verify ltx` commands.
 
 ## `format-ltx`
 
-Formats a file or all LTX files under a folder.
+Formats one file or every LTX file under a folder.
 
 ```powershell
 xrf-tool format-ltx --path ./gamedata/configs
@@ -18,9 +19,11 @@ Options:
 - `-s, --silent`: disable logging.
 - `-v, --verbose`: enable verbose logging.
 
+`--check` is implemented for folders. Single-file mode formats the file.
+
 ## `verify-ltx`
 
-Verifies an LTX project folder.
+Verifies an LTX project folder with scheme and strict-project options enabled.
 
 ```powershell
 xrf-tool verify-ltx --path ./gamedata/configs
@@ -33,5 +36,10 @@ Options:
 - `--silent`: disable logging.
 - `-v, --verbose`: enable verbose logging.
 - `-s, --strict`: enable strict checking.
+
+## Failure notes
+
+`verify-ltx` expects a directory, not a single file. It fails when includes, inheritance, section fields, or scheme
+validation produce errors.
 
 Scheme definitions are documented in [Script config schemes](../../script_engine/configs_scheme.md).

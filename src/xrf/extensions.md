@@ -31,13 +31,21 @@ can be toggled.
 
 The current engine source includes these extension folders:
 
-- `achievements_rewards`
-- `enhanced_items_drop`
-- `enhanced_location_progression`
-- `enhanced_treasures`
-- `original_start_position`
+| Source folder                   | Extension name                        | Default state |
+| ------------------------------- | ------------------------------------- | ------------- |
+| `achievements_rewards`          | `Achievement rewards`                 | enabled       |
+| `enhanced_items_drop`           | `Enhanced items drop (with upgrades)` | disabled      |
+| `enhanced_location_progression` | `Enhanced location progression`       | enabled       |
+| `enhanced_treasures`            | `Enhanced treasures`                  | enabled       |
+| `original_start_position`       | `Original start position`             | disabled      |
 
-Use these as implementation references when adding a new extension.
+Use the built-in extension pages as implementation references when adding a new extension:
+
+- [Achievement rewards](extensions/achievement_rewards.md)
+- [Enhanced items drop](extensions/enhanced_items_drop.md)
+- [Enhanced location progression](extensions/enhanced_location_progression.md)
+- [Enhanced treasures](extensions/enhanced_treasures.md)
+- [Original start position](extensions/original_start_position.md)
 
 ## Config Files
 

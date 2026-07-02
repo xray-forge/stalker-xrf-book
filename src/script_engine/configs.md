@@ -6,6 +6,23 @@ generates additional `.ltx` or `.xml` files from TypeScript sources.
 Config files are runtime behavior. Script configs can switch schemes, call effects, check conditions, spawn objects,
 define smart terrain jobs, describe tasks, load dialogs, configure weapons, and drive weather.
 
+## Domain pages
+
+The config chapter is split by the kind of runtime data being edited.
+
+| Page                                                          | Use it for                                                                        |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [Scheme](configs_scheme.md)                                   | How `$scheme/*.scheme.ltx` files validate LTX sections.                           |
+| [Condlists](configs_condlists.md)                             | Conditional expressions used by script configs and scheme switching.              |
+| [Dialogs](configs_dialogs.md)                                 | Dialog XML sources, phrase graphs, and dialog-related config data.                |
+| [Scripts](configs_scripts.md)                                 | Story script configs, scheme sections, effects, conditions, and logic activation. |
+| [Creatures](configs_creatures.md)                             | Actor, stalker, monster, crow, and online/offline group configs.                  |
+| [Zones and anomalies](configs_zones.md)                       | Anomaly fields, anomaly zones, restrictors, camp zones, and level changers.       |
+| [Smart terrains and jobs](configs_smart_terrains_and_jobs.md) | Smart terrain population, jobs, respawn, and simulation behavior.                 |
+| [Treasures](configs_treasures.md)                             | Treasure descriptors and hidden stash behavior.                                   |
+| [Weapons](configs_weapons.md)                                 | Weapon section layout and generated weapon config helpers.                        |
+| [Weather](configs_weather.md)                                 | Weather cycles, graph sources, and weather config generation.                     |
+
 ## Source types
 
 | Source type            | Build behavior                                                        |

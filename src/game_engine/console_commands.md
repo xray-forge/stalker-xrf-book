@@ -63,9 +63,6 @@ The inspected OpenXRay-style engine registers these AI and ALife debugging comma
 - `ai_draw_visibility_rays`
 - `ai_animation_stats`
 
-Older docs and forum posts sometimes spell `ai_dbg_frustum` as `ai_dbg_frustrum`. The engine command name is
-`ai_dbg_frustum`.
-
 ## Render, UI, sound, and gameplay commands
 
 Useful command families include:

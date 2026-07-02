@@ -4,6 +4,9 @@ The script engine is the TypeScript runtime layer that is compiled to Lua and lo
 extern modules, object binders, scheme registry, global managers, server object classes, and shared helpers used by
 configs and gameplay logic.
 
+For the object lifecycle, manager startup, event, and save/load flow, start with the Runtime lifecycle section. This
+page is the lower-level source map for script modules.
+
 The main source roots are:
 
 | Area                   | Source                      |

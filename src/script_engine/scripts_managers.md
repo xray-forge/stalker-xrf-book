@@ -12,11 +12,14 @@ The current startup list includes:
 - actor input and actor inventory menu;
 - database, debug, profiling, and events;
 - dialogs, load screen, loadout, map display, music, notifications, PDA;
-- phantom, save, simulation, sleep, sound, statistics, surge;
+- phantom, save, simulation, sleep, sound, statistics;
 - tasks, trade, travel, treasures, upgrades, weather;
 - body release handling.
 
 Each manager is initialized through `initializeManager(ManagerClass)`.
+
+Other managers can be initialized lazily through `getManager`. For the startup list and lifecycle rules, see the Runtime
+managers page.
 
 ## Manager Registry
 

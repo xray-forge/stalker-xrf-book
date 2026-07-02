@@ -1,51 +1,45 @@
 # Spawn CLI
 
-Spawn commands work with ALife `.spawn` files.
+Spawn commands inspect, verify, pack, unpack, and round-trip ALife `.spawn` files.
 
 ## Commands
 
-- `pack-spawn`: pack an unpacked spawn folder into a single `.spawn` file.
-- `repack-spawn`: read a `.spawn` file and write it to another file.
-- `unpack-spawn`: unpack a `.spawn` file into separate files.
-- `verify-spawn`: verify that a spawn file can be read.
-- `info-spawn`: print header, object, artefact spawn, patrol, and graph counts.
+| Command        | Purpose                                                         | Writes files |
+| -------------- | --------------------------------------------------------------- | ------------ |
+| `info-spawn`   | Print header, object, artefact spawn, patrol, and graph counts. | No           |
+| `unpack-spawn` | Export a packed spawn file into a folder.                       | Yes          |
+| `pack-spawn`   | Build a packed spawn file from an unpacked folder.              | Yes          |
+| `repack-spawn` | Read a packed spawn file and write it to another packed file.   | Yes          |
+| `verify-spawn` | Check whether a packed spawn file can be parsed.                | No           |
 
-## `pack-spawn`
+## Examples
 
 ```powershell
-xrf-tool pack-spawn --path ./unpacked --dest ./all.spawn --force
+xrf-tool info-spawn --path ./all.spawn
+xrf-tool unpack-spawn --path ./all.spawn --dest ./all_spawn --force
+xrf-tool pack-spawn --path ./all_spawn --dest ./all.spawn --force
+xrf-tool repack-spawn --path ./all.spawn --dest ./all.repacked.spawn
+xrf-tool verify-spawn --path ./all.spawn
 ```
 
-Options:
+## Options
+
+`pack-spawn`:
 
 - `-p, --path <path>`: unpacked spawn folder. Required.
 - `-d, --dest <dest>`: output `.spawn` file. Defaults to `unpacked`.
 - `-f, --force`: remove an existing output file first.
 
-## `repack-spawn`
-
-```powershell
-xrf-tool repack-spawn --path ./all.spawn --dest ./all.repacked.spawn
-```
-
-Options:
-
-- `-p, --path <path>`: source `.spawn` file. Required.
-- `-d, --dest <dest>`: output `.spawn` file. Required.
-
-## `unpack-spawn`
-
-```powershell
-xrf-tool unpack-spawn --path ./all.spawn --dest ./unpacked --force
-```
-
-Options:
+`unpack-spawn`:
 
 - `-p, --path <path>`: source `.spawn` file. Required.
 - `-d, --dest <dest>`: output folder. Defaults to `unpacked`.
 - `-f, --force`: remove an existing output folder first.
 - `-s, --silent`: disable logging.
 
-## `verify-spawn` and `info-spawn`
+`info-spawn`, `verify-spawn`, and `repack-spawn` require `-p, --path <path>`. `repack-spawn` also requires
+`-d, --dest <dest>`.
 
-Both commands require `-p, --path <path>`.
+## Failure notes
+
+Packing and unpacking reject existing destinations unless `--force` is supplied.
