@@ -28,6 +28,15 @@ On activation, the scheme:
 The `add` method registers `IS_SCRIPTED_COMBAT`, changes the base combat action precondition, and installs helper
 actions for `combat_camper` and `combat_zombied`.
 
+## Runtime sequence
+
+1. Activation checks whether the section exists or whether the NPC community is `zombied`.
+2. The scheme reads common switch fields and `combat_type`.
+3. Zombied-community NPCs get `combat_type = zombied` when no field is configured.
+4. `setCombatType` resolves the condlist and stores `scriptCombatType` on the object registry state.
+5. `add` registers `IS_SCRIPTED_COMBAT` and blocks the base `COMBAT` action while scripted combat is active.
+6. Camper and zombied helper actions are installed into the planner.
+
 ## Example
 
 ```ini
@@ -46,3 +55,4 @@ combat_type = {+ambush_started} camper, nil
   than replacing movement by itself.
 - The `monolith` value exists in the enum, but the inspected implementation only wires specific helper actions for
   camper and zombied combat.
+- Use the `combat_camper` and `combat_zombied` pages when debugging the helper actions installed by this scheme.

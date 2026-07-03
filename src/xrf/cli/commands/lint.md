@@ -24,6 +24,14 @@ npm run lint:strict
 npm run lint -- --fix
 ```
 
+## Inputs and output
+
+Lint reads TypeScript, TSX, and JavaScript sources from the repository and reports rule violations to the terminal. The
+standard script reuses the ESLint cache, so repeated runs after small edits are faster than a cold run.
+
+Use the normal lint command during documentation-adjacent code edits or focused implementation work. Use strict lint
+before larger changes when you want the additional repository checks.
+
 ## Related checks
 
 Use `npm run typecheck` for TypeScriptToLua script type checks and `npm run typecheck:tests` for test TypeScript checks.

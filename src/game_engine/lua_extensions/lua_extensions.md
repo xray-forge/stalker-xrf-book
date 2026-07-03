@@ -23,3 +23,15 @@ package.
 
 The engine appends gamedata script paths to `package.path`, allowing scripts to be required from the game script
 directory. Keep runtime `require(...)` names aligned with the emitted Lua script layout.
+
+## Practical checks
+
+When adding a dependency on a Lua module:
+
+1. check the TypeScript declaration under `src/typedefs`;
+2. check whether the target executable opens or ships the module;
+3. run the game with the same executable that will ship to users;
+4. keep fallback behavior for optional modules.
+
+For engine-bound code, prefer X-Ray APIs and XRF helpers over standalone Lua assumptions. The engine can change module
+availability, package paths, and debug library access depending on build flags.

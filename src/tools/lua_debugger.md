@@ -18,6 +18,19 @@ loads.
 
 Luabind classes, userdata, and C++ callbacks may not expose enough Lua-level state for convenient inspection.
 
+## Practical workflow
+
+Start with the generated Lua file that corresponds to the TypeScript module. Confirm that the file exists under
+`target/gamedata/scripts` after a script build, then compare the emitted Lua names with the stack trace or log line from
+the engine.
+
+Use Lua debugging for runtime-only questions such as callback order, engine object state, and values passed through
+luabind. Use Jest and TypeScript tests for parser, manager, scheme, and utility behavior that can be reproduced outside
+the engine.
+
+When a Lua debugger cannot inspect userdata, add temporary logging around the TypeScript source and rebuild scripts.
+Keep those logs local or remove them before committing documentation or code changes.
+
 ## Visual Studio Lua Debugger Research
 
 The previous research link for Lua debugging is:

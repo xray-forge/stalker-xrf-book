@@ -33,6 +33,14 @@ behind the commander and accelerates members that fall behind.
 
 Objects are removed from the patrol manager when they die or switch offline.
 
+## Runtime sequence
+
+1. `SchemeReachTask.setup` replaces the nested ALife planner's `SMART_TERRAIN_TASK` evaluator and action.
+2. `EvaluatorReachedTaskLocation` returns true only when the NPC's squad is doing `REACH_TARGET` and the assigned
+   simulation target still reports not reached.
+3. `SchemeReachTask.add` subscribes the existing nested `SMART_TERRAIN_TASK` action for scheme events.
+4. The action sends the commander toward the assigned target and keeps followers in formation.
+
 ## Example
 
 ```ini
@@ -51,3 +59,4 @@ path_look = idle_look
 - Movement switches between game-path and level-path movement depending on whether the commander is on the target game
   vertex.
 - During surge, reach-task movement uses running with free mental state.
+- Debug this through squad simulation state first; there is normally no `[reach_task]` LTX section to inspect.

@@ -50,3 +50,11 @@ Check all referenced sections and assets when adding a weapon variant.
 - Validate upgrade section names and include order.
 - Run `npm run cli verify ltx`.
 - Test script-side weapon utilities only when changing runtime TypeScript behavior.
+
+## Common failure points
+
+- Missing include order can make a weapon section valid in isolation but unavailable from the final item index.
+- HUD section names must stay aligned with the weapon section fields that reference them.
+- Ammo, scope, silencer, and grenade-launcher section names must exist before the weapon can use them.
+- Texture, model, sound, and particle references are not fixed by LTX formatting; verify the referenced resource files
+  separately.

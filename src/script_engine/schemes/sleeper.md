@@ -19,6 +19,14 @@ Uses the sitting state instead of the sleeping state when the NPC reaches the fi
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
+## Runtime behavior
+
+`SchemeSleeper.add` installs a planner evaluator and `SLEEP_ACTIVITY` action. The action runs only when the stalker is
+alive and not in danger, combat, or anomaly handling.
+
+On action initialization, desired position and direction are cleared, then the action builds walk/look data from
+`path_main` and starts the patrol manager. Reaching the final patrol point switches the stalker to `sleep` or `sit`.
+
 ## Patrol shape
 
 `path_main` must contain either one or two waypoints.
@@ -32,6 +40,8 @@ The NPC walks to the single point and then sleeps there.
 The NPC walks using the main path and looks toward the second point when entering the final state.
 
 Any other waypoint count aborts with a config error.
+
+For a two-point path, the second point is also used as the look position while entering the final state.
 
 ## Example
 
@@ -53,3 +63,4 @@ path_walk = wake_up_walk
 - `path_main` is required and must exist as a patrol path.
 - `wakeable = true` currently maps to `sit`; `wakeable = false` maps to `sleep`.
 - The action builds internal `path_walk` and `path_look` data from `path_main`; those are not user-facing fields.
+- Use common switch fields such as `on_info` to wake or redirect the NPC when an alarm or quest state changes.

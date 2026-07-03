@@ -28,3 +28,18 @@ unless your selected runtime package ships it.
 
 For game paths, prefer engine filesystem helpers and configured path aliases. Use LFS for plain filesystem work only
 when the runtime dependency is verified.
+
+## Practical use
+
+Use LFS for tools or controlled runtime packages where filesystem access is part of the environment contract. Avoid it
+inside portable gameplay code unless the target executable is known to expose the module.
+
+For game data lookup, prefer engine path aliases and file-system helpers because they follow mounted game paths and mod
+layout rules. LFS works on process-visible filesystem paths; it does not know about engine virtual paths by itself.
+
+## Verification checklist
+
+- Check that `require("lfs")` succeeds in the exact runtime package you ship.
+- Check path separators and working directory assumptions on the target platform.
+- Keep save-game and game-state persistence on engine packet APIs instead of plain files unless the feature explicitly
+  owns external files.

@@ -26,6 +26,14 @@ visibility.
 
 Moves toward the best danger source, ignoring grenade movement targets and reacting to hits.
 
+## Where it is installed
+
+`combat_zombied` is added by the broader `combat` scheme; it is not normally used as an active section in LTX. Use
+`combat_type = zombied` for intent, but also keep the NPC community as `zombied` because the evaluator checks community.
+
+This helper is useful for simple zombie-style combat where the NPC should keep pressure on the enemy and react to danger
+without cover or camper behavior.
+
 ## Example
 
 ```ini
@@ -43,3 +51,4 @@ combat_type = zombied
 - `SchemeCombat` parses the `zombied` combat type, but the inspected `combat_zombied` evaluator itself checks the NPC
   community. Use zombied community data when relying on this behavior.
 - `ZOMBIED_SHOOT` may play `fight_attack` on activation with a 25 percent chance.
+- Use `combat_camper` or the normal `combat` flow when the NPC should use cover-like hide/look behavior instead.

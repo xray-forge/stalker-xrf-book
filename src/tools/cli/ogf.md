@@ -27,3 +27,11 @@ The command reads the model and prints available metadata:
 
 Use `info-ogf` to confirm that a mesh file can be parsed, to inspect texture references, or to compare model metadata
 without opening a graphical tool.
+
+## Workflow
+
+Run `info-ogf` before texture or model packaging when you need to confirm what a mesh references. The command is
+read-only: it does not rewrite chunks, normalize paths, or repair model data.
+
+If a model fails to parse, first confirm the file is an OGF from the expected game version. Then compare the reported
+failure with neighboring meshes from the same source archive.

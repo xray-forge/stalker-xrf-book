@@ -54,3 +54,16 @@ npm run cli verify ltx
 ```
 
 For behavior changes, test the scheme, condition, effect, or manager that reads the field.
+
+## Editing workflow
+
+Start from the object, smart terrain job, or restrictor that owns the logic file. Follow `[logic] active` to the active
+section, then identify the scheme from the section prefix before `@`.
+
+When a switch does not fire, check the pieces in this order:
+
+1. the active section name;
+2. the switch field supported by that scheme;
+3. the condlist conditions and effects;
+4. the target section existence;
+5. any runtime event needed to trigger the manager, such as hit, death, use, signal, or actor-zone update.

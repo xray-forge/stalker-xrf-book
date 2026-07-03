@@ -30,6 +30,15 @@ npm run cli -- logs 500
 
 The last example still prints at most `200` lines.
 
+## When to use it
+
+Use `logs` after `start_game` or a manual game launch to inspect the newest script/runtime messages without navigating
+to the game logs folder. It is the fastest check after a crash during startup, a failed script reload, or a missing file
+reported by the engine.
+
+For longer inspection, open the linked logs folder or the real game logs directory and use an editor that can follow
+file updates.
+
 ## Failure notes
 
 If no active log is found, start the game once, check the configured game path, or run `npm run cli -- link` to create

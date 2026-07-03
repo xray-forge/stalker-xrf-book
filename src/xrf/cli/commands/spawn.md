@@ -30,6 +30,13 @@ npm run cli -- spawn unpack --force
 npm run cli -- spawn unpack --path src/resources/spawns/all.spawn --dest target/all_spawn
 ```
 
+## Output
+
+The output directory contains the unpacked spawn representation produced by the XRF tools CLI. The engine wrapper is
+intended for inspection and verification workflows in this repository; it does not expose pack or repack commands.
+
+Keep generated unpack output under `target/` unless you are intentionally preparing source data for another tool.
+
 ## Failure notes
 
 The source spawn file must exist. Use the Tools CLI spawn commands when you need lower-level spawn info, pack, repack,

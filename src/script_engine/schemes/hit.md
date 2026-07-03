@@ -18,6 +18,16 @@ zero-damage hit is ignored when the object is not invulnerable. If the object ha
 `isDeadlyHit` when the hit amount is greater than or equal to current health times `100`, tries to switch section, then
 clears the flag.
 
+## Runtime sequence
+
+1. `SchemeHit.activate` aborts if the referenced section does not exist.
+2. `SchemeHit.add` subscribes a `HitManager` action.
+3. `HitManager.onHit` stores `boneIndex` in the `hit` scheme state.
+4. Zero-damage hits are ignored unless the object is invulnerable.
+5. The manager stores `who.id()` or `-1`.
+6. While switching, `isDeadlyHit` is true only for hits whose amount is at least `health * 100`.
+7. The flag is cleared after the switch attempt.
+
 ## Example
 
 ```ini
@@ -32,3 +42,4 @@ on_info = walker@angry %=give_info(guard_was_hit)%
 
 - This scheme is event-driven. Its switch fields are checked when the object is hit.
 - Disabling the scheme unsubscribes the stored hit manager.
+- Use condition/effect code that reads the scheme state if behavior depends on attacker, bone, or deadly-hit status.

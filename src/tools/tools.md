@@ -25,3 +25,21 @@ The engine repository uses a bundled tools binary from `cli/bin` for some build 
 
 Use the desktop app for manual inspection and editing workflows. Use the CLI for repeatable scripts, CI checks, and
 engine build integration.
+
+## Choosing an interface
+
+Use the CLI when the command must be repeatable, run in CI, or become part of an engine build step. Examples include LTX
+verification, translation builds, archive unpacking, spawn conversion, and texture packing.
+
+Use the desktop app when you need to inspect structured project data with navigation: archives, configs, dialogs,
+exports, icons, spawns, and translations. Some app routes are read-only or prototype workflows; the page for each app
+tool calls out what is currently wired.
+
+## Source truth
+
+Tool behavior comes from the tools workspace, not from the book text:
+
+- CLI commands: `stalker-xrf-tools/bin/xrf-cli/src/commands`;
+- desktop backend commands: `stalker-xrf-tools/bin/xrf-app/src`;
+- desktop frontend routes: `stalker-xrf-tools/bin/xrf-ui/src/applications`;
+- reusable format logic: `stalker-xrf-tools/crates`.

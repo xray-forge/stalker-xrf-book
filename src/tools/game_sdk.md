@@ -27,3 +27,18 @@ OpenXRay includes SDK-related work and documentation in its repository:
 - [OpenXRay game editor wiki](https://github.com/OpenXRay/xray-16/wiki/%5BEN%5D-Game-Editor)
 
 When SDK output is committed back to a project, keep generated binary output separate from hand-authored XRF sources.
+
+## Boundary with XRF
+
+Treat SDK output as source only when the project intentionally owns that binary or editor-authored asset. Do not edit
+`target/` output by hand and do not treat packed game data as the source of truth.
+
+For script/config changes, prefer XRF text sources and validation commands. For native asset changes, use the SDK or
+format-specific XRF tools, then document how the generated asset should be reproduced.
+
+## Common handoff pattern
+
+1. Author or inspect the native asset in the SDK or a format-specific tool.
+2. Export the asset into the project-owned resource location.
+3. Rebuild or repack with XRF CLI commands.
+4. Verify the resulting game data in game, especially for spawn, level, model, animation, and particle changes.

@@ -14,6 +14,9 @@ The section supports common switch fields. They are parsed into `state.logic`.
 On activation, the scheme sets `behavior = 0`, which corresponds to the simple walk behavior in
 `ActionCompanionActivity`.
 
+The scheme adds `EActionId.COMPANION_ACTIVITY` to the state planner. It is a stalker scheme, so it expects a stalker
+object with a planner and normal movement access.
+
 The action runs when the NPC is alive, has no enemy, and the companion section is active. It:
 
 - clears desired position and direction;
@@ -38,3 +41,5 @@ on_info = {+companion_stop} walker@wait
 - The source defines additional behavior constants for near/ignore/wait modes, but the current activation code always
   sets simple walking behavior.
 - The assist position is chosen to the side of the actor and must be accessible to the NPC.
+- Combat or death interrupts the action because the evaluator requires the NPC to be alive and without an enemy.
+- Use common switch fields on the companion section to exit follow behavior when quest state changes.

@@ -33,3 +33,7 @@ npm run typecheck:tests
 
 Runtime tests use fixtures and mocks under `src/fixtures` for X-Ray APIs, Lua behavior, engine helpers, and CLI
 utilities. Use focused Jest paths first when changing a specific manager, scheme, binder, or CLI helper.
+
+The typecheck commands do not execute tests. They catch TypeScript and TypeScriptToLua issues that can pass Jest when a
+mocked runtime path is not exercised. For gameplay logic changes, run the focused Jest test and `npm run typecheck`
+before broader validation.

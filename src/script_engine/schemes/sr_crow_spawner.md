@@ -33,6 +33,15 @@ A path can spawn a crow when:
 
 The spawned server object section is `m_crow`. After a spawn, the selected path is put on a 10-second cooldown.
 
+## Runtime sequence
+
+1. Activation reads common switch fields, `max_crows_on_level`, and `spawn_path`.
+2. Manager activation initializes each path cooldown to `0`.
+3. On update, the manager checks the global crow count and update throttle.
+4. Paths are copied and tried in random order.
+5. A valid path creates `m_crow` at patrol point `0` with that point's level and game vertex ids.
+6. Common switch fields are checked after the spawn attempt.
+
 ## Example
 
 ```ini
@@ -49,3 +58,4 @@ spawn_path = zat_crow_spawn_1, zat_crow_spawn_2, zat_crow_spawn_3
 - `spawn_path` is parsed as a comma-separated list.
 - If the crow count is already at the limit, the manager waits for the crow update throttle.
 - Each path uses point `0` as the spawn position.
+- Keep spawn points away from the actor; paths within 100 units are skipped.

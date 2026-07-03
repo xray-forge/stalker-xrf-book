@@ -3,6 +3,9 @@
 `ph_button` plays a button animation and switches sections when the object is used. Use it for physical buttons, levers,
 and scripted controls.
 
+The scheme is for physical objects. On activation it sets the object tooltip, subscribes `PhysicalButtonManager`, and
+plays the configured animation cycle.
+
 ## Parameters
 
 ### `anim`
@@ -47,8 +50,18 @@ anim = idle_on
 anim_blend = false
 ```
 
+## Runtime sequence
+
+1. `SchemePhysicalButton.activate` reads common switch conditions and button fields.
+2. The object tooltip is set to `tooltip` or to an empty string when `tooltip` is absent.
+3. `PhysicalButtonManager.activate` calls `object.play_cycle(anim, anim_blend)`.
+4. Manager updates evaluate common section switching such as `on_info` and `on_timer`.
+5. `onUse` evaluates `on_press` only while the object is still in the active `ph_button` section.
+
 ## Notes
 
 - `anim` is required.
+- `anim_blend` defaults to `true`.
 - `on_press` only runs when the object is still in the active button section.
 - Common switch conditions are checked during update.
+- Use `on_press` for use-triggered transitions and common switch fields for background transitions.

@@ -21,6 +21,14 @@ npm run cli -- link
 npm run cli -- start_game
 ```
 
+## Inputs and output
+
+The command reads the configured game target and launches the executable from that folder. It does not rebuild scripts,
+copy gamedata, or wait for the engine process to finish.
+
+Use it after `build` and `link` when you want to test the currently linked project output. Use `logs` after the game
+starts if you need the script engine error output.
+
 ## Failure notes
 
 If the process does not start, run `npm run cli -- verify project` and check the resolved game folder and executable.

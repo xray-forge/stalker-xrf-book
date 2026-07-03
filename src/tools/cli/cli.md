@@ -28,7 +28,19 @@ used by both the engine scripts and the desktop tools.
 Most commands support command-specific `--silent` or `--verbose` flags. The binary also initializes Rust logging from
 `RUST_LOG` when the environment variable is present.
 
+## Read and write commands
+
+Inspection commands such as `info-ogf`, `info-omf`, `info-dds`, `info-spawn`, and `info-particles` read input files and
+print parsed metadata. Conversion commands such as archive unpacking, spawn packing, particle packing, texture packing,
+and translation building write output paths.
+
+Use explicit `--path` and `--dest` values when documenting or scripting a command. Defaults are useful for local manual
+work, but explicit paths make generated assets easier to reproduce.
+
 ## Usage pattern
 
 Use the command-specific page when working with a file format. Each page lists the required input, output behavior, and
 the commands that are safe to run as read-only inspection versus commands that write files.
+
+When running from the engine repository, prefer the engine CLI wrapper if it already exposes the workflow. Use
+`xrf-tool` directly when you need a lower-level command that the engine wrapper does not register.

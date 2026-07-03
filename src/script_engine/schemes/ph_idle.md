@@ -43,6 +43,15 @@ hit_on_bone = 1|ph_idle@hit %+box_was_hit%|2|ph_idle@hit
 
 When a matching bone is hit, the manager evaluates the condlist and switches to the selected section.
 
+## Runtime sequence
+
+1. Activation parses common switch fields, `hit_on_bone`, `nonscript_usable`, `on_use`, and `tips`.
+2. The object tip text is set immediately.
+3. Manager activation calls `object.set_nonscript_usable(...)`.
+4. Each update checks common switch fields.
+5. `onUse` evaluates `on_use` and switches to the selected section.
+6. `onHit` checks the hit bone index against `hit_on_bone` and switches through that condlist when a match exists.
+
 ## Example
 
 ```ini
@@ -63,3 +72,4 @@ nonscript_usable = true
 - The manager clears the tip text on deactivation.
 - `on_use` and `hit_on_bone` use explicit section switching.
 - Common switch conditions are checked during update.
+- Bone descriptors use engine bone indexes, not bone names.

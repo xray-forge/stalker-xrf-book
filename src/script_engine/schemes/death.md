@@ -33,6 +33,16 @@ On death, the manager stores the killer object id, or `-1` when no killer is pro
 condlists with the actor and the dead object as context. The return value is not used for section switching; use effects
 inside the condlist for death side effects.
 
+## Runtime sequence
+
+1. `SchemeDeath.activate` creates the state for the stalker.
+2. `SchemeDeath.add` subscribes `DeathManager`.
+3. `SchemeDeath.reset` reads `on_death` from the active logic section.
+4. If a death section is named, `on_info` and `on_info2` are parsed from that section.
+5. `DeathManager.onDeath` stores `killerId` and evaluates the parsed condlists.
+
+The condlists are evaluated with `registry.actor` as the first object and the dead stalker as the second object.
+
 ## Example
 
 ```ini
@@ -53,3 +63,4 @@ on_info2 = {=killed_by_actor} %+actor_killed_guard%
 
 - Missing `on_death` is allowed.
 - If `on_death` names a section that does not exist, reset aborts.
+- Use `mob_death` for monster death callbacks. `death` is the stalker scheme.

@@ -1,32 +1,55 @@
 # Spawn Editor
 
-The spawn editor opens and inspects ALife spawn files.
+The spawn editor opens and inspects ALife spawn data. It can read packed spawn files, import unpacked spawn folders,
+export unpacked data, and save packed spawn files.
 
 ## Screens
 
-- Navigator: open a spawn file.
-- Editor: inspect loaded spawn chunks.
-- Pack: pack spawn data.
-- Unpack: unpack a spawn file.
+| Screen    | Route                  | Purpose                                          |
+| --------- | ---------------------- | ------------------------------------------------ |
+| Navigator | `/spawn_editor`        | Choose Open, Unpack, or Pack.                    |
+| Editor    | `/spawn_editor/editor` | Open and inspect the current spawn file.         |
+| Unpack    | `/spawn_editor/unpack` | Unpack a spawn file into a folder.               |
+| Pack      | `/spawn_editor/pack`   | Pack an unpacked spawn folder into a spawn file. |
 
-## Data Views
+## Data views
 
-The editor has backend accessors for:
+The backend exposes accessors for:
 
 - header data;
 - graph data;
 - ALife spawn objects;
 - artefact spawn points;
-- patrols.
+- patrols;
+- full loaded spawn file data.
 
-## Backend Commands
+## Backend commands
 
-The Tauri backend exposes commands to:
+The Tauri `spawns-editor` plugin exposes:
 
-- open and close a spawn file;
-- check whether a spawn file is loaded;
-- get spawn file data and individual chunk groups;
-- import and export spawn data;
-- save a spawn file.
+- `open_spawn_file`;
+- `import_spawn_file`;
+- `export_spawn_file`;
+- `save_spawn_file`;
+- `close_spawn_file`;
+- `get_spawn_file`;
+- `get_spawn_file_header`;
+- `get_spawn_file_graphs`;
+- `get_spawn_file_alife_spawns`;
+- `get_spawn_file_artefact_spawns`;
+- `get_spawn_file_patrols`;
+- `has_spawn_file`.
 
-Use this tool for inspection before editing binary spawn data. Keep backups when saving converted spawn files.
+## Workflow
+
+1. Use **Open** for a packed `all.spawn` file.
+2. Inspect header, graph, ALife, artefact, and patrol chunks in the editor.
+3. Use **Unpack** to export a packed spawn file into editable structured data.
+4. Use **Pack** to rebuild a packed spawn file from an unpacked folder.
+
+When an XRF project path is configured, default paths point at `target/gamedata/spawns/all.spawn`,
+`target/spawns/unpacked`, and `target/spawns/repacked/repacked.spawn`.
+
+## Safety note
+
+Spawn files are binary game data. Keep a backup before saving or replacing a spawn file.

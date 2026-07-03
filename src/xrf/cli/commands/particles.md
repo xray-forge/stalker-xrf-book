@@ -31,6 +31,14 @@ npm run cli -- particles pack
 npm run cli -- particles pack --path src/resources/particles_unpacked --dest src/resources/particles.xr
 ```
 
+## Workflow
+
+Unpack first when you need to inspect or edit particle definitions as files. Pack after edits to rebuild `particles.xr`
+for resources or packaging. Use `--force` when replacing a previous unpacked folder or packed output.
+
+The command delegates to the bundled XRF tools binary. If you need lower-level particle conversion commands outside the
+engine repository defaults, use the Tools CLI particle commands directly.
+
 ## Related verification
 
 ```powershell

@@ -1,15 +1,37 @@
 # Dialog Editor
 
-The dialog editor is a UI surface for NPC dialog graph work.
+The dialog editor is currently a prototype UI surface for dialog graph work. It is useful for checking the shape of the
+future graph editor, not for production dialog data editing.
 
-The current app routes expose the main dialog editor page and a test page. Treat this tool as an early editor surface
-unless the source adds import, export, or validation commands.
+## Current routes
 
-## Use Cases
+| Route                    | Purpose                                                   |
+| ------------------------ | --------------------------------------------------------- |
+| `/dialog_editor`         | Navigator with an **Open** entry.                         |
+| Experimental graph route | Test graph page using React Flow dialog and phrase nodes. |
 
-- inspect the shape of dialog graph UI work;
-- prototype dialog-node and phrase-node interactions;
-- test dialog editor components during development.
+The current app source does not register a dialog-editor Tauri plugin and does not expose import, export, save, or
+validation commands for real dialog XML.
 
-For production dialog data changes, keep using the engine translation and dialog sources until the editor workflow is
-fully wired.
+## What is implemented
+
+- A navigator page.
+- A test graph with dialog and phrase node components.
+- Client-side graph interactions through React Flow.
+
+## What is not implemented
+
+- Opening engine dialog XML.
+- Saving dialog XML.
+- Validating phrase links or script predicates/actions.
+- Synchronizing dialog text with translation files.
+
+## Production workflow
+
+For real dialog changes, edit the engine sources directly:
+
+- dialog XML under `src/engine/configs/gameplay`;
+- dialog extern declarations under `src/engine/scripts/declarations/dialogs`;
+- dialog text under `src/engine/translations`.
+
+See [Dialog configs](../../script_engine/configs_dialogs.md) for the current production documentation.

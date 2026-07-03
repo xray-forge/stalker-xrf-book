@@ -38,6 +38,9 @@ On activation, the manager starts a postprocess effector with id `object.id() + 
 - accumulates hit power while inside;
 - once per second, applies radiation and shock hits to the actor.
 
+`intensity` and `intensity_speed` are converted from percent-style values by multiplying by `0.01`. `hit_intensity` is
+used directly as the per-second accumulation rate.
+
 ## Example
 
 ```ini
@@ -56,3 +59,4 @@ on_actor_outside = sr_idle@cooldown
 - `intensity` and `intensity_speed` are percent-style config values.
 - Deactivation is not implemented in the current manager and aborts if called.
 - The hit direction is zero and impulse is `0`.
+- Use a switch to a non-postprocess section when the restrictor should stop controlling the effect.

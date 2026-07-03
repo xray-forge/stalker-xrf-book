@@ -25,6 +25,14 @@ verification.
 
 See the [command list](./commands.md) for a quick index.
 
+## Working directories and output
+
+Run commands from the repository root unless a page says otherwise. Most defaults are repository-relative and come from
+`cli/config.json`.
+
+Generated output belongs under `target/`: built gamedata, parsed helper files, coverage, packed archives, and package
+output. Source edits belong under `src/engine`, `src/resources`, `cli`, or the relevant external resource repository.
+
 ## Global Alias
 
 `package.json` exposes the binary name `xrf`, but local development should prefer `npm run cli -- ...` so the command
@@ -41,3 +49,6 @@ xrf verify project
 
 Most CLI defaults live in `cli/config.json`: locale, resource roots, build source paths, target paths, compression
 tools, package roots, and game executable settings.
+
+When a command cannot find the game, resources, or generated output, check the command page first and then inspect the
+matching config key in `cli/config.json`.

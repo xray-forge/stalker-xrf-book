@@ -36,6 +36,15 @@ npm run cli -- icons unpack-descriptions --description ui_actor.xml
 npm run cli -- icons pack-descriptions --description ui_actor.xml
 ```
 
+## Workflow
+
+Unpack before editing icon sprites or checking generated sprite coordinates. Pack after editing the unpacked files or
+texture descriptions. Use `--description` when working on a single UI texture description file instead of the whole
+description set.
+
+Equipment commands are tied to the equipment icon atlas. Description commands are tied to XML texture description files
+under `src/engine/forms/textures_descr`.
+
 ## Failure notes
 
 Equipment commands depend on valid `system.ltx` icon coordinates. Description commands depend on XML description names

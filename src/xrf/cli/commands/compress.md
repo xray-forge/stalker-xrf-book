@@ -35,6 +35,14 @@ npm run cli -- compress --clean
 npm run cli -- compress --include configs shaders
 ```
 
+## Inputs and output
+
+The command reads built files from `target/gamedata` and writes database archives under `target/db`. It does not build
+missing gamedata by itself, so run `build` first when source files changed.
+
+Use `--include` for fast package checks when only one archive group changed. Use `--clean` before producing a package
+that should not contain stale archives from a previous target set.
+
 ## Failure notes
 
 `target/gamedata` must exist. If compression target names are wrong, the command prints the valid names from the

@@ -19,6 +19,14 @@ npm run cli -- format ltx
 npm run cli -- format ltx --check
 ```
 
+## Inputs and output
+
+`format ltx` reads LTX config sources from the repository and either rewrites them or reports formatting differences
+when `--check` is set. It is useful before `verify ltx` because it normalizes layout without changing config meaning.
+
+Run the check form in review or CI-style validation. Run the writing form when you intentionally want the formatter to
+update files.
+
 ## Package script difference
 
 The package script is broader:

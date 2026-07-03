@@ -1,19 +1,43 @@
 # Translation Editor
 
-The translation editor opens and reads translation projects.
+The translation editor opens and reads XRF translation projects. The current app workflow is read-only inspection.
 
 ## Screens
 
-- Navigator: open a translation project.
-- Project view: inspect the loaded translation project.
+| Screen       | Route                          | Purpose                                 |
+| ------------ | ------------------------------ | --------------------------------------- |
+| Navigator    | `/translations_editor`         | Open a translation project.             |
+| Project view | `/translations_editor/project` | Inspect the loaded translation project. |
 
-## Backend Commands
+## Backend commands
 
-The Tauri backend exposes commands to:
+The Tauri `translations-editor` plugin exposes:
 
-- open a translation project;
-- close a translation project;
-- get the current translation project;
-- read translation project data.
+- `open_translations_project`;
+- `read_translations_project`;
+- `get_translations_project`;
+- `close_translations_project`.
 
-Use the CLI translation commands for repeatable conversion, initialization, and verification workflows.
+Both open/read paths use `TranslationProject::read_project`.
+
+## Workflow
+
+1. Open a translation project folder or file.
+2. Inspect loaded translation ids and language values in the project view.
+3. Close and reopen after editing translation sources outside the app.
+
+When an XRF project path is configured, the app can prefill `src/engine/translations`.
+
+## Output and limitations
+
+The app keeps the parsed translation project in the Tauri plugin state and displays it in the project view. It does not
+currently expose a save action, build XML output, or run translation verification from the UI.
+
+Use the app for inspection while comparing ids across languages. Use the CLI when you need to initialize files, build
+game XML, or validate translation structure.
+
+## CLI equivalent
+
+Use `xrf-tool initialize-translation`, `xrf-tool build-translation`, and `xrf-tool verify-translation` for write, build,
+and verification workflows. In the engine repository, use `npm run cli -- translations ...` for XML-to-JSON conversion
+and project translation checks.

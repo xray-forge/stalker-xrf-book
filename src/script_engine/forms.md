@@ -55,3 +55,11 @@ npm run cli build -- --filter ui
 ```
 
 Do not edit generated XML under `target/`.
+
+## Debugging workflow
+
+If a control does not appear or a callback does not fire, check the runtime class before changing the form. Most UI
+classes look up controls by XML node name, so a renamed node can break runtime initialization even when the XML builds.
+
+For layout issues, compare the generated XML with the TSX source and any paired widescreen variant. For behavior issues,
+inspect the `src/engine/core/ui` class that loads the form and binds callbacks.

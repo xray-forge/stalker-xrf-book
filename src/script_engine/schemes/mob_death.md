@@ -2,6 +2,9 @@
 
 `mob_death` handles monster death callbacks. It records the killer id and then evaluates common switch logic.
 
+Use it from monster logic through `on_death` when a death should set info portions, trigger quest effects, or switch to
+a cleanup section.
+
 ## Parameters
 
 `mob_death` has no scheme-specific config fields. It reads common switch fields from the section.
@@ -33,6 +36,9 @@ On death, the manager stores the killer id in the object's death state:
 
 After that, it calls the common switcher for the `mob_death` state.
 
+The stored killer id is available in the death state for code that needs to inspect who killed the monster. The scheme
+does not decide rewards by itself; put reward effects in the condlist.
+
 ## Example
 
 ```ini
@@ -48,3 +54,4 @@ on_info = nil %+bloodsucker_dead%
 
 - This is normally referenced from a monster logic section through `on_death`.
 - Use condlist effects to set info portions, spawn rewards, or advance quest state.
+- Use `killer = -1` as the nil-killer case when reading the stored state in script code.

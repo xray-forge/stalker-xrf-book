@@ -30,6 +30,9 @@ Without `--silent`, the command prints:
 - real unpacked size;
 - unpack duration when files are written.
 
+With `--dry`, the command still reads the archive metadata but does not write the extracted files. Use it to confirm
+that a database can be opened before spending time on a full unpack.
+
 ## Examples
 
 ```powershell
@@ -37,3 +40,8 @@ xrf-tool unpack-archive --path .\db\configs.db0 --dest .\unpacked\configs
 xrf-tool unpack-archive --path .\db\textures.db0 --dest .\unpacked\textures --parallel 8
 xrf-tool unpack-archive --path .\db\sounds.db0 --dry
 ```
+
+## Failure notes
+
+The source path must point to a readable X-Ray database archive. If the destination already contains files, choose a new
+folder or clean it before running the command.

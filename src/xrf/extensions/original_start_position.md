@@ -37,3 +37,4 @@ This extension does not export `save` or `load`.
 - Keep the `isNewGame` guard.
 - Use engine start-position APIs only during new-game startup.
 - Update tests if the vertex id or vector changes.
+- Check the extension registration state when the code looks correct but the actor still starts elsewhere.

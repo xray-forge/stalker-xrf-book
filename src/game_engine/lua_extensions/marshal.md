@@ -19,3 +19,13 @@ Guard code that depends on `marshal`, or keep usage in paths where the runtime p
 
 Use marshal only when the runtime really needs Lua-level serialization or cloning. For game save data, prefer the engine
 save packet APIs and XRF save/load helpers so the data remains compatible with the engine lifecycle.
+
+Good candidates are short-lived Lua tables in tooling, debug-only data capture, or controlled runtime features where the
+package is bundled with the executable. Avoid using it as an implicit dependency for core gameplay scripts.
+
+## Validation notes
+
+- Check that `require("marshal")` succeeds in the selected executable before using these declarations.
+- Keep encoded data versioned if it can persist outside the current process.
+- Prefer explicit table copies when the shape is small and known; `marshal.clone` is useful only when marshal semantics
+  are the intended behavior.

@@ -36,3 +36,17 @@ new generated game data, prefer the appropriate source folder:
 - scripts in `src/engine/scripts` and `src/engine/core`.
 
 Do not patch packed output or files under `target/`.
+
+## Validation workflow
+
+After asset changes, run the narrowest build filter that covers the path you touched. Then inspect `target/gamedata` to
+confirm the copied path matches the engine-facing layout.
+
+Use format-specific tools for packed or structured assets:
+
+- icon texture workflows through `icons` commands;
+- `particles.xr` workflows through `particles` commands;
+- spawn workflows through `spawn` commands;
+- archive inspection through the Tools CLI archive commands.
+
+If an asset change depends on config references, validate the LTX/XML source that points at the asset as well.

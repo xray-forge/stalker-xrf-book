@@ -23,6 +23,15 @@ The manager's `checkStalker` helper returns two booleans:
 - the configured `light_on` value;
 - whether the checked stalker is inside this active restrictor zone.
 
+## Runtime sequence
+
+1. `SchemeLight.activate` reads common switch fields and `light_on`.
+2. `SchemeLight.add` subscribes `LightManager`.
+3. `LightManager.activate` registers the manager in `registry.lightZones` by restrictor object id.
+4. Each update tries common section switching.
+5. If switching happens, the manager marks itself inactive and removes the zone from `registry.lightZones`.
+6. Otherwise it marks itself active and can answer `checkStalker(...)`.
+
 ## Example
 
 ```ini
@@ -41,3 +50,4 @@ light_on = false
 
 - The scheme reset clears all registered light zones.
 - Deactivation does not currently unregister the zone directly; updates and reset handle registry cleanup.
+- `checkStalker` returns `(false, false)` when the manager is inactive or the stalker is outside the restrictor.
