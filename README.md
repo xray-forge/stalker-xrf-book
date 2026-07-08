@@ -5,11 +5,12 @@ Documentation for x-ray forge engine template and tools.
 ## 📦 Links
 
 - [Xray forge documentation book](https://xray-forge.github.io/stalker-xrf-book).
-- [Xray16 type definitions](https://xray-forge.github.io/xray-16-types/modules.html).
+- [XRF X-Ray 16 SDK](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html).
 
 ---
 
-- Types repository: [https://github.com/xray-forge/xray-16-types](https://github.com/xray-forge/xray-16-types)
+- X-Ray 16 SDK repository:
+  [https://github.com/xray-forge/stalker-xrf-xray16-sdk](https://github.com/xray-forge/stalker-xrf-xray16-sdk)
 - Engine repository:
   [https://github.com/xray-forge/stalker-xrf-engine](https://github.com/xray-forge/stalker-xrf-engine)
 - Tools repository: [https://github.com/xray-forge/stalker-xrf-tools](https://github.com/xray-forge/stalker-xrf-tools)

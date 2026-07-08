@@ -21,7 +21,7 @@ At runtime it also owns:
 - render, sound, input, and UI infrastructure;
 - frame updates and scheduled object processing.
 
-The source references for these behaviors are the local `xray-16` engine tree and the `xray-16-types` declarations.
+The source references for these behaviors are the local `xray-16` engine tree and the XRF X-Ray 16 SDK declarations.
 
 ## What XRF adds
 

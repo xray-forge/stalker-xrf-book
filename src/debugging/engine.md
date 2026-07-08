@@ -42,9 +42,6 @@ Use the engine source when you need to verify:
 - UI XML initialization behavior in `CScriptXmlInit` and CUI controls;
 - engine-only debug overlays, stats, scheduler, physics, and renderer behavior.
 
-Use `C:\Projects\stalker\xray-16-types` first for the TypeScript-visible API shape, then confirm ambiguous runtime
-semantics in `C:\Projects\stalker\xray-16`.
-
 ## Limitations
 
 - TypeScript breakpoints are not available in the engine. Debug generated Lua or C++ instead.

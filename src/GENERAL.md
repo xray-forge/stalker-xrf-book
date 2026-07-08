@@ -16,7 +16,7 @@ in the sibling XRF tool/resource repositories.
 
 ## Links
 
-- [Xray16 type definitions](https://xray-forge.github.io/xray-16-types/modules.html)
+- [XRF X-Ray 16 SDK](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html)
 - [XRF engine repository](https://github.com/xray-forge/stalker-xrf-engine)
 - [XRF tools repository](https://github.com/xray-forge/stalker-xrf-tools)
 - [XRF binaries repository](https://github.com/xray-forge/stalker-xrf-bin)

@@ -56,8 +56,8 @@ When script compilation reports diagnostics, use `typecheck` for a focused failu
 X-Ray engine APIs are exposed through TypeScript declarations from the `xray16` package and the XRF typedefs under
 `src/typedefs`. Use the generated type documentation when checking engine class, method, and enum names:
 
-- [xray-16-types source](https://github.com/xray-forge/xray-16-types)
-- [xray-16-types documentation](https://xray-forge.github.io/xray-16-types/index.html)
+- [XRF X-Ray 16 SDK source](https://github.com/xray-forge/stalker-xrf-xray16-sdk)
+- [XRF X-Ray 16 SDK documentation](https://xray-forge.github.io/stalker-xrf-xray16-sdk/index.html)
 
 ## Luabind Classes
 
