@@ -5,7 +5,7 @@ OGF commands inspect X-Ray model files.
 ## `info-ogf`
 
 ```powershell
-xrf-tool info-ogf --path ./meshes/example.ogf
+xrf-cli info-ogf --path ./meshes/example.ogf
 ```
 
 Options:

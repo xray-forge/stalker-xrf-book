@@ -15,7 +15,7 @@ Texture commands inspect DDS files and pack or unpack icon-related assets.
 ## DDS inspection
 
 ```powershell
-xrf-tool info-dds --path ./textures/ui/ui_icon_equipment.dds
+xrf-cli info-dds --path ./textures/ui/ui_icon_equipment.dds
 ```
 
 The command prints file size, metadata size, pixel data size, dimensions, mipmap information, pitch or linear size when
@@ -24,8 +24,8 @@ present, block size, bits per pixel, FourCC, and D3D/DXGI format when known.
 ## Equipment icons
 
 ```powershell
-xrf-tool unpack-equipment-icons --system-ltx ./configs/system.ltx --source ./textures/ui/ui_icon_equipment.dds --output ./textures_unpacked/ui/ui_icon_equipment
-xrf-tool pack-equipment-icons --system-ltx ./configs/system.ltx --source ./textures_unpacked/ui/ui_icon_equipment --output ./textures/ui/ui_icon_equipment.dds --strict
+xrf-cli unpack-equipment-icons --system-ltx ./configs/system.ltx --source ./textures/ui/ui_icon_equipment.dds --output ./textures_unpacked/ui/ui_icon_equipment
+xrf-cli pack-equipment-icons --system-ltx ./configs/system.ltx --source ./textures_unpacked/ui/ui_icon_equipment --output ./textures/ui/ui_icon_equipment.dds --strict
 ```
 
 `pack-equipment-icons` also accepts `--gamedata <path>` for resource lookup, plus `-v, --verbose` and `-s, --strict`.
@@ -34,8 +34,8 @@ xrf-tool pack-equipment-icons --system-ltx ./configs/system.ltx --source ./textu
 ## Texture descriptions
 
 ```powershell
-xrf-tool unpack-texture-description --description ./configs/ui/textures_descr/ui_actor.xml --base ./textures --output ./textures_unpacked --parallel
-xrf-tool pack-texture-description --description ./configs/ui/textures_descr/ui_actor.xml --base ./textures_unpacked --output ./textures --strict
+xrf-cli unpack-texture-description --description ./configs/ui/textures_descr/ui_actor.xml --base ./textures --output ./textures_unpacked --parallel
+xrf-cli pack-texture-description --description ./configs/ui/textures_descr/ui_actor.xml --base ./textures_unpacked --output ./textures --strict
 ```
 
 Description commands require `--description` and `--base`. If `--output` is omitted, output defaults to the base path.

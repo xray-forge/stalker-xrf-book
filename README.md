@@ -23,11 +23,11 @@ Documentation for x-ray forge engine template and tools.
 - Extended assets:
   [https://gitlab.com/xray-forge/stalker-xrf-resources-extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
 - EN locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng)
+  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en)
 - UA locale assets:
   [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
 - RU locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus)
+  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru)
 
 ## Working with the book locally
 

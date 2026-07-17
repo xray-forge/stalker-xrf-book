@@ -8,8 +8,8 @@ the lower-level tool behind the engine repository's `format ltx` and `verify ltx
 Formats one file or every LTX file under a folder.
 
 ```powershell
-xrf-tool format-ltx --path ./gamedata/configs
-xrf-tool format-ltx --path ./gamedata/configs --check
+xrf-cli format-ltx --path ./gamedata/configs
+xrf-cli format-ltx --path ./gamedata/configs --check
 ```
 
 Options:
@@ -26,8 +26,8 @@ Options:
 Verifies an LTX project folder with scheme and strict-project options enabled.
 
 ```powershell
-xrf-tool verify-ltx --path ./gamedata/configs
-xrf-tool verify-ltx --path ./gamedata/configs --strict
+xrf-cli verify-ltx --path ./gamedata/configs
+xrf-cli verify-ltx --path ./gamedata/configs --strict
 ```
 
 Options:

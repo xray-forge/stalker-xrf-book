@@ -7,7 +7,7 @@ Archive commands work with X-Ray `.db` database archives.
 `unpack-archive` opens an archive project and exports the contained files to a folder.
 
 ```powershell
-xrf-tool unpack-archive --path gamedata.db0 --dest unpacked
+xrf-cli unpack-archive --path gamedata.db0 --dest unpacked
 ```
 
 ## Options
@@ -36,9 +36,9 @@ that a database can be opened before spending time on a full unpack.
 ## Examples
 
 ```powershell
-xrf-tool unpack-archive --path .\db\configs.db0 --dest .\unpacked\configs
-xrf-tool unpack-archive --path .\db\textures.db0 --dest .\unpacked\textures --parallel 8
-xrf-tool unpack-archive --path .\db\sounds.db0 --dry
+xrf-cli unpack-archive --path .\db\configs.db0 --dest .\unpacked\configs
+xrf-cli unpack-archive --path .\db\textures.db0 --dest .\unpacked\textures --parallel 8
+xrf-cli unpack-archive --path .\db\sounds.db0 --dry
 ```
 
 ## Failure notes

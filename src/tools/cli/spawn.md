@@ -15,11 +15,11 @@ Spawn commands inspect, verify, pack, unpack, and round-trip ALife `.spawn` file
 ## Examples
 
 ```powershell
-xrf-tool info-spawn --path ./all.spawn
-xrf-tool unpack-spawn --path ./all.spawn --dest ./all_spawn --force
-xrf-tool pack-spawn --path ./all_spawn --dest ./all.spawn --force
-xrf-tool repack-spawn --path ./all.spawn --dest ./all.repacked.spawn
-xrf-tool verify-spawn --path ./all.spawn
+xrf-cli info-spawn --path ./all.spawn
+xrf-cli unpack-spawn --path ./all.spawn --dest ./all_spawn --force
+xrf-cli pack-spawn --path ./all_spawn --dest ./all.spawn --force
+xrf-cli repack-spawn --path ./all.spawn --dest ./all.repacked.spawn
+xrf-cli verify-spawn --path ./all.spawn
 ```
 
 ## Options

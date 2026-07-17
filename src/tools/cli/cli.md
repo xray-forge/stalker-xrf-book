@@ -1,13 +1,13 @@
 # Tools CLI
 
-The Tools CLI is the Rust `xrf-tool` binary from `stalker-xrf-tools/bin/xrf-cli`. Use it for repeatable asset
-inspection, conversion, packing, unpacking, formatting, and verification outside the engine repository wrapper.
+The Tools CLI is the Rust `xrf-cli` binary from `stalker-xrf-tools/bin/xrf-cli`. Use it for repeatable asset inspection,
+conversion, packing, unpacking, formatting, and verification outside the engine repository wrapper.
 
 ```powershell
-xrf-tool <command> --help
+xrf-cli <command> --help
 ```
 
-The engine CLI wraps some of these commands through `npm run cli -- ...`, but `xrf-tool` is the lower-level interface
+The engine CLI wraps some of these commands through `npm run cli -- ...`, but `xrf-cli` is the lower-level interface
 used by both the engine scripts and the desktop tools.
 
 ## Command groups
@@ -42,5 +42,6 @@ work, but explicit paths make generated assets easier to reproduce.
 Use the command-specific page when working with a file format. Each page lists the required input, output behavior, and
 the commands that are safe to run as read-only inspection versus commands that write files.
 
-When running from the engine repository, prefer the engine CLI wrapper if it already exposes the workflow. Use
-`xrf-tool` directly when you need a lower-level command that the engine wrapper does not register.
+When running from the engine repository, prefer the engine CLI wrapper if it already exposes the workflow. Use `xrf-cli`
+directly when you need a lower-level command that the engine wrapper does not register. On Windows, use `xrf-cli.exe` or
+the bundled path under `cli/bin/tools`.

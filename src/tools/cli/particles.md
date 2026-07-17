@@ -16,13 +16,13 @@ Particle commands inspect, verify, pack, unpack, and round-trip `particles.xr` d
 ## Examples
 
 ```powershell
-xrf-tool info-particles --path ./particles.xr
-xrf-tool unpack-particles --path ./particles.xr --dest ./particles_unpacked --force
-xrf-tool pack-particles --path ./particles_unpacked --dest ./particles.xr --force
-xrf-tool repack-particles --path ./particles.xr --dest ./particles.repacked.xr
-xrf-tool re-unpack-particles --path ./particles_unpacked --dest ./particles_unpacked_roundtrip
-xrf-tool verify-particles --path ./particles.xr
-xrf-tool verify-particles --path ./particles_unpacked --unpacked
+xrf-cli info-particles --path ./particles.xr
+xrf-cli unpack-particles --path ./particles.xr --dest ./particles_unpacked --force
+xrf-cli pack-particles --path ./particles_unpacked --dest ./particles.xr --force
+xrf-cli repack-particles --path ./particles.xr --dest ./particles.repacked.xr
+xrf-cli re-unpack-particles --path ./particles_unpacked --dest ./particles_unpacked_roundtrip
+xrf-cli verify-particles --path ./particles.xr
+xrf-cli verify-particles --path ./particles_unpacked --unpacked
 ```
 
 ## Shared options

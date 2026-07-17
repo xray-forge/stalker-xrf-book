@@ -29,8 +29,6 @@ what the TypeScript declarations say exists.
 
 ## Notes for XRF scripts
 
-- Treat `src/typedefs` and the XRF X-Ray 16 SDK as declarations for what TypeScript can see, then verify ambiguous behavior
-  against the engine build.
 - Do not assume optional Lua modules such as LFS or marshal are loaded unless the runtime package opens or provides
   them.
 - Use engine APIs for game objects, packets, configs, and path resolution. Standalone Lua behavior is a weak reference

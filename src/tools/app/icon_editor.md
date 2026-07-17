@@ -38,5 +38,5 @@ and `src/resources/textures/ui/ui_icon_equipment.dds`.
 
 ## CLI equivalent
 
-Use `xrf-tool unpack-equipment-icons`, `xrf-tool pack-equipment-icons`, `xrf-tool unpack-texture-description`, and
-`xrf-tool pack-texture-description` when you need workflows that are not fully wired in the app.
+Use `xrf-cli unpack-equipment-icons`, `xrf-cli pack-equipment-icons`, `xrf-cli unpack-texture-description`, and
+`xrf-cli pack-texture-description` when you need workflows that are not fully wired in the app.

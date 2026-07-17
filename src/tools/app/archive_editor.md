@@ -36,4 +36,4 @@ for output when an XRF project path is configured.
 
 ## CLI equivalent
 
-Use `xrf-tool unpack-archive` for repeatable unpacking from scripts.
+Use `xrf-cli unpack-archive` for repeatable unpacking from scripts.

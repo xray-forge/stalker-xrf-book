@@ -5,7 +5,7 @@ OMF commands inspect X-Ray motion files.
 ## `info-omf`
 
 ```powershell
-xrf-tool info-omf --path ./meshes/example.omf
+xrf-cli info-omf --path ./meshes/example.omf
 ```
 
 Options:

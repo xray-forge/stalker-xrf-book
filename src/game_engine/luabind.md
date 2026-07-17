@@ -43,5 +43,5 @@ shape that the engine expects.
 
 ## Verification
 
-Use the XRF X-Ray 16 SDK to check TypeScript-visible API shape. For ambiguous behavior, check the engine binding code in the
-selected `xray-16` fork, because some binding setters and object methods have engine-specific semantics.
+Use the XRF X-Ray 16 SDK to check TypeScript-visible API shape. For ambiguous behavior, check the engine binding code in
+the selected `xray-16` fork, because some binding setters and object methods have engine-specific semantics.

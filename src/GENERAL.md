@@ -26,9 +26,9 @@ in the sibling XRF tool/resource repositories.
 
 - [Base assets](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
 - [Extended assets](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
-- [English locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-eng)
+- [English locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en)
 - [Ukrainian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
-- [Russian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-rus)
+- [Russian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru)
 
 ## References
 

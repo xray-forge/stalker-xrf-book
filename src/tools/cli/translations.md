@@ -14,7 +14,7 @@ Translation commands work with XRF JSON translation projects and generated gamed
 ## Initialize
 
 ```powershell
-xrf-tool initialize-translation --path ./translations
+xrf-cli initialize-translation --path ./translations
 ```
 
 Options:
@@ -26,7 +26,7 @@ Options:
 ## Build
 
 ```powershell
-xrf-tool build-translation --path ./translations --output ./gamedata/configs/text --language ukr
+xrf-cli build-translation --path ./translations --output ./gamedata/configs/text --language ukr
 ```
 
 Options:
@@ -41,7 +41,7 @@ Options:
 ## Verify
 
 ```powershell
-xrf-tool verify-translation --path ./translations --language ukr --strict
+xrf-cli verify-translation --path ./translations --language ukr --strict
 ```
 
 Options:

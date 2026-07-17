@@ -32,5 +32,5 @@ Verification opens the folder with scheme checking enabled and strict checking d
 
 ## CLI equivalent
 
-Use `xrf-tool verify-ltx` and `xrf-tool format-ltx` for repeatable checks. In the engine repository, use
+Use `xrf-cli verify-ltx` and `xrf-cli format-ltx` for repeatable checks. In the engine repository, use
 `npm run cli -- verify ltx` and `npm run cli -- format ltx`.

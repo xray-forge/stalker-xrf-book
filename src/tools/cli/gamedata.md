@@ -6,7 +6,7 @@ missing textures, meshes, animations, scripts, configs, particles, or weather da
 ## `verify-gamedata`
 
 ```powershell
-xrf-tool verify-gamedata --root ./gamedata --configs ./gamedata/configs
+xrf-cli verify-gamedata --root ./gamedata --configs ./gamedata/configs
 ```
 
 ## Options
@@ -25,9 +25,9 @@ If `--ignore` is omitted, the command ignores common repository and unpacked-sou
 ## Examples
 
 ```powershell
-xrf-tool verify-gamedata --root ./gamedata
-xrf-tool verify-gamedata --root ./base,./override --configs ./override/configs
-xrf-tool verify-gamedata --root ./gamedata --ignore .git,textures_unpacked --strict
+xrf-cli verify-gamedata --root ./gamedata
+xrf-cli verify-gamedata --root ./base,./override --configs ./override/configs
+xrf-cli verify-gamedata --root ./gamedata --ignore .git,textures_unpacked --strict
 ```
 
 ## Result
