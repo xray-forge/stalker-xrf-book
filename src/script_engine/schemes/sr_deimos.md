@@ -120,4 +120,4 @@ on_info = {+scene_finished} sr_idle@done
 
 - `cam_effector_repeating_time` is configured in seconds and converted to milliseconds.
 - The manager skips updates while the screen is black.
-- If an actor binder provides `deimosIntensity`, the manager uses it as the current intensity seed.
+- The core `DeimosManager` persists the active intensity and provides it to the next active Deimos controller after a load.
