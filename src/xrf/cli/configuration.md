@@ -1,6 +1,6 @@
 # CLI Configuration
 
-The engine CLI reads its defaults from `cli/config.json`.
+The engine CLI reads project defaults from `cli/config.json`.
 
 This file controls:
 
@@ -43,7 +43,7 @@ The `build` section maps source folders:
 
 Generated output goes under `target/gamedata`.
 
-## Non-Steam Game Path
+## Game path
 
-The `targets` section contains the Steam app id, fallback game path, and game executable name. Update
-`stalker_game_fallback_path` if the CLI cannot locate a non-Steam installation automatically.
+The `targets` section contains the Steam app id, fallback game path, and executable name. Set
+`stalker_game_fallback_path` when the CLI cannot locate a non-Steam installation.

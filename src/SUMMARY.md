@@ -66,7 +66,7 @@
   - [Game SDK](tools/game_sdk.md)
   - [Lua debugger](tools/lua_debugger.md)
 
-- [Debugging]()
+- [Debugging](debugging/debugging.md)
 
   - [AI and logics](debugging/ai_and_logics.md)
   - [Engine (C++)](debugging/engine.md)

@@ -1,10 +1,10 @@
 # Original Start Position
 
-`Original start position` changes the actor's start vertex and position for new games.
+`Original start position` changes the actor's initial vertex and position for a new game.
 
 The source lives under `src/engine/extensions/original_start_position`.
 
-## Default State
+## Default state
 
 The extension exports:
 
@@ -15,7 +15,7 @@ export const enabled = false;
 
 It is disabled by default. Saved extension state can enable it.
 
-## Runtime Behavior
+## Behaviour
 
 The extension receives `isNewGame` from the extension registration flow.
 
@@ -28,7 +28,7 @@ set_start_position(createVector(268, 20, 560));
 
 When `isNewGame` is `false`, it does nothing. This prevents loaded saves from having their actor position changed.
 
-## Save Data
+## Saved data
 
 This extension does not export `save` or `load`.
 

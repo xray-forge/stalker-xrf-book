@@ -1,18 +1,18 @@
 # Installation
 
-This page describes a local development setup for `stalker-xrf-engine`.
+This guide prepares a local `stalker-xrf-engine` checkout, connects it to an installed game, and starts XRF.
 
 ## Requirements
 
-- Windows development environment.
-- [Node.js](https://nodejs.org/) with `npm`.
+- Windows.
+- [Node.js](https://nodejs.org/) and `npm`.
 - Git with submodule support.
-- Installed S.T.A.L.K.E.R.: Call of Pripyat.
+- An installed copy of S.T.A.L.K.E.R.: Call of Pripyat.
 
-The project can locate the Steam installation for app id `41700`. For a non-Steam copy, configure the fallback game path
-in `cli/config.json`.
+The CLI looks for Steam app `41700`. For a non-Steam installation, set `targets.stalker_game_fallback_path` in
+`cli/config.json`.
 
-## Set Up the Project
+## Set up the project
 
 Clone the engine repository and install dependencies:
 
@@ -23,10 +23,9 @@ npm install
 npm run setup
 ```
 
-`npm run setup` initializes and updates the repository submodules. The important submodules are `src/resources` for base
-game resources and `cli/bin` for bundled binaries and tooling.
+`npm run setup` initializes the `src/resources` and `cli/bin` submodules used for assets, engines, and tools.
 
-## Link the Game
+## Verify and link the game
 
 Run the project verification before linking:
 
@@ -34,22 +33,22 @@ Run the project verification before linking:
 npm run verify
 ```
 
-Link the built `target/gamedata` folder, logs, and game folder paths:
+Create development links for the game folder, `target/gamedata`, and logs:
 
 ```powershell
 npm run cli -- link
 ```
 
-Switch to one of the bundled engine variants:
+List the bundled engines and select one:
 
 ```powershell
 npm run cli -- engine list
 npm run cli -- engine use release
 ```
 
-Use `engine rollback` if you need to restore the default game executable.
+`engine rollback` restores the original game executable.
 
-## Build and Start
+## Build and start
 
 Build the gamedata output:
 
@@ -63,10 +62,17 @@ Start the configured game executable:
 npm run cli -- start_game
 ```
 
+For faster testing, the start command can create or load a session directly:
+
+```powershell
+npm run cli -- start_game --new --no-intro
+npm run cli -- start_game --load quicksave
+```
+
 The build output is written to `target/gamedata`. Do not edit files there by hand; edit sources under `src/engine` and
 rebuild.
 
-## Updating Submodules
+## Update submodules
 
 Update submodules when resource or binary repositories change:
 
@@ -74,7 +80,7 @@ Update submodules when resource or binary repositories change:
 git submodule update --init --recursive
 ```
 
-## Local OpenXRay Builds
+## Use a local OpenXRay build
 
 For a locally built OpenXRay executable, follow the OpenXRay Windows build guide, then configure or copy the executable
 into the engine location used by the CLI. Use `npm run cli -- engine info` to inspect the currently selected engine.

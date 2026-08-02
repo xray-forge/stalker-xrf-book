@@ -1,10 +1,10 @@
 # Achievement Rewards
 
-`Achievement rewards` restores periodic reward spawns for selected vanilla achievements.
+`Achievement rewards` periodically fills two actor reward boxes after the relevant achievements are earned.
 
 The source lives under `src/engine/extensions/achievements_rewards`.
 
-## Default State
+## Default state
 
 The extension exports:
 
@@ -15,11 +15,11 @@ export const enabled = true;
 
 It is enabled by default unless saved extension state overrides it.
 
-## Runtime Behavior
+## Behaviour
 
 On registration, the extension subscribes to `EGameEvent.ACTOR_UPDATE`.
 
-Each update checks whether the actor has gained these info portions:
+Each actor update checks these info portions:
 
 - `detective_achievement_gained`;
 - `mutant_hunter_achievement_gained`.
@@ -41,7 +41,7 @@ Reward targets:
 The spawn count is fixed in the update code: detective rewards spawn with count `4`, and mutant hunter rewards spawn
 with count `5`.
 
-## Save Data
+## Saved data
 
 The extension persists two timestamps in dynamic extension data:
 
@@ -50,7 +50,7 @@ The extension persists two timestamps in dynamic extension data:
 
 The timestamps are serialized through the time helpers and restored on extension load.
 
-## Editing Notes
+## Tuning
 
 - Keep reward timing in `AchievementRewardsConfig.ts`.
 - Keep achievement checks in `update.ts`.

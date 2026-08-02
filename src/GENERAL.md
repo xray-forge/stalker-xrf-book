@@ -1,36 +1,33 @@
-# Stalker XRF Book
+# X-Ray Forge
 
-This book documents the X-Ray Forge script engine, build pipeline, CLI tools, and supporting modding workflow for
-S.T.A.L.K.E.R.: Call of Pripyat projects.
+X-Ray Forge (XRF) is a TypeScript rewrite of the S.T.A.L.K.E.R.: Call of Pripyat script layer. It compiles gameplay
+code to Lua and builds the configs, UI forms, translations, and resources used by X-Ray.
 
-Use it when you need to:
+This book covers the full development workflow: project setup, builds, CLI and desktop tools, runtime architecture,
+gameplay schemes, and debugging.
 
-- set up the XRF engine project locally;
-- build scripts, configs, UI forms, translations, and resources into `target/gamedata`;
-- use the local CLI for linking, verification, packaging, engine switching, and asset utilities;
-- understand how the rewritten TypeScript script engine maps to X-Ray Lua scripts;
-- debug game logic, UI, weather, logs, and runtime state.
+## Start here
 
-The implementation source lives in `stalker-xrf-engine`. This book should describe behavior that is implemented there or
-in the sibling XRF tool/resource repositories.
+- New to XRF? Follow [Installation](./INSTALLATION.md), then read [Building](./xrf/building/building.md).
+- Working on gameplay? Start with the [Script engine](./script_engine/script_engine.md) and
+  [Schemes](./script_engine/schemes/schemes.md).
+- Looking for a command? See the [XRF CLI](./xrf/cli/cli.md) or [Tools CLI](./tools/cli/cli.md).
+- Investigating runtime behavior? Read [Game engine](./game_engine/game_engine.md) and [Debugging](./debugging/logs.md).
 
-## Links
+Generated files are written under `target/`. Edit sources in the engine or tools repository and rebuild; do not edit
+generated gamedata by hand.
 
-- [XRF X-Ray 16 SDK](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html)
-- [XRF engine repository](https://github.com/xray-forge/stalker-xrf-engine)
-- [XRF tools repository](https://github.com/xray-forge/stalker-xrf-tools)
-- [XRF binaries repository](https://github.com/xray-forge/stalker-xrf-bin)
-- [Book repository](https://github.com/xray-forge/stalker-xrf-book)
+## Project repositories
 
-## Resource Repositories
+- [XRF engine](https://github.com/xray-forge/stalker-xrf-engine) — script runtime and project CLI.
+- [XRF tools](https://github.com/xray-forge/stalker-xrf-tools) — format libraries, CLI, and desktop application.
+- [XRF binaries](https://github.com/xray-forge/stalker-xrf-bin) — packaged engine and tool binaries.
+- [XRF X-Ray 16 SDK](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html) — TypeScript-facing engine API.
+- [Book source](https://github.com/xray-forge/stalker-xrf-book) — this documentation.
 
-- [Base assets](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
-- [Extended assets](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
-- [English locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en)
-- [Ukrainian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
-- [Russian locale assets](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru)
-
-## References
-
-- This site is built with [mdBook](https://github.com/rust-lang/mdBook).
-- XRF targets [OpenXRay](https://github.com/OpenXRay/xray-16) as the main engine fork.
+XRF uses [OpenXRay](https://github.com/OpenXRay/xray-16) as its main engine reference. Game assets are split across
+[base](https://gitlab.com/xray-forge/stalker-xrf-resources-base),
+[extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended), and locale repositories for
+[English](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en),
+[Ukrainian](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr), and
+[Russian](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru).

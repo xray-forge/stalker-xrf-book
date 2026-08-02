@@ -1,10 +1,10 @@
 # Enhanced Treasures
 
-`Enhanced treasures` enables typed treasure map spots.
+`Enhanced treasures` uses a treasure's type to choose its map icon.
 
 The source lives under `src/engine/extensions/enhanced_treasures`.
 
-## Default State
+## Default state
 
 The extension exports:
 
@@ -15,7 +15,7 @@ export const enabled = true;
 
 It is enabled by default unless saved extension state overrides it.
 
-## Runtime Behavior
+## Behaviour
 
 On registration, the extension sets:
 
@@ -40,7 +40,7 @@ When enhanced mode is enabled, `getTreasureMapSpot` maps treasure type to mark:
 
 Treasure state itself is still owned by `TreasureManager` and `treasureConfig.TREASURES`.
 
-## Save Data
+## Saved data
 
 This extension does not export `save` or `load`. Treasure manager state is saved by `TreasureManager`.
 

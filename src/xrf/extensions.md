@@ -1,31 +1,30 @@
 # Extensions
 
-Extensions are optional script modules loaded from `gamedata/extensions`. They let XRF keep larger gameplay changes
-separate from the core script engine.
+Extensions are optional modules discovered in `gamedata/extensions`. They keep gameplay changes separate from the core
+script layer.
 
-The engine scans extension folders, loads each `main.script`, synchronizes the list with saved user preferences, and
-registers enabled extensions during game start.
+At game startup, XRF scans folders containing `main.script`, restores their saved order and enabled state, and registers
+enabled modules.
 
 ## Extension Entry Point
 
 Each extension has its own folder under `extensions` and an entry file named `main.script` after build output.
 
-The module can export:
+An extension module can export:
 
-- `register(isNewGame, extension)`: called when the extension is enabled.
+- `register(isNewGame, extension)`: called when the extension is enabled; this is required for a usable module.
 - `unregister(isNewGame, extension)`: optional cleanup hook called when the extension is disabled.
 - `save(data)`: optional hook for extension dynamic data.
 - `load(data)`: optional hook for restoring extension dynamic data.
 
 The TypeScript sources for built-in extensions live under `src/engine/extensions`.
 
-## Runtime State
+## State and ordering
 
 Loaded extensions are stored in the runtime registry by name. The load order and enabled state are saved to
 `extensions_order.scopo` in the game saves folder.
 
-The main menu includes an extensions dialog. It lets the user reorder extensions and toggle extensions that declare they
-can be toggled.
+The main menu can reorder extensions and toggle those that opt in with `canToggle`.
 
 ## Built-In Extensions
 
@@ -39,7 +38,7 @@ The current engine source includes these extension folders:
 | `enhanced_treasures`            | `Enhanced treasures`                  | enabled       |
 | `original_start_position`       | `Original start position`             | disabled      |
 
-Use the built-in extension pages as implementation references when adding a new extension:
+The built-in modules are useful references when adding an extension:
 
 - [Achievement rewards](extensions/achievement_rewards.md)
 - [Enhanced items drop](extensions/enhanced_items_drop.md)
@@ -52,8 +51,7 @@ Use the built-in extension pages as implementation references when adding a new 
 Extensions can open extension-local LTX files through the extension utilities. `main.ltx` is the default relative file
 name when no file name is provided.
 
-## Limitations
+## Scope
 
-The current implementation covers discovery, ordering, enabling/disabling, registry registration, and save/load hooks.
-More advanced extension packaging, dependency declarations, and extension-specific build steps should be treated as
-future work unless the source adds them.
+XRF supports discovery, ordering, enablement, registry registration, and save/load hooks. It does not currently define
+extension dependencies, packaging metadata, or extension-specific build steps.

@@ -1,11 +1,11 @@
 # Enhanced Items Drop
 
-`Enhanced items drop (with upgrades)` adds random upgrades to weapons, outfits, and helmets when those items go online
-for the first time.
+`Enhanced items drop (with upgrades)` can add random upgrades to weapons, outfits, and helmets when they first go
+online.
 
 The source lives under `src/engine/extensions/enhanced_items_drop`.
 
-## Default State
+## Default state
 
 The extension exports:
 
@@ -16,7 +16,7 @@ export const enabled = false;
 
 It is disabled by default. Saved extension state can enable it.
 
-## Runtime Behavior
+## Behaviour
 
 On registration, the extension subscribes to:
 
@@ -47,7 +47,7 @@ The default config lives in `EnhancedDropConfig.ts`.
 
 The final upgrade count includes random dispersion from `ADD_RANDOM_DISPERSION`.
 
-## Save Data
+## Saved data
 
 This extension does not export `save` or `load`. It changes items when first-online item events are emitted.
 

@@ -1,4 +1,4 @@
-# Project Commands and Scripts
+# Commands and scripts
 
 Run package scripts from the repository root:
 
@@ -12,7 +12,7 @@ Run CLI commands through the local wrapper:
 npm run cli -- <command>
 ```
 
-## Package Scripts
+## Package scripts
 
 - `setup`: initialize and update submodules.
 - `verify`: run `verify project`.
@@ -26,7 +26,7 @@ npm run cli -- <command>
 - `lint:strict`: run the stricter ESLint config.
 - `test`: run Jest.
 - `test:coverage`: run Jest coverage.
-- `format`: run Prettier, ESLint fix, and LTX formatting.
+- `format`: rewrite Markdown, TypeScript, and LTX files using the configured formatters.
 - `help`: print CLI help.
 
 ## CLI Commands
@@ -48,4 +48,4 @@ npm run cli -- <command>
 - `translations`: initialize, convert, and check translation files.
 - `verify`: run project, gamedata, LTX, and particles verification commands.
 
-Use `npm run cli -- <command> --help` for command-specific options.
+Use `npm run cli -- <command> --help` for current command-specific options.

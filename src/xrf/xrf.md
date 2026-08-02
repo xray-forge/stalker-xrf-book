@@ -1,9 +1,9 @@
 # XRF Engine
 
-XRF is a TypeScript rewrite of the S.T.A.L.K.E.R.: Call of Pripyat script engine. The source is compiled to Lua scripts
-with TypeScriptToLua and packaged with generated configs, UI XML, translations, and static game resources.
+XRF is a TypeScript implementation of the Call of Pripyat script layer. The build compiles it to Lua and assembles
+configs, UI XML, translations, and static resources into `target/gamedata`.
 
-The engine repository also includes a Node-based CLI for common modding tasks:
+The engine repository also includes a local Node CLI for common modding tasks:
 
 - building `target/gamedata`;
 - linking the project to a local game installation;
@@ -25,7 +25,6 @@ The main engine source is under `src/engine`:
 
 Build output and generated artifacts go under `target/`.
 
-## Development Model
+## Development model
 
-Most work starts in TypeScript or source data files and then goes through the CLI build pipeline. The generated files
-are runtime artifacts for X-Ray; the source of truth stays in the repository.
+Edit source files, then build. `target/` is generated output; do not edit it by hand.

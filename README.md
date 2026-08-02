@@ -1,38 +1,28 @@
-# 🎮 [Stalker XRF book](https://xray-forge.github.io/stalker-xrf-book)
+# Stalker XRF Book
 
-Documentation for x-ray forge engine template and tools.
+The [XRF book](https://xray-forge.github.io/stalker-xrf-book) documents the XRF script engine and companion tools for
+S.T.A.L.K.E.R.: Call of Pripyat.
 
-## 📦 Links
+## Project links
 
-- [Xray forge documentation book](https://xray-forge.github.io/stalker-xrf-book).
-- [XRF X-Ray 16 SDK](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html).
+- [XRF engine](https://github.com/xray-forge/stalker-xrf-engine)
+- [XRF tools](https://github.com/xray-forge/stalker-xrf-tools)
+- [X-Ray 16 TypeScript SDK](https://github.com/xray-forge/stalker-xrf-xray16-sdk) and [API reference](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html)
+- [XRF binary payloads](https://github.com/xray-forge/stalker-xrf-bin)
 
----
+## Resource packs
 
-- X-Ray 16 SDK repository:
-  [https://github.com/xray-forge/stalker-xrf-xray16-sdk](https://github.com/xray-forge/stalker-xrf-xray16-sdk)
-- Engine repository:
-  [https://github.com/xray-forge/stalker-xrf-engine](https://github.com/xray-forge/stalker-xrf-engine)
-- Tools repository: [https://github.com/xray-forge/stalker-xrf-tools](https://github.com/xray-forge/stalker-xrf-tools)
-- Binaries repository: [https://github.com/xray-forge/stalker-xrf-bin](https://github.com/xray-forge/stalker-xrf-bin)
+- [Base assets](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
+- [Extended assets](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
+- [English locale](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en)
+- [Ukrainian locale](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
+- [Russian locale](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru)
 
----
+## Preview locally
 
-- Base assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-base](https://gitlab.com/xray-forge/stalker-xrf-resources-base)
-- Extended assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended)
-- EN locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en)
-- UA locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr)
-- RU locale assets:
-  [https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru)
+Install [Rust](https://www.rust-lang.org/) and mdBook, then run:
 
-## Working with the book locally
-
-- Make sure [rust](https://www.rust-lang.org/) is installed
-- [Install cargo mdbook](https://rust-lang.github.io/mdBook/guide/installation.html)
-  - `cargo install mdbook`
-- [Run mdbook locally](https://rust-lang.github.io/mdBook/guide/creating.html)
-  - `mdbook serve --open`
+```powershell
+cargo install mdbook
+mdbook serve --open
+```

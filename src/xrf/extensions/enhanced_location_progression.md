@@ -1,11 +1,11 @@
 # Enhanced Location Progression
 
-`Enhanced location progression` requires smart terrains to be discovered before some map and travel behavior can use
-them.
+`Enhanced location progression` requires a smart terrain to be visited before it appears on the map or can be selected
+as a same-level travel target.
 
 The source lives under `src/engine/extensions/enhanced_location_progression`.
 
-## Default State
+## Default state
 
 The extension exports:
 
@@ -16,7 +16,7 @@ export const enabled = true;
 
 It is enabled by default unless saved extension state overrides it.
 
-## Runtime Behavior
+## Behaviour
 
 On registration, the extension sets:
 
@@ -40,7 +40,7 @@ Restrictor lifecycle code gives visited info portions when the actor reaches the
 `TravelManager.isSmartAvailableToReach` rejects smart terrain travel targets on the current level when
 `REQUIRE_SMART_TERRAIN_VISIT` is enabled and the terrain has not been visited.
 
-## Save Data
+## Saved data
 
 This extension does not export `save` or `load`. It changes runtime config during extension registration.
 
