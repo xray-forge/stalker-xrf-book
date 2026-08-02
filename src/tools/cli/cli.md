@@ -1,14 +1,14 @@
 # Tools CLI
 
-The Tools CLI is the Rust `xrf-cli` binary from `stalker-xrf-tools/bin/xrf-cli`. Use it for repeatable asset inspection,
-conversion, packing, unpacking, formatting, and verification outside the engine repository wrapper.
+The Rust `xrf-cli` binary provides repeatable asset inspection, conversion, packing, unpacking, formatting, and
+verification outside the engine repository wrapper.
 
 ```powershell
 xrf-cli <command> --help
 ```
 
-The engine CLI wraps some of these commands through `npm run cli -- ...`, but `xrf-cli` is the lower-level interface
-used by both the engine scripts and the desktop tools.
+The engine CLI wraps selected operations through `npm run cli -- ...`. Use `xrf-cli` directly for scripts and
+format-specific workflows.
 
 ## Command groups
 
@@ -25,8 +25,7 @@ used by both the engine scripts and the desktop tools.
 
 ## Logging
 
-Most commands support command-specific `--silent` or `--verbose` flags. The binary also initializes Rust logging from
-`RUST_LOG` when the environment variable is present.
+Some commands offer `--silent` or `--verbose`. Rust logging honours `RUST_LOG` when it is set.
 
 ## Read and write commands
 

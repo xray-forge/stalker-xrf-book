@@ -1,7 +1,7 @@
 # Archive Editor
 
-The archive editor works with X-Ray `.db` archive projects. It can open an archive set, show project metadata, read
-individual files as text, and unpack archives to a destination folder.
+The archive editor opens X-Ray `.db` archive projects, shows their metadata, reads individual files as text, and can
+unpack them to a folder.
 
 ## Screens
 
@@ -27,7 +27,7 @@ workers.
 
 ## Workflow
 
-1. Use **Open** to inspect archives without extracting everything.
+1. Use **Open** to inspect an archive project without extracting it.
 2. Use file reading from the editor view when you need to inspect a text file inside the archive.
 3. Use **Unpack** when you need the archive contents on disk.
 

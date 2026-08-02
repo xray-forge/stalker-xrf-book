@@ -2,8 +2,8 @@
 
 <img src="images/main_window.png" alt="main window" />
 
-The XRF tools application is a Tauri desktop app backed by Rust commands and a React UI. Use it for manual inspection,
-visual browsing, and one-off conversion tasks while working with X-Ray game data.
+The XRF tools application is a Tauri desktop app with Rust commands and a React UI. Use it for interactive inspection
+and one-off data operations; use the CLI for scripted work.
 
 The application source is split across:
 
@@ -29,7 +29,6 @@ The app stores selected XRF project and configs paths in local storage. Several 
 locations such as `src/engine/configs`, `target/gamedata/spawns/all.spawn`, `target/game_link`, and
 `src/engine/translations`.
 
-## CLI vs app
+## Choose the CLI when
 
-Use the app when you need to inspect data interactively. Use [Tools CLI](../cli/cli.md) when the task should be
-repeatable, scripted, or run in CI.
+Use [Tools CLI](../cli/cli.md) when the task must be repeatable, scripted, or run in CI.

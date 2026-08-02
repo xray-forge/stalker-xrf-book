@@ -1,7 +1,6 @@
 # Config Editor
 
-The config editor works with LTX config projects. The current production-ready workflows are verification and
-formatting.
+The config editor works with LTX projects. Verification and formatting are the currently wired workflows.
 
 ## Screens
 
@@ -28,7 +27,7 @@ Verification opens the folder with scheme checking enabled and strict checking d
 1. Select the configs folder. When an XRF project path is configured, the app can prefill `src/engine/configs`.
 2. Run **Verifier** after config edits to inspect include, inheritance, section, and scheme errors.
 3. Run **Formatter** in check mode first when reviewing changes.
-4. Disable check mode only when you want the formatter to rewrite files.
+4. Disable check mode only when you intend the formatter to rewrite files.
 
 ## CLI equivalent
 

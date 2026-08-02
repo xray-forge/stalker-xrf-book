@@ -1,7 +1,6 @@
 # Exports Viewer
 
-The exports viewer reads script declaration folders and displays exported conditions, dialog functions, effects, and
-their parameter declarations.
+The exports viewer reads declaration folders and shows exported conditions, dialog functions, effects, and parameters.
 
 Use it when editing config logic and you need to confirm which script externs are available.
 
@@ -35,8 +34,7 @@ When an XRF project path is configured, the UI can derive default declaration pa
 
 ## Notes
 
-The viewer is read-only. To change exports, edit the declaration source files in the engine repository and reload the
-viewer.
+The viewer is read-only. Edit the engine declaration sources, then reload the viewer.
 
 Use the CLI-generated externs reference when you need a static artifact under `target/parsed`. Use the app viewer when
 you are browsing declarations interactively while editing configs.

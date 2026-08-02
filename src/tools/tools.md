@@ -1,7 +1,7 @@
 # XRF Tools
 
-`stalker-xrf-tools` is the companion tools workspace for XRF development. It contains reusable Rust crates, a CLI, and a
-Tauri desktop application.
+`stalker-xrf-tools` is the XRF companion workspace. It contains reusable Rust format crates, a CLI, and a Tauri desktop
+application.
 
 Use it for tasks that are awkward to do by hand:
 
@@ -12,7 +12,7 @@ Use it for tasks that are awkward to do by hand:
 - packing and unpacking equipment icons and texture descriptions;
 - inspecting or converting spawn, particles, OGF, and OMF data.
 
-## Repository Layout
+## Repository layout
 
 - `crates/`: reusable Rust crates for X-Ray formats and project validation.
 - `bin/xrf-cli`: command-line tool.
@@ -21,12 +21,7 @@ Use it for tasks that are awkward to do by hand:
 
 The engine repository uses a bundled tools binary from `cli/bin` for some build and asset operations.
 
-## Interfaces
-
-Use the desktop app for manual inspection and editing workflows. Use the CLI for repeatable scripts, CI checks, and
-engine build integration.
-
-## Choosing an interface
+## Choose an interface
 
 Use the CLI when the command must be repeatable, run in CI, or become part of an engine build step. Examples include LTX
 verification, translation builds, archive unpacking, spawn conversion, and texture packing.
@@ -35,7 +30,7 @@ Use the desktop app when you need to inspect structured project data with naviga
 exports, icons, spawns, and translations. Some app routes are read-only or prototype workflows; the page for each app
 tool calls out what is currently wired.
 
-## Source truth
+## Implementation source
 
 Tool behavior comes from the tools workspace, not from the book text:
 

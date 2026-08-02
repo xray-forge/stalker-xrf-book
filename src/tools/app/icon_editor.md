@@ -1,7 +1,7 @@
 # Icon Editor
 
-The icon editor works with equipment icon sprites and icon descriptor data. The fully wired workflow is equipment sprite
-opening and equipment icon packing.
+The icon editor works with equipment icon sprites and their descriptors. Opening a sprite and packing equipment icons
+are the fully wired workflows.
 
 ## Screens
 

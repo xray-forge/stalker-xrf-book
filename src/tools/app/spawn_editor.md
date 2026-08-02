@@ -1,7 +1,7 @@
 # Spawn Editor
 
-The spawn editor opens and inspects ALife spawn data. It can read packed spawn files, import unpacked spawn folders,
-export unpacked data, and save packed spawn files.
+The spawn editor reads and inspects ALife spawn data. It can open packed files, import and export unpacked folders, and
+save a packed file.
 
 ## Screens
 
@@ -50,6 +50,6 @@ The Tauri `spawns-editor` plugin exposes:
 When an XRF project path is configured, default paths point at `target/gamedata/spawns/all.spawn`,
 `target/spawns/unpacked`, and `target/spawns/repacked/repacked.spawn`.
 
-## Safety note
+## Safety
 
 Spawn files are binary game data. Keep a backup before saving or replacing a spawn file.

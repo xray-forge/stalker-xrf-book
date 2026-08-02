@@ -9,7 +9,7 @@ Translation commands work with XRF JSON translation projects and generated gamed
 | `initialize-translation` | Ensure translation files have the expected language keys.                                                                    |
 | `build-translation`      | Build translation JSON into gamedata output files.                                                                           |
 | `verify-translation`     | Check translation completeness.                                                                                              |
-| `parse-translation`      | Registered command for parsing XML translations; the current implementation accepts `--path` and returns without conversion. |
+| `parse-translation`      | Placeholder command. It accepts `--path` but does not currently parse or write translations.                |
 
 ## Initialize
 
@@ -54,5 +54,5 @@ Options:
 
 ## Notes
 
-The engine repository's `npm run cli -- translations ...` command provides a separate XML-to-JSON conversion workflow
-implemented in TypeScript. Use that wrapper when converting original X-Ray XML string tables into XRF JSON sources.
+Use the engine repository's `npm run cli -- translations ...` workflow to convert original X-Ray XML string tables to
+XRF JSON sources.

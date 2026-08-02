@@ -1,7 +1,6 @@
 # Dialog Editor
 
-The dialog editor is currently a prototype UI surface for dialog graph work. It is useful for checking the shape of the
-future graph editor, not for production dialog data editing.
+The dialog editor is a prototype for dialog graphs. It is not a production workflow for dialog data.
 
 ## Current routes
 

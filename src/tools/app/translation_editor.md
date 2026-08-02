@@ -1,6 +1,6 @@
 # Translation Editor
 
-The translation editor opens and reads XRF translation projects. The current app workflow is read-only inspection.
+The translation editor opens XRF translation projects for read-only inspection.
 
 ## Screens
 
@@ -28,7 +28,7 @@ Both open/read paths use `TranslationProject::read_project`.
 
 When an XRF project path is configured, the app can prefill `src/engine/translations`.
 
-## Output and limitations
+## Limitations
 
 The app keeps the parsed translation project in the Tauri plugin state and displays it in the project view. It does not
 currently expose a save action, build XML output, or run translation verification from the UI.
