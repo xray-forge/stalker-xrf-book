@@ -1,11 +1,11 @@
 # Building Resources
 
-The resources build target copies static game assets into `target/gamedata`.
+The resources target copies static game assets into `target/gamedata`.
 
 The base resource root is configured in `cli/config.json` as `resources.mod_assets_base_folder` and points to
 `src/resources`. Additional override and locale roots can be configured in the same file.
 
-## Build Only Resources
+## Build resources
 
 ```powershell
 npm run cli -- build --include resources
@@ -20,12 +20,9 @@ npm run cli -- build -i resources --filter textures
 
 Filters are regular-expression strings matched against source file paths.
 
-## Diff Checking
+## Incremental builds
 
-Directory resources use a diff check before copy. On non-clean builds, unchanged files are skipped, which keeps static
-asset rebuilds faster.
-
-Use `--clean` when you need to force a fresh `target/gamedata` tree.
+Directory resources are compared before copy. Non-clean builds skip unchanged files.
 
 ## Additional Assets
 
@@ -37,7 +34,7 @@ npm run cli -- clone extended
 npm run cli -- clone locale-ukr
 ```
 
-The configured roots are:
+The relevant configuration keys are:
 
 - `resources.mod_assets_override_folders` for general overrides;
 - `resources.mod_assets_locales` for locale-specific assets.

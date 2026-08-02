@@ -1,11 +1,9 @@
 # Building Translations
 
-The translations build target writes text files to `target/gamedata/configs/text`.
+The translations target writes game string tables to `target/gamedata/configs/text` from
+`src/engine/translations` through the bundled XRF tools binary.
 
-Translation sources live in `src/engine/translations`. The build step delegates to the bundled XRF tools binary and
-passes the source path, output path, and verbosity mode.
-
-## Build Only Translations
+## Build translations
 
 ```powershell
 npm run cli -- build --include translations
@@ -30,7 +28,7 @@ Resource packs for voice and localized assets are configured under `resources.mo
 When asset overrides are enabled, the resources build includes override folders plus the locale folders for the selected
 language.
 
-## JSON and XML Sources
+## Sources
 
 XRF uses JSON translation sources for generated multilingual output and can also copy static XML translation files where
 they are part of the source tree. Use the translation CLI commands when converting existing game XML into JSON sources.

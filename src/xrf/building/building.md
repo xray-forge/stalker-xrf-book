@@ -1,15 +1,15 @@
 # Building
 
-The build command compiles and copies XRF source files into X-Ray-compatible `gamedata` output under `target/gamedata`.
+Build XRF into `target/gamedata` before testing, linking, or packaging.
 
 ```powershell
 npm run build
 npm run cli -- build
 ```
 
-## Build Targets
+## Targets
 
-The build target names are:
+`build` runs every target by default:
 
 - `scripts`
 - `ui`
@@ -30,15 +30,15 @@ npm run cli -- build --exclude resources
 - `-e, --exclude <targets...>`: build all targets except selected targets.
 - `-v, --verbose`: print verbose build logs.
 - `-l, --language <language>`: build with a locale from `cli/config.json`.
-- `-f, --filter <targets...>`: filter source files by regular-expression strings.
+- `-f, --filter <patterns...>`: regular-expression filters for source paths.
 - `-c, --clean`: remove `target/gamedata` before building.
 - `--nl, --no-lua-logs`: strip Lua logger calls from the compiled script output.
 - `--na, --no-asset-overrides`: skip configured override and locale resource roots.
 - `--itz, --inject-tracy-zones`: inject Tracy profiling zones into compiled scripts.
 
-Filters must be used with an explicit `--include` target. The build command rejects filtered implicit `all` builds.
+`--filter` requires an explicit `--include`; it cannot be used with the default all-target build.
 
-## Build Steps
+## What a full build does
 
 When all targets run, the build performs these steps:
 
@@ -64,6 +64,5 @@ npm run cli -- build --no-lua-logs --inject-tracy-zones
 
 ## Output
 
-The command writes generated gamedata to `target/gamedata` and collects a build log in `target/xrf_build.log`.
-
-Do not edit `target/gamedata` by hand. Change the source file and rebuild.
+The command writes `target/gamedata`, `target/gamedata/metadata.json`, and `target/xrf_build.log`. Change source files
+and rebuild rather than editing generated output.

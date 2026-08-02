@@ -1,12 +1,11 @@
 # Building Scripts
 
-The scripts build target compiles TypeScript under `src/engine/scripts` and related imported engine code to Lua with
-TypeScriptToLua.
+The scripts target compiles entry points in `src/engine/scripts` and their imports to Lua with TypeScriptToLua.
 
 The output is written into `target/gamedata` as X-Ray script files. The generated bundle also includes
 `lualib_bundle.script`, which provides helper functions emitted by TypeScriptToLua.
 
-## Build Only Scripts
+## Build scripts
 
 ```powershell
 npm run cli -- build --include scripts
@@ -25,7 +24,7 @@ Use `--inject-tracy-zones` when profiling with Tracy support:
 npm run cli -- build -i scripts --inject-tracy-zones
 ```
 
-## Watch Mode
+## Watch mode
 
 Use watch mode during script development:
 
@@ -41,7 +40,7 @@ npm run watch:scripts-tracy
 npm run watch:scripts-tracy-optimized
 ```
 
-## Type Checking
+## Type checking
 
 Run TypeScriptToLua type checking without emitting files:
 
@@ -59,7 +58,7 @@ X-Ray engine APIs are exposed through TypeScript declarations from the `xray16` 
 - [XRF X-Ray 16 SDK source](https://github.com/xray-forge/stalker-xrf-xray16-sdk)
 - [XRF X-Ray 16 SDK documentation](https://xray-forge.github.io/stalker-xrf-xray16-sdk/index.html)
 
-## Luabind Classes
+## Luabind classes
 
 XRF uses custom TypeScriptToLua transforms for luabind-style classes. Classes that need engine-compatible luabind
 registration use project decorators and generated Lua class shapes instead of plain TypeScriptToLua metatable classes.
