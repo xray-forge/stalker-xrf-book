@@ -22,8 +22,7 @@ npm run cli -- <command>
 - `watch:scripts`: rebuild scripts when TypeScript sources change.
 - `typecheck`: run TypeScriptToLua type checking without emitting files.
 - `typecheck:tests`: type-check test sources with TypeScript.
-- `lint`: run ESLint.
-- `lint:strict`: run the stricter ESLint config.
+- `lint`: run ESLint with the full repository rule set.
 - `test`: run Jest.
 - `test:coverage`: run Jest coverage.
 - `format`: rewrite Markdown, TypeScript, and LTX files using the configured formatters.
