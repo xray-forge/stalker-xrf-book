@@ -34,8 +34,9 @@ Inspection commands such as `info-ogf`, `info-omf`, `info-dds`, `info-spawn`, an
 print parsed metadata. Conversion commands such as archive unpacking, spawn packing, particle packing, texture packing,
 and translation building write output paths.
 
-Use explicit `--path` and `--dest` values when documenting or scripting a command. Defaults are useful for local manual
-work, but explicit paths make generated assets easier to reproduce.
+Use explicit input and output paths when documenting or scripting a command. Some commands use named options such as
+`--path` and `--dest`; `verify-gamedata` uses its assembled gamedata root as a positional operand. Explicit paths make
+generated assets easier to reproduce.
 
 ## Usage pattern
 
