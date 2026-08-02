@@ -43,7 +43,7 @@ Optional text string shown in `hud_timer_text`.
 The section also checks common switch fields before updating the timer. If a common switch succeeds, the timer update
 for that tick is skipped.
 
-## Usage
+## Behavior
 
 Use `type = dec` for deadlines and visible countdowns. It requires `start_value`.
 

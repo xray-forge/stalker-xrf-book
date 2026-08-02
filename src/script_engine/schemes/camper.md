@@ -100,7 +100,7 @@ Enemy memory timeout before the action stops treating the remembered enemy as ac
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
-## Shooting modes
+## Firing
 
 ### `always`
 

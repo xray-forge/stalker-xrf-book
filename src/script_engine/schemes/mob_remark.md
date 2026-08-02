@@ -55,7 +55,7 @@ Per-animation timeout list. Missing values use animation-end condition.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager disables talk, applies monster state, captures the monster, and queues each animation from
 `anim`. If a matching `time` value exists, the animation uses a time-end condition. Otherwise it waits for animation

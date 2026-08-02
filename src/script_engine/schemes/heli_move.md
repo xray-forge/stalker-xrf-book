@@ -121,7 +121,7 @@ Sets object registry mute state.
 
 The section also supports common switch fields. They are checked before movement updates.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager asserts that `path_move` exists, parses waypoint data, creates the movement patrol, and sets
 linear acceleration and max velocity from `max_velocity`. It loops through patrol points and records waypoint signals

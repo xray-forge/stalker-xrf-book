@@ -37,7 +37,7 @@ Patrol point index used as the force target.
 
 The section also supports common switch fields. They are checked before force application.
 
-## Runtime behavior
+## Behavior
 
 On activation the scheme validates `force`, `time`, `point`, and `point_index`, then stores the selected patrol point in
 state. On manager activation, a non-zero `delay` schedules the first force attempt for a later game time.

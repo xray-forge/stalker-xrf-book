@@ -1,4 +1,4 @@
-# AI and Logics
+# AI and logics
 
 Use this page when an NPC is alive in game but its scheme, planner, relation, or animation state does not match what you
 expect.
@@ -6,7 +6,7 @@ expect.
 Start with the in-game overlays when you need visual context. Switch to log dumps when you need the exact script state
 or GOAP action IDs.
 
-## Capturing an NPC
+## Capture an NPC
 
 NPC capture is an engine debug feature. It is useful when you need to inspect the world from the NPC perspective.
 
@@ -16,7 +16,7 @@ NPC capture is an engine debug feature. It is useful when you need to inspect th
 
 The camera switches to the captured object. Release the capture before continuing normal gameplay testing.
 
-## AI Overlays
+## AI overlays
 
 Enable stalker and monster overlays from the console:
 
@@ -35,7 +35,7 @@ ai_dbg_monster on
 
 Use the matching `off` command to hide each overlay.
 
-## Planner and Scheme Logs
+## Planner and scheme logs
 
 The XRF debug panel can print the selected object's script state to the log. Open the main menu, press `F11`, switch to
 the `object` section, then choose one of the log buttons.
@@ -50,7 +50,7 @@ The object section can print:
 Planner `show(...)` output is only available when the engine exposes it. If the log says to run in mixed or debug mode,
 restart with a debug-capable engine build and repeat the dump.
 
-## Performance Stats
+## Performance stats
 
 Use engine stats when you need frame-level AI cost, not a script-level dump:
 
@@ -73,7 +73,7 @@ hooked call counts, print manually marked profiling portions, show Lua memory us
 Run Lua profiling with `-nojit` when you need cleaner call stats. The profiler logs a warning when LuaJIT is enabled
 because JIT compilation can change the measured call pattern.
 
-## Useful Console Commands
+## Useful console commands
 
 Common AI debug toggles are listed in the game engine command reference:
 

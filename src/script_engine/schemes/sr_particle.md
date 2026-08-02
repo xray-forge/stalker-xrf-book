@@ -31,7 +31,7 @@ Restarts playback when the particle is not playing.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
-## Modes
+## Particle modes
 
 ### `1`
 

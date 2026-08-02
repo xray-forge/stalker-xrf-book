@@ -27,7 +27,7 @@ Type: `milliseconds | condlist`.
 
 Switch after the section has been active for the duration.
 
-## Runtime behavior
+## Behavior
 
 On death, the manager stores the killer id in the object's death state:
 

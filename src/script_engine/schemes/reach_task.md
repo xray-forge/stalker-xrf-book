@@ -21,7 +21,7 @@ Value: built-in formation list.
 
 Default follower offsets behind the squad commander.
 
-## Runtime behavior
+## Behavior
 
 `SchemeReachTask.setup()` installs the `SMART_TERRAIN_TASK` evaluator and action inside the nested alife planner. The
 evaluator returns true when the NPC's squad has a `REACH_TARGET` action and the assigned simulation target is not yet

@@ -31,7 +31,7 @@ Rotation angle applied to the next force direction when the oscillation flips.
 
 The section also supports common switch fields, parsed into state with the rest of the section.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager:
 

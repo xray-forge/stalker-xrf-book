@@ -1,4 +1,4 @@
-# XRF Debug Panel
+# XRF debug panel
 
 The XRF debug panel is an in-game CUI dialog for development-only actions. It is available when `forge.ltx` has
 `debug.enabled = true`, which is the default project config.
@@ -110,7 +110,7 @@ The `treasures` section shows total, given, and found treasure counts. It can:
 The section also shows debug details for the selected treasure, including given/checked state, refresh flags, remaining
 items, and treasure type.
 
-## Current Shell Sections
+## Current shell sections
 
 `player`, `position`, and `sound` are present as panel sections, but their current TypeScript runtime classes only parse
 their form XML and do not bind interactive actions.

@@ -97,7 +97,7 @@ Sound played while the smart cover action executes.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
-## Cover states
+## Cover state
 
 `cover_state` is parsed as a condlist. The selected value is used to choose smart cover target behavior.
 

@@ -33,7 +33,7 @@ Default: `0`.
 
 Current accumulated abuse value. It decays over time.
 
-## Runtime behavior
+## Behavior
 
 The scheme adds an `IS_ABUSED` evaluator and an abuse action to the stalker planner. The action can run only while the
 NPC is alive, not in danger, and not wounded. When selected, it clears desired position and direction and sets the NPC

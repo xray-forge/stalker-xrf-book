@@ -33,7 +33,7 @@ Stored in scheme state for compatibility with monster logic.
 
 The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-zone checks.
 
-## Waypoint behavior
+## Waypoints
 
 When activated, the manager captures the monster for scripted commands and sends it along `path_walk`.
 

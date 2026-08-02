@@ -43,7 +43,7 @@ Maximum random distance from the smart terrain for selecting a cover search poin
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 On activation, the cover action picks a random direction from the smart terrain level vertex and chooses a point between
 `radius_min` and `radius_max`. That point is also stored as the look reference. The action asks the engine for the best

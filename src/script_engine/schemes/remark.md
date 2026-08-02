@@ -44,7 +44,7 @@ Sender id read only when `tips` is set.
 The section also supports common switch fields. `remark` is commonly paired with `on_signal = action_end | ...` or
 `on_signal = anim_end | ...`.
 
-## Targets
+## Target behavior
 
 `target` supports three descriptor forms:
 

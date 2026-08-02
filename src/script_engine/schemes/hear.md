@@ -45,7 +45,7 @@ Position: 5.
 
 Section condlist evaluated when the sound matches.
 
-## Runtime behavior
+## Behavior
 
 On reset, the scheme scans every line in the section and stores entries whose field name matches `on_sound` with an
 optional numeric suffix.

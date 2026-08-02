@@ -44,7 +44,7 @@ Speed for sliding the warning sound position along the path.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 When the actor enters the restrictor, the manager selects a path from `sound_path` and starts sliding a sound position
 from point to point. When the selected path wraps back to its start:

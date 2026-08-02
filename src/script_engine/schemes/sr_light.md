@@ -13,7 +13,7 @@ Light flag returned when a stalker is inside the active zone.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and actor-zone checks.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager registers itself in `registry.lightZones`. On update, it checks common switch conditions. If
 a switch happens, the manager marks itself inactive and removes the zone from the registry. Otherwise it remains active.

@@ -1,9 +1,9 @@
-# Debugging UI Forms
+# Debug UI forms
 
 XRF UI forms are authored as TSX/XML sources and loaded at runtime through xray CUI classes. Debug UI problems by
 checking both sides: the generated form structure and the runtime code that initializes named nodes.
 
-## Source and Runtime Files
+## Source and runtime files
 
 Most UI work touches one of these areas:
 
@@ -16,7 +16,7 @@ Most UI work touches one of these areas:
 When a runtime class calls `xml.InitStatic`, `xml.Init3tButton`, `xml.InitScrollView`, or another `CScriptXmlInit`
 method, the named XML node must exist in the form source.
 
-## Check the Form Path
+## Check the form path
 
 Runtime code usually resolves a form by path:
 
@@ -32,7 +32,7 @@ If a form does not appear, verify:
 - every node name used by the runtime class exists in the form;
 - both 4:3 and 16:9 variants were updated when the form has paired variants.
 
-## Use Engine UI Debugging
+## Use engine UI debugging
 
 OpenXRay includes UI inspection tools for layout and control rectangles. They are most useful for positioning issues,
 wrong sizes, and overlapping controls.
@@ -47,7 +47,7 @@ show_wnd_rect_all 0
 
 Some UI debug tools depend on the engine build. If the command has no effect, run with a mixed/debug-capable engine.
 
-## Common Failure Points
+## Common failure points
 
 - A runtime `Init...` call references a missing XML node.
 - A section exists in TSX but is not registered by the runtime dialog.

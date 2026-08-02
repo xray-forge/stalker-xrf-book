@@ -64,7 +64,7 @@ Type: `story_id | zone | condlist`.
 
 Switch while the named NPC is outside the named zone.
 
-## Usage
+## Behavior
 
 Use `sr_idle` when the restrictor is only a condition gate:
 

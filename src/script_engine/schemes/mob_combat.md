@@ -25,21 +25,12 @@ Type: `signal | condlist`.
 
 Switch when a signal is set.
 
-## Runtime behavior
+## Behavior
 
 The manager only acts on the combat event. If the scheme is enabled, the monster has an enemy, and the object has an
 active scheme, it calls the common section switcher.
 
 The scheme can be disabled through `SchemeMobCombat.disable`, which sets its runtime `enabled` flag to `false`.
-
-## Runtime sequence
-
-1. `SchemeMobCombat.activate` parses common switch fields and sets `enabled = true`.
-2. `SchemeMobCombat.add` subscribes a `MobCombatManager`.
-3. `MobCombatManager.onCombat` runs only when the state is enabled, `object.get_enemy()` is not null, and the object
-   still has an active scheme.
-4. The manager calls `trySwitchToAnotherSection`.
-5. `disable` leaves the action in place but sets `enabled = false`, so later combat events are ignored.
 
 ## Example
 

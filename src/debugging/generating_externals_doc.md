@@ -1,9 +1,9 @@
-# Generating Externals Docs
+# Generate externals documentation
 
 External functions are script functions that configs can call from condlists, effects, dialogs, and other game data. The
 XRF CLI can scan declaration sources and generate an HTML reference for them.
 
-## Run the Generator
+## Run the generator
 
 From the XRF engine repository:
 
@@ -25,7 +25,7 @@ target/parsed/externals.html
 
 Open the generated file in a browser when you need to inspect the currently exported external names.
 
-## What Gets Documented
+## What gets documented
 
 The generator reads TypeScript declaration sources, extracts external function metadata, renders the result as HTML, and
 writes the rendered file with the project XML renderer.
@@ -33,7 +33,7 @@ writes the rendered file with the project XML renderer.
 Keep extern declarations close to the runtime implementation and tests. The generated page is only as useful as the
 names, parameters, and comments present in the declaration files.
 
-## Updating JSDoc
+## Update JSDoc
 
 When adding or changing an external:
 

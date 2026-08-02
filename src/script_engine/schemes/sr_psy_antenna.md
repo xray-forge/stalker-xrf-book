@@ -62,7 +62,7 @@ Hit frequency used by the manager.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 When the actor enters the zone, the manager:
 

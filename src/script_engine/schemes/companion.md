@@ -9,7 +9,7 @@ planner action rather than a large LTX parameter set.
 
 The section supports common switch fields. They are parsed into `state.logic`.
 
-## Runtime behavior
+## Behavior
 
 On activation, the scheme sets `behavior = 0`, which corresponds to the simple walk behavior in
 `ActionCompanionActivity`.

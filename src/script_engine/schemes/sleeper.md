@@ -19,7 +19,7 @@ Uses the sitting state instead of the sleeping state when the NPC reaches the fi
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
-## Runtime behavior
+## Behavior
 
 `SchemeSleeper.add` installs a planner evaluator and `SLEEP_ACTIVITY` action. The action runs only when the stalker is
 alive and not in danger, combat, or anomaly handling.

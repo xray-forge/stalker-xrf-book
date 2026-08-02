@@ -85,7 +85,7 @@ Intensity where camera and secondary postprocess can trigger.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 The manager compares `movement_speed` with the actor's current movement speed and adjusts intensity between `0` and `1`.
 As thresholds are crossed it starts or stops:

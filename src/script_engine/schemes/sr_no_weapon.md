@@ -33,7 +33,7 @@ Type: condlist.
 
 Switch while the actor is outside the current restrictor.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager removes the zone's previous registry entry, resets its local actor state, and immediately
 checks whether the actor is inside the restrictor.

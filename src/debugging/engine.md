@@ -1,4 +1,4 @@
-# Engine Debug (C++)
+# Engine debugging (C++)
 
 Use engine debugging when the problem crosses from TypeScript/Lua into xray runtime behavior: scheduler timing,
 rendering, physics, UI initialization, luabind bindings, or console command implementation.
@@ -6,7 +6,7 @@ rendering, physics, UI initialization, luabind bindings, or console command impl
 For script-only behavior, start with logs and the XRF debug panel first. They are faster and do not require rebuilding
 the engine.
 
-## Set Up the Engine Project
+## Set up the engine project
 
 OpenXRay has build guides for both supported development paths:
 
@@ -20,7 +20,7 @@ For local XRF development on Windows, the usual flow is:
 3. Start the engine from Visual Studio when you need C++ breakpoints.
 4. Start from the XRF CLI when you only need game logs and Lua output.
 
-## Debugging Lua from Visual Studio
+## Debug Lua from Visual Studio
 
 Lua debugging is possible through the Visual Studio Lua debugger extension, but it is limited by the engine and by the
 compiled Lua output.
@@ -33,7 +33,7 @@ compiled Lua output.
 XRF TypeScript is compiled to Lua by TypeScriptToLua. Visual Studio will see the generated Lua code that the engine
 executes.
 
-## What to Debug in C++
+## What to debug in C++
 
 Use the engine source when you need to verify:
 

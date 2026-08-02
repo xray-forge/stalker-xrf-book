@@ -11,7 +11,7 @@ Type: boolean. Optional. Default: `true`.
 
 Enables or disables corpse detection for the current reset section.
 
-## Runtime behavior
+## Behavior
 
 The scheme adds `IS_CORPSE_EXISTING` and a `SEARCH_CORPSE` action. The evaluator returns true only when the NPC is
 alive, has no enemy, is not in danger, is not zombied, is not wounded, is not the cinematic actor visual, and a nearby

@@ -55,7 +55,7 @@ Adds a brighten complex effector for outdoor night cutscenes.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager:
 

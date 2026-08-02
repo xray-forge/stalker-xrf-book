@@ -3,8 +3,16 @@
 Command line arguments are read by the engine before scripts are loaded. Use them for engine startup choices such as
 filesystem layout, renderer, logs, game mode, Lua JIT, and initial level loading.
 
-`npm run cli -- start_game` starts the configured game executable. It does not inject arbitrary engine arguments for
-you. To pass arguments, run the executable directly, configure a launcher shortcut, or extend the local start command.
+`npm run cli -- start_game` starts the configured executable with `-dump_bindings`. It also supports `--new`, `--load`,
+`--difficulty`, and `--no-intro` for common test runs. To pass other engine arguments, run the executable directly,
+configure a launcher shortcut, or extend the local start command.
+
+For example:
+
+```powershell
+npm run cli -- start_game --new --difficulty gd_master --no-intro
+npm run cli -- start_game --load quicksave
+```
 
 ## Common flags
 

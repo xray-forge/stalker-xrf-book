@@ -74,7 +74,7 @@ Type: condlist. Optional. Default: `null`.
 
 The section also supports common switch fields. They are checked on manager update before minigun-specific processing.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager gets the object's car interface, disables normal script use, clears the tip text, and
 activates the mounted weapon if the car has one.

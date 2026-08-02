@@ -16,7 +16,7 @@ path_look = ambush_look
 combat_type = camper
 ```
 
-## Runtime behavior
+## Behavior
 
 The helper adds two evaluators:
 

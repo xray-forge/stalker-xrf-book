@@ -27,7 +27,7 @@ Damage accumulation rate while the actor is inside.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and actor-zone checks.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager starts a postprocess effector with id `object.id() + 2000`. Each update:
 

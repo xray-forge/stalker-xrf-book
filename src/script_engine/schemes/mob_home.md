@@ -49,7 +49,7 @@ Maximum home radius.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager applies the configured monster state, resolves home parameters, and calls
 `object.set_home(home, min, max, aggressive, mid)`.

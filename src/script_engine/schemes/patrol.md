@@ -64,7 +64,7 @@ Compatibility fallback for `def_state_moving`.
 
 The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-distance checks.
 
-## Usage
+## Behavior
 
 Give all members of the same patrol the same `path_walk`. If the NPCs belong to a squad, the engine keys the shared
 patrol manager by path name plus squad id, so separate squads can use the same route without sharing one runtime

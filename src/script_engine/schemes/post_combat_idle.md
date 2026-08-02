@@ -23,7 +23,7 @@ Maximum randomized wait time in seconds after a non-actor enemy disappears.
 
 These overrides are consumed by the evaluator. Their parsing is handled outside `SchemePostCombatIdle`.
 
-## Runtime behavior
+## Behavior
 
 `SchemePostCombatIdle.setup()` skips zombied-community stalkers. For other stalkers it:
 

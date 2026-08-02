@@ -120,7 +120,7 @@ Optional condlist after `@`, resolved to the sound name.
 The parser selects the last descriptor whose breakpoint is greater than or equal to the current value before a higher
 unmatched breakpoint stops the scan.
 
-## Runtime behavior
+## Behavior
 
 On reset, the scheme resolves the wounded config section and parses the descriptor fields. Defaults differ for normal,
 monolith, and zombied communities. Normal stalkers default to a wounded-heavy state with help sounds and medkit use.

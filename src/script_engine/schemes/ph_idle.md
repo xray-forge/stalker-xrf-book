@@ -43,7 +43,7 @@ hit_on_bone = 1|ph_idle@hit %+box_was_hit%|2|ph_idle@hit
 
 When a matching bone is hit, the manager evaluates the condlist and switches to the selected section.
 
-## Runtime sequence
+## Behavior
 
 1. Activation parses common switch fields, `hit_on_bone`, `nonscript_usable`, `on_use`, and `tips`.
 2. The object tip text is set immediately.

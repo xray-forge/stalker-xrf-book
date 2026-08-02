@@ -14,7 +14,7 @@ Type: boolean. Optional. Default: `true`.
 
 Enables item gathering for the current reset section.
 
-## Runtime behavior
+## Behavior
 
 The scheme replaces the planner `ITEMS` evaluator with `EvaluatorGatherItems`. The evaluator returns true when
 `gather_items_enabled` resolved to true and the engine reports that there are items to pick up through

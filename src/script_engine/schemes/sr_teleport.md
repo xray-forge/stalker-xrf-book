@@ -31,7 +31,7 @@ Weight for the matching point/look pair.
 
 The section also supports common switch fields. They are checked after teleport processing when the manager is idle.
 
-## Runtime behavior
+## Behavior
 
 When the actor enters the restrictor, the manager:
 

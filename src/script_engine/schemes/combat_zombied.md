@@ -10,7 +10,7 @@ zombied-community stalkers: advance toward the enemy, shoot, and move toward dan
 Zombied-community NPCs receive `combat_type = zombied` by default when `combat` is activated without an explicit
 `combat_type`.
 
-## Runtime behavior
+## Behavior
 
 The helper adds `IS_COMBAT_ZOMBIED_ENABLED`. The current evaluator returns true when the object's community is
 `zombied`.

@@ -9,7 +9,7 @@ use indirectly through the scheme state.
 
 The section supports common switch fields. They are evaluated from the hit callback.
 
-## Runtime behavior
+## Behavior
 
 On activation, `hit` verifies that the configured section exists and parses common switch conditions.
 

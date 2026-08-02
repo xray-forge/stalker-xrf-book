@@ -27,7 +27,7 @@ Value: `40 * 40`.
 
 Distance check for helping allies or reacting to enemy weapon sounds.
 
-## Runtime behavior
+## Behavior
 
 The scheme replaces `DANGER` evaluators in the main planner and the nested danger action planner with `EvaluatorDanger`,
 then stores a `DangerManager` on state.

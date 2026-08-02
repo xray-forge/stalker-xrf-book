@@ -1,8 +1,7 @@
 # Schemes
 
-Schemes are script-engine behavior blocks attached to an object through its logic config. A logic section chooses the
-first active scheme, and each scheme section describes what the object does until a switch condition moves it to another
-section.
+A scheme is the behavior selected by an object's logic configuration. `[logic] active` names the initial section; the
+part before `@` selects the implementation.
 
 ```ini
 [logic]
@@ -21,11 +20,13 @@ def_state_moving = run
 The scheme name is the part before the suffix. For example, `walker@guard` uses the `walker` implementation, and
 `sr_idle@wait_for_actor` uses the `sr_idle` implementation.
 
-## Section switching
+Digits are ignored while resolving a scheme name, so numbered variants share the same implementation.
 
-Many active scheme sections support the same switching fields. The engine parses them from the active section and checks
-them in the order used by the scheme switch parser. Numbered variants such as `on_info1` and `on_info2` let one section
-define several checks of the same kind.
+## Switching sections
+
+Active sections can define switch rules. The engine evaluates rule groups in this fixed order: actor distance, signals,
+info portions, real-time timers, game-time timers, actor-zone rules, then NPC-zone rules. Within a group, rules follow
+their order in the section. Numbered variants such as `on_info1` add another rule of the same type.
 
 ### `on_info`, `on_info1`, ...
 
@@ -117,48 +118,16 @@ A condlist can also set info portions or run effects while selecting the next se
 on_info = {+actor_has_key} ph_door@open %=play_sound(door_unlock)%
 ```
 
-If the condlist returns an empty section, `nil`, or the current section, the switch is skipped.
-
-`nil` is a special inactive target, not a registered scheme implementation. Switching helpers use it to clear active
-scheme state or skip activation in places where a real section would normally be expected.
+An empty target, `nil`, or the current section does not switch. Timer baselines reset after a successful switch.
 
 ## Scheme families
 
-### Stalker schemes
-
-Examples: `walker`, `patrol`, `remark`, `animpoint`, `smartcover`.
-
-Human NPC movement, idle states, combat support, meetings, and scripted actions.
-
-### Monster schemes
-
-Examples: `mob_walker`, `mob_home`, `mob_remark`, `mob_combat`.
-
-Monster movement, territory, scripted animations, and combat hooks.
-
-### Restrictor schemes
-
-Examples: `sr_idle`, `sr_timer`, `sr_teleport`, `sr_particle`, `sr_cutscene`.
-
-Trigger volumes, timers, effects, postprocess, and actor-facing scripted events.
-
-### Physical schemes
-
-Examples: `ph_idle`, `ph_button`, `ph_door`, `ph_code`, `ph_on_hit`.
-
-Scripted behavior for physical objects and usable scene objects.
-
-### Helicopter schemes
-
-Examples: `heli_move`.
-
-Helicopter patrol, movement, targeting, and attack behavior.
-
-### Generic schemes
-
-Examples: `combat`, `danger`, `death`, `hit`, `meet`, `post_combat_idle`, `wounded`.
-
-Shared behavior that can be enabled alongside active stalker or monster logic.
+- **Stalker:** NPC movement, animations, combat, and interaction (`walker`, `remark`, `animpoint`, `smartcover`).
+- **Monster:** monster movement, territory, animations, and combat (`mob_walker`, `mob_home`, `mob_remark`, `mob_combat`).
+- **Restrictor:** zone triggers, timers, visual effects, and actor events (`sr_idle`, `sr_timer`, `sr_teleport`, `sr_particle`).
+- **Physical:** usable and reactive world objects (`ph_idle`, `ph_button`, `ph_door`, `ph_code`, `ph_on_hit`).
+- **Helicopter:** scripted flight and weapons (`heli_move`).
+- **Generic:** behavior attached alongside an active scheme (`combat`, `danger`, `death`, `hit`, `meet`, `post_combat_idle`, `wounded`).
 
 ## Patrol names
 
@@ -168,10 +137,8 @@ terrain `zat_b40_smart_terrain` resolves to `zat_b40_smart_terrain_guard_walk`.
 
 Use full path names when the path does not belong to the active smart terrain.
 
-## Common checks
+## Before testing a section
 
-- `path_walk` is usually required for movement schemes.
-- `path_look` must not be the same path as `path_walk`.
-- Scheme sections can have suffixes, such as `walker@start`, `walker@alarm`, or `sr_timer@lab_countdown`.
-- For timed transitions, section activation time is reset when switching to a different section.
-- For switch-heavy logic, prefer `sr_idle` when the object should do nothing except wait for conditions.
+- Supply every required field for the selected scheme.
+- Keep `path_walk` and `path_look` distinct where both are used.
+- Use `sr_idle` for a state that only waits for switch rules.

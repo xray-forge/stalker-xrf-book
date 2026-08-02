@@ -9,7 +9,7 @@ physics objects.
 
 The section supports common switch fields. They are evaluated from the death callback.
 
-## Runtime behavior
+## Behavior
 
 The manager subscribes to physical object death events. When the object dies and the object still has an active scheme,
 it calls the common section-switching logic for the current `ph_on_death` state.

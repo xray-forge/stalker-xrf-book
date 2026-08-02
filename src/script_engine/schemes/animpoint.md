@@ -42,7 +42,7 @@ description.
 
 The section also supports common switch fields such as `on_info`, `on_timer`, and `on_signal`.
 
-## Usage
+## Behavior
 
 Use `animpoint` when the map has a smart cover that represents the desired pose location. The smart cover must be
 registered before the scheme starts, otherwise activation aborts when the manager calculates the position.

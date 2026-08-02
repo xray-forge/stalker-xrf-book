@@ -151,7 +151,7 @@ trade_enable = false
 
 To disable meeting for a section, point `meet` to the no-meet section used by the project config.
 
-## Runtime behavior
+## Behavior
 
 The meet manager checks actor distance and visibility each update. It tracks close, far, and reset states. When the
 actor moves beyond the reset distance, hello and bye flags are cleared.

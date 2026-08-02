@@ -25,7 +25,7 @@ Value: `helping_wounded_object`.
 
 Portable-store key used to reserve a wounded target for one helper.
 
-## Runtime behavior
+## Behavior
 
 The scheme adds `IS_WOUNDED_EXISTING` and a `HELP_WOUNDED` action. The evaluator only allows helping when the NPC is
 alive, has no enemy, is not zombied, is not wounded, is not the cinematic actor visual, and a wounded target is nearby.

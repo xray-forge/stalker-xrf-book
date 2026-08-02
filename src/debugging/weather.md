@@ -3,7 +3,7 @@
 XRF weather is managed by `WeatherManager`. It reads level weather settings, dynamic weather graphs, AtmosFear-style
 configuration, and weather FX state, then updates weather on actor spawn and on hourly game-time changes.
 
-## Runtime Weather Flow
+## Runtime weather flow
 
 On actor network spawn, the manager:
 
@@ -23,7 +23,7 @@ During actor updates, it:
 Use the debug panel `general` section to dump Lua state when you need to inspect the live `WeatherManager` fields. The
 dump is written to `_appdata_\\dumps\\lua_data.json`.
 
-## Changing Weather from Scripts
+## Change weather from scripts
 
 Script effects can force weather through `xr_effects.set_weather`, which calls `level.set_weather`:
 
@@ -46,13 +46,13 @@ level.set_weather_fx("fx_surge_day_3");
 level.start_weather_fx_from_time("fx_surge_day_3", time);
 ```
 
-## Weather Console Settings
+## Weather console settings
 
 `WeatherManager` applies commands from the `weather_console_settings` section in
 `environment\\dynamic_weather_graphs.ltx` during initialization. Use that section for console settings that must be
 applied with the dynamic weather system.
 
-## Debugging Weather Editor Issues
+## Debug weather editor issues
 
 OpenXRay includes a weather editor project and editor documentation. Use it for visual tuning of weather sections and
 effects, then confirm the resulting section names and graph entries in XRF configs.

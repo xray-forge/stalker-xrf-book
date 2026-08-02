@@ -22,7 +22,7 @@ Type: `milliseconds | condlist`.
 
 Switch after the section has been active for the duration.
 
-## Runtime behavior
+## Behavior
 
 On activation, the scheme stores the restrictor id and name in `registry.silenceZones`.
 

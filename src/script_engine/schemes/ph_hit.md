@@ -47,14 +47,6 @@ dir_path = kick_direction
 on_timer = 100 | ph_idle@after_hit
 ```
 
-## Runtime sequence
-
-1. `SchemePhysicalHit.activate` reads common switch conditions and hit fields.
-2. `dir_path` is resolved as a patrol path, and point `0` is used as the direction target.
-3. The manager builds a `hit` object with `power`, `impulse`, `bone`, `type = hit.strike`, and the calculated direction.
-4. The physical object receives the hit through `object.hit(...)`.
-5. Later updates only evaluate common section switching.
-
 ## Notes
 
 - `bone` and `dir_path` are required. Missing values fail during scheme activation.

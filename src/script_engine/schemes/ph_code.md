@@ -29,7 +29,7 @@ Type: `string | condlist`. Optional. Default: empty.
 
 Per-code condlists used when `code` is not set.
 
-## Usage
+## Behavior
 
 There are two modes:
 

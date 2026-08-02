@@ -1,11 +1,11 @@
-# Running Custom Scripts
+# Run custom scripts
 
 The engine exposes two development console commands for running Lua from the game console: `run_script` and
 `run_string`. They are useful for short investigations on a throwaway save.
 
 These commands are engine debug tools. Availability depends on the engine build.
 
-## Run a Script File
+## Run a script file
 
 Use `run_script` to run a `.script` file from the game scripts directory:
 
@@ -16,7 +16,7 @@ run_script my_debug_script
 The engine rescans the scripts path before adding the script to the level script processor. Use this for repeatable
 debug snippets that are too large for a single console line.
 
-## Run One Lua Expression
+## Run one Lua expression
 
 Use `run_string` for a single Lua command:
 
@@ -28,7 +28,7 @@ run_string db.actor:set_actor_position(vector():set(0, 0, 0))
 The engine preserves argument casing for `run_string`, sends the string to the level script processor when one exists,
 and otherwise loads the buffer directly as `@console_command`.
 
-## XRF Helper Examples
+## XRF helper examples
 
 Many XRF declarations are available through registered Lua modules after scripts are loaded. For example, debug notes in
 spawn configs use command shapes like:

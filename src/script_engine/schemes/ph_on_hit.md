@@ -10,7 +10,7 @@ next section should be chosen only after damage is applied.
 The section supports common switch fields such as `on_info`, `on_timer`, and zone or distance checks. They are evaluated
 from the hit callback, not from a normal per-frame update.
 
-## Runtime behavior
+## Behavior
 
 The manager subscribes to physical object hit events. When the object is hit and the object still has an active scheme,
 it calls the common section-switching logic for the current `ph_on_hit` state.

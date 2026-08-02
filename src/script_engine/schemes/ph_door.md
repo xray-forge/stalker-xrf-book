@@ -85,7 +85,7 @@ Maps hit bone indexes to section switch condlists.
 
 The implementation currently reads the locked-door tip from `tip_open` with default `tip_door_locked`.
 
-## Use and hit behavior
+## Behavior
 
 Using the door evaluates `on_use` and switches to the selected section. Hitting a configured bone evaluates the matching
 `hit_on_bone` condlist and switches to the selected section.

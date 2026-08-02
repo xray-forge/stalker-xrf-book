@@ -1,9 +1,9 @@
-# Logs
+# Debug with logs
 
 Logs are the quickest way to inspect XRF runtime behavior. By default, `forge.ltx` enables debug mode, regular Lua
 logging, and the separate Lua log file.
 
-## Where Logs Go
+## Find the logs
 
 The engine writes the main log into the game logs folder. XRF tooling can link that folder into the project as
 `target/logs_link`.
@@ -17,7 +17,7 @@ Common files are:
 
 The exact prefix depends on the logger configuration and the engine variant.
 
-## Checking Logs
+## Check the logs
 
 With a prebuilt engine:
 
@@ -32,7 +32,7 @@ With Visual Studio:
 2. Check the Visual Studio Output window.
 3. Check the same game log files if the message was written through the engine logger.
 
-## Printing Logs with the CLI
+## Print logs with the CLI
 
 The XRF CLI can print the end of the active engine log:
 
@@ -44,7 +44,7 @@ npm run cli -- logs 100
 The default count is `15` lines. Values are capped at `200` lines. The CLI looks for the linked logs folder and then
 chooses `openxray_<username>.log` or `xray_<username>.log` depending on the detected engine.
 
-## Writing Lua Logs
+## Write Lua logs
 
 Use `LuaLogger` from runtime code:
 
@@ -83,7 +83,7 @@ flush
 The profiling manager calls `flush` after printing profiling reports so the latest stats are persisted before you leave
 the session.
 
-## Build-Time Logging Flag
+## Build-time logging flag
 
 For performance or release-like builds, script compilation can strip Lua logger calls:
 

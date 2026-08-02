@@ -58,7 +58,7 @@ Compatibility fallback for `def_state_moving`.
 
 The section also supports common switch fields such as `on_info`, `on_signal`, `on_timer`, and actor-distance checks.
 
-## Usage
+## Behavior
 
 Use `walker` when one NPC owns its own patrol. Use `patrol` instead when several squad members should share a commander
 and follow a formation.

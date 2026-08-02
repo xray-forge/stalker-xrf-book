@@ -50,14 +50,6 @@ anim = idle_on
 anim_blend = false
 ```
 
-## Runtime sequence
-
-1. `SchemePhysicalButton.activate` reads common switch conditions and button fields.
-2. The object tooltip is set to `tooltip` or to an empty string when `tooltip` is absent.
-3. `PhysicalButtonManager.activate` calls `object.play_cycle(anim, anim_blend)`.
-4. Manager updates evaluate common section switching such as `on_info` and `on_timer`.
-5. `onUse` evaluates `on_press` only while the object is still in the active `ph_button` section.
-
 ## Notes
 
 - `anim` is required.

@@ -21,7 +21,7 @@ Patrol paths considered as crow spawn points.
 
 The section also supports common switch fields.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager initializes a cooldown entry for each spawn path. On update, if enough time has passed and
 the current crow count is below the configured maximum, it tries the paths in random order.

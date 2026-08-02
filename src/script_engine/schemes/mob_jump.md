@@ -33,7 +33,7 @@ Required by the scheme parser. Usually listens for `jumped`.
 
 The section also supports other common switch fields.
 
-## Runtime behavior
+## Behavior
 
 On activation, the manager captures the monster and resolves the jump point. It commands the monster to look at the
 target, waits for the look action to finish, then calls `object.jump(point, ph_jump_factor)`.
