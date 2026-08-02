@@ -41,9 +41,3 @@ Use the LTX verifier after config changes:
 ```powershell
 npm run cli -- verify ltx
 ```
-
-Strict mode is available for stricter checks:
-
-```powershell
-npm run cli -- verify ltx --strict
-```

@@ -56,12 +56,6 @@ Run LTX validation after changing config shape, includes, inheritance, or `$sche
 npm run cli verify ltx
 ```
 
-Use strict validation when the change is specifically about schema coverage:
-
-```powershell
-npm run cli verify ltx -- --strict
-```
-
 For generated configs, also run a focused build:
 
 ```powershell

@@ -21,7 +21,7 @@ The package script `npm run verify` is shorthand for `npm run cli -- verify proj
 ## Options
 
 - `verify gamedata -v, --verbose`: print verbose external-tool logs.
-- `verify ltx -s, --strict`: run strict LTX validation.
+- `verify gamedata -s, --strict`: fully validate expensive asset payloads, including complete sound decoding.
 - `verify ltx -v, --verbose`: print verbose external-tool logs.
 - Particle verification commands support `-v, --verbose`.
 
@@ -31,9 +31,9 @@ The package script `npm run verify` is shorthand for `npm run cli -- verify proj
 npm run verify
 npm run cli -- verify project
 npm run cli -- verify ltx
-npm run cli -- verify ltx --strict
 npm run build
 npm run cli -- verify gamedata --verbose
+npm run cli -- verify gamedata --strict
 npm run cli -- verify particles-packed
 ```
 
