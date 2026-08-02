@@ -3,7 +3,7 @@
 Script configs are LTX files that drive object logic. They live under `src/engine/configs/scripts` and are copied to
 `target/gamedata/configs/scripts`.
 
-These files are active gameplay data. They select schemes, configure object binders, define section switching, call
+These files are active gameplay data. They select schemes, configure object binders, define section switches, call
 conditions and effects, and describe smart terrain jobs.
 
 ## Common structure

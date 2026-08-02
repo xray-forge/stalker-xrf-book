@@ -1,7 +1,7 @@
 # Time
 
 Time helpers live in `src/engine/core/utils/time.ts`. They format game time, convert weather periods, advance game time,
-and serialize xray `CTime` values for save data.
+and serialize X-Ray `CTime` values for save data.
 
 ## Formatting
 
@@ -36,14 +36,14 @@ Converts an hour to a weather period section label:
 12 -> 12:00:00
 ```
 
-## Time Checks
+## Time checks
 
 `isInTimeInterval(fromHours, toHours)` checks whether the current level hour is inside a range. Ranges that cross
 midnight are supported.
 
 For example, `22` to `4` means late night through early morning.
 
-## Changing Time
+## Changing time
 
 `setCurrentTime(hour, min, sec)` advances game time to the requested time of day. If the current day has already passed
 that time, it advances to the next day.
@@ -53,7 +53,7 @@ the previous time factor.
 
 Use this carefully. It is not a passive setter; it advances the simulation while waiting.
 
-## Save and Load
+## Save and load
 
 `writeTimeToPacket(packet, time)` writes a nullable time value to a net packet. `null` is stored as `MAX_U8`.
 

@@ -1,12 +1,12 @@
 # Translations
 
-Translations are string-table source files for UI labels, dialogs, tasks, item names, achievements, subtitles, and other
+Translations provide string-table source for UI labels, dialogs, tasks, item names, achievements, subtitles, and other
 text shown by the game.
 
 XRF keeps the main editable translation source in JSON files under `src/engine/translations`. The build converts those
 sources into X-Ray string-table XML under `target/gamedata/configs/text`.
 
-## Supported Languages
+## Supported languages
 
 The supported locale keys are defined in `cli/config.json`:
 
@@ -24,7 +24,7 @@ The supported locale keys are defined in `cli/config.json`:
 The default build locale is also configured in `cli/config.json`. It can be overridden with the build command
 `--language` option.
 
-## Source Format
+## Source format
 
 Each JSON file is a dictionary keyed by translation id. Each translation id contains one value per supported locale.
 Values can be strings or string arrays:
@@ -47,7 +47,7 @@ Values can be strings or string arrays:
 String arrays are used when XML text contains explicit line breaks. The XML import helper splits `\n` into arrays when
 converting existing string-table XML into JSON.
 
-## Build Behavior
+## Build behavior
 
 The `translations` build target calls the bundled `xrf-cli` translation builder:
 
@@ -63,7 +63,7 @@ target/gamedata/configs/text
 
 Do not edit generated XML under `target/`. Fix the JSON source or the imported static XML source instead.
 
-## Translation Utilities
+## Translation utilities
 
 The local CLI exposes helper commands under `translations`:
 
@@ -80,7 +80,7 @@ Use `init` to add missing locale keys to JSON translation files. Use `check` to 
 The XML importer accepts an optional `--encoding` value. If encoding is not passed, it tries the XML header first and
 then falls back to `windows-1251` for `ukr` and `rus`, or `windows-1250` for the other supported locales.
 
-## References From Game Data
+## References from game data
 
 Translation ids are referenced across multiple source types:
 

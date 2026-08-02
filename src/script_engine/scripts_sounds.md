@@ -3,7 +3,7 @@
 Sound scripts load sound themes from LTX, play one-shot and looped sounds, save active sound state, and map engine sound
 masks to script sound classes.
 
-## Source Layout
+## Source layout
 
 | Source                                  | Purpose                                                            |
 | --------------------------------------- | ------------------------------------------------------------------ |
@@ -12,7 +12,7 @@ masks to script sound classes.
 | `src/engine/core/utils/sound.ts`        | Console volume helpers and sound-mask mapping                      |
 | `src/engine/configs`                    | Generated and static sound config inputs                           |
 
-## Sound Config
+## Sound configuration
 
 `SoundsConfig.ts` loads:
 
@@ -45,9 +45,9 @@ The main methods are:
 
 `play` rejects looped sound themes. `playLooped` requires a looped theme.
 
-## Heard Sound Mapping
+## Heard-sound mapping
 
-`mapSoundMaskToSoundType` converts xray `snd_type` bit masks into script enum values used by `hear` and danger logic.
+`mapSoundMaskToSoundType` converts X-Ray `snd_type` bit masks into script enum values used by `hear` and danger logic.
 
 Supported groups include:
 
@@ -56,9 +56,9 @@ Supported groups include:
 - monster sounds: `MST_die`, `MST_damage`, `MST_step`, `MST_talk`, `MST_attack`, `MST_eat`, `MST`;
 - fallback: `NIL`.
 
-## Volume Helpers
+## Volume helpers
 
-`getMusicVolume`, `setMusicVolume`, `getEffectsVolume`, and `setEffectsVolume` read and write xray console variables for
+`getMusicVolume`, `setMusicVolume`, `getEffectsVolume`, and `setEffectsVolume` read and write X-Ray console variables for
 music and effects volume.
 
 ## Guidelines

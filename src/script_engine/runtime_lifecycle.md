@@ -1,12 +1,12 @@
-# Runtime Lifecycle
+# Runtime lifecycle
 
-The runtime lifecycle is the path from xray loading Lua scripts to XRF managers, binders, schemes, and server objects
+The runtime lifecycle is the path from X-Ray loading Lua scripts to XRF managers, binders, schemes, and server objects
 owning live gameplay state.
 
 Read this section before changing object registration, manager startup, save/load, online/offline transitions, or event
 emission order.
 
-## Startup Flow
+## Startup flow
 
 The main game-start callback is `start.callback(isNewGame)` in `src/engine/scripts/start.ts`. It runs for both new games
 and loaded games.
@@ -25,13 +25,13 @@ Startup order:
 Managers, schemes, and extensions should not depend on object binders already being online during this callback. Online
 objects arrive later through binder calls from the engine.
 
-## Object Flow
+## Object flow
 
 The usual runtime path is:
 
-1. xray loads script entry modules such as `register`, `bind`, and `start`.
+1. X-Ray loads script entry modules such as `register`, `bind`, and `start`.
 2. `start.callback` initializes shared runtime systems.
-3. xray creates an online game object and calls a function from the `bind` extern module.
+3. X-Ray creates an online game object and calls a function from the `bind` extern module.
 4. The binder attaches a TypeScript `object_binder` subclass to the game object.
 5. `net_spawn` registers the object in the runtime registry and sets up callbacks.
 6. `update` runs per-frame or throttled behavior.
@@ -40,7 +40,7 @@ The usual runtime path is:
 
 Server-side objects use related ALife callbacks such as `on_register`, `on_unregister`, `STATE_Write`, and `STATE_Read`.
 
-## Runtime Owners
+## Runtime owners
 
 | Owner          | Source                            | Owns                                                |
 | -------------- | --------------------------------- | --------------------------------------------------- |
@@ -55,7 +55,7 @@ Server-side objects use related ALife callbacks such as `on_register`, `on_unreg
 Keep state near the owner that controls its lifecycle. A binder should not become the permanent owner of a cross-object
 system. A manager should not store short-lived object state that belongs in `registry.objects`.
 
-## First Places To Check
+## First places to check
 
 - For startup order, read `src/engine/scripts/start.ts`.
 - For binder factories, read `src/engine/scripts/bind.ts`.
@@ -64,7 +64,7 @@ system. A manager should not store short-lived object state that belongs in `reg
 - For shared state, read `src/engine/core/database/registry.ts`.
 - For save/load coordination, read `src/engine/core/managers/save/SaveManager.ts`.
 
-## Editing Checklist
+## Editing checklist
 
 - Identify whether the change belongs to a binder, manager, registry helper, scheme, or server object.
 - Check both online and offline paths.

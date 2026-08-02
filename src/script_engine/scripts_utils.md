@@ -5,7 +5,7 @@ server object classes.
 
 They live under `src/engine/core/utils`.
 
-## Main Utility Areas
+## Main utility areas
 
 | Area                                              | Examples                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
@@ -16,14 +16,14 @@ They live under `src/engine/core/utils`.
 | `sound`                                           | sound masks, volume console helpers, object sound checks     |
 | `time`                                            | time formatting and packet serialization                     |
 | `ui`                                              | XML resolution, CUI element setup, screen helpers            |
-| `position`, `vector`, `patrol`, `level`, `vertex` | xray spatial helpers                                         |
+| `position`, `vector`, `patrol`, `level`, `vertex` | X-Ray spatial helpers                                        |
 | `relation`, `community`, `ranks`                  | faction and relationship helpers                             |
 | `squad`, `smart_terrain`, `smart_cover`           | simulation and job helpers                                   |
 | `logging`                                         | `LuaLogger` and log registry helpers                         |
 | `game`                                            | game-flow checks and waiting helpers                         |
 | `binding`                                         | global extern registration helpers                           |
 
-## Spawn Helpers
+## Spawn helpers
 
 `spawn.ts` wraps common simulator creation paths:
 
@@ -40,12 +40,12 @@ They live under `src/engine/core/utils`.
 
 Ammo helpers respect section `box_size` and split large ammo counts into engine-safe chunks.
 
-## Binding Helpers
+## Binding helpers
 
 `binding.ts` owns `extern` and `getExtern`, which are used by script declarations to expose Lua globals. Use these
 helpers instead of assigning globals directly.
 
-## INI and Scheme Helpers
+## INI and scheme helpers
 
 The `ini` helpers parse fields, condlists, string lists, condition lists, timers, switch conditions, and bone
 descriptors.

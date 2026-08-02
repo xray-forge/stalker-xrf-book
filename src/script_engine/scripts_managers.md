@@ -10,7 +10,7 @@ save/load, sound, simulation, trade, tasks, map spots, weather, upgrades, and de
 The current startup list includes:
 
 - actor input and actor inventory menu;
-- database, debug, profiling, and events;
+- database, debug, and events;
 - dialogs, load screen, loadout, map display, music, notifications, PDA;
 - phantom, save, simulation, sleep, sound, statistics;
 - tasks, trade, travel, treasures, upgrades, weather;
@@ -21,7 +21,7 @@ Each manager is initialized through `initializeManager(ManagerClass)`.
 Other managers can be initialized lazily through `getManager`. For the startup list and lifecycle rules, see the Runtime
 managers page.
 
-## Manager Registry
+## Manager registry
 
 Manager instances are stored in two maps:
 
@@ -48,7 +48,7 @@ Managers extend `AbstractManager`. The base class defines:
 
 `disposeManager` calls `destroy()`, marks the instance as destroyed, and removes it from both registry maps.
 
-## Common Patterns
+## Common patterns
 
 Managers often subscribe to `EventsManager` in `initialize()` and unsubscribe in `destroy()`.
 

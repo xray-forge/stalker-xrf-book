@@ -1,4 +1,4 @@
-# Runtime Save and Load
+# Runtime save and load
 
 XRF has two save paths:
 
@@ -8,7 +8,7 @@ XRF has two save paths:
 Use net-packet save/load for compact state that is part of the engine lifecycle. Use dynamic save data for flexible
 extension or event state that should not be constrained by packet layout.
 
-## Save Manager
+## Save manager
 
 `SaveManager` coordinates core manager save/load and engine save callbacks.
 
@@ -23,14 +23,15 @@ Client manager state is saved and loaded through:
 - `TreasureManager`;
 - `TaskManager`;
 - `ActorInputManager`;
-- `GameSettingsManager`.
+- `GameSettingsManager`;
+- `DeimosManager`.
 
 Server manager state currently goes through `SimulationManager`.
 
 `SaveManager` also handles `alife_storage_manager` callbacks exposed from
 `src/engine/scripts/declarations/callbacks/game.ts`.
 
-## Dynamic Save Data
+## Dynamic save data
 
 Before a game save, `SaveManager.onBeforeGameSave(saveName)`:
 
@@ -46,7 +47,7 @@ When loading starts, `SaveManager.onGameLoad(saveName)`:
 
 After the engine reports successful load, `SaveManager.onAfterGameLoad(saveName)` emits `GAME_LOADED`.
 
-## Binder Save and Load
+## Binder save and load
 
 Save-relevant binders write their own state from `save(packet)` and read it in `load(reader)`.
 
@@ -71,7 +72,7 @@ closeLoadMarker(reader, BinderClass.__name);
 `saveObjectLogic` persists logic file names, active section, smart terrain name, activation time, active scheme save
 event, and portable store data. `loadObjectLogic` restores the matching loaded fields and portable store.
 
-## Save Markers
+## Save markers
 
 Save markers protect net-packet layout.
 

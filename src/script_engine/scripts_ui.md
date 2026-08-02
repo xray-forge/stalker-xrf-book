@@ -1,11 +1,11 @@
 # UI
 
-Runtime UI scripts load XML forms, initialize xray CUI controls, bind callbacks, and implement menus, debug screens, and
+Runtime UI scripts load XML forms, initialize X-Ray CUI controls, bind callbacks, and implement menus, debug screens, and
 in-game dialogs.
 
 This page covers runtime scripts. Form source generation is covered in the Forms page.
 
-## Source Layout
+## Source layout
 
 | Source                                                   | Purpose                                        |
 | -------------------------------------------------------- | ---------------------------------------------- |
@@ -14,7 +14,7 @@ This page covers runtime scripts. Form source generation is covered in the Forms
 | `src/engine/forms`                                       | TSX/static XML form sources                    |
 | `src/engine/scripts/declarations/callbacks/interface.ts` | Engine-facing UI callbacks                     |
 
-## XML Loading
+## XML loading
 
 `resolveXmlFormPath(path, hasWideScreenSupport)` normalizes form paths and optionally selects a `.16.xml` variant when
 the current screen is wide and the file exists.
@@ -22,9 +22,9 @@ the current screen is wide and the file exists.
 `resolveXmlFile(path, xml?, hasWideScreenSupport?)` creates or reuses `CScriptXmlInit`, resolves the form path, and
 calls `ParseFile`.
 
-In debug mode, XML paths containing `/` abort because xray expects Windows-style UI paths.
+In debug mode, XML paths containing `/` abort because X-Ray expects Windows-style UI paths.
 
-## Element Initialization
+## Element initialization
 
 `initializeElement(xml, type, selector, base, descriptor?)` initializes CUI controls from XML and can register callbacks
 on the owning `CUIScriptWnd`.
@@ -40,7 +40,7 @@ Supported element types include:
 
 `initializeStatic` and `initializeStatics` are shortcuts for static controls.
 
-## Runtime UI Classes
+## Runtime UI classes
 
 The runtime UI tree includes:
 
@@ -53,7 +53,7 @@ The runtime UI tree includes:
 
 These classes load XML by selector names. If an XML element name changes, update the runtime class and tests together.
 
-## Interface Externals
+## Interface externals
 
 `interface.ts` registers engine-facing modules such as:
 

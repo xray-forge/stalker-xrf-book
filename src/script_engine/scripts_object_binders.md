@@ -1,9 +1,9 @@
-# Object Binders
+# Object binders
 
-Object binders attach TypeScript lifecycle code to online xray game objects. They are client-side wrappers around
+Object binders attach TypeScript lifecycle code to online X-Ray game objects. They are client-side wrappers around
 `object_binder` and are registered through the `bind` extern module.
 
-## Binder Registration
+## Binder registration
 
 `src/engine/scripts/bind.ts` exposes one function per bindable object category:
 
@@ -17,7 +17,7 @@ Object binders attach TypeScript lifecycle code to online xray game objects. The
 Some binders are conditional. For example, `physic_object` binds only when the object has a `[logic]` section or is an
 inventory box, and `smart_terrain` binds only when the spawn ini contains `[smart_terrain]`.
 
-## Lifecycle Methods
+## Lifecycle methods
 
 Most binders implement some subset of:
 

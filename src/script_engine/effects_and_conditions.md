@@ -1,7 +1,7 @@
 # Effects and conditions
 
-Effects and conditions are Lua externals called from config condlists. They are the bridge between LTX logic and XRF
-TypeScript behavior.
+Effects and conditions are Lua externals called from config condlists. They connect LTX logic to XRF TypeScript
+behavior.
 
 Effects are registered under `xr_effects`. Conditions are registered under `xr_conditions`.
 

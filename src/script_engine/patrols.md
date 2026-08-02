@@ -1,7 +1,7 @@
 # Patrols
 
-Patrol paths are level-authored waypoint paths used by stalker schemes, monster movement, smart cover targets, travel,
-spawn helpers, and simulation utilities.
+Patrol paths are level-authored waypoints used by stalker schemes, monster movement, smart-cover targets, travel, spawn
+helpers, and simulation utilities.
 
 For stalker logic, XRF routes most waypoint behavior through `StalkerPatrolManager`. Schemes such as `walker`,
 `sleeper`, `patrol`, and `reach_task` configure the manager with `path_walk`, optional `path_look`, team

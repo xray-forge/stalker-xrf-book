@@ -25,7 +25,7 @@ format-specific workflows.
 
 ## Logging
 
-Some commands offer `--silent` or `--verbose`. Rust logging honours `RUST_LOG` when it is set.
+Some commands offer `--silent` or `--verbose`. Rust logging honors `RUST_LOG` when it is set.
 
 ## Read and write commands
 

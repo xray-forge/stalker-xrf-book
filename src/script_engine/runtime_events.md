@@ -1,12 +1,12 @@
-# Runtime Events and Timers
+# Runtime events and timers
 
-`EventsManager` is the internal publish-subscribe layer for runtime lifecycle changes. It also owns game-time intervals
-and timeouts through `AbstractTimersManager`.
+`EventsManager` is XRF's internal publish-subscribe layer for runtime lifecycle changes. It also owns global-time
+intervals and timeouts through `AbstractTimersManager`.
 
 Use events when a binder, manager, scheme, or server object needs to announce a lifecycle change without directly
 depending on every listener.
 
-## Event Dispatch
+## Event dispatch
 
 Events are declared in `EGameEvent` under `src/engine/core/managers/events/events_types.ts`.
 
@@ -24,7 +24,7 @@ EventsManager.emitEvent(EGameEvent.GAME_STARTED, isNewGame);
 
 Callbacks can be registered with a context. When context is provided, the callback is called with that context.
 
-## Event Groups
+## Event groups
 
 `EGameEvent` covers:
 

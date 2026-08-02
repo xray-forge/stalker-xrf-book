@@ -1,11 +1,11 @@
-# Runtime Managers
+# Runtime managers
 
 Managers are singleton runtime services stored in the registry. They own cross-object systems such as events, save/load,
 sound, simulation, trade, tasks, weather, upgrades, UI state, and debugging.
 
 Managers extend `AbstractManager` from `src/engine/core/managers/abstract/AbstractManager.ts`.
 
-## Manager Access
+## Manager access
 
 Use the registry helper that matches the lifecycle you need:
 
@@ -22,7 +22,7 @@ getManagerByName("SoundManager");
 `getManagerByName(name)` is mainly for circular-reference cases where the class reference is not available. It cannot
 initialize a missing manager.
 
-## Startup Managers
+## Startup managers
 
 `registerManagers()` initializes the startup manager list during `start.callback`.
 
@@ -42,7 +42,6 @@ The current startup list is:
 - `NotificationManager`;
 - `PdaManager`;
 - `PhantomManager`;
-- `ProfilingManager`;
 - `ReleaseBodyManager`;
 - `SaveManager`;
 - `SimulationManager`;
@@ -59,7 +58,7 @@ The current startup list is:
 Other managers can still be initialized lazily with `getManager`. For example, `SaveManager` initializes `SurgeManager`
 after `ACTOR_REINIT`.
 
-## Lifecycle Methods
+## Lifecycle methods
 
 `AbstractManager` defines:
 
@@ -73,7 +72,7 @@ The base `update`, `save`, and `load` methods abort. Implement only the methods 
 
 `disposeManager` calls `destroy()`, marks the manager as destroyed, and removes it from both registry maps.
 
-## Common Patterns
+## Common patterns
 
 Managers that listen to events usually subscribe in `initialize()` and unsubscribe in `destroy()`.
 
@@ -82,7 +81,7 @@ save and load order synchronized.
 
 Managers with delayed work should check `isDestroyed` before doing work after disposal.
 
-## Where To Add Behavior
+## Where to add behavior
 
 - Use a manager for shared behavior across many objects.
 - Use a binder when the behavior belongs to one online object.

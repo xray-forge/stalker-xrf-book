@@ -15,7 +15,7 @@ export const enabled = false;
 
 It is disabled by default. Saved extension state can enable it.
 
-## Behaviour
+## Behavior
 
 The extension receives `isNewGame` from the extension registration flow.
 

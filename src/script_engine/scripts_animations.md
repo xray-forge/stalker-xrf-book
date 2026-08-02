@@ -3,7 +3,7 @@
 Animation scripts define named stalker states, animation sequences, smart-cover descriptors, and helper functions used
 by schemes such as `walker`, `remark`, `animpoint`, `camper`, `corpse_detection`, and `help_wounded`.
 
-## Source Layout
+## Source layout
 
 | Source                                   | Purpose                                                                           |
 | ---------------------------------------- | --------------------------------------------------------------------------------- |
@@ -15,7 +15,7 @@ by schemes such as `walker`, `remark`, `animpoint`, `camper`, `corpse_detection`
 | `src/engine/core/animation/predicates`   | Predicate lists used to select animpoint-compatible animations                    |
 | `src/engine/core/utils/animation.ts`     | Helpers for sequence construction                                                 |
 
-## State Descriptors
+## State descriptors
 
 State descriptors map a script state name to engine animation inputs. The base table defines states such as `walk`,
 `run`, `patrol`, `assault`, `threat`, `hide`, `search_corpse`, `help_wounded`, and wounded states.
@@ -33,7 +33,7 @@ A descriptor can set:
 Schemes usually pass a state name to `setStalkerState`. The state manager resolves that name through these tables and
 applies the engine-level settings.
 
-## Animation Sequences
+## Animation sequences
 
 Animation descriptors define `into`, `idle`, `rnd`, and `out` sequences. The `createSequence(...)` helper stores the
 sequence as a Lua table using zero-based indexes, which matches the runtime animation code.
@@ -52,15 +52,15 @@ Examples in the base animation table include:
 - `search_corpse`, which calls corpse-loot finalization;
 - `help_wounded_with_medkit`, which attaches the scripted medkit and finishes wounded help.
 
-## Smart Cover Animations
+## Smart-cover animations
 
 Smart-cover animation files define cover descriptions and loopholes consumed by `smartcover` and `animpoint`. The
-registered `smart_covers.descriptions` extern exposes the list to xray.
+registered `smart_covers.descriptions` extern exposes the list to X-Ray.
 
 Animpoint schemes can also use predicate lists to choose compatible animations from a smart-cover description when
 `avail_animations` is not explicitly set.
 
-## Common Pitfalls
+## Common pitfalls
 
 - State names are runtime API. Changing a name can break LTX sections that refer to it.
 - Some sequence callbacks have gameplay side effects, such as transferring loot or healing wounded NPCs.

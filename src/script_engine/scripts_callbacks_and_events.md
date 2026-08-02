@@ -1,9 +1,9 @@
-# Callbacks and Events
+# Callbacks and events
 
-Callbacks are the bridge from xray and Lua config scripts into the TypeScript runtime. Events are the engine's internal
+Callbacks are the bridge from X-Ray and Lua config scripts into the TypeScript runtime. Events are XRF's internal
 publish-subscribe layer for sharing lifecycle changes between managers, binders, and schemes.
 
-## External Callbacks
+## External callbacks
 
 External callbacks live under `src/engine/scripts/declarations/callbacks` and are loaded by `registerExternals()`.
 
@@ -17,7 +17,7 @@ External callbacks live under `src/engine/scripts/declarations/callbacks` and ar
 The declarations use `extern(name, value)` to register global functions or modules. Config files and engine code call
 those names from Lua.
 
-## Binder Callbacks
+## Binder callbacks
 
 Object binders register engine callbacks on online objects.
 
@@ -50,7 +50,7 @@ callback with that context.
 - intervals assert that the period is at least `50`.
 - timers are processed from `ActorBinder.update()` through `eventsManager.tick()`.
 
-## Event Groups
+## Event groups
 
 `EGameEvent` includes events for:
 

@@ -1,12 +1,12 @@
-# Runtime Binders
+# Runtime binders
 
-Binders attach TypeScript lifecycle code to online xray game objects. They are registered through the `bind` extern
+Binders attach TypeScript lifecycle code to online X-Ray game objects. They are registered through the `bind` extern
 module in `src/engine/scripts/bind.ts`.
 
 Use binders for client-side lifecycle glue: registering an object, installing engine callbacks, initializing logic, and
 cleaning up when the object goes offline.
 
-## Binder Families
+## Binder families
 
 | Family        | Binder functions                                                                     |
 | ------------- | ------------------------------------------------------------------------------------ |
@@ -24,7 +24,7 @@ Some binder factories are conditional:
 - `physic_object` binds only when the object has `logic` or is an inventory box;
 - `smart_terrain` binds only when the spawn ini contains `smart_terrain`.
 
-## Common Lifecycle Methods
+## Common lifecycle methods
 
 Most binders implement some subset of:
 
@@ -39,7 +39,7 @@ Most binders implement some subset of:
 Use the same read/write order in `save` and `load`. When a binder persists object logic, it usually wraps the operation
 in save markers and calls `saveObjectLogic` / `loadObjectLogic`.
 
-## Actor Binder
+## Actor binder
 
 `ActorBinder` is the global update driver for many runtime systems.
 
@@ -56,7 +56,7 @@ update for the initial spawn buffer, schedules stable ALife updates, and emits `
 On update it emits `ACTOR_UPDATE`, throttled actor update events, processes `EventsManager` timers, and updates actor
 simulation availability.
 
-## Stalker Binder
+## Stalker binder
 
 `StalkerBinder` owns online stalker setup. It creates the stalker state manager and patrol manager, sets up planners,
 registers the stalker in the registry, installs callbacks, initializes sound themes, initializes object logic, and sets
@@ -65,7 +65,7 @@ up post-combat idle behavior.
 On offline switch it stops sounds, emits scheme offline events, applies `on_offline` overrides, stores offline state,
 and unregisters the stalker.
 
-## Restrictor Binder
+## Restrictor binder
 
 `RestrictorBinder` is a compact example for zone lifecycle:
 

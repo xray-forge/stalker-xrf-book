@@ -15,7 +15,7 @@ export const enabled = true;
 
 It is enabled by default unless saved extension state overrides it.
 
-## Behaviour
+## Behavior
 
 On registration, the extension sets:
 

@@ -52,7 +52,7 @@ Use focused validation first:
 npm test -- <path-or-pattern>
 npm run typecheck
 npm run cli verify ltx
-npm run cli build -- --filter configs
+npm run cli -- build --include configs --filter <pattern>
 ```
 
 Use broader `npm run verify` or `npm run build` when a change touches shared config, generated output, or multiple

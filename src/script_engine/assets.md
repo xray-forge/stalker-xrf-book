@@ -1,7 +1,7 @@
 # Assets
 
-Assets are static gamedata resources copied into the build output. They are separate from TypeScript source, generated
-Lua scripts, generated configs, and generated UI XML.
+Assets are static gamedata resources copied into the build output. Keep them separate from TypeScript, generated Lua,
+generated configs, and generated UI XML.
 
 The main source directory is `src/resources`. Project asset override roots can also be included by the build when asset
 overrides are enabled for a language.

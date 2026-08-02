@@ -6,7 +6,7 @@ movement tasks.
 The core implementation is split between `SimulationManager`, server object classes, smart terrain utilities, and squad
 actions.
 
-## Source Layout
+## Source layout
 
 | Source                                      | Purpose                                                      |
 | ------------------------------------------- | ------------------------------------------------------------ |
@@ -18,7 +18,7 @@ actions.
 | `src/engine/core/utils/alife.ts`            | ALife update batching helpers                                |
 | `src/engine/core/utils/squad`               | Squad state/action helpers                                   |
 
-## SimulationManager
+## `SimulationManager`
 
 `SimulationManager` is registered during startup. It listens for:
 
@@ -26,10 +26,10 @@ actions.
 - `ACTOR_REGISTER`;
 - `ACTOR_GO_OFFLINE`.
 
-On actor registration it initializes default simulation squads. On actor offline it removes the actor from xray ranking
+On actor registration it initializes default simulation squads. On actor offline it removes the actor from X-Ray ranking
 when that engine callback exists. It also saves and loads the `IS_SIMULATION_INITIALIZED` flag.
 
-## Simulation Targets
+## Simulation targets
 
 The main simulation targets are:
 
@@ -62,7 +62,7 @@ It then runs either:
 - `SquadReachTargetAction`;
 - `SquadStayOnTargetAction`.
 
-## Smart Terrains
+## Smart terrains
 
 `SmartTerrain` owns:
 
@@ -77,7 +77,7 @@ It then runs either:
 When a terrain is selected as a target, squad members are soft-reset offline and assigned to the terrain. When NPCs
 arrive, the terrain assigns jobs from its job list.
 
-## ALife Update Rate
+## ALife update rate
 
 `setUnlimitedAlifeObjectsUpdate()` temporarily allows all ALife objects to update, which smooths initial spawn.
 `setStableAlifeObjectsUpdate()` restores the configured stable update count.

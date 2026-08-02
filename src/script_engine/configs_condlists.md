@@ -1,7 +1,7 @@
 # Condlists
 
 Condlists are conditional config expressions used throughout script configs, task configs, dialogs, and scheme switches.
-A condlist can check info portions, call conditions, apply side effects, and return a value.
+A condlist can check info portions, call conditions, apply side effects, and select a value.
 
 Basic shape:
 

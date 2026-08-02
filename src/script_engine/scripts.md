@@ -1,10 +1,10 @@
 # Scripts
 
-The script engine is the TypeScript runtime layer that is compiled to Lua and loaded by the xray engine. It owns the Lua
+The script engine is the TypeScript runtime layer that is compiled to Lua and loaded by the X-Ray engine. It owns the Lua
 extern modules, object binders, scheme registry, global managers, server object classes, and shared helpers used by
 configs and gameplay logic.
 
-For the object lifecycle, manager startup, event, and save/load flow, start with the Runtime lifecycle section. This
+For object lifecycle, manager startup, events, and save/load, start with [Runtime lifecycle](runtime_lifecycle.md). This
 page is the lower-level source map for script modules.
 
 The main source roots are:
@@ -21,7 +21,7 @@ The main source roots are:
 | UI classes             | `src/engine/core/ui`        |
 | Animation tables       | `src/engine/core/animation` |
 
-## Entry Points
+## Entry points
 
 The engine-facing entry points are registered with `extern(...)`.
 
@@ -37,7 +37,7 @@ Exposes class-id and class registration helpers:
 - `register.getGameClassId`
 - `register.getUiClassId`
 
-These functions are called by xray while linking script classes to engine class ids.
+The X-Ray engine calls these functions while linking script classes to engine class ids.
 
 ### `bind`
 
@@ -52,13 +52,13 @@ object kind needs script logic.
 Runs the game-start callback. It updates class ids, registers the simulator and ranks, unlocks system ini overriding,
 registers managers, registers schemes, registers extensions, and emits `GAME_STARTED`.
 
-## Runtime Shape
+## Runtime shape
 
 Most gameplay code is not called directly from config files. The usual path is:
 
-1. xray loads script entry modules.
+1. X-Ray loads script entry modules.
 2. `start.callback` initializes shared runtime systems.
-3. xray creates online objects and calls a `bind.*` function.
+3. X-Ray creates online objects and calls a `bind.*` function.
 4. The binder registers the object in `registry`.
 5. The binder initializes object logic from spawn ini or generated config.
 6. Schemes, managers, and events update behavior on object or actor ticks.
@@ -66,7 +66,7 @@ Most gameplay code is not called directly from config files. The usual path is:
 Server-side classes such as squads and smart terrains participate through `on_register`, `on_unregister`, `STATE_Write`,
 and `STATE_Read`.
 
-## What To Edit
+## What to edit
 
 - Add new engine callbacks under `src/engine/scripts/declarations`.
 - Add new object lifecycle behavior under `src/engine/core/binders`.

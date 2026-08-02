@@ -1,7 +1,7 @@
 # Dialog configs
 
-Dialog configs define conversation XML and script predicates/actions used by dialog phrases. XRF keeps dialog data under
-`src/engine/configs/gameplay` and dialog script externs under `src/engine/scripts/declarations/dialogs`.
+Dialog configs define conversation XML and the script predicates/actions used by dialog phrases. XRF keeps dialog data
+under `src/engine/configs/gameplay` and dialog externs under `src/engine/scripts/declarations/dialogs`.
 
 Use this page when you need to add a phrase, wire a phrase to script, or check why a dialog option is not visible.
 

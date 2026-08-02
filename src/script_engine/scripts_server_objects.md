@@ -1,11 +1,11 @@
-# Server Objects
+# Server objects
 
-Server object classes extend xray `cse_alife_*` classes and run on the ALife side of the engine. They register story
+Server object classes extend X-Ray `cse_alife_*` classes and run on the ALife side of the engine. They register story
 links, simulation targets, save/load data, and object-specific ALife behavior.
 
 Runtime server classes live under `src/engine/core/objects`.
 
-## Source Layout
+## Source layout
 
 | Source                  | Purpose                                                                       |
 | ----------------------- | ----------------------------------------------------------------------------- |
@@ -19,7 +19,7 @@ Runtime server classes live under `src/engine/core/objects`.
 | `objects/helicopter`    | Helicopter server class                                                       |
 | `objects/level`         | Level changer server class                                                    |
 
-## Class Registration
+## Class registration
 
 Server classes are linked to engine class ids through the registration flow exposed by `register.registerGameClasses`.
 Class-id helpers are implemented in `src/engine/scripts/register`.
@@ -27,7 +27,7 @@ Class-id helpers are implemented in `src/engine/scripts/register`.
 The class-id helpers distinguish game class ids, UI class ids, and object class ids. Unknown game types abort during
 class-id resolution.
 
-## Common Lifecycle
+## Common lifecycle
 
 Server object classes usually implement some subset of:
 
@@ -68,7 +68,7 @@ It owns:
 Squads select either `SquadReachTargetAction` or `SquadStayOnTargetAction` depending on whether the current target is
 already reached.
 
-## Smart Terrain
+## Smart terrain
 
 `SmartTerrain` extends `cse_alife_smart_zone`. It owns terrain simulation, job assignment, respawn configuration,
 campfires, map spot state, alarm/control state, arriving objects, and job save/load data.

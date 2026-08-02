@@ -1,10 +1,10 @@
 # Configs
 
-XRF stores game configuration source under `src/engine/configs`. The build copies static `.ltx` and `.xml` files and
+Game configuration source lives under `src/engine/configs`. The build copies static `.ltx` and `.xml` files and
 generates additional `.ltx` or `.xml` files from TypeScript sources.
 
-Config files are runtime behavior. Script configs can switch schemes, call effects, check conditions, spawn objects,
-define smart terrain jobs, describe tasks, load dialogs, configure weapons, and drive weather.
+Configs are runtime behavior. They can switch schemes, call effects, check conditions, spawn objects, define smart
+terrain jobs, describe tasks, load dialogs, configure weapons, and drive weather.
 
 ## Domain pages
 

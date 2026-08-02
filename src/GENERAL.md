@@ -12,7 +12,8 @@ gameplay schemes, and debugging.
 - Working on gameplay? Start with the [Script engine](./script_engine/script_engine.md) and
   [Schemes](./script_engine/schemes/schemes.md).
 - Looking for a command? See the [XRF CLI](./xrf/cli/cli.md) or [Tools CLI](./tools/cli/cli.md).
-- Investigating runtime behavior? Read [Game engine](./game_engine/game_engine.md) and [Debugging](./debugging/logs.md).
+- Investigating runtime behavior? Read [Game engine](./game_engine/game_engine.md) and
+  [Debugging](./debugging/debugging.md).
 
 Generated files are written under `target/`. Edit sources in the engine or tools repository and rebuild; do not edit
 generated gamedata by hand.

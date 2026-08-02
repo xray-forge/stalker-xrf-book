@@ -6,7 +6,7 @@ shader files from the resource roots into `target/gamedata/shaders` as part of t
 Use this page when you need to find where shader files live, how they reach the game package, or where configs and UI
 forms reference shader names.
 
-## Source Layout
+## Source layout
 
 | Source                                        | Purpose                                         |
 | --------------------------------------------- | ----------------------------------------------- |
@@ -20,7 +20,7 @@ forms reference shader names.
 The base resource directory also contains other static asset folders such as `anims`, `levels`, `sounds`, `spawns`, and
 `textures`. Shader files follow the same static-resource build path as those folders.
 
-## Build Behavior
+## Build behavior
 
 The CLI `resources` target copies static assets from configured resource roots:
 
@@ -35,7 +35,7 @@ The static resource copier intentionally skips development-only folders such as 
 `particles_unpacked`. It also rejects resource roots that overlap generated engine folders such as `configs`, `scripts`,
 `core`, or `lib`.
 
-## References From Configs
+## References from configs
 
 Shader names are usually referenced by engine configs rather than by scripts. Examples include:
 

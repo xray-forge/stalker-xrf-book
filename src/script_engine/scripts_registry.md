@@ -5,7 +5,7 @@ The registry is the shared runtime state table for the script engine. It is defi
 
 Use it for state that must be visible across binders, schemes, managers, and utility modules.
 
-## Main State Groups
+## Main state groups
 
 | Field                         | Purpose                                    |
 | ----------------------------- | ------------------------------------------ |
@@ -27,7 +27,7 @@ Use it for state that must be visible across binders, schemes, managers, and uti
 There are also focused registries for wounded objects, doors, helicopters, crows, anomaly zones, light zones, silence
 zones, no-weapon zones, trade state, camp managers, ranks, goodwill, and save markers.
 
-## Object State
+## Object state
 
 `registry.objects` is the central per-object store. Binders reset and register object state when objects come online.
 Schemes attach their state into the same object descriptor by scheme id.
@@ -41,7 +41,7 @@ Common object state includes:
 - overrides;
 - state manager and patrol manager for stalkers.
 
-## Story Links
+## Story links
 
 Story links are stored both ways:
 
@@ -51,7 +51,7 @@ Story links are stored both ways:
 Use the database helpers to register or unregister story links. Do not update these tables by hand unless the helper
 does not cover the case.
 
-## Manager Access
+## Manager access
 
 Managers should be accessed through:
 
