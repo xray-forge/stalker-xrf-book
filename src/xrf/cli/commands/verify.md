@@ -43,4 +43,5 @@ npm run cli -- verify particles-packed
 ## Failure notes
 
 `verify project` reports setup problems but catches its own top-level error. `verify gamedata`, `verify ltx`, and
-particle verification delegate to the tools binary and fail the process on invalid data.
+particle verification delegate to the tools binary and fail the process on invalid data, checker errors, or an
+incomplete selected check.
