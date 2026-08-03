@@ -10,6 +10,7 @@
   - [Building](xrf/building/building.md)
     - [Clean](xrf/building/building_clean.md)
     - [Scripts](xrf/building/building_scripts.md)
+    - [Extern manifest](xrf/building/building_externs.md)
     - [UI](xrf/building/building_ui.md)
     - [Configs](xrf/building/building_configs.md)
     - [Translations](xrf/building/building_translations.md)

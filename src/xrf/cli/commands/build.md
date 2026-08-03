@@ -10,19 +10,21 @@ npm run cli -- build
 ## What it builds
 
 | Target         | Source                                | Output                                                                       |
-| -------------- | ------------------------------------- | ---------------------------------------------------------------------------- |
+| -------------- | ------------------------------------- |------------------------------------------------------------------------------|
 | `scripts`      | `src/engine/scripts`                  | Lua `.script` files in `target/gamedata/scripts` and related output folders. |
+| `externs`      | `src/engine/declarations`             | `src/engine/declarations/extern.json` and `target/gamedata/extern.json`.     |
 | `ui`           | `src/engine/forms` plus static UI XML | UI XML under `target/gamedata/configs/ui`.                                   |
 | `configs`      | `src/engine/configs`                  | Static and generated config files under `target/gamedata/configs`.           |
 | `translations` | `src/engine/translations`             | XML string tables under `target/gamedata/configs/text`.                      |
 | `resources`    | configured resource roots             | Static assets copied into `target/gamedata`.                                 |
 
-The build also writes `target/gamedata/metadata.json` and stores the build log in `target/xrf_build.log`.
+`target/gamedata/extern.json` is metadata for gamedata verification tools; the game runtime does not load it. The
+build also writes `target/gamedata/metadata.json` and stores the build log in `target/xrf_build.log`.
 
 ## Options
 
-- `-i, --include <targets...>`: build only selected targets. Choices are `scripts`, `ui`, `configs`, `translations`, and
-  `resources`.
+- `-i, --include <targets...>`: build only selected targets. Choices are `scripts`, `externs`, `ui`, `configs`,
+  `translations`, and `resources`.
 - `-e, --exclude <targets...>`: skip selected targets. This conflicts with `--include`.
 - `-f, --filter <targets...>`: filter copied/generated files by regular-expression strings. Use it only with a specific
   included target, not with the default `all` target set.
@@ -38,6 +40,7 @@ The build also writes `target/gamedata/metadata.json` and stores the build log i
 ```powershell
 npm run cli -- build --clean
 npm run cli -- build --include scripts configs
+npm run cli -- build --include externs
 npm run cli -- build --include configs --filter system.ltx
 npm run cli -- build --exclude resources
 npm run cli -- build --include scripts --no-lua-logs
