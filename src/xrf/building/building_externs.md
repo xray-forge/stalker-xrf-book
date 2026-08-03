@@ -11,7 +11,7 @@ npm run cli -- build --include externs
 - `src/engine/declarations/extern.json` — tracked contract.
 - `target/gamedata/extern.json` — packaged sidecar for gamedata tools.
 
-The game does not load either file. Do not edit them by hand.
+The game does not load either file. Do not edit them by hand. Manifest source paths are relative to the declarations root.
 
 ## Check the tracked manifest
 

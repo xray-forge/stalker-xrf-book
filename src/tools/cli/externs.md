@@ -3,10 +3,10 @@
 `export-externs` reads TypeScript `extern(...)` declarations.
 
 ```powershell
-xrf-cli export-externs <declarations-root> --source-root <repo-root> --format json --output <path>
+xrf-cli export-externs <declarations-root> --format json --output <path>
 ```
 
-For the engine, use `src/engine/declarations` and the repository root.
+Manifest source paths are relative to the declarations root.
 
 ## Formats
 
@@ -17,7 +17,7 @@ For the engine, use `src/engine/declarations` and the repository root.
 Use `--line-endings lf|crlf` to override the default.
 
 ```powershell
-xrf-cli export-externs src/engine/declarations --source-root . --format html --output target/parsed/externs.html
+xrf-cli export-externs src/engine/declarations --format html --output target/parsed/externs.html
 ```
 
 ## Check
@@ -25,7 +25,7 @@ xrf-cli export-externs src/engine/declarations --source-root . --format html --o
 `--check <artifact>` validates without writing and cannot be combined with `--output`.
 
 ```powershell
-xrf-cli export-externs src/engine/declarations --source-root . --check src/engine/declarations/extern.json
+xrf-cli export-externs src/engine/declarations --check src/engine/declarations/extern.json
 ```
 
 The format is inferred from the extension unless `--format` is provided. JSON is compared semantically; XML and HTML
