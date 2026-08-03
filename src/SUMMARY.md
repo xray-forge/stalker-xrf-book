@@ -63,6 +63,7 @@
     - [Spawn](tools/cli/spawn.md)
     - [Textures](tools/cli/textures.md)
     - [Translations](tools/cli/translations.md)
+    - [Extern exports](tools/cli/externs.md)
   - [Useful links](tools/useful_links.md)
   - [Game SDK](tools/game_sdk.md)
   - [Lua debugger](tools/lua_debugger.md)

@@ -1,0 +1,39 @@
+# Extern exports
+
+`export-externs` reads TypeScript `extern(...)` declarations.
+
+```powershell
+xrf-cli export-externs <declarations-root> --source-root <repo-root> --format json --output <path>
+```
+
+For the engine, use `src/engine/declarations` and the repository root.
+
+## Formats
+
+- `json`: tracked `{ "exports": ... }` contract; CRLF by default.
+- `xml`: `<externs><exports>` document; LF by default.
+- `html`: collapsed namespace reference; LF by default.
+
+Use `--line-endings lf|crlf` to override the default.
+
+```powershell
+xrf-cli export-externs src/engine/declarations --source-root . --format html --output target/parsed/externs.html
+```
+
+## Check
+
+`--check <artifact>` validates without writing and cannot be combined with `--output`.
+
+```powershell
+xrf-cli export-externs src/engine/declarations --source-root . --check src/engine/declarations/extern.json
+```
+
+The format is inferred from the extension unless `--format` is provided. JSON is compared semantically; XML and HTML
+are compared as rendered text with line-ending differences ignored.
+
+The engine wrapper is `npm run cli -- verify externs`. It is not a build or CI gate.
+
+## Requirements
+
+Names must be unique string literals. Callables need explicit parameter and return types. Values need `value as Type`.
+The command skips `*.test.ts`, `*.spec.ts`, and `__test__` sources.

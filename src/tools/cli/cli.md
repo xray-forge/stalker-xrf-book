@@ -15,6 +15,7 @@ format-specific workflows.
 | Group        | Commands                                                                                                               |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Archive      | `unpack-archive`                                                                                                       |
+| Externs      | `export-externs`                                                                                                        |
 | Gamedata     | `verify-gamedata`                                                                                                      |
 | LTX          | `format-ltx`, `verify-ltx`                                                                                             |
 | Models       | `info-ogf`, `info-omf`                                                                                                 |

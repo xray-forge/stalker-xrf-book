@@ -1,22 +1,23 @@
 # Verify
 
-`verify` runs project and gamedata validation commands.
+`verify` validates project setup and generated data.
 
 ```powershell
 npm run cli -- verify <command>
 ```
 
-The package script `npm run verify` is shorthand for `npm run cli -- verify project`.
+`npm run verify` runs `verify project`.
 
 ## Commands
 
-| Command                     | Checks                                                                                                   |
-| --------------------------- |----------------------------------------------------------------------------------------------------------|
-| `verify project`            | CLI config, game path, game executable, engine link, gamedata link, logs link, and configured resources. |
-| `verify gamedata`           | The assembled `target/gamedata` tree, including generated scripts/configs and copied resources.          |
-| `verify ltx`                | LTX includes, inheritance, section shape, and `$scheme` validation.                                      |
-| `verify particles-packed`   | Packed `src/resources/particles.xr`.                                                                     |
-| `verify particles-unpacked` | Unpacked particles under `src/resources/particles_unpacked`.                                             |
+| Command                     | Checks                              |
+| --------------------------- |-------------------------------------|
+| `verify project`            | Project setup and links.            |
+| `verify gamedata`           | Assembled `target/gamedata`.        |
+| `verify externs`            | Tracked extern manifest.            |
+| `verify ltx`                | LTX structure and `$scheme` values. |
+| `verify particles-packed`   | Packed `particles.xr`.              |
+| `verify particles-unpacked` | Unpacked particle files.            |
 
 ## Options
 
@@ -28,20 +29,13 @@ The package script `npm run verify` is shorthand for `npm run cli -- verify proj
 ## Examples
 
 ```powershell
-npm run verify
-npm run cli -- verify project
-npm run cli -- verify ltx
-npm run build
+npm run cli -- verify externs
 npm run cli -- verify gamedata --verbose
-npm run cli -- verify gamedata --strict
-npm run cli -- verify particles-packed
 ```
 
-`verify gamedata` uses `target/gamedata` automatically. Build gamedata first; the resulting tree must contain
-`configs/system.ltx`.
+Build gamedata before `verify gamedata`. `verify externs` does not write files. Regenerate a stale manifest with
+`npm run cli -- build --include externs`.
 
 ## Failure notes
 
-`verify project` reports setup problems but catches its own top-level error. `verify gamedata`, `verify ltx`, and
-particle verification delegate to the tools binary and fail the process on invalid data, checker errors, or an
-incomplete selected check.
+`verify project` reports setup problems without failing. Other checks fail on invalid data or tool errors.

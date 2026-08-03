@@ -18,7 +18,7 @@ npm run cli -- build
 | `translations` | `src/engine/translations`             | XML string tables under `target/gamedata/configs/text`.                      |
 | `resources`    | configured resource roots             | Static assets copied into `target/gamedata`.                                 |
 
-`target/gamedata/extern.json` is metadata for gamedata verification tools; the game runtime does not load it. The
+`target/gamedata/extern.json` is metadata for gamedata tools; the game runtime does not load it. The
 build also writes `target/gamedata/metadata.json` and stores the build log in `target/xrf_build.log`.
 
 ## Options
