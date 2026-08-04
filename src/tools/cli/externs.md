@@ -35,5 +35,5 @@ The engine wrapper is `npm run cli -- verify externs`. It is not a build or CI g
 
 ## Requirements
 
-Names must be unique string literals. Callables need explicit parameter and return types. Values need `value as Type`.
-The command skips `*.test.ts`, `*.spec.ts`, and `__test__` sources.
+Names must be unique string literals. Missing or unrenderable callable types are emitted as `unknown`. Values need
+`value as Type`. The command skips `*.test.ts`, `*.spec.ts`, and `__test__` sources.

@@ -23,5 +23,5 @@ This compares declarations with the tracked manifest without writing. Regenerate
 
 ## Requirements
 
-Callable externs need explicit parameter and return annotations. Values need `value as Type`. The build fails for
+Missing or unrenderable callable types are emitted as `unknown`. Values need `value as Type`. The build fails for
 duplicates, dynamic names, and unsupported declaration shapes.
