@@ -123,11 +123,14 @@ An empty target, `nil`, or the current section does not switch. Timer baselines 
 ## Scheme families
 
 - **Stalker:** NPC movement, animations, combat, and interaction (`walker`, `remark`, `animpoint`, `smartcover`).
-- **Monster:** monster movement, territory, animations, and combat (`mob_walker`, `mob_home`, `mob_remark`, `mob_combat`).
-- **Restrictor:** zone triggers, timers, visual effects, and actor events (`sr_idle`, `sr_timer`, `sr_teleport`, `sr_particle`).
+- **Monster:** monster movement, territory, animations, and combat (`mob_walker`, `mob_home`, `mob_remark`,
+  `mob_combat`).
+- **Restrictor:** zone triggers, timers, visual effects, and actor events (`sr_idle`, `sr_timer`, `sr_teleport`,
+  `sr_particle`).
 - **Physical:** usable and reactive world objects (`ph_idle`, `ph_button`, `ph_door`, `ph_code`, `ph_on_hit`).
 - **Helicopter:** scripted flight and weapons (`heli_move`).
-- **Generic:** behavior attached alongside an active scheme (`combat`, `danger`, `death`, `hit`, `meet`, `post_combat_idle`, `wounded`).
+- **Generic:** behavior attached alongside an active scheme (`combat`, `danger`, `death`, `hit`, `meet`,
+  `post_combat_idle`, `wounded`).
 
 ## Patrol names
 

@@ -28,8 +28,8 @@ xrf-cli export-externs src/engine/declarations --format html --output target/par
 xrf-cli export-externs src/engine/declarations --check src/engine/declarations/extern.json
 ```
 
-The format is inferred from the extension unless `--format` is provided. JSON is compared semantically; XML and HTML
-are compared as rendered text with line-ending differences ignored.
+The format is inferred from the extension unless `--format` is provided. JSON is compared semantically; XML and HTML are
+compared as rendered text with line-ending differences ignored.
 
 The engine wrapper is `npm run cli -- verify externs`. It is not a build or CI gate.
 

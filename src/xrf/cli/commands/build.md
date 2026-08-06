@@ -10,7 +10,7 @@ npm run cli -- build
 ## What it builds
 
 | Target         | Source                                | Output                                                                       |
-| -------------- | ------------------------------------- |------------------------------------------------------------------------------|
+| -------------- | ------------------------------------- | ---------------------------------------------------------------------------- |
 | `scripts`      | `src/engine/scripts`                  | Lua `.script` files in `target/gamedata/scripts` and related output folders. |
 | `externs`      | `src/engine/declarations`             | `src/engine/declarations/extern.json` and `target/gamedata/extern.json`.     |
 | `ui`           | `src/engine/forms` plus static UI XML | UI XML under `target/gamedata/configs/ui`.                                   |
@@ -18,8 +18,8 @@ npm run cli -- build
 | `translations` | `src/engine/translations`             | XML string tables under `target/gamedata/configs/text`.                      |
 | `resources`    | configured resource roots             | Static assets copied into `target/gamedata`.                                 |
 
-`target/gamedata/extern.json` is metadata for gamedata tools; the game runtime does not load it. The
-build also writes `target/gamedata/metadata.json` and stores the build log in `target/xrf_build.log`.
+`target/gamedata/extern.json` is metadata for gamedata tools; the game runtime does not load it. The build also writes
+`target/gamedata/metadata.json` and stores the build log in `target/xrf_build.log`.
 
 ## Options
 

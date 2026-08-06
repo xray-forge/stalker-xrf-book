@@ -22,8 +22,8 @@ xrf-cli verify-gamedata ./target/gamedata
 - `-s, --strict`: fully validate expensive asset payloads.
 
 Accepted check names are `animations`, `levels`, `ltx`, `meshes`, `particles`, `particles-usage`, `scripts`, `shaders`,
-`sounds`, `spawns`, `textures`, `weapons`, and `weathers`. The script check parses emitted `.script`
-files with the LuaJIT syntax dialect.
+`sounds`, `spawns`, `textures`, `weapons`, and `weathers`. The script check parses emitted `.script` files with the
+LuaJIT syntax dialect.
 
 If `--ignore` is omitted, the command ignores common repository and unpacked-source entries: `.git`, `.idea`,
 `particles_unpacked`, `textures_unpacked`, `.gitignore`, `.gitattributes`, `README.md`, and `LICENSE`.

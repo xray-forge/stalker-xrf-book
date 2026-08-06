@@ -1,7 +1,7 @@
 # Scripts
 
-The script engine is the TypeScript runtime layer that is compiled to Lua and loaded by the X-Ray engine. It owns the Lua
-extern modules, object binders, scheme registry, global managers, server object classes, and shared helpers used by
+The script engine is the TypeScript runtime layer that is compiled to Lua and loaded by the X-Ray engine. It owns the
+Lua extern modules, object binders, scheme registry, global managers, server object classes, and shared helpers used by
 configs and gameplay logic.
 
 For object lifecycle, manager startup, events, and save/load, start with [Runtime lifecycle](runtime_lifecycle.md). This

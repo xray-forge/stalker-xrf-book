@@ -6,7 +6,7 @@ runtime logs, and the debug panel before a native engine debugger is needed.
 ## Choose the right tool
 
 | Problem                                           | Start with                                          |
-|---------------------------------------------------|-----------------------------------------------------|
+| ------------------------------------------------- | --------------------------------------------------- |
 | Build output is missing or stale                  | The relevant build command and project verification |
 | A script throws or behaves incorrectly            | [Logs](./logs.md) and a focused test                |
 | An NPC uses the wrong scheme or animation         | [AI and logics](./ai_and_logics.md)                 |

@@ -4,12 +4,12 @@ Translation commands work with XRF JSON translation projects and generated gamed
 
 ## Commands
 
-| Command                  | Purpose                                                                                                                      |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| `initialize-translation` | Ensure translation files have the expected language keys.                                                                    |
-| `build-translation`      | Build translation JSON into gamedata output files.                                                                           |
-| `verify-translation`     | Check translation completeness.                                                                                              |
-| `parse-translation`      | Placeholder command. It accepts `--path` but does not currently parse or write translations.                |
+| Command                  | Purpose                                                                                      |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
+| `initialize-translation` | Ensure translation files have the expected language keys.                                    |
+| `build-translation`      | Build translation JSON into gamedata output files.                                           |
+| `verify-translation`     | Check translation completeness.                                                              |
+| `parse-translation`      | Placeholder command. It accepts `--path` but does not currently parse or write translations. |
 
 ## Initialize
 

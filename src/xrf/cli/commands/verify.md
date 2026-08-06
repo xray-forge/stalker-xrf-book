@@ -11,7 +11,7 @@ npm run cli -- verify <command>
 ## Commands
 
 | Command                     | Checks                              |
-| --------------------------- |-------------------------------------|
+| --------------------------- | ----------------------------------- |
 | `verify project`            | Project setup and links.            |
 | `verify gamedata`           | Assembled `target/gamedata`.        |
 | `verify externs`            | Tracked extern manifest.            |

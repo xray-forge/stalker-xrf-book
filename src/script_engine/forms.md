@@ -1,7 +1,7 @@
 # Forms
 
-Forms are UI XML sources consumed by engine CUI classes. XRF keeps most form source in TSX under
-`src/engine/forms` and builds it into XML.
+Forms are UI XML sources consumed by engine CUI classes. XRF keeps most form source in TSX under `src/engine/forms` and
+builds it into XML.
 
 Runtime UI classes live under `src/engine/core/ui`. They load XML, initialize controls, register callbacks, and update
 the UI at runtime.

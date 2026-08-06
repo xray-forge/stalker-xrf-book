@@ -7,7 +7,8 @@ S.T.A.L.K.E.R.: Call of Pripyat.
 
 - [XRF engine](https://github.com/xray-forge/stalker-xrf-engine)
 - [XRF tools](https://github.com/xray-forge/stalker-xrf-tools)
-- [X-Ray 16 TypeScript SDK](https://github.com/xray-forge/stalker-xrf-xray16-sdk) and [API reference](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html)
+- [X-Ray 16 TypeScript SDK](https://github.com/xray-forge/stalker-xrf-xray16-sdk) and
+  [API reference](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html)
 - [XRF binary payloads](https://github.com/xray-forge/stalker-xrf-bin)
 
 ## Resource packs

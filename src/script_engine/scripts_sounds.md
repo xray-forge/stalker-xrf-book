@@ -58,8 +58,8 @@ Supported groups include:
 
 ## Volume helpers
 
-`getMusicVolume`, `setMusicVolume`, `getEffectsVolume`, and `setEffectsVolume` read and write X-Ray console variables for
-music and effects volume.
+`getMusicVolume`, `setMusicVolume`, `getEffectsVolume`, and `setEffectsVolume` read and write X-Ray console variables
+for music and effects volume.
 
 ## Guidelines
 

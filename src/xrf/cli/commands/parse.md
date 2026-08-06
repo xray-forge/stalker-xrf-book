@@ -8,9 +8,9 @@ npm run cli -- parse <command>
 
 ## Commands
 
-| Command                    | Purpose                                                                     | Output                         |
-| -------------------------- | --------------------------------------------------------------------------- | ------------------------------ |
-| `parse dir_as_json <path>` | Flatten a directory tree into a JSON object keyed by normalized file names. | `target/parsed/<folder>.json`  |
+| Command                    | Purpose                                                                     | Output                        |
+| -------------------------- | --------------------------------------------------------------------------- | ----------------------------- |
+| `parse dir_as_json <path>` | Flatten a directory tree into a JSON object keyed by normalized file names. | `target/parsed/<folder>.json` |
 
 `dir_as_json` resolves `<path>` relative to the repository root.
 

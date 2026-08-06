@@ -1,7 +1,7 @@
 # UI
 
-Runtime UI scripts load XML forms, initialize X-Ray CUI controls, bind callbacks, and implement menus, debug screens, and
-in-game dialogs.
+Runtime UI scripts load XML forms, initialize X-Ray CUI controls, bind callbacks, and implement menus, debug screens,
+and in-game dialogs.
 
 This page covers runtime scripts. Form source generation is covered in the Forms page.
 

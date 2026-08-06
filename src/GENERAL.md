@@ -1,7 +1,7 @@
 # X-Ray Forge
 
-X-Ray Forge (XRF) is a TypeScript rewrite of the S.T.A.L.K.E.R.: Call of Pripyat script layer. It compiles gameplay
-code to Lua and builds the configs, UI forms, translations, and resources used by X-Ray.
+X-Ray Forge (XRF) is a TypeScript rewrite of the S.T.A.L.K.E.R.: Call of Pripyat script layer. It compiles gameplay code
+to Lua and builds the configs, UI forms, translations, and resources used by X-Ray.
 
 This book covers the full development workflow: project setup, builds, CLI and desktop tools, runtime architecture,
 gameplay schemes, and debugging.

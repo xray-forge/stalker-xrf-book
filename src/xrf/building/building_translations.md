@@ -1,7 +1,7 @@
 # Building Translations
 
-The translations target writes game string tables to `target/gamedata/configs/text` from
-`src/engine/translations` through the bundled XRF tools binary.
+The translations target writes game string tables to `target/gamedata/configs/text` from `src/engine/translations`
+through the bundled XRF tools binary.
 
 ## Build translations
 
