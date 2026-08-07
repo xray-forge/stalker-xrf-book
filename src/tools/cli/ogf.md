@@ -55,6 +55,7 @@ Options:
 - `-p, --path <path>`: path to an `.ogf` file. Required.
 - `-d, --dest <dest>`: path to the resulting file. Defaults to rewriting the source file in place.
 - `-r, --refs <refs>...`: one or more motion references to store. Required.
+- `--dry-run`: report what the rewrite would produce without writing anything.
 
 Paths use backslashes and omit the `.omf` extension, matching how the engine resolves them. A reference ending in
 `\*.omf` is a wildcard: the engine loads every OMF in that directory.

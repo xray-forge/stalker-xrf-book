@@ -97,6 +97,7 @@ Options:
 - `-d, --dest <dest>`: resulting `.omf` file. Required.
 - `-k, --keep <name>...`: exact motion names to keep.
 - `--keep-prefix <prefix>...`: keep motions whose name starts with the prefix.
+- `--dry-run`: report the outcome without writing anything.
 
 At least one of `--keep` or `--keep-prefix` must be given, and a motion is kept if it matches any of them. Prefixes are
 matched literally, so `ak_74_` and `ak74_` select different motions.
@@ -119,6 +120,7 @@ Options:
 - `-d, --dest <dest>`: resulting `.omf` file. Required.
 - `-m, --map <map>`: JSON object mapping existing motion names to new ones. Required.
 - `--strict`: require every motion in the file to appear in the map.
+- `--dry-run`: report the outcome without writing anything.
 
 The map is a flat JSON object:
 
