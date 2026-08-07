@@ -18,7 +18,7 @@ format-specific workflows.
 | Externs      | `export-externs`                                                                                                       |
 | Gamedata     | `verify-gamedata`                                                                                                      |
 | LTX          | `format-ltx`, `verify-ltx`                                                                                             |
-| Models       | `info-ogf`, `info-omf`                                                                                                 |
+| Models       | `info-ogf`, `info-omf`, `repack-omf`                                                                                   |
 | Particles    | `info-particles`, `unpack-particles`, `pack-particles`, `repack-particles`, `re-unpack-particles`, `verify-particles`  |
 | Spawn        | `info-spawn`, `unpack-spawn`, `pack-spawn`, `repack-spawn`, `verify-spawn`                                             |
 | Textures     | `info-dds`, `unpack-equipment-icons`, `pack-equipment-icons`, `unpack-texture-description`, `pack-texture-description` |
