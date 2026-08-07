@@ -1,13 +1,24 @@
 # OMF CLI
 
-OMF commands inspect and re-serialize X-Ray motion files.
+OMF commands inspect, re-serialize, and edit the motion set of X-Ray motion files.
 
 ## Commands
 
-| Command      | Purpose                                                         | Writes files       |
-| ------------ | --------------------------------------------------------------- | ------------------ |
-| `info-omf`   | Print version, motions, bones, and animation parts.             | No                 |
-| `repack-omf` | Read a motion file and write it back, or verify it round-trips. | Only with `--dest` |
+| Command              | Purpose                                                         | Writes files       |
+| -------------------- | --------------------------------------------------------------- | ------------------ |
+| `info-omf`           | Print version, motions, bones, and animation parts.             | No                 |
+| `repack-omf`         | Read a motion file and write it back, or verify it round-trips. | Only with `--dest` |
+| `filter-omf-motions` | Keep only selected motions, dropping the rest.                  | Yes                |
+| `rename-omf-motions` | Rename motions using a name map.                                | Yes                |
+
+## How motions are stored
+
+Both editing commands rely on the same structure, which is worth knowing before using them.
+
+A motion file holds two parallel lists: motion **definitions**, which carry the name and playback parameters, and motion
+**payloads**, which carry the keyframes. They are paired by position. The engine looks a motion up by its definition
+name and then reads the payload stored at the same position, so the two lists must always be filtered and renamed
+together. Both commands maintain that pairing; the names an LTX `anm_*` key refers to are the definition names.
 
 ## `info-omf`
 
@@ -71,9 +82,64 @@ generated motion banks. Because it fails on any mismatch, it works as a build or
 
 Use single-file write mode when you need a normalized copy of a motion file.
 
+## `filter-omf-motions`
+
+Shared animation banks often carry motions for many weapons at once. This command extracts the subset you need.
+
+```powershell
+xrf-cli filter-omf-motions --path ./shared_bank.omf --dest ./wpn_ak74_hud_animation.omf --keep-prefix ak_74_
+xrf-cli filter-omf-motions --path ./bank.omf --dest ./trimmed.omf --keep idle --keep-prefix ak_74_ pist_
+```
+
+Options:
+
+- `-p, --path <path>`: source `.omf` file. Required.
+- `-d, --dest <dest>`: resulting `.omf` file. Required.
+- `-k, --keep <name>...`: exact motion names to keep.
+- `--keep-prefix <prefix>...`: keep motions whose name starts with the prefix.
+
+At least one of `--keep` or `--keep-prefix` must be given, and a motion is kept if it matches any of them. Prefixes are
+matched literally, so `ak_74_` and `ak74_` select different motions.
+
+Surviving definitions are renumbered so their internal motion index stays consistent with their new position.
+
+`--dest` is required rather than defaulting to an in-place rewrite. Trimming a shared bank in place would destroy it for
+every other weapon that sources from it, and the input is often a read-only reference dump.
+
+## `rename-omf-motions`
+
+```powershell
+xrf-cli rename-omf-motions --path ./trimmed.omf --dest ./renamed.omf --map ./ak74.json
+xrf-cli rename-omf-motions --path ./trimmed.omf --dest ./renamed.omf --map ./ak74.json --strict
+```
+
+Options:
+
+- `-p, --path <path>`: source `.omf` file. Required.
+- `-d, --dest <dest>`: resulting `.omf` file. Required.
+- `-m, --map <map>`: JSON object mapping existing motion names to new ones. Required.
+- `--strict`: require every motion in the file to appear in the map.
+
+The map is a flat JSON object:
+
+```json
+{
+  "ak_74_draw": "ak74_draw",
+  "ak_74_idle_move": "ak74_idle_moving",
+  "ak_74_grenade_off": "ak74_switch_off"
+}
+```
+
+Motions absent from the map keep their current name. Pass `--strict` when a file is meant to be fully normalized; it
+fails and lists the motions that have no entry, which is the difference between a deliberate partial rename and an
+incomplete map.
+
+Renaming updates the definition name and the payload name together, so the new name is what the engine resolves.
+
 ## Shared options
 
-Both commands accept `-s, --silent` to disable logging and `-v, --verbose` to enable verbose logging.
+All commands accept `-s, --silent` to disable logging and `-v, --verbose` to enable verbose logging. Under
+`filter-omf-motions` and `rename-omf-motions`, `--verbose` prints the resulting motion list.
 
 Under `repack-omf`, `--verbose` additionally reports every file that verified as byte identical. Without it, verifying a
 directory prints only mismatches, read failures, and a closing summary, and verifying a single file that passes prints
@@ -91,3 +157,10 @@ usually from the original packed archive with `unpack-archive` rather than from 
 Writing rejects data it cannot represent faithfully rather than emitting a corrupt file. Motion marks exist only in
 version 4, so writing a version 3 file that carries marks fails, as does writing a file whose motion count and motion
 definition count disagree.
+
+The editing commands refuse work that would produce a file the engine cannot use, before writing anything:
+
+- `filter-omf-motions` fails when no motion matches, since an empty motion file is not useful and the usual cause is a
+  mistyped prefix.
+- `rename-omf-motions` fails when the map matches nothing, and when a rename would give two motions the same name,
+  because lookups are by name and a duplicate makes one of them unreachable.
