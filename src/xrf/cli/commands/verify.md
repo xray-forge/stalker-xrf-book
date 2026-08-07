@@ -21,10 +21,33 @@ npm run cli -- verify <command>
 
 ## Options
 
+- `verify gamedata -c, --checks <checks...>`: run only the listed checks instead of all of them.
+- `verify gamedata -r, --report <report>`: write the structured verification report as JSON.
 - `verify gamedata -v, --verbose`: print verbose external-tool logs.
 - `verify gamedata -s, --strict`: fully validate expensive asset payloads, including complete sound decoding.
 - `verify ltx -v, --verbose`: print verbose external-tool logs.
 - Particle verification commands support `-v, --verbose`.
+
+### Selecting checks
+
+A full run validates everything and is slow. When iterating on one kind of asset, narrow it:
+
+```powershell
+npm run cli -- verify gamedata --checks meshes weapons animations
+```
+
+Available checks: `animations`, `levels`, `ltx`, `meshes`, `particles`, `particles-usage`, `scripts`, `shaders`,
+`sounds`, `spawns`, `textures`, `weapons`, `weathers`. Unknown names are rejected before the tool runs.
+
+### Structured report
+
+`--report` writes the findings as JSON instead of leaving them only in the log. Because the format is stable, a report
+from a known-good build can be kept as a baseline and later runs compared against it, which is more reliable than
+reading console output when a change is expected to alter some findings but not others.
+
+```powershell
+npm run cli -- verify gamedata --checks weapons --report target/verify-weapons.json
+```
 
 ## Examples
 
