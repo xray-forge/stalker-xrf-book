@@ -1,13 +1,14 @@
 # OGF CLI
 
-OGF commands inspect X-Ray model files and rewrite their motion references.
+OGF commands inspect X-Ray model files and safely rewrite motion or texture references.
 
 ## Commands
 
-| Command                 | Purpose                                               | Writes files |
-| ----------------------- | ----------------------------------------------------- | ------------ |
-| `info-ogf`              | Print header, textures, bones, and motion references. | No           |
-| `patch-ogf-motion-refs` | Replace the motion references stored inside a model.  | Yes          |
+| Command                  | Purpose                                               | Writes files |
+| ------------------------ | ----------------------------------------------------- | ------------ |
+| `info-ogf`               | Print header, textures, bones, lods, and motion refs. | No           |
+| `patch-ogf-motion-refs`  | Replace the motion references stored inside a model.  | Yes          |
+| `patch-ogf-texture-refs` | Rename a texture reference stored inside a model.     | Yes          |
 
 ## `info-ogf`
 
@@ -18,6 +19,8 @@ xrf-cli info-ogf --path ./meshes/example.ogf
 Options:
 
 - `-p, --path <path>`: path to an `.ogf` file. Required.
+- `-s, --silent`: disable logging.
+- `-v, --verbose`: turn on verbose logging, which lists each level of detail individually.
 
 ### Output
 
@@ -28,7 +31,13 @@ The command reads the model and prints available metadata:
 - description chunk data when present;
 - bones and parent names when present;
 - motion references when present;
-- child model texture and shader names for nested OGF data.
+- progressive mesh level of detail counts when present;
+- unparsed chunk ids, so an incomplete read is visible rather than silent;
+- child model texture, shader names, and level of detail counts for nested OGF data.
+
+Progressive level of detail data usually belongs to the nested child visuals rather than the root, so expect the
+`[n] progressive lods` lines rather than a single figure for the model. Pass `-v` to list each level with its index
+buffer offset, triangle count, and vertex count.
 
 ### When to use it
 
@@ -83,3 +92,49 @@ destination file is removed. A model without a motion references chunk is refuse
 
 Use it when relocating animation banks, for example when consolidating per-weapon hand animations into one shared
 directory and pointing every hands model at it with a wildcard. Confirm the result with `info-ogf`.
+
+## `patch-ogf-texture-refs`
+
+A model stores the path of every texture it uses. This command renames one of those paths, which is what lets an
+imported texture follow your project's naming without re-exporting the model.
+
+```powershell
+xrf-cli patch-ogf-texture-refs --path ./meshes/wpn_ak74u.ogf --from "wpn\wpn_aksu\wpn_aksu" --to "wpn\wpn_ak74u\wpn_ak74u"
+xrf-cli patch-ogf-texture-refs --path ./model.ogf --dest ./model.patched.ogf --from "old\name" --to "new\name" --dry-run
+```
+
+Options:
+
+- `-p, --path <path>`: path to an `.ogf` file. Required.
+- `-d, --dest <dest>`: path to the resulting file. Defaults to rewriting the source file in place.
+- `--from <name>`: the texture reference to rename, matched exactly. Required.
+- `--to <name>`: the reference to write in its place. Required.
+- `--dry-run`: report what the rewrite would produce without writing anything.
+
+It also accepts `-s, --silent` and `-v, --verbose`. Paths use backslashes and omit the extension. Matching is exact;
+rename one source name per run.
+
+Texture names live inside nested child visuals. The command walks those children and rebuilds every texture chunk whose
+name matches, including when the replacement has a different length.
+
+### What is preserved
+
+Only matching texture chunks are rebuilt. Every other chunk, including geometry, is copied byte for byte; each paired
+shader name is preserved.
+
+### Safety checks
+
+The command applies three guards:
+
+- Before writing, it renames the reference to itself and requires a byte-for-byte copy of the source.
+- A `--from` that matches nothing is refused, and the error lists the references the model actually has, so a typo
+  cannot pass as a silent no-op.
+- After writing, it reads the result back and requires the old name to be gone and the new name to be present.
+
+If the final check fails the write is undone: an in-place edit is restored from the original bytes, and a separate
+destination file is removed.
+
+### When to use it
+
+Rename the texture files first, patch every model that referenced them, then confirm with `info-ogf` and
+`verify-gamedata`. A missed model leaves a dangling reference.

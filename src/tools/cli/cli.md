@@ -12,17 +12,17 @@ format-specific workflows.
 
 ## Command groups
 
-| Group        | Commands                                                                                                               |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| Archive      | `unpack-archive`                                                                                                       |
-| Externs      | `export-externs`                                                                                                       |
-| Gamedata     | `verify-gamedata`                                                                                                      |
-| LTX          | `format-ltx`, `verify-ltx`                                                                                             |
-| Models       | `info-ogf`, `patch-ogf-motion-refs`, `info-omf`, `repack-omf`, `filter-omf-motions`, `rename-omf-motions`              |
-| Particles    | `info-particles`, `unpack-particles`, `pack-particles`, `repack-particles`, `re-unpack-particles`, `verify-particles`  |
-| Spawn        | `info-spawn`, `unpack-spawn`, `pack-spawn`, `repack-spawn`, `verify-spawn`                                             |
-| Textures     | `info-dds`, `unpack-equipment-icons`, `pack-equipment-icons`, `unpack-texture-description`, `pack-texture-description` |
-| Translations | `initialize-translation`, `build-translation`, `verify-translation`, `parse-translation`                               |
+| Group        | Commands                                                                                                                            |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Archive      | `unpack-archive`                                                                                                                    |
+| Externs      | `export-externs`                                                                                                                    |
+| Gamedata     | `verify-gamedata`                                                                                                                   |
+| LTX          | `format-ltx`, `verify-ltx`                                                                                                          |
+| Models       | `info-ogf`, `patch-ogf-motion-refs`, `patch-ogf-texture-refs`, `info-omf`, `repack-omf`, `filter-omf-motions`, `rename-omf-motions` |
+| Particles    | `info-particles`, `unpack-particles`, `pack-particles`, `repack-particles`, `re-unpack-particles`, `verify-particles`               |
+| Spawn        | `info-spawn`, `unpack-spawn`, `pack-spawn`, `repack-spawn`, `verify-spawn`                                                          |
+| Textures     | `info-dds`, `crop-dds`, `unpack-equipment-icons`, `pack-equipment-icons`, `unpack-texture-description`, `pack-texture-description`  |
+| Translations | `initialize-translation`, `build-translation`, `verify-translation`, `parse-translation`                                            |
 
 ## Logging
 
