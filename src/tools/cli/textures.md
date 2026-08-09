@@ -10,6 +10,7 @@ Texture commands inspect DDS files and pack or unpack icon-related assets.
 | `crop-dds`                   | Crop a pixel region out of a DDS file into a new DDS or PNG file.          |
 | `unpack-equipment-icons`     | Slice an equipment icon sprite into section icon files using `system.ltx`. |
 | `pack-equipment-icons`       | Pack section icon files into an equipment DDS sprite using `system.ltx`.   |
+| `verify-equipment-icons`     | Report inventory icon grid rects that overlap each other.                  |
 | `unpack-texture-description` | Slice textures based on XML texture descriptions.                          |
 | `pack-texture-description`   | Pack textures based on XML texture descriptions.                           |
 
@@ -70,6 +71,25 @@ own.
 
 Without `--strict`, an opted-in section whose icon file is missing is skipped with a warning. With `--strict` the
 command packs nothing and reports every such section in a single error, so the whole list can be fixed in one pass.
+
+### Checking the grid before moving an icon
+
+```powershell
+xrf-cli verify-equipment-icons --system-ltx ./configs/system.ltx
+```
+
+Reports every pair of sections whose grid rects cover a shared cell, with the cell and how many cells overlap, and exits
+non-zero when any are found.
+
+This covers a case packing cannot. `pack-equipment-icons` warns when two sections write different art to the **same**
+slot, which is the common and usually harmless case, because variants such as `_nimble`, `_snag` and the `pri_a15_`
+quest copies inherit their base weapon's position by design. Identical rects are therefore not reported here either.
+
+What it catches instead is a rect reaching **into** a neighbour: widen a `1x1` icon to `2x1` and it may quietly take a
+cell another weapon already occupies. Both pack without complaint, and whichever writes last wins those pixels, so the
+loser silently shows the wrong art. Run this before widening or relocating any icon, and again afterwards.
+
+Grid coordinates are cells, not pixels; a cell is 50x50, hardcoded in the engine.
 
 ## Texture descriptions
 

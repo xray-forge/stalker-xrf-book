@@ -4,12 +4,13 @@ OMF commands inspect, re-serialize, and edit the motion set of X-Ray motion file
 
 ## Commands
 
-| Command              | Purpose                                                         | Writes files       |
-| -------------------- | --------------------------------------------------------------- | ------------------ |
-| `info-omf`           | Print version, motions, bones, and animation parts.             | No                 |
-| `repack-omf`         | Read a motion file and write it back, or verify it round-trips. | Only with `--dest` |
-| `filter-omf-motions` | Keep only selected motions, dropping the rest.                  | Yes                |
-| `rename-omf-motions` | Rename motions using a name map.                                | Yes                |
+| Command                | Purpose                                                         | Writes files       |
+| ---------------------- | --------------------------------------------------------------- | ------------------ |
+| `info-omf`             | Print version, motions, bones, and animation parts.             | No                 |
+| `repack-omf`           | Read a motion file and write it back, or verify it round-trips. | Only with `--dest` |
+| `filter-omf-motions`   | Keep only selected motions, dropping the rest.                  | Yes                |
+| `rename-omf-motions`   | Rename motions using a name map.                                | Yes                |
+| `duplicate-omf-motion` | Copy a motion under a new name, optionally clearing its loop.   | Yes                |
 
 ## How motions are stored
 
@@ -39,6 +40,11 @@ The command reads the motion file and prints:
 - total bone count;
 - animation part names;
 - bones assigned to each animation part.
+
+With `-v`, each motion is listed individually with its keyframe count, flags, speed, power, accrue, and falloff.
+Keyframes and speed together give the effective duration. The flags matter more than they look: bit `0b10` means the
+motion plays once and stops, and a motion without it loops forever. Vanilla idles read `0b00` while draw, shoot and bore
+motions read `0b10`.
 
 ### When to use it
 
@@ -137,6 +143,38 @@ fails and lists the motions that have no entry, which is the difference between 
 incomplete map.
 
 Renaming updates the definition name and the payload name together, so the new name is what the engine resolves.
+
+## `duplicate-omf-motion`
+
+Copies one motion under a second name, so a bank can provide an animation it does not ship.
+
+```powershell
+xrf-cli duplicate-omf-motion --path ./wpn_hand_pm_hud_animation.omf --from pm_idle --to pm_idle_bore --play-once
+```
+
+Options:
+
+- `-p, --path <path>`: path to an `.omf` file. Required.
+- `-d, --dest <dest>`: path to the resulting file. Defaults to rewriting the source file in place.
+- `--from <name>`: motion to copy, matched exactly. Required.
+- `--to <name>`: name to give the copy. Required.
+- `--play-once`: clear looping on the copy so it plays once and ends.
+
+Both the definition and the keyframe payload are duplicated rather than aliased, and the copy is pointed at its own new
+payload slot. That is deliberate: motion definitions and payloads are ordinal pairs, and a definition without a payload
+would break every later filter or rename. The file grows by one animation's worth of keyframes.
+
+An unknown `--from`, or a `--to` that already exists, is refused rather than producing an unreachable motion.
+
+### Why `--play-once` exists
+
+Some engine states are left **only** from the animation end callback. Bore is the one that bites: `OnAnimationEnd`
+switches it back to idle, and nothing else does. Point `anm_bore` at a looping motion and the weapon sits in the bore
+state indefinitely, appearing frozen until some other action forces a state change.
+
+That is the situation when an imported animation pack ships no bore at all. Copying the weapon's idle and clearing its
+loop yields a motion that holds the idle pose and then ends, which is enough for the engine to leave the state. Confirm
+the result with `info-omf -v`: the copy should read `0b10`.
 
 ## Shared options
 
