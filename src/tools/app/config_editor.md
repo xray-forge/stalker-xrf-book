@@ -20,7 +20,7 @@ The Tauri `configs-editor` plugin exposes:
 - `format_configs_path`.
 
 Verification opens the folder with scheme checking enabled and strict checking disabled. Formatting uses the shared
-`xray-ltx` formatter.
+`xrf-ltx` formatter.
 
 ## Workflow
 
