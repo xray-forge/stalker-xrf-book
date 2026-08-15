@@ -1,7 +1,7 @@
 # Compress
 
-`compress` packs built `target/gamedata` content into database archives with `xrCompress`. Use it after `build` when you
-need DB archives for a game package.
+`compress` packs built `target/gamedata` content into database archives with `xrf-cli pack-archive`. Use it after
+`build` when you need DB archives for a game package.
 
 ```powershell
 npm run cli -- compress
@@ -25,7 +25,7 @@ Output archives are written under `target/db` as `<target>.dbN`.
 
 - `-i, --include <targets...>`: compress selected targets. Defaults to `all`.
 - `-c, --clean`: remove `target/db` before writing archives.
-- `-v, --verbose`: print `xrCompress` output.
+- `-v, --verbose`: print packing output.
 
 ## Examples
 
