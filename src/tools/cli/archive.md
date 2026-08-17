@@ -10,9 +10,13 @@ Archive commands work with X-Ray `.db` database archives.
 xrf-cli pack-archive --path target\gamedata --dest target\db --name gamedata
 ```
 
-Volumes are written as `<name>.db0`, `<name>.db1` and so on, splitting when a volume reaches the maximum size. Files the
-engine expects compressed are compressed and the rest are stored, matching what the engine loads. Identical files are
-stored once and referenced twice.
+A set that fits in one volume is written as `<name>.db`; a larger one splits into `<name>.db0`, `<name>.db1` and so on.
+The engine mounts any file whose extension starts with `db` or `xdb`, so the index is a convenience rather than a
+requirement. Files the engine expects compressed are compressed and the rest are stored, matching what the engine loads.
+Identical files are stored once and referenced twice.
+
+Give the archive a `[header]`. Without one the engine assumes a `.db` is an encrypted Shadow of Chernobyl archive and
+decrypts it into nonsense; `--xdb` is the other way to say an archive is not that.
 
 ### Options
 

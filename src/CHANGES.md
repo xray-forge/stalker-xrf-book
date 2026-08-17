@@ -9,9 +9,9 @@ Latest check: xrf-engine `5875ddeb9a399ff371bc51151739e39888098a5a`.
 ### August 2026
 
 - **Database archives are packed by the XRF tools instead of xrCompress.** `compress` now calls `xrf-cli pack-archive`,
-  which reads the same configuration dialect and writes `<target>.dbN` straight into `target/db`, so the SDK binary is
-  no longer part of a build. Archives holding mostly text pack somewhat larger, because the packer uses one LZO level
-  where xrCompress used its slowest.
+  which reads the same configuration dialect and writes archives straight into `target/db`, so the SDK binary is no
+  longer part of a build. A group that fits one volume is now named `<target>.db` rather than `<target>.db0`. Archives
+  holding mostly text pack somewhat larger, because the packer uses one LZO level where xrCompress used its slowest.
 
 - **Script declarations are discovered and documented automatically.** Runtime callback, condition, effect, dialog, and
   task modules load from `gamedata/declarations`; builds emit an extern JSON manifest, and `verify externs` checks it
