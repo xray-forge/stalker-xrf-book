@@ -5,5 +5,5 @@ src = "src"
 title = "Xray forge book"
 
 [output.html]
-git-repository-url = "https://github.com/xray-forge/stalker-xrf-book"
-site-url = "/stalker-xrf-book/"
+git-repository-url = "https://github.com/xray-forge/xrf-book"
+site-url = "/xrf-book/"

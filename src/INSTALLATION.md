@@ -1,6 +1,6 @@
 # Installation
 
-This guide prepares a local `stalker-xrf-engine` checkout, connects it to an installed game, and starts XRF.
+This guide prepares a local `xrf-engine` checkout, connects it to an installed game, and starts XRF.
 
 ## Requirements
 
@@ -17,8 +17,8 @@ The CLI looks for Steam app `41700`. For a non-Steam installation, set `targets.
 Clone the engine repository and install dependencies:
 
 ```powershell
-git clone https://github.com/xray-forge/stalker-xrf-engine.git
-cd stalker-xrf-engine
+git clone https://github.com/xray-forge/xrf-engine.git
+cd xrf-engine
 npm install
 npm run setup
 ```

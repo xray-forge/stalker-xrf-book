@@ -7,9 +7,9 @@ and one-off data operations; use the CLI for scripted work.
 
 The application source is split across:
 
-- `stalker-xrf-tools/bin/xrf-app`: Tauri backend plugins and commands;
-- `stalker-xrf-tools/bin/xrf-ui`: React routes, pages, stores, and components;
-- `stalker-xrf-tools/crates/*`: reusable parsers, verifiers, packers, and project readers.
+- `xrf-tools/bin/xrf-app`: Tauri backend plugins and commands;
+- `xrf-tools/bin/xrf-ui`: React routes, pages, stores, and components;
+- `xrf-tools/crates/*`: reusable parsers, verifiers, packers, and project readers.
 
 ## Tools
 

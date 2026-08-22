@@ -1,7 +1,7 @@
 # Clone
 
 `clone` downloads optional resource repositories configured in `cli/config.json`. The command clones into the parent
-folder of the engine repository, next to `stalker-xrf-engine`.
+folder of the engine repository, next to `xrf-engine`.
 
 ```powershell
 npm run cli -- clone <repository>

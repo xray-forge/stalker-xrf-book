@@ -20,15 +20,15 @@ generated gamedata by hand.
 
 ## Project repositories
 
-- [XRF engine](https://github.com/xray-forge/stalker-xrf-engine) — script runtime and project CLI.
-- [XRF tools](https://github.com/xray-forge/stalker-xrf-tools) — format libraries, CLI, and desktop application.
-- [XRF binaries](https://github.com/xray-forge/stalker-xrf-bin) — packaged engine and tool binaries.
-- [XRF X-Ray 16 SDK](https://xray-forge.github.io/stalker-xrf-xray16-sdk/modules.html) — TypeScript-facing engine API.
-- [Book source](https://github.com/xray-forge/stalker-xrf-book) — this documentation.
+- [XRF engine](https://github.com/xray-forge/xrf-engine) — script runtime and project CLI.
+- [XRF tools](https://github.com/xray-forge/xrf-tools) — format libraries, CLI, and desktop application.
+- [XRF binaries](https://github.com/xray-forge/xrf-bin) — packaged engine and tool binaries.
+- [XRF X-Ray 16 SDK](https://xray-forge.github.io/xrf-xray16-sdk/modules.html) — TypeScript-facing engine API.
+- [Book source](https://github.com/xray-forge/xrf-book) — this documentation.
 
 XRF uses [OpenXRay](https://github.com/OpenXRay/xray-16) as its main engine reference. Game assets are split across
-[base](https://gitlab.com/xray-forge/stalker-xrf-resources-base),
-[extended](https://gitlab.com/xray-forge/stalker-xrf-resources-extended), and locale repositories for
-[English](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-en),
-[Ukrainian](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ukr), and
-[Russian](https://gitlab.com/xray-forge/stalker-xrf-resources-locale-ru).
+[base](https://gitlab.com/xray-forge/xrf-resources-base),
+[extended](https://gitlab.com/xray-forge/xrf-resources-extended), and locale repositories for
+[English](https://gitlab.com/xray-forge/xrf-resources-locale-en),
+[Ukrainian](https://gitlab.com/xray-forge/xrf-resources-locale-ukr), and
+[Russian](https://gitlab.com/xray-forge/xrf-resources-locale-ru).

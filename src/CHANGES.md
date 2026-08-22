@@ -1,6 +1,6 @@
 # XRF changelog
 
-This changelog records notable player-, modmaker-, and developer-facing changes in `stalker-xrf-engine`.
+This changelog records notable player-, modmaker-, and developer-facing changes in `xrf-engine`.
 
 Latest check: xrf-engine `5875ddeb9a399ff371bc51151739e39888098a5a`.
 

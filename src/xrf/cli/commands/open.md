@@ -10,9 +10,9 @@ npm run cli -- open_project_folder
 ## Commands
 
 | Command               | Opens                                                |
-| --------------------- | ---------------------------------------------------- |
+| --------------------- |------------------------------------------------------|
 | `open_game_folder`    | The configured or detected S.T.A.L.K.E.R. game root. |
-| `open_project_folder` | The `stalker-xrf-engine` repository root.            |
+| `open_project_folder` | The `xrf-engine` repository root.                    |
 
 `open_game_folder` uses the same game path resolution as `link`, `logs`, `start_game`, and `verify project`.
 `open_project_folder` uses the repository root detected from the CLI process location.

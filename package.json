@@ -1,5 +1,5 @@
 {
-  "name": "stalker-xrf-book",
+  "name": "xrf-book",
   "private": true,
   "scripts": {
     "format": "prettier --write \"**/*.md\"",

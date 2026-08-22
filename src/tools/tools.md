@@ -1,6 +1,6 @@
 # XRF Tools
 
-`stalker-xrf-tools` is the XRF companion workspace. It contains reusable Rust format crates, a CLI, and a Tauri desktop
+`xrf-tools` is the XRF companion workspace. It contains reusable Rust format crates, a CLI, and a Tauri desktop
 application.
 
 Use it for tasks that are awkward to do by hand:
@@ -34,7 +34,7 @@ tool calls out what is currently wired.
 
 Tool behavior comes from the tools workspace, not from the book text:
 
-- CLI commands: `stalker-xrf-tools/bin/xrf-cli/src/commands`;
-- desktop backend commands: `stalker-xrf-tools/bin/xrf-app/src`;
-- desktop frontend routes: `stalker-xrf-tools/bin/xrf-ui/src/applications`;
-- reusable format logic: `stalker-xrf-tools/crates`.
+- CLI commands: `xrf-tools/bin/xrf-cli/src/commands`;
+- desktop backend commands: `xrf-tools/bin/xrf-app/src`;
+- desktop frontend routes: `xrf-tools/bin/xrf-ui/src/applications`;
+- reusable format logic: `xrf-tools/crates`.
