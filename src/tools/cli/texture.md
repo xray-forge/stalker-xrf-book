@@ -94,17 +94,17 @@ Grid coordinates are cells, not pixels; a cell is 50x50, hardcoded in the engine
 
 ## Bump declarations
 
-A texture's bump map is not found by naming convention. `CTextureDescrMngr::LoadTHM` reads the `.thm` beside the
-texture and takes its bump name verbatim.
+A texture's bump map is not found by naming convention. `CTextureDescrMngr::LoadTHM` reads the `.thm` beside the texture
+and takes its bump name verbatim.
 
-A name that resolves to nothing does not turn bump mapping off. `bump_exist()` only tests that the name is non-empty,
-so the renderer still selects the `_bump` shader variant, and the loader substitutes `ed\ed_dummy_bump` while logging
+A name that resolves to nothing does not turn bump mapping off. `bump_exist()` only tests that the name is non-empty, so
+the renderer still selects the `_bump` shader variant, and the loader substitutes `ed\ed_dummy_bump` while logging
 `! Fallback to default bump map: <name>` on every load. The surface renders flat while still paying for the bump path,
 and the log fills with fallbacks.
 
 This bites whenever a texture is imported under a different path than it had at its source, because the copied
-descriptor keeps pointing into the source layout. On `renderer_r4` the bump is consumed through
-`CTexture::Preload`, so it is not a setting the player can opt out of.
+descriptor keeps pointing into the source layout. On `renderer_r4` the bump is consumed through `CTexture::Preload`, so
+it is not a setting the player can opt out of.
 
 ```powershell
 xrf-cli patch-thm-bump --path ./textures/wpn/wpn_pm/wpn_pm.thm --to "wpn\wpn_pm\wpn_pm_bump"

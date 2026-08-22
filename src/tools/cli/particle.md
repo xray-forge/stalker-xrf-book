@@ -1,4 +1,4 @@
-# Particles CLI
+# Particle CLI
 
 Particle commands inspect, verify, pack, unpack, and round-trip `particles.xr` data.
 
